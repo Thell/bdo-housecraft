@@ -1,6 +1,7 @@
 #[global_allocator]
 static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
 
+pub mod houseinfo;
 use anyhow::{Ok, Result};
 use clap::Parser;
 
