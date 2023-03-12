@@ -1,14 +1,13 @@
 #[global_allocator]
 static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
 
+pub mod cli_args;
 pub mod find_crafts;
 pub mod houseinfo;
 pub mod list_crafts;
 pub mod list_regions;
 use anyhow::{Ok, Result};
 use clap::Parser;
-
-pub mod cli_args;
 use cli_args::Cli;
 use find_crafts::find_craft_buildings;
 use list_crafts::list_crafts;
@@ -25,6 +24,45 @@ fn main() -> Result<()> {
         list_crafts(cli.region)?
     } else if let Some(craft) = cli.find_craft {
         find_craft_buildings(cli.region, craft)?
+    // Generation dispatch
+    } else if cli.generate {
+        println!("WIP... implementing");
+        let region = cli.region.unwrap();
+        let progress = cli.progress;
+        let workers = cli.workers.unwrap_or(1);
+        println!("generating listings for {region}");
+        println!("using [progress: {progress}, workers: {workers}]");
+        println!("is not implemented yet.")
+    // Optimizer dispatch
+    } else if cli.optimize {
+        // This is going to be the last section implemented.
+        let region = cli.region.unwrap();
+        let desired_warehouse_count = cli.storage_count.unwrap();
+        let desired_worker_count = cli.lodging_count.unwrap();
+        let progress = cli.progress;
+        let workers = cli.workers.unwrap_or(1);
+        println!("running an optimizer for {region} with {desired_warehouse_count} storage and {desired_worker_count} lodging");
+        println!("using [progress: {progress}, workers: {workers}]");
+        println!("is not implemented yet.")
+    // Main listing dispatch
+    } else if let Some(region) = cli.region {
+        let mut desired_warehouse_count = 0;
+        let mut desired_worker_count = 0;
+        if cli.storage_count.is_none() && cli.lodging_count.is_none() {
+            println!("listings for {region} without storage or lodging is not implemented yet.");
+        } else if cli.storage_count.is_none() {
+            desired_worker_count = cli.lodging_count.unwrap();
+            println!("listings for {region} without storage but with {desired_worker_count} lodging is not implemented yet.");
+        } else if cli.lodging_count.is_none() {
+            desired_warehouse_count = cli.storage_count.unwrap();
+            println!("listings for {region} with {desired_warehouse_count} storage but without lodging is not implemented yet.");
+        } else {
+            desired_warehouse_count = cli.storage_count.unwrap();
+            desired_worker_count = cli.lodging_count.unwrap();
+        }
+        println!("if this was implemented...");
+        println!("{region} would be listed showing results with {desired_warehouse_count} storage and {desired_worker_count} lodging.");
+        println!("using the given output and context flags which haven't been implmented yet.");
     }
 
     Ok(())
