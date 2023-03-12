@@ -1,6 +1,7 @@
 #[global_allocator]
 static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
 
+pub mod find_crafts;
 pub mod houseinfo;
 pub mod list_crafts;
 pub mod list_regions;
@@ -9,6 +10,7 @@ use clap::Parser;
 
 pub mod cli_args;
 use cli_args::Cli;
+use find_crafts::find_craft_buildings;
 use list_crafts::list_crafts;
 use list_regions::list_regions;
 
@@ -21,6 +23,8 @@ fn main() -> Result<()> {
         list_regions()?
     } else if cli.list_crafts {
         list_crafts(cli.region)?
+    } else if let Some(craft) = cli.find_craft {
+        find_craft_buildings(cli.region, craft)?
     }
 
     Ok(())
