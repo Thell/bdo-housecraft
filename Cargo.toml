@@ -12,6 +12,7 @@ clap = { version = "4.1.8", features = ["derive"] }
 comfy-table = "6.1.4"
 console = "0.15.5"
 csv = "1.2.1"
+lazy_static = "1.4.0"
 mimalloc = { version = "0.1.34", default-features = false }
 rayon = "1.7.0"
 serde = { version = "1.0.154", features = ["derive"] }

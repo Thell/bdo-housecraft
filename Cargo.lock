@@ -337,6 +337,7 @@ dependencies = [
  "comfy-table",
  "console",
  "csv",
+ "lazy_static",
  "mimalloc",
  "rayon",
  "serde",

@@ -1,6 +1,9 @@
 #[global_allocator]
 static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
 
+#[macro_use]
+extern crate lazy_static;
+
 pub mod cli_args;
 pub mod find_crafts;
 pub mod houseinfo;
@@ -15,7 +18,6 @@ use list_regions::list_regions;
 
 fn main() -> Result<()> {
     let cli = Cli::parse();
-    println!("{cli:#?}");
 
     // Options dispatch
     if cli.list_regions {
@@ -26,7 +28,9 @@ fn main() -> Result<()> {
         find_craft_buildings(cli.region, craft)?
     // Generation dispatch
     } else if cli.generate {
+        println!("{cli:#?}");
         println!("WIP... implementing");
+
         let region = cli.region.unwrap();
         let progress = cli.progress;
         let workers = cli.workers.unwrap_or(1);
