@@ -71,7 +71,7 @@ fn summarize_regions(regions_buildings: RegionBuildingMap) -> Result<RegionStats
 }
 
 pub(crate) fn list_regions() -> Result<()> {
-    let regions_buildings = merge_houseinfo_data()?;
+    let regions_buildings = parse_houseinfo_data()?;
     let regions_summary = summarize_regions(regions_buildings)?;
     let totals = regions_summary
         .iter()

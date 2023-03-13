@@ -114,7 +114,7 @@ fn filter_craft_buildings(
 }
 
 pub(crate) fn find_craft_buildings(town_name: Option<String>, craft: String) -> Result<()> {
-    let mut regions_buildings = merge_houseinfo_data()?;
+    let mut regions_buildings = parse_houseinfo_data()?;
     if let Some(town_name) = town_name {
         regions_buildings.retain(|k, _| *k == town_name);
     }
