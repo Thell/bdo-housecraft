@@ -4,7 +4,12 @@ use std::collections::BTreeMap;
 use std::collections::HashMap;
 use std::path::Path;
 
-type BuildingMap = BTreeMap<u32, Building>;
+pub(crate) type BuildingMap = BTreeMap<u32, Building>;
+pub(crate) type RegionBuildingMap = BTreeMap<String, BuildingMap>;
+pub(crate) type CraftBuildingMap = BTreeMap<String, (u32, Vec<Building>)>;
+
+// pub const HOUSECRAFT_TABLE_STYLE: &str = "0123456789abcdefghi";
+pub(crate) const HOUSECRAFT_TABLE_STYLE: &str = "   ═────      ═  ══";
 
 #[allow(unused)]
 #[derive(Clone, Debug)]
@@ -182,7 +187,7 @@ pub(crate) fn read_csv_data(filename: &str) -> Result<HashMap<u32, String>> {
     Ok(records)
 }
 
-pub(crate) fn merge_houseinfo_data() -> Result<BTreeMap<String, BTreeMap<u32, Building>>> {
+pub(crate) fn merge_houseinfo_data() -> Result<RegionBuildingMap> {
     let character = read_csv_data("Character.csv")?;
     let exploration = read_csv_data("Exploration.csv")?;
     let _usage = read_csv_data("HouseInfoReceipe.csv")?;
@@ -237,13 +242,13 @@ pub(crate) fn merge_houseinfo_data() -> Result<BTreeMap<String, BTreeMap<u32, Bu
 }
 
 #[allow(unused)]
-pub(crate) fn get_town_buildings_by_key(key: u32) -> Result<BTreeMap<u32, Building>> {
+pub(crate) fn get_town_buildings_by_key(key: u32) -> Result<BuildingMap> {
     let town_name = town_id_to_name(key);
     get_town_buildings_by_name(&town_name)
 }
 
 #[allow(unused)]
-pub(crate) fn get_town_buildings_by_name(town_name: &str) -> Result<BTreeMap<u32, Building>> {
+pub(crate) fn get_town_buildings_by_name(town_name: &str) -> Result<BuildingMap> {
     let regions_buildings = merge_houseinfo_data()?;
     let region_buildings = regions_buildings
         .get(town_name)
