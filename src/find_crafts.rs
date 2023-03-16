@@ -3,16 +3,12 @@ use anyhow::{Ok, Result};
 use comfy_table::{Attribute, Cell, Row, Table};
 use console::style;
 use std::collections::BTreeMap;
-use std::collections::HashMap;
 
 type RegionCraftMap = BTreeMap<String, CraftBuildingMap>;
 
 lazy_static! {
-    static ref CRAFT_USAGE: HashMap<u32, String> = {
-        let map =
-            read_csv_data("HouseInfoReceipe.csv").expect("Error reading HouseInfoReceipe.csv");
-        map
-    };
+    static ref CRAFT_USAGE: IndexedStringMap =
+        read_csv_data("HouseInfoReceipe.csv").expect("Error reading HouseInfoReceipe.csv");
 }
 
 fn print_listing(crafts_summary: RegionCraftMap) -> Result<()> {

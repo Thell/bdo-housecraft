@@ -1,31 +1,48 @@
-use anyhow::{Context, Ok, Result};
+use anyhow::{bail, Context, Ok, Result};
 use serde::Deserialize;
 use std::collections::BTreeMap;
 use std::collections::HashMap;
 use std::path::Path;
 
-pub(crate) type IndexedStringMap = HashMap<u32, String>;
-pub(crate) type BuildingMap = BTreeMap<u32, Building>;
+pub(crate) type IndexedStringMap = HashMap<usize, String>;
+pub(crate) type BuildingMap = BTreeMap<usize, Building>;
 pub(crate) type RegionBuildingMap = BTreeMap<String, BuildingMap>;
-pub(crate) type CraftBuildingMap = BTreeMap<String, (u32, Vec<Building>)>;
+pub(crate) type CraftBuildingMap = BTreeMap<String, (usize, Vec<Building>)>;
 
 // pub const HOUSECRAFT_TABLE_STYLE: &str = "0123456789abcdefghi";
 pub(crate) const HOUSECRAFT_TABLE_STYLE: &str = "   ═────      ═  ══";
 
+#[derive(Clone, Debug)]
+pub(crate) struct UsageCounters {
+    pub cost: usize,
+    pub warehouse_count: usize,
+    pub worker_count: usize,
+}
+
+impl UsageCounters {
+    pub fn new() -> Self {
+        Self {
+            cost: 0,
+            warehouse_count: 0,
+            worker_count: 0,
+        }
+    }
+}
+
 #[allow(unused)]
 #[derive(Clone, Debug)]
 pub(crate) struct Building {
-    pub key: u32,
-    pub need_key: u32,
-    pub node_key: u32,
-    pub region_key: u32,
+    pub key: usize,
+    pub need_key: usize,
+    pub node_key: usize,
+    pub region_key: usize,
     pub building_name: String,
     pub node_name: String,
     pub region_name: String,
-    pub cost: u32,
-    pub worker_count: u32,
-    pub stable_count: u32,
-    pub warehouse_count: u32,
+    pub cost: usize,
+    pub worker_count: usize,
+    pub stable_count: usize,
+    pub warehouse_count: usize,
     pub craft_list: Vec<CraftList>,
 }
 
@@ -55,7 +72,7 @@ impl Building {
             node_name: exploration.get(&node_key).unwrap().to_string(),
             region_name: region.get(&region_key).unwrap().to_string(),
 
-            cost: house_info.need_explore_point,
+            cost: house_info.need_explore_point as usize,
             worker_count: house_info.worker_count(),
             warehouse_count: house_info.warehouse_count(),
             stable_count: house_info.stable_count(),
@@ -72,36 +89,36 @@ pub(crate) struct HouseInfos {
 #[allow(unused)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct HouseInfo {
-    pub affiliated_warehouse: u32,
-    pub character_key: u32,         /* key [CharacterKey] */
+    pub affiliated_warehouse: usize,
+    pub character_key: usize,       /* key [CharacterKey] */
     pub craft_list: Vec<CraftList>, /* house craft list [pa_vector<gc::HouseInfoCraft>] */
-    pub has_need_house_key: u32,
-    pub house_floor: u32,        /* house floor [HouseFloor] */
-    pub house_group: u32,        /* house group [HouseGroup] */
+    pub has_need_house_key: usize,
+    pub house_floor: usize,      /* house floor [HouseFloor] */
+    pub house_group: usize,      /* house group [HouseGroup] */
     pub need_explore_point: u32, /* need explore count [ExplorationPoint] */
-    pub need_house_key: u32,     /* need house key list [pa_vector<gc::CharacterKey>] */
+    pub need_house_key: usize,   /* need house key list [pa_vector<gc::CharacterKey>] */
     pub num_craft_list_items: u32,
-    pub parent_node: u32, /* parent node key [gc::WaypointKey] */
+    pub parent_node: usize, /* parent node key [gc::WaypointKey] */
 }
 
 impl HouseInfo {
-    pub fn worker_count(&self) -> u32 {
+    pub fn worker_count(&self) -> usize {
         self.craft_index_to_count(1)
     }
 
-    pub fn warehouse_count(&self) -> u32 {
+    pub fn warehouse_count(&self) -> usize {
         self.craft_index_to_count(2)
     }
 
-    pub fn stable_count(&self) -> u32 {
+    pub fn stable_count(&self) -> usize {
         self.craft_index_to_count(3)
     }
 
-    fn craft_index_to_count(&self, index: u32) -> u32 {
+    fn craft_index_to_count(&self, index: usize) -> usize {
         self.craft_list
             .iter()
             .find(|c| c.item_craft_index == index)
-            .map(|c| c.level_to_count())
+            .map(|c| c.level_to_count() as usize)
             .unwrap_or(0)
     }
 }
@@ -109,7 +126,7 @@ impl HouseInfo {
 #[derive(Clone, Deserialize, Debug)]
 pub(crate) struct CraftList {
     pub house_level: u32,
-    pub item_craft_index: u32,
+    pub item_craft_index: usize,
 }
 
 impl CraftList {
@@ -151,18 +168,18 @@ impl CraftList {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 struct LanguageData {
-    param0: u32,
+    param0: usize,
     string: String,
 }
 
-pub(crate) fn read_csv_data(filename: &str) -> Result<HashMap<u32, String>> {
+pub(crate) fn read_csv_data(filename: &str) -> Result<IndexedStringMap> {
     let path = Path::new("./data/houseinfo/filename.txt");
     let path = path.with_file_name(filename);
     let path_string = path.clone();
     let path_string = path_string.as_path().display();
     let file = std::fs::File::open(path).context(format!("Can't find {path_string})"))?;
     let mut rdr = csv::Reader::from_reader(file);
-    let mut records: std::collections::HashMap<u32, String> = std::collections::HashMap::new();
+    let mut records: std::collections::HashMap<usize, String> = std::collections::HashMap::new();
     for result in rdr.deserialize() {
         let record: LanguageData = result?;
         records.insert(record.param0, record.string);
@@ -187,7 +204,7 @@ pub(crate) fn parse_houseinfo_data() -> Result<RegionBuildingMap> {
             region.insert(building.key, building);
         } else {
             let region_key = building.region_name.to_owned();
-            let mut value = BTreeMap::<u32, Building>::new();
+            let mut value = BuildingMap::new();
             value.insert(building.key, building);
             region_buildings.insert(region_key, value);
         }

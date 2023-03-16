@@ -3,25 +3,9 @@ use anyhow::{Ok, Result};
 use comfy_table::{Attribute, Cell, Table};
 use std::collections::BTreeMap;
 
-type RegionStatsMap = BTreeMap<String, Stats>;
+type RegionStatsMap = BTreeMap<String, UsageCounters>;
 
-struct Stats {
-    cost: u32,
-    warehouse_count: u32,
-    worker_count: u32,
-}
-
-impl Stats {
-    pub fn new() -> Self {
-        Self {
-            cost: 0,
-            warehouse_count: 0,
-            worker_count: 0,
-        }
-    }
-}
-
-fn print_listing(regions_summary: RegionStatsMap, totals: Stats) -> Result<()> {
+fn print_listing(regions_summary: RegionStatsMap, totals: UsageCounters) -> Result<()> {
     let mut table = Table::new();
     table.load_preset(HOUSECRAFT_TABLE_STYLE);
     table.set_header(vec![
@@ -58,7 +42,7 @@ fn summarize_regions(regions_buildings: RegionBuildingMap) -> Result<RegionStats
             region.to_string(),
             buildings
                 .iter()
-                .fold(Stats::new(), |mut stats, (_, building)| {
+                .fold(UsageCounters::new(), |mut stats, (_, building)| {
                     stats.cost += building.cost;
                     stats.warehouse_count += building.warehouse_count;
                     stats.worker_count += building.worker_count;
@@ -73,13 +57,14 @@ fn summarize_regions(regions_buildings: RegionBuildingMap) -> Result<RegionStats
 pub(crate) fn list_regions() -> Result<()> {
     let regions_buildings = parse_houseinfo_data()?;
     let regions_summary = summarize_regions(regions_buildings)?;
-    let totals = regions_summary
-        .iter()
-        .fold(Stats::new(), |mut stats, (_, region_stats)| {
-            stats.cost += region_stats.cost;
-            stats.warehouse_count += region_stats.warehouse_count;
-            stats.worker_count += region_stats.worker_count;
-            stats
-        });
+    let totals =
+        regions_summary
+            .iter()
+            .fold(UsageCounters::new(), |mut stats, (_, region_stats)| {
+                stats.cost += region_stats.cost;
+                stats.warehouse_count += region_stats.warehouse_count;
+                stats.worker_count += region_stats.worker_count;
+                stats
+            });
     print_listing(regions_summary, totals)
 }
