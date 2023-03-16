@@ -33,7 +33,7 @@ fn main() -> Result<()> {
 
         let region = cli.region.unwrap();
         let progress = cli.progress;
-        let workers = cli.workers.unwrap_or(1);
+        let workers = cli.jobs.unwrap_or(1);
         println!("generating listings for {region}");
         println!("using [progress: {progress}, workers: {workers}]");
         println!("is not implemented yet.")
@@ -44,7 +44,7 @@ fn main() -> Result<()> {
         let desired_warehouse_count = cli.storage_count.unwrap();
         let desired_worker_count = cli.lodging_count.unwrap();
         let progress = cli.progress;
-        let workers = cli.workers.unwrap_or(1);
+        let workers = cli.jobs.unwrap_or(1);
         println!("running an optimizer for {region} with {desired_warehouse_count} storage and {desired_worker_count} lodging");
         println!("using [progress: {progress}, workers: {workers}]");
         println!("is not implemented yet.")

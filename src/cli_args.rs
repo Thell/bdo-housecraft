@@ -10,7 +10,7 @@ pub(crate) enum ContextType {
 
 /// A BDO buildings chain tool.
 /// (Calpheon City and Valencia City are not available for exact score listings.)
-#[derive(Debug, Parser)]
+#[derive(Clone, Debug, Parser)]
 #[command(author, version, about, long_about = None)]
 #[clap(group(
     ArgGroup::new("listing")
@@ -58,7 +58,7 @@ pub(crate) struct Cli {
     pub(crate) detailed: bool,
 
     /// format as json
-    #[arg(short = 'j', long, requires = "listing", group = "output", help_heading = Some("Output control"))]
+    #[arg(long, requires = "listing", group = "output", help_heading = Some("Output control"))]
     pub(crate) json: bool,
 
     /// print NUM entries of leading context
@@ -102,6 +102,6 @@ pub(crate) struct Cli {
     pub(crate) progress: bool,
 
     /// use NUM parallel jobs
-    #[arg(long, requires = "generation", help_heading = Some("Generation"))]
-    pub(crate) workers: Option<u8>,
+    #[arg(short, long, requires = "generation", help_heading = Some("Generation"))]
+    pub(crate) jobs: Option<u8>,
 }
