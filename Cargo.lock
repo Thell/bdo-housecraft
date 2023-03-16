@@ -339,6 +339,7 @@ dependencies = [
  "csv",
  "lazy_static",
  "mimalloc",
+ "num_cpus",
  "rayon",
  "serde",
  "serde_json",

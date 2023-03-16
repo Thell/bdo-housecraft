@@ -212,6 +212,19 @@ pub(crate) fn parse_houseinfo_data() -> Result<RegionBuildingMap> {
     Ok(region_buildings)
 }
 
+pub(crate) fn get_region_buildings(region_name: Option<String>) -> Result<RegionBuildingMap> {
+    let mut region_buildings = parse_houseinfo_data()?;
+    if let Some(region_name) = region_name {
+        region_buildings.retain(|k, _| *k == region_name);
+        if region_buildings.len() != 1 {
+            bail!(
+                "Unable to find region {}.\n Use '--list-regions'.",
+                region_name
+            );
+        }
+    };
+    Ok(region_buildings)
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // I think I'll use these during generate...
 

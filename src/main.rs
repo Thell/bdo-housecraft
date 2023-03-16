@@ -4,15 +4,22 @@ static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
 #[macro_use]
 extern crate lazy_static;
 
-pub mod cli_args;
-pub mod find_crafts;
-pub mod houseinfo;
-pub mod list_crafts;
-pub mod list_regions;
+extern crate num_cpus;
+
+mod cli_args;
+mod find_crafts;
+mod generate;
+mod generate_common;
+mod houseinfo;
+mod list_crafts;
+mod list_regions;
+mod node_manipulation;
+mod region_nodes;
 use anyhow::{Ok, Result};
 use clap::Parser;
 use cli_args::Cli;
 use find_crafts::find_craft_buildings;
+use generate_common::generate_main;
 use list_crafts::list_crafts;
 use list_regions::list_regions;
 
@@ -28,15 +35,9 @@ fn main() -> Result<()> {
         find_craft_buildings(cli.region, craft)?
     // Generation dispatch
     } else if cli.generate {
-        println!("{cli:#?}");
+        // println!("{cli:#?}");
         println!("WIP... implementing");
-
-        let region = cli.region.unwrap();
-        let progress = cli.progress;
-        let workers = cli.jobs.unwrap_or(1);
-        println!("generating listings for {region}");
-        println!("using [progress: {progress}, workers: {workers}]");
-        println!("is not implemented yet.")
+        generate_main(cli)?
     // Optimizer dispatch
     } else if cli.optimize {
         // This is going to be the last section implemented.
