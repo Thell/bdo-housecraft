@@ -36,6 +36,29 @@ pub(crate) fn reduce_last_state(chain: &mut Chain, region: &RegionNodes) -> usiz
     index + 1
 }
 
+pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec<Chain>> {
+    let mut chain = Chain::new(cli, region);
+    let mut chains = Vec::<Chain>::new();
+    let mut counter = 0;
+
+    while !chain.indices.is_empty() {
+        counter += 1;
+        chains.push(chain.clone());
+        let index = match chain.states.last() {
+            Some(&2) => reduce_last_state(&mut chain, region),
+            _ => reduce_chain(&mut chain, region),
+        };
+        if index < region.num_nodes {
+            extend_chain(index, &mut chain, region);
+        }
+    }
+
+    if cli.progress {
+        println!("\tVisited {counter} combinations.");
+    }
+    Ok(chains)
+}
+
 pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<BestChains> {
     let mut chain = Chain::new(cli, region);
     let mut chains = BestChains::new();

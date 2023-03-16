@@ -10,6 +10,7 @@ mod cli_args;
 mod find_crafts;
 mod generate;
 mod generate_common;
+mod generate_par;
 mod houseinfo;
 mod list_crafts;
 mod list_regions;

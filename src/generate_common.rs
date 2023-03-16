@@ -1,5 +1,7 @@
 use crate::cli_args::Cli;
 use crate::generate::generate_chains;
+use crate::generate_par::generate_chains_par;
+use crate::generate_par::JobControl;
 use crate::houseinfo::UsageCounters;
 use crate::houseinfo::*;
 use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
@@ -26,6 +28,31 @@ impl Chain {
         };
         if cli.progress {
             println!("{:?}", chain);
+        }
+        chain
+    }
+
+    pub fn new_par(cli: &Cli, region: &RegionNodes, job: &JobControl) -> Self {
+        let indices = job.start_indices.clone();
+        let states = job.start_states.clone();
+        let mut usage_counts = UsageCounters::new();
+
+        for (i, &state) in states.iter().enumerate().skip(1) {
+            let building = region.buildings.get(&region.children[indices[i]]).unwrap();
+            usage_counts.cost += building.cost;
+            if state == 1 {
+                usage_counts.warehouse_count += building.warehouse_count;
+            } else {
+                usage_counts.worker_count += building.worker_count;
+            }
+        }
+        let chain = Self {
+            indices,
+            states,
+            usage_counts,
+        };
+        if cli.progress {
+            println!("j-{} start: {:?}", job.job_id, chain)
         }
         chain
     }
@@ -120,7 +147,10 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
     let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
     print_starting_status(&region);
 
-    let best_chains = generate_chains(&cli, &region)?;
+    let best_chains = match cli.jobs.unwrap_or(1) {
+        1 => generate_chains(&cli, &region)?,
+        _ => generate_chains_par(&cli, &region)?,
+    };
 
     let mut best_of_best_chains = best_chains.clone();
     best_of_best_chains.retain(|_k, v| {
