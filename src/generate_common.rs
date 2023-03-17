@@ -9,6 +9,8 @@ use crate::region_nodes::RegionNodes;
 use anyhow::{Ok, Result};
 use console::style;
 use std::collections::BTreeMap;
+use std::fs::File;
+use std::io::Write;
 
 pub(crate) type BestChains = BTreeMap<(usize, usize), Chain>;
 
@@ -138,9 +140,6 @@ pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
     }
 }
 
-use std::fs::File;
-use std::io::Write;
-
 pub(crate) fn generate_main(cli: Cli) -> Result<()> {
     let region_name = cli.region.clone().unwrap();
     let region_buildings = get_region_buildings(Some(region_name.clone()))?;
@@ -161,7 +160,7 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
         })
     });
 
-    let file_name = region_name.replace(" ", "_");
+    let file_name = region_name.replace(' ', "_");
     let path = format!("./data/housecraft/{}.csv", file_name);
     let mut output = File::create(path.clone())?;
     for chain in best_of_best_chains.iter() {
@@ -170,7 +169,7 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
     println!(
         "Result: {} 'best of best' scored storage/lodging chains written to {}.",
         best_of_best_chains.len(),
-        path.to_string()
+        path
     );
     Ok(())
 }
