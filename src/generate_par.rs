@@ -131,7 +131,7 @@ fn get_job_controls(cli: &Cli, region: &RegionNodes) -> Result<Vec<JobControl>> 
 fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> Result<BestChains> {
     let mut best_chains = BestChains::new();
     let mut chain = Chain::new_par(&cli, &region, job);
-    let mut counter = 0;
+    let mut counter: usize = 0;
 
     while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
         counter += 1;

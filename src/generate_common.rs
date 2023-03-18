@@ -8,11 +8,11 @@ use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
 use anyhow::{Ok, Result};
 use console::style;
-use std::collections::BTreeMap;
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 
-pub(crate) type BestChains = BTreeMap<(usize, usize), Chain>;
+pub(crate) type BestChains = HashMap<(usize, usize), Chain>;
 
 #[derive(Clone, Debug)]
 pub(crate) struct Chain {
@@ -118,25 +118,24 @@ pub(crate) fn print_starting_status(region: &RegionNodes) {
     );
 }
 
-#[inline]
+#[inline(never)]
 pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
     let key = (
         chain.usage_counts.worker_count,
         chain.usage_counts.warehouse_count,
     );
-    if let Some(current_best) = best_chains.get_mut(&key) {
-        if chain.usage_counts.cost < current_best.usage_counts.cost {
-            if cli.progress {
-                print_chain(current_best, '-');
-                print_chain(chain, '+')
-            }
-            *current_best = chain.clone();
-        }
-    } else {
-        best_chains.insert(key, chain.clone());
+    let current_best = best_chains.entry(key).or_insert_with(|| {
         if cli.progress {
             print_chain(chain, '+');
         }
+        chain.clone()
+    });
+    if chain.usage_counts.cost < current_best.usage_counts.cost {
+        if cli.progress {
+            print_chain(current_best, '-');
+            print_chain(chain, '+')
+        }
+        *current_best = chain.clone();
     }
 }
 
@@ -160,16 +159,35 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
         })
     });
 
+    let mut best_of_best_chains: Vec<Chain> = best_of_best_chains.into_values().collect();
+    best_of_best_chains.sort_unstable_by_key(|chain| {
+        (
+            chain.usage_counts.worker_count,
+            chain.usage_counts.warehouse_count,
+        )
+    });
+
     let file_name = region_name.replace(' ', "_");
     let path = format!("./data/housecraft/{}.csv", file_name);
     let mut output = File::create(path.clone())?;
-    for chain in best_of_best_chains.iter() {
-        writeln!(&mut output, "{:?}", chain)?;
-    }
+    writeln!(&mut output, "lodging,storage,cost,indices,states")?;
+    best_of_best_chains.iter().for_each(|chain| {
+        _ = writeln!(
+            &mut output,
+            "{:?},{:?},{:?},{:?},{:?}",
+            chain.usage_counts.worker_count,
+            chain.usage_counts.warehouse_count,
+            chain.usage_counts.cost,
+            chain.indices,
+            chain.states,
+        );
+    });
+
     println!(
         "Result: {} 'best of best' scored storage/lodging chains written to {}.",
         best_of_best_chains.len(),
         path
     );
+
     Ok(())
 }
