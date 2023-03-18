@@ -6,13 +6,14 @@ use crate::houseinfo::UsageCounters;
 use crate::houseinfo::*;
 use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
+use ahash::RandomState;
 use anyhow::{Ok, Result};
 use console::style;
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 
-pub(crate) type BestChains = HashMap<(usize, usize), Chain>;
+pub(crate) type BestChains = HashMap<(usize, usize), Chain, RandomState>;
 
 #[derive(Clone, Debug)]
 pub(crate) struct Chain {
@@ -118,7 +119,7 @@ pub(crate) fn print_starting_status(region: &RegionNodes) {
     );
 }
 
-#[inline(never)]
+#[inline(always)]
 pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
     let key = (
         chain.usage_counts.worker_count,

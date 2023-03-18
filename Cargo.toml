@@ -8,6 +8,7 @@ edition = "2021"
 debug = 1
 
 [dependencies]
+ahash = "0.8.3"
 anyhow = "1.0.69"
 chrono = "0.4.23"
 clap = { version = "4.1.8", features = ["derive"] }

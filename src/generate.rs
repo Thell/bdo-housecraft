@@ -3,7 +3,7 @@ use crate::generate_common::*;
 use crate::region_nodes::*;
 use anyhow::{Ok, Result};
 
-#[inline(never)]
+#[inline(always)]
 pub(crate) fn extend_chain(index: usize, chain: &mut Chain, region: &RegionNodes) {
     (index..region.num_nodes).for_each(|i| {
         chain.indices.push(i);
@@ -16,7 +16,7 @@ pub(crate) fn extend_chain(index: usize, chain: &mut Chain, region: &RegionNodes
     });
 }
 
-#[inline(never)]
+#[inline(always)]
 pub(crate) fn reduce_chain(chain: &mut Chain, region: &RegionNodes) -> usize {
     chain.states.pop();
     let index = chain.indices.pop().unwrap();
@@ -25,7 +25,7 @@ pub(crate) fn reduce_chain(chain: &mut Chain, region: &RegionNodes) -> usize {
     region.jump_indices[index]
 }
 
-#[inline(never)]
+#[inline(always)]
 pub(crate) fn reduce_last_state(chain: &mut Chain, region: &RegionNodes) -> usize {
     *chain.states.last_mut().unwrap() = 1;
     let index = *chain.indices.last().unwrap();
@@ -59,7 +59,7 @@ pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec
 
 pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<BestChains> {
     let mut chain = Chain::new(cli, region);
-    let mut chains = BestChains::new();
+    let mut chains = BestChains::default();
     let mut counter = 0;
 
     while !chain.indices.is_empty() {

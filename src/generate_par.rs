@@ -51,7 +51,7 @@ fn generate_job_prefixes(cli: &Cli, region: &RegionNodes) -> Result<Vec<Chain>> 
     Ok(prefixes)
 }
 
-#[inline]
+#[inline(always)]
 fn find_deactived_nodes(base_indices: &HashSet<usize>, prefix_indices: &[usize]) -> Vec<usize> {
     base_indices
         .difference(&prefix_indices.iter().copied().collect())
@@ -59,7 +59,7 @@ fn find_deactived_nodes(base_indices: &HashSet<usize>, prefix_indices: &[usize])
         .collect()
 }
 
-#[inline]
+#[inline(always)]
 fn get_stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: usize) -> usize {
     std::cmp::max(
         deactivated_nodes
@@ -71,7 +71,7 @@ fn get_stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: 
     )
 }
 
-#[inline]
+#[inline(always)]
 fn extend_prefix_from(indices: &[usize], prefix: &Chain, from: usize) -> Vec<usize> {
     prefix
         .indices
@@ -81,7 +81,7 @@ fn extend_prefix_from(indices: &[usize], prefix: &Chain, from: usize) -> Vec<usi
         .collect()
 }
 
-#[inline]
+#[inline(always)]
 fn extend_states_from(indices: &[usize], prefix: &Chain, from: usize) -> Vec<usize> {
     prefix
         .states
@@ -129,7 +129,7 @@ fn get_job_controls(cli: &Cli, region: &RegionNodes) -> Result<Vec<JobControl>> 
 }
 
 fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> Result<BestChains> {
-    let mut best_chains = BestChains::new();
+    let mut best_chains = BestChains::default();
     let mut chain = Chain::new_par(&cli, &region, job);
     let mut counter: usize = 0;
 
@@ -154,7 +154,7 @@ fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> 
 }
 
 pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<BestChains> {
-    let mut best_chains = BestChains::new();
+    let mut best_chains = BestChains::default();
     let job_controls = get_job_controls(cli, region)?;
 
     job_controls
