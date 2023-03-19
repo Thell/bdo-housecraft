@@ -135,7 +135,7 @@ fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> 
 
     while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
         counter += 1;
-        visit(&chain, &mut best_chains, &cli);
+        visit(&chain, &mut best_chains);
         let index = match chain.states.last() {
             Some(&2) => reduce_last_state(&mut chain, &region),
             _ => reduce_chain(&mut chain, &region),
@@ -145,7 +145,7 @@ fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> 
         }
     }
     counter += 1;
-    visit(&chain, &mut best_chains, &cli);
+    visit(&chain, &mut best_chains);
     if cli.progress {
         println!("\tJob {} visited {} combinations.", job.job_id, counter);
     }
@@ -163,7 +163,7 @@ pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<Bes
         .collect::<Vec<BestChains>>()
         .iter()
         .flatten()
-        .for_each(|(_, chain)| visit(chain, &mut best_chains, cli));
+        .for_each(|(_, chain)| visit(chain, &mut best_chains));
 
     Ok(best_chains)
 }

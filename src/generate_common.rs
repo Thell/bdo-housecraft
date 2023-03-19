@@ -8,7 +8,6 @@ use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
 use ahash::RandomState;
 use anyhow::{Ok, Result};
-use console::style;
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
@@ -61,44 +60,6 @@ impl Chain {
     }
 }
 
-pub(crate) fn print_chain(chain: &Chain, marker: char) {
-    match marker {
-        '-' => {
-            println!(
-                "{} {:?}, {:?}, {:?}, {:?}, {:?}",
-                style(marker).red(),
-                chain.usage_counts.worker_count,
-                chain.usage_counts.warehouse_count,
-                chain.usage_counts.cost,
-                style(chain.indices.clone()).dim(),
-                style(chain.states.clone()).dim(),
-            )
-        }
-        '+' => {
-            println!(
-                "{} {:?}, {:?}, {:?}, {:?}, {:?}",
-                style(marker).green(),
-                style(chain.usage_counts.worker_count).bold(),
-                style(chain.usage_counts.warehouse_count).bold(),
-                style(chain.usage_counts.cost).bold(),
-                style(chain.indices.clone()).dim(),
-                style(chain.states.clone()).dim(),
-            )
-        }
-        _ => {
-            println!(
-                "{} {:?}, {:?}, {:?}, {:?}, {:?}",
-                style(marker).bold(),
-                style(chain.usage_counts.worker_count).dim(),
-                style(chain.usage_counts.warehouse_count).dim(),
-                style(chain.usage_counts.cost).dim(),
-                style(chain.indices.clone()).bold(),
-                style(chain.states.clone()).bold(),
-            )
-        }
-    };
-}
-
 pub(crate) fn print_starting_status(region: &RegionNodes) {
     let building_chain_count = count_subtrees(region.root, &region.parents, &region.children);
     let multistate_count = count_subtrees_multistate(
@@ -146,22 +107,13 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
 }
 
 #[inline(always)]
-pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
+pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains) {
     let key = (
         chain.usage_counts.worker_count,
         chain.usage_counts.warehouse_count,
     );
-    let current_best = best_chains.entry(key).or_insert_with(|| {
-        if cli.progress {
-            print_chain(chain, '+');
-        }
-        chain.clone()
-    });
+    let current_best = best_chains.entry(key).or_insert_with(|| chain.clone());
     if chain.usage_counts.cost < current_best.usage_counts.cost {
-        if cli.progress {
-            print_chain(current_best, '-');
-            print_chain(chain, '+')
-        }
         *current_best = chain.clone();
     }
 }

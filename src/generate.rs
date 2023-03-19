@@ -64,7 +64,7 @@ pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<BestCha
 
     while !chain.indices.is_empty() {
         counter += 1;
-        visit(&chain, &mut chains, cli);
+        visit(&chain, &mut chains);
         let index = match chain.states.last() {
             Some(&2) => reduce_last_state(&mut chain, region),
             _ => reduce_chain(&mut chain, region),
