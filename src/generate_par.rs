@@ -128,8 +128,8 @@ fn get_job_controls(cli: &Cli, region: &RegionNodes) -> Result<Vec<JobControl>> 
     Ok(job_controls)
 }
 
-fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> Result<BestChains> {
-    let mut best_chains = BestChains::default();
+fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> Result<ChainMap> {
+    let mut best_chains = ChainMap::default();
     let mut chain = Chain::new_par(&cli, &region, job);
     let mut counter: usize = 0;
 
@@ -153,14 +153,14 @@ fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> 
     Ok(best_chains)
 }
 
-pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<BestChains> {
-    let mut best_chains = BestChains::default();
+pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+    let mut best_chains = ChainMap::default();
     let job_controls = get_job_controls(cli, region)?;
 
     job_controls
         .par_iter()
         .map(|job| generate_best_chains_par(cli.clone(), region.clone(), job).unwrap())
-        .collect::<Vec<BestChains>>()
+        .collect::<Vec<ChainMap>>()
         .iter()
         .flatten()
         .for_each(|(_, chain)| visit(chain, &mut best_chains));

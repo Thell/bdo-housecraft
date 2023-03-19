@@ -57,9 +57,9 @@ pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec
     Ok(chains)
 }
 
-pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<BestChains> {
+pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let mut chain = Chain::new(cli, region);
-    let mut chains = BestChains::default();
+    let mut chains = ChainMap::default();
     let mut counter = 0;
 
     while !chain.indices.is_empty() {

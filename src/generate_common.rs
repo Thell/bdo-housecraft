@@ -12,7 +12,7 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 
-pub(crate) type BestChains = HashMap<(usize, usize), Chain, RandomState>;
+pub(crate) type ChainMap = HashMap<(usize, usize), Chain, RandomState>;
 
 #[derive(Clone, Debug)]
 pub(crate) struct Chain {
@@ -107,7 +107,7 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
 }
 
 #[inline(always)]
-pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains) {
+pub(crate) fn visit(chain: &Chain, best_chains: &mut ChainMap) {
     let key = (
         chain.usage_counts.worker_count,
         chain.usage_counts.warehouse_count,
@@ -130,7 +130,7 @@ fn is_dominated_by_any(chain: &Chain, chains: &[Chain], start_pos: usize) -> boo
     chains[start_pos..].iter().any(|c| dominates(c, chain))
 }
 
-fn retain_best_chains(chains: &BestChains) -> Vec<Chain> {
+fn retain_best_chains(chains: &ChainMap) -> Vec<Chain> {
     let mut chains: Vec<Chain> = chains.values().cloned().collect();
     chains.sort_unstable_by_key(|chain| {
         (
