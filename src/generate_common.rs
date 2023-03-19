@@ -107,12 +107,12 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
 }
 
 #[inline(always)]
-pub(crate) fn visit(chain: &Chain, best_chains: &mut ChainMap) {
+pub(crate) fn visit(chain: &Chain, chains: &mut ChainMap) {
     let key = (
         chain.usage_counts.worker_count,
         chain.usage_counts.warehouse_count,
     );
-    let current_best = best_chains.entry(key).or_insert_with(|| chain.clone());
+    let current_best = chains.entry(key).or_insert_with(|| chain.clone());
     if chain.usage_counts.cost < current_best.usage_counts.cost {
         *current_best = chain.clone();
     }
@@ -130,7 +130,7 @@ fn is_dominated_by_any(chain: &Chain, chains: &[Chain], start_pos: usize) -> boo
     chains[start_pos..].iter().any(|c| dominates(c, chain))
 }
 
-fn retain_best_chains(chains: &ChainMap) -> Vec<Chain> {
+fn retain_dominating_chains(chains: &ChainMap) -> Vec<Chain> {
     let mut chains: Vec<Chain> = chains.values().cloned().collect();
     chains.sort_unstable_by_key(|chain| {
         (
@@ -139,13 +139,13 @@ fn retain_best_chains(chains: &ChainMap) -> Vec<Chain> {
         )
     });
 
-    let mut best_chains = vec![];
+    let mut dominating_chains = vec![];
     for (i, chain) in chains.iter().enumerate() {
         if !is_dominated_by_any(chain, &chains, i + 1) {
-            best_chains.push(chain.clone());
+            dominating_chains.push(chain.clone());
         }
     }
-    best_chains
+    dominating_chains
 }
 
 pub(crate) fn generate_main(cli: Cli) -> Result<()> {
@@ -159,7 +159,7 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
         _ => generate_chains_par(&cli, &region)?,
     };
 
-    let chains = retain_best_chains(&chains);
+    let chains = retain_dominating_chains(&chains);
     write_chains(&cli, &chains)?;
 
     Ok(())
