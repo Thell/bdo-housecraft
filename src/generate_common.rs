@@ -119,6 +119,32 @@ pub(crate) fn print_starting_status(region: &RegionNodes) {
     );
 }
 
+fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
+    let region_name = cli.region.clone().unwrap();
+    let file_name = region_name.replace(' ', "_");
+    let path = format!("./data/housecraft/{}.csv", file_name);
+    let mut output = File::create(path.clone())?;
+    writeln!(&mut output, "lodging,storage,cost,indices,states")?;
+    chains.iter().for_each(|chain| {
+        _ = writeln!(
+            &mut output,
+            "{:?},{:?},{:?},{:?},{:?}",
+            chain.usage_counts.worker_count,
+            chain.usage_counts.warehouse_count,
+            chain.usage_counts.cost,
+            chain.indices,
+            chain.states,
+        );
+    });
+    println!(
+        "Result: {} 'best of best' scored storage/lodging chains written to {}.",
+        chains.len(),
+        path
+    );
+
+    Ok(())
+}
+
 #[inline(always)]
 pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
     let key = (
@@ -140,55 +166,49 @@ pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
     }
 }
 
-pub(crate) fn generate_main(cli: Cli) -> Result<()> {
-    let region_name = cli.region.clone().unwrap();
-    let region_buildings = get_region_buildings(Some(region_name.clone()))?;
-    let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
-    print_starting_status(&region);
+#[inline(always)]
+fn dominates(other_chain: &Chain, chain: &Chain) -> bool {
+    other_chain.usage_counts.cost == chain.usage_counts.cost
+        && other_chain.usage_counts.worker_count >= chain.usage_counts.worker_count
+        && other_chain.usage_counts.warehouse_count > chain.usage_counts.warehouse_count
+}
 
-    let best_chains = match cli.jobs.unwrap_or(1) {
-        1 => generate_chains(&cli, &region)?,
-        _ => generate_chains_par(&cli, &region)?,
-    };
+#[inline(always)]
+fn is_dominated_by_any(chain: &Chain, chains: &[Chain], start_pos: usize) -> bool {
+    chains[start_pos..].iter().any(|c| dominates(c, chain))
+}
 
-    let mut best_of_best_chains = best_chains.clone();
-    best_of_best_chains.retain(|_k, v| {
-        !best_chains.values().any(|c| {
-            (c.usage_counts.cost == v.usage_counts.cost)
-                && (c.usage_counts.worker_count >= v.usage_counts.worker_count)
-                && (c.usage_counts.warehouse_count > v.usage_counts.warehouse_count)
-        })
-    });
-
-    let mut best_of_best_chains: Vec<Chain> = best_of_best_chains.into_values().collect();
-    best_of_best_chains.sort_unstable_by_key(|chain| {
+fn retain_best_chains(chains: &BestChains) -> Vec<Chain> {
+    let mut chains: Vec<Chain> = chains.values().cloned().collect();
+    chains.sort_unstable_by_key(|chain| {
         (
             chain.usage_counts.worker_count,
             chain.usage_counts.warehouse_count,
         )
     });
 
-    let file_name = region_name.replace(' ', "_");
-    let path = format!("./data/housecraft/{}.csv", file_name);
-    let mut output = File::create(path.clone())?;
-    writeln!(&mut output, "lodging,storage,cost,indices,states")?;
-    best_of_best_chains.iter().for_each(|chain| {
-        _ = writeln!(
-            &mut output,
-            "{:?},{:?},{:?},{:?},{:?}",
-            chain.usage_counts.worker_count,
-            chain.usage_counts.warehouse_count,
-            chain.usage_counts.cost,
-            chain.indices,
-            chain.states,
-        );
-    });
+    let mut best_chains = vec![];
+    for (i, chain) in chains.iter().enumerate() {
+        if !is_dominated_by_any(chain, &chains, i + 1) {
+            best_chains.push(chain.clone());
+        }
+    }
+    best_chains
+}
 
-    println!(
-        "Result: {} 'best of best' scored storage/lodging chains written to {}.",
-        best_of_best_chains.len(),
-        path
-    );
+pub(crate) fn generate_main(cli: Cli) -> Result<()> {
+    let region_name = cli.region.clone().unwrap();
+    let region_buildings = get_region_buildings(Some(region_name.clone()))?;
+    let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
+    print_starting_status(&region);
+
+    let chains = match cli.jobs.unwrap_or(1) {
+        1 => generate_chains(&cli, &region)?,
+        _ => generate_chains_par(&cli, &region)?,
+    };
+
+    let chains = retain_best_chains(&chains);
+    write_chains(&cli, &chains)?;
 
     Ok(())
 }
