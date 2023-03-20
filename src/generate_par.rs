@@ -51,7 +51,7 @@ fn generate_job_prefixes(cli: &Cli, region: &RegionNodes) -> Result<Vec<Chain>> 
     Ok(prefixes)
 }
 
-#[inline]
+#[inline(always)]
 fn find_deactived_nodes(base_indices: &HashSet<usize>, prefix_indices: &[usize]) -> Vec<usize> {
     base_indices
         .difference(&prefix_indices.iter().copied().collect())
@@ -59,7 +59,7 @@ fn find_deactived_nodes(base_indices: &HashSet<usize>, prefix_indices: &[usize])
         .collect()
 }
 
-#[inline]
+#[inline(always)]
 fn get_stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: usize) -> usize {
     std::cmp::max(
         deactivated_nodes
@@ -71,7 +71,7 @@ fn get_stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: 
     )
 }
 
-#[inline]
+#[inline(always)]
 fn extend_prefix_from(indices: &[usize], prefix: &Chain, from: usize) -> Vec<usize> {
     prefix
         .indices
@@ -81,7 +81,7 @@ fn extend_prefix_from(indices: &[usize], prefix: &Chain, from: usize) -> Vec<usi
         .collect()
 }
 
-#[inline]
+#[inline(always)]
 fn extend_states_from(indices: &[usize], prefix: &Chain, from: usize) -> Vec<usize> {
     prefix
         .states
@@ -128,14 +128,18 @@ fn get_job_controls(cli: &Cli, region: &RegionNodes) -> Result<Vec<JobControl>> 
     Ok(job_controls)
 }
 
-fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> Result<BestChains> {
-    let mut best_chains = BestChains::new();
+fn generate_dominating_chains_par(
+    cli: Cli,
+    region: RegionNodes,
+    job: &JobControl,
+) -> Result<ChainMap> {
+    let mut chains = ChainMap::default();
     let mut chain = Chain::new_par(&cli, &region, job);
-    let mut counter = 0;
+    let mut counter: usize = 0;
 
     while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
         counter += 1;
-        visit(&chain, &mut best_chains, &cli);
+        visit(&chain, &mut chains);
         let index = match chain.states.last() {
             Some(&2) => reduce_last_state(&mut chain, &region),
             _ => reduce_chain(&mut chain, &region),
@@ -145,25 +149,25 @@ fn generate_best_chains_par(cli: Cli, region: RegionNodes, job: &JobControl) -> 
         }
     }
     counter += 1;
-    visit(&chain, &mut best_chains, &cli);
+    visit(&chain, &mut chains);
     if cli.progress {
         println!("\tJob {} visited {} combinations.", job.job_id, counter);
     }
 
-    Ok(best_chains)
+    Ok(chains)
 }
 
-pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<BestChains> {
-    let mut best_chains = BestChains::new();
+pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+    let mut chains = ChainMap::default();
     let job_controls = get_job_controls(cli, region)?;
 
     job_controls
         .par_iter()
-        .map(|job| generate_best_chains_par(cli.clone(), region.clone(), job).unwrap())
-        .collect::<Vec<BestChains>>()
+        .map(|job| generate_dominating_chains_par(cli.clone(), region.clone(), job).unwrap())
+        .collect::<Vec<ChainMap>>()
         .iter()
         .flatten()
-        .for_each(|(_, chain)| visit(chain, &mut best_chains, cli));
+        .for_each(|(_, chain)| visit(chain, &mut chains));
 
-    Ok(best_chains)
+    Ok(chains)
 }

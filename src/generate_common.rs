@@ -6,13 +6,14 @@ use crate::houseinfo::UsageCounters;
 use crate::houseinfo::*;
 use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
+use crate::retain_traits::SplitLastRetain;
+use ahash::RandomState;
 use anyhow::{Ok, Result};
-use console::style;
-use std::collections::BTreeMap;
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 
-pub(crate) type BestChains = BTreeMap<(usize, usize), Chain>;
+pub(crate) type ChainMap = HashMap<(usize, usize), Chain, RandomState>;
 
 #[derive(Clone, Debug)]
 pub(crate) struct Chain {
@@ -60,44 +61,6 @@ impl Chain {
     }
 }
 
-pub(crate) fn print_chain(chain: &Chain, marker: char) {
-    match marker {
-        '-' => {
-            println!(
-                "{} {:?}, {:?}, {:?}, {:?}, {:?}",
-                style(marker).red(),
-                chain.usage_counts.worker_count,
-                chain.usage_counts.warehouse_count,
-                chain.usage_counts.cost,
-                style(chain.indices.clone()).dim(),
-                style(chain.states.clone()).dim(),
-            )
-        }
-        '+' => {
-            println!(
-                "{} {:?}, {:?}, {:?}, {:?}, {:?}",
-                style(marker).green(),
-                style(chain.usage_counts.worker_count).bold(),
-                style(chain.usage_counts.warehouse_count).bold(),
-                style(chain.usage_counts.cost).bold(),
-                style(chain.indices.clone()).dim(),
-                style(chain.states.clone()).dim(),
-            )
-        }
-        _ => {
-            println!(
-                "{} {:?}, {:?}, {:?}, {:?}, {:?}",
-                style(marker).bold(),
-                style(chain.usage_counts.worker_count).dim(),
-                style(chain.usage_counts.warehouse_count).dim(),
-                style(chain.usage_counts.cost).dim(),
-                style(chain.indices.clone()).bold(),
-                style(chain.states.clone()).bold(),
-            )
-        }
-    };
-}
-
 pub(crate) fn print_starting_status(region: &RegionNodes) {
     let building_chain_count = count_subtrees(region.root, &region.parents, &region.children);
     let multistate_count = count_subtrees_multistate(
@@ -118,26 +81,70 @@ pub(crate) fn print_starting_status(region: &RegionNodes) {
     );
 }
 
-#[inline]
-pub(crate) fn visit(chain: &Chain, best_chains: &mut BestChains, cli: &Cli) {
+fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
+    let region_name = cli.region.clone().unwrap();
+    let file_name = region_name.replace(' ', "_");
+    let path = format!("./data/housecraft/{}.csv", file_name);
+    let mut output = File::create(path.clone())?;
+    writeln!(&mut output, "lodging,storage,cost,indices,states")?;
+    chains.iter().for_each(|chain| {
+        _ = writeln!(
+            &mut output,
+            "{:?},{:?},{:?},{:?},{:?}",
+            chain.usage_counts.worker_count,
+            chain.usage_counts.warehouse_count,
+            chain.usage_counts.cost,
+            chain.indices,
+            chain.states,
+        );
+    });
+    println!(
+        "Result: {} 'best of best' scored storage/lodging chains written to {}.",
+        chains.len(),
+        path
+    );
+
+    Ok(())
+}
+
+#[inline(always)]
+pub(crate) fn visit(chain: &Chain, chains: &mut ChainMap) {
     let key = (
         chain.usage_counts.worker_count,
         chain.usage_counts.warehouse_count,
     );
-    if let Some(current_best) = best_chains.get_mut(&key) {
-        if chain.usage_counts.cost < current_best.usage_counts.cost {
-            if cli.progress {
-                print_chain(current_best, '-');
-                print_chain(chain, '+')
+    chains
+        .entry(key)
+        .and_modify(|c| {
+            if chain.usage_counts.cost < c.usage_counts.cost {
+                chain.clone_into(c);
             }
-            *current_best = chain.clone();
-        }
-    } else {
-        best_chains.insert(key, chain.clone());
-        if cli.progress {
-            print_chain(chain, '+');
-        }
-    }
+        })
+        .or_insert_with(|| chain.to_owned());
+}
+
+#[inline(always)]
+fn dominates(chain: &Chain, other_chain: &Chain) -> bool {
+    !(other_chain.usage_counts.cost == chain.usage_counts.cost
+        && other_chain.usage_counts.worker_count >= chain.usage_counts.worker_count
+        && other_chain.usage_counts.warehouse_count > chain.usage_counts.warehouse_count)
+}
+
+#[inline(always)]
+fn dominates_all(chain: &Chain, chains: &[Chain]) -> bool {
+    chains.iter().all(|other| dominates(chain, other))
+}
+
+fn retain_dominating_chains(chains: &ChainMap) -> Vec<Chain> {
+    let mut chains: Vec<Chain> = chains.values().cloned().collect();
+    chains.sort_unstable_by_key(|chain| {
+        (
+            chain.usage_counts.worker_count,
+            chain.usage_counts.warehouse_count,
+        )
+    });
+    chains.retain_split_last(|chain, remaining_chains| dominates_all(chain, remaining_chains));
+    chains
 }
 
 pub(crate) fn generate_main(cli: Cli) -> Result<()> {
@@ -146,30 +153,13 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
     let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
     print_starting_status(&region);
 
-    let best_chains = match cli.jobs.unwrap_or(1) {
+    let chains = match cli.jobs.unwrap_or(1) {
         1 => generate_chains(&cli, &region)?,
         _ => generate_chains_par(&cli, &region)?,
     };
 
-    let mut best_of_best_chains = best_chains.clone();
-    best_of_best_chains.retain(|_k, v| {
-        !best_chains.values().any(|c| {
-            (c.usage_counts.cost == v.usage_counts.cost)
-                && (c.usage_counts.worker_count >= v.usage_counts.worker_count)
-                && (c.usage_counts.warehouse_count > v.usage_counts.warehouse_count)
-        })
-    });
+    let chains = retain_dominating_chains(&chains);
+    write_chains(&cli, &chains)?;
 
-    let file_name = region_name.replace(' ', "_");
-    let path = format!("./data/housecraft/{}.csv", file_name);
-    let mut output = File::create(path.clone())?;
-    for chain in best_of_best_chains.iter() {
-        writeln!(&mut output, "{:?}", chain)?;
-    }
-    println!(
-        "Result: {} 'best of best' scored storage/lodging chains written to {}.",
-        best_of_best_chains.len(),
-        path
-    );
     Ok(())
 }

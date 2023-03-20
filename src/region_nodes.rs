@@ -1,7 +1,6 @@
 use super::houseinfo::*;
 use crate::node_manipulation::*;
 use anyhow::{Ok, Result};
-use std::collections::HashMap;
 
 #[derive(Clone, Debug)]
 pub(crate) struct RegionNodes {
@@ -14,7 +13,8 @@ pub(crate) struct RegionNodes {
     pub children: Vec<usize>,
     pub costs: Vec<usize>,
     pub states: Vec<usize>,
-    pub state_values: HashMap<usize, Vec<usize>>,
+    pub warehouse_counts: Vec<usize>,
+    pub worker_counts: Vec<usize>,
     pub jump_indices: Vec<usize>,
     pub usage_counts: UsageCounters,
 }
@@ -61,10 +61,6 @@ impl RegionNodes {
         }
         usage_counts.cost = costs.iter().sum();
 
-        let mut state_values = HashMap::new();
-        state_values.insert(1, warehouse_counts);
-        state_values.insert(2, worker_counts);
-
         Ok(Self {
             region_name,
             buildings: buildings.clone(),
@@ -74,7 +70,8 @@ impl RegionNodes {
             children,
             costs,
             states,
-            state_values,
+            warehouse_counts,
+            worker_counts,
             jump_indices,
             usage_counts,
         })
