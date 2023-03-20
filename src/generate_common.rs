@@ -6,6 +6,7 @@ use crate::houseinfo::UsageCounters;
 use crate::houseinfo::*;
 use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
+use crate::retain_traits::SplitLastRetain;
 use ahash::RandomState;
 use anyhow::{Ok, Result};
 use std::collections::HashMap;
@@ -112,22 +113,26 @@ pub(crate) fn visit(chain: &Chain, chains: &mut ChainMap) {
         chain.usage_counts.worker_count,
         chain.usage_counts.warehouse_count,
     );
-    let current_best = chains.entry(key).or_insert_with(|| chain.clone());
-    if chain.usage_counts.cost < current_best.usage_counts.cost {
-        *current_best = chain.clone();
-    }
+    chains
+        .entry(key)
+        .and_modify(|c| {
+            if chain.usage_counts.cost < c.usage_counts.cost {
+                chain.clone_into(c);
+            }
+        })
+        .or_insert_with(|| chain.to_owned());
 }
 
 #[inline(always)]
-fn dominates(other_chain: &Chain, chain: &Chain) -> bool {
-    other_chain.usage_counts.cost == chain.usage_counts.cost
+fn dominates(chain: &Chain, other_chain: &Chain) -> bool {
+    !(other_chain.usage_counts.cost == chain.usage_counts.cost
         && other_chain.usage_counts.worker_count >= chain.usage_counts.worker_count
-        && other_chain.usage_counts.warehouse_count > chain.usage_counts.warehouse_count
+        && other_chain.usage_counts.warehouse_count > chain.usage_counts.warehouse_count)
 }
 
 #[inline(always)]
-fn is_dominated_by_any(chain: &Chain, chains: &[Chain], start_pos: usize) -> bool {
-    chains[start_pos..].iter().any(|c| dominates(c, chain))
+fn dominates_all(chain: &Chain, chains: &[Chain]) -> bool {
+    chains.iter().all(|other| dominates(chain, other))
 }
 
 fn retain_dominating_chains(chains: &ChainMap) -> Vec<Chain> {
@@ -138,14 +143,8 @@ fn retain_dominating_chains(chains: &ChainMap) -> Vec<Chain> {
             chain.usage_counts.warehouse_count,
         )
     });
-
-    let mut dominating_chains = vec![];
-    for (i, chain) in chains.iter().enumerate() {
-        if !is_dominated_by_any(chain, &chains, i + 1) {
-            dominating_chains.push(chain.clone());
-        }
-    }
-    dominating_chains
+    chains.retain_split_last(|chain, remaining_chains| dominates_all(chain, remaining_chains));
+    chains
 }
 
 pub(crate) fn generate_main(cli: Cli) -> Result<()> {
