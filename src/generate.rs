@@ -59,8 +59,8 @@ pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec
 
 pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let mut chain = Chain::new(cli, region);
-    let mut chains = ChainMap::default();
-    let mut counter = 0;
+    let mut chains = ChainMap::new(region);
+    let mut counter: usize = 0;
 
     while !chain.indices.is_empty() {
         counter += 1;
@@ -74,8 +74,6 @@ pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMa
         }
     }
 
-    if cli.progress {
-        println!("\tVisited {counter} combinations.");
-    }
+    println!("\tVisited {counter} combinations.");
     Ok(chains)
 }

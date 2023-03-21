@@ -7,6 +7,8 @@ pub(crate) struct RegionNodes {
     pub region_name: String,
     #[allow(unused)]
     pub buildings: BuildingMap,
+    pub max_warehouse_count: usize,
+    pub max_worker_count: usize,
     pub num_nodes: usize,
     pub root: usize,
     pub parents: Vec<usize>,
@@ -63,6 +65,8 @@ impl RegionNodes {
 
         Ok(Self {
             region_name,
+            max_warehouse_count: warehouse_counts.iter().sum(),
+            max_worker_count: worker_counts.iter().sum(),
             buildings: buildings.clone(),
             num_nodes: children.len(),
             root,
