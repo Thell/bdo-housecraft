@@ -7,13 +7,68 @@ use crate::houseinfo::*;
 use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
 use crate::retain_traits::SplitLastRetain;
-use ahash::RandomState;
 use anyhow::{Ok, Result};
-use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 
-pub(crate) type ChainMap = HashMap<(usize, usize), Chain, RandomState>;
+use chrono::Utc;
+
+// pub(crate) type ChainMap = Vec<(usize, Chain)>;
+
+// This is a small sample: 12_500_000_000 'entry' calls on 5964 unique keys.
+// 15 threads processing ~ 833,333,333
+
+// 168477.9889
+// Using:
+use stable_vec::ExternStableVec;
+
+#[derive(Clone, Debug)]
+pub(crate) struct ChainMap {
+    pub keys: ExternStableVec<usize>,
+    pub chains: ExternStableVec<Chain>,
+}
+
+impl ChainMap {
+    pub fn new(region: &RegionNodes) -> Self {
+        let dim = std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1;
+        let mut keys = ExternStableVec::<usize>::new();
+        keys.reserve(dim.pow(2));
+        let chains = ExternStableVec::<Chain>::new();
+        Self { keys, chains }
+    }
+}
+
+// Using:
+//    pub(crate) fn visit(chain: &Chain, chains: &mut ChainMap) {
+//        chains
+//            .entry(chain.elegant_pair())
+//            .and_modify(|entry| {
+//                if chain.usage_counts.cost < entry.usage_counts.cost {
+//                    chain.clone_into(entry);
+//                }
+//            })
+//            .or_insert_with(|| chain.to_owned());
+//    }
+
+// 210657.1583ms
+// use ahash::RandomState;
+// use std::collections::HashMap;
+// pub(crate) type ChainMap = HashMap<usize, Chain, RandomState>;
+
+// 313227.4553ms
+// use std::collections::HashMap;
+// pub(crate) type ChainMap = HashMap<usize, Chain>;
+
+// 510342.9126ms
+// use nohash_hasher::NoHashHasher;
+// use std::{collections::HashMap, hash::BuildHasherDefault};
+// pub(crate) type ChainMap = HashMap<usize, Chain, BuildHasherDefault<NoHashHasher<usize>>>;
+
+// 539879.451ms
+// use std::collections::BTreeMap;
+// pub(crate) type ChainMap = BTreeMap<usize, Chain>;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #[derive(Clone, Debug)]
 pub(crate) struct Chain {
@@ -59,6 +114,17 @@ impl Chain {
         }
         chain
     }
+
+    pub fn elegant_pair(&self) -> usize {
+        let x = self.usage_counts.worker_count;
+        let y = self.usage_counts.warehouse_count;
+
+        if x != std::cmp::max(x, y) {
+            y.pow(2) + x
+        } else {
+            x.pow(2) + x + y
+        }
+    }
 }
 
 pub(crate) fn print_starting_status(region: &RegionNodes) {
@@ -74,10 +140,11 @@ pub(crate) fn print_starting_status(region: &RegionNodes) {
         region.region_name, region.buildings.len(), building_chain_count, multistate_count
     );
     println!(
-        "With a maximum cost of {} with {} storage and {} lodging.",
+        "With a maximum cost of {} with {} lodging and {} storage (out of {:?} possible).",
         region.usage_counts.cost,
+        region.usage_counts.worker_count,
         region.usage_counts.warehouse_count,
-        region.usage_counts.worker_count
+        region.max_warehouse_count
     );
 }
 
@@ -109,18 +176,19 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
 
 #[inline(always)]
 pub(crate) fn visit(chain: &Chain, chains: &mut ChainMap) {
-    let key = (
-        chain.usage_counts.worker_count,
-        chain.usage_counts.warehouse_count,
-    );
-    chains
-        .entry(key)
-        .and_modify(|c| {
-            if chain.usage_counts.cost < c.usage_counts.cost {
-                chain.clone_into(c);
+    let key = chain.elegant_pair();
+    if chains.keys.has_element_at(key) {
+        unsafe {
+            let index = chains.keys.get_unchecked(key);
+            let entry = chains.chains.get_unchecked_mut(*index);
+            if chain.usage_counts.cost < entry.usage_counts.cost {
+                chain.clone_into(entry);
             }
-        })
-        .or_insert_with(|| chain.to_owned());
+        }
+    } else {
+        let index = chains.chains.push(chain.to_owned());
+        chains.keys.insert(key, index);
+    }
 }
 
 #[inline(always)]
@@ -136,7 +204,9 @@ fn dominates_all(chain: &Chain, chains: &[Chain]) -> bool {
 }
 
 fn retain_dominating_chains(chains: &ChainMap) -> Vec<Chain> {
-    let mut chains: Vec<Chain> = chains.values().cloned().collect();
+    let mut chains: Vec<Chain> = chains.chains.values().map(|c| c.to_owned()).collect();
+    println!("Captured chain count: {:?}", chains.len());
+
     chains.sort_unstable_by_key(|chain| {
         (
             chain.usage_counts.worker_count,
@@ -153,12 +223,14 @@ pub(crate) fn generate_main(cli: Cli) -> Result<()> {
     let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
     print_starting_status(&region);
 
+    println!("[{:?}] generating...", Utc::now());
     let chains = match cli.jobs.unwrap_or(1) {
         1 => generate_chains(&cli, &region)?,
         _ => generate_chains_par(&cli, &region)?,
     };
-
+    println!("[{:?}] retaining...", Utc::now());
     let chains = retain_dominating_chains(&chains);
+    println!("[{:?}] writing...", Utc::now());
     write_chains(&cli, &chains)?;
 
     Ok(())

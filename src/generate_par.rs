@@ -10,6 +10,8 @@ use rayon::prelude::*;
 use std::cmp::min;
 use std::collections::HashSet;
 
+use chrono::Utc;
+
 #[derive(Clone, Debug)]
 pub(crate) struct JobControl {
     pub job_id: usize,
@@ -133,7 +135,7 @@ fn generate_dominating_chains_par(
     region: RegionNodes,
     job: &JobControl,
 ) -> Result<ChainMap> {
-    let mut chains = ChainMap::default();
+    let mut chains = ChainMap::new(&region);
     let mut chain = Chain::new_par(&cli, &region, job);
     let mut counter: usize = 0;
 
@@ -150,24 +152,32 @@ fn generate_dominating_chains_par(
     }
     counter += 1;
     visit(&chain, &mut chains);
-    if cli.progress {
-        println!("\tJob {} visited {} combinations.", job.job_id, counter);
-    }
+
+    println!(
+        "\tJob {} visited {} combinations yielding {:?} chains.",
+        job.job_id,
+        counter,
+        chains.chains.num_elements()
+    );
 
     Ok(chains)
 }
 
 pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    let mut chains = ChainMap::default();
     let job_controls = get_job_controls(cli, region)?;
 
-    job_controls
+    let results = job_controls
         .par_iter()
         .map(|job| generate_dominating_chains_par(cli.clone(), region.clone(), job).unwrap())
-        .collect::<Vec<ChainMap>>()
-        .iter()
-        .flatten()
-        .for_each(|(_, chain)| visit(chain, &mut chains));
+        .collect::<Vec<ChainMap>>();
+
+    println!("[{:?}] merging...", Utc::now());
+    let mut chains = results[0].clone();
+    results.iter().skip(1).for_each(|cm| {
+        cm.chains
+            .values()
+            .for_each(|chain| visit(chain, &mut chains))
+    });
 
     Ok(chains)
 }

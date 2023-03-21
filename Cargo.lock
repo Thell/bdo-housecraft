@@ -367,6 +367,7 @@ dependencies = [
  "rayon",
  "serde",
  "serde_json",
+ "stable-vec",
 ]
 
 [[package]]
@@ -763,6 +764,15 @@ name = "smallvec"
 version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0"
+
+[[package]]
+name = "stable-vec"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "80dfb7bb28f3d2fa50566793349d633b33f938543154be8071610ea9f590d8ca"
+dependencies = [
+ "no-std-compat",
+]
 
 [[package]]
 name = "strsim"
