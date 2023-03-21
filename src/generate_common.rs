@@ -24,17 +24,19 @@ use stable_vec::ExternStableVec;
 
 #[derive(Clone, Debug)]
 pub(crate) struct ChainMap {
+    pub seen: Vec<bool>,
     pub keys: ExternStableVec<usize>,
     pub chains: ExternStableVec<Chain>,
 }
 
 impl ChainMap {
     pub fn new(region: &RegionNodes) -> Self {
-        let dim = std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1;
+        let len = (std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1).pow(2);
+        let seen = vec![false; len];
         let mut keys = ExternStableVec::<usize>::new();
-        keys.reserve(dim.pow(2));
+        keys.reserve(len);
         let chains = ExternStableVec::<Chain>::new();
-        Self { keys, chains }
+        Self { seen, keys, chains }
     }
 }
 
@@ -177,17 +179,18 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
 #[inline(always)]
 pub(crate) fn visit(chain: &Chain, chains: &mut ChainMap) {
     let key = chain.elegant_pair();
-    if chains.keys.has_element_at(key) {
-        unsafe {
+    unsafe {
+        if *chains.seen.get_unchecked(key) {
             let index = chains.keys.get_unchecked(key);
             let entry = chains.chains.get_unchecked_mut(*index);
             if chain.usage_counts.cost < entry.usage_counts.cost {
                 chain.clone_into(entry);
             }
+        } else {
+            chains.seen[key] = true;
+            let index = chains.chains.push(chain.to_owned());
+            chains.keys.insert(key, index);
         }
-    } else {
-        let index = chains.chains.push(chain.to_owned());
-        chains.keys.insert(key, index);
     }
 }
 
