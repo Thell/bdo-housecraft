@@ -9,19 +9,19 @@ extern crate num_cpus;
 mod cli_args;
 mod find_crafts;
 mod generate;
-mod generate_common;
-mod generate_par;
 mod houseinfo;
 mod list_crafts;
 mod list_regions;
 mod node_manipulation;
 mod region_nodes;
 mod retain_traits;
+
 use anyhow::{Ok, Result};
 use clap::Parser;
+
 use cli_args::Cli;
 use find_crafts::find_craft_buildings;
-use generate_common::generate_main;
+use generate::generate;
 use list_crafts::list_crafts;
 use list_regions::list_regions;
 
@@ -37,9 +37,7 @@ fn main() -> Result<()> {
         find_craft_buildings(cli.region, craft)?
     // Generation dispatch
     } else if cli.generate {
-        // println!("{cli:#?}");
-        println!("WIP... implementing");
-        generate_main(cli)?
+        generate(cli)?
     // Optimizer dispatch
     } else if cli.optimize {
         // This is going to be the last section implemented.
@@ -53,6 +51,9 @@ fn main() -> Result<()> {
         println!("is not implemented yet.")
     // Main listing dispatch
     } else if let Some(region) = cli.region {
+        // println!("{cli:#?}");
+        // println!("WIP... implementing");
+
         let mut desired_warehouse_count = 0;
         let mut desired_worker_count = 0;
         if cli.storage_count.is_none() && cli.lodging_count.is_none() {
