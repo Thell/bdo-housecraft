@@ -16,6 +16,25 @@ use crate::retain_traits::SplitLastRetain;
 
 type ChainVec = Vec<Chain>;
 
+type ChainMapVec = Vec<ChainMap>;
+
+pub trait FlattenDominating {
+    type Output;
+    fn flatten_dominating(&mut self) -> Self::Output;
+}
+
+impl FlattenDominating for Vec<ChainMap> {
+    type Output = ChainMap;
+    #[inline(always)]
+    fn flatten_dominating(&mut self) -> ChainMap {
+        let mut chains = self[0].clone();
+        self.iter()
+            .skip(1)
+            .for_each(|cm| cm.chains.values().for_each(|c| chains.insert_or_update(c)));
+        chains
+    }
+}
+
 #[derive(Clone, Debug)]
 pub(crate) struct ChainMap {
     pub seen: Vec<bool>,
@@ -118,6 +137,17 @@ impl Chain {
     }
 
     #[inline(always)]
+    pub fn next_state(&mut self, region: &RegionNodes) {
+        let index = match self.states.last() {
+            Some(n) if n > &1 => self.reduce_last_state(region),
+            _ => self.reduce(region),
+        };
+        if index < region.num_nodes {
+            self.extend(index, region);
+        }
+    }
+
+    #[inline(always)]
     pub fn reduce(&mut self, region: &RegionNodes) -> usize {
         self.states.pop();
         let index = self.indices.pop().unwrap();
@@ -174,20 +204,14 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
     Ok(())
 }
 
-pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec<Chain>> {
+pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
     let mut chain = Chain::new(cli, region);
     let mut chains = Vec::<Chain>::new();
     let mut counter = 0;
 
     while !chain.indices.is_empty() {
         chains.push(chain.clone());
-        let index = match chain.states.last() {
-            Some(&2) => chain.reduce_last_state(region),
-            _ => chain.reduce(region),
-        };
-        if index < region.num_nodes {
-            chain.extend(index, region);
-        }
+        chain.next_state(region);
 
         counter += 1;
     }
@@ -204,21 +228,12 @@ pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMa
 
 pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let job_controls = job_controls_from_region(cli, region)?;
-
     let results = job_controls
         .into_par_iter()
         .map(|job| generate_dominating_chains_par(cli.clone(), region.clone(), job).unwrap())
-        .collect::<Vec<ChainMap>>();
-
-    println!("[{:?}] merging...", Utc::now());
-    let mut chains = results[0].clone();
-    results.iter().skip(1).for_each(|cm| {
-        cm.chains
-            .values()
-            .for_each(|chain| chains.insert_or_update(chain))
-    });
-
-    Ok(chains)
+        .collect::<ChainMapVec>()
+        .flatten_dominating();
+    Ok(results)
 }
 
 #[inline(always)]
@@ -229,13 +244,7 @@ pub(crate) fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Res
 
     while !chain.indices.is_empty() {
         chains.insert_or_update(&chain);
-        let index = match chain.states.last() {
-            Some(n) if n > &1 => chain.reduce_last_state(region),
-            _ => chain.reduce(region),
-        };
-        if index < region.num_nodes {
-            chain.extend(index, region);
-        }
+        chain.next_state(region);
 
         counter += 1;
         if counter == 2_500_000_000 {
@@ -259,18 +268,12 @@ fn generate_dominating_chains_par(
 
     while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
         chains.insert_or_update(&chain);
-        let index = match chain.states.last() {
-            Some(n) if n > &1 => chain.reduce_last_state(&region),
-            _ => chain.reduce(&region),
-        };
-        if index < region.num_nodes {
-            chain.extend(index, &region);
-        }
+        chain.next_state(&region);
 
         counter += 1;
-        // if counter == 12_500_000_000 {
-        //     break;
-        // }
+        if counter == 12_500_000_000 {
+            break;
+        }
     }
     counter += 1;
     chains.insert_or_update(&chain);
@@ -357,20 +360,20 @@ fn job_prefixes(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
         num_cpus::get(),
     );
 
-    let mut prefixes = Vec::<Chain>::new();
+    let mut chains = ChainVec::new();
     for num_nodes in 1..=num_jobs {
-        let tmp_prefixes = job_prefix_chains(cli, region, num_nodes)?;
-        if tmp_prefixes.len() > num_jobs {
+        let tmp_chains = job_prefix_chains(cli, region, num_nodes)?;
+        if tmp_chains.len() > num_jobs {
             break;
         }
-        prefixes = tmp_prefixes;
+        chains = tmp_chains;
     }
 
     if cli.progress {
-        println!("--- Prefixes");
-        prefixes.iter().for_each(|j| println!("{:?}", j));
+        println!("--- Job Prefix Chains");
+        chains.iter().for_each(|j| println!("{:?}", j));
     }
-    Ok(prefixes)
+    Ok(chains)
 }
 
 fn job_prefix_chains(cli: &Cli, region: &RegionNodes, num_nodes: usize) -> Result<ChainVec> {
