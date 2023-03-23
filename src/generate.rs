@@ -44,7 +44,7 @@ impl ChainMap {
                     chain.clone_into(entry);
                 }
             } else {
-                self.seen[key] = true;
+                *self.seen.get_unchecked_mut(key) = true;
                 let index = self.chains.push(chain.to_owned());
                 self.keys.insert(key, index);
             }
@@ -91,6 +91,7 @@ impl Chain {
         chain
     }
 
+    #[inline(always)]
     pub fn elegant_pair(&self) -> usize {
         let x = self.usage_counts.worker_count;
         let y = self.usage_counts.warehouse_count;
@@ -104,15 +105,16 @@ impl Chain {
 
     #[inline(always)]
     pub fn extend(&mut self, index: usize, region: &RegionNodes) {
-        (index..region.num_nodes).for_each(|i| {
+        for i in index..region.num_nodes {
             self.indices.push(i);
-            self.states.push(region.states[i]);
-            match region.states[i] {
+            let state = region.states[i];
+            self.states.push(state);
+            match state {
                 1 => self.usage_counts.warehouse_count += region.warehouse_counts[i],
                 _ => self.usage_counts.worker_count += region.worker_counts[i],
             }
             self.usage_counts.cost += region.costs[i];
-        });
+        }
     }
 
     #[inline(always)]
@@ -178,7 +180,6 @@ pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec
     let mut counter = 0;
 
     while !chain.indices.is_empty() {
-        counter += 1;
         chains.push(chain.clone());
         let index = match chain.states.last() {
             Some(&2) => chain.reduce_last_state(region),
@@ -187,6 +188,8 @@ pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Vec
         if index < region.num_nodes {
             chain.extend(index, region);
         }
+
+        counter += 1;
     }
 
     if cli.progress {
@@ -218,13 +221,13 @@ pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<Cha
     Ok(chains)
 }
 
+#[inline(always)]
 pub(crate) fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let mut chain = Chain::new(cli, region);
     let mut chains = ChainMap::new(region);
     let mut counter: usize = 0;
 
     while !chain.indices.is_empty() {
-        counter += 1;
         chains.insert_or_update(&chain);
         let index = match chain.states.last() {
             Some(n) if n > &1 => chain.reduce_last_state(region),
@@ -233,12 +236,18 @@ pub(crate) fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Res
         if index < region.num_nodes {
             chain.extend(index, region);
         }
+
+        counter += 1;
+        if counter == 2_500_000_000 {
+            break;
+        }
     }
 
     println!("  [{:?}] Visited {} combinations.", Utc::now(), counter);
     Ok(chains)
 }
 
+#[inline(always)]
 fn generate_dominating_chains_par(
     _cli: Cli,
     region: RegionNodes,
@@ -249,7 +258,6 @@ fn generate_dominating_chains_par(
     let mut counter: usize = 0;
 
     while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
-        counter += 1;
         chains.insert_or_update(&chain);
         let index = match chain.states.last() {
             Some(n) if n > &1 => chain.reduce_last_state(&region),
@@ -258,9 +266,11 @@ fn generate_dominating_chains_par(
         if index < region.num_nodes {
             chain.extend(index, &region);
         }
-        if counter == 100_000_000_000 {
-            break;
-        }
+
+        counter += 1;
+        // if counter == 12_500_000_000 {
+        //     break;
+        // }
     }
     counter += 1;
     chains.insert_or_update(&chain);
