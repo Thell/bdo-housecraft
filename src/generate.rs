@@ -18,7 +18,7 @@ type ChainVec = Vec<Chain>;
 
 type ChainMapVec = Vec<ChainMap>;
 
-pub trait FlattenDominating {
+trait FlattenDominating {
     type Output;
     fn flatten_dominating(&mut self) -> Self::Output;
 }
@@ -36,14 +36,14 @@ impl FlattenDominating for Vec<ChainMap> {
 }
 
 #[derive(Clone, Debug)]
-pub(crate) struct ChainMap {
-    pub seen: Vec<bool>,
-    pub keys: ExternStableVec<usize>,
-    pub chains: ExternStableVec<Chain>,
+struct ChainMap {
+    seen: Vec<bool>,
+    keys: ExternStableVec<usize>,
+    chains: ExternStableVec<Chain>,
 }
 
 impl ChainMap {
-    pub fn new(region: &RegionNodes) -> Self {
+    fn new(region: &RegionNodes) -> Self {
         let len = (std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1).pow(2);
         let seen = vec![false; len];
         let mut keys = ExternStableVec::<usize>::new();
@@ -53,7 +53,7 @@ impl ChainMap {
     }
 
     #[inline(always)]
-    pub fn insert_or_update(&mut self, chain: &Chain) {
+    fn insert_or_update(&mut self, chain: &Chain) {
         let key = chain.elegant_pair();
         unsafe {
             if *self.seen.get_unchecked(key) {
@@ -85,20 +85,20 @@ impl ChainMap {
         chains
     }
 
-    pub fn values_to_vec(&self) -> ChainVec {
+    fn values_to_vec(&self) -> ChainVec {
         self.chains.values().map(|c| c.to_owned()).collect()
     }
 }
 
 #[derive(Clone, Debug)]
-pub(crate) struct Chain {
-    pub indices: Vec<usize>,
-    pub states: Vec<usize>,
-    pub usage_counts: UsageCounters,
+struct Chain {
+    indices: Vec<usize>,
+    states: Vec<usize>,
+    usage_counts: UsageCounters,
 }
 
 impl Chain {
-    pub fn new(cli: &Cli, region: &RegionNodes) -> Self {
+    fn new(cli: &Cli, region: &RegionNodes) -> Self {
         let chain = Self {
             usage_counts: region.usage_counts.clone(),
             indices: (0..region.num_nodes).collect::<Vec<_>>(),
@@ -111,7 +111,7 @@ impl Chain {
     }
 
     #[inline(always)]
-    pub fn elegant_pair(&self) -> usize {
+    fn elegant_pair(&self) -> usize {
         let x = self.usage_counts.worker_count;
         let y = self.usage_counts.warehouse_count;
 
@@ -123,7 +123,7 @@ impl Chain {
     }
 
     #[inline(always)]
-    pub fn extend(&mut self, index: usize, region: &RegionNodes) {
+    fn extend(&mut self, index: usize, region: &RegionNodes) {
         for i in index..region.num_nodes {
             self.indices.push(i);
             let state = region.states[i];
@@ -137,7 +137,7 @@ impl Chain {
     }
 
     #[inline(always)]
-    pub fn next_state(&mut self, region: &RegionNodes) {
+    fn next_state(&mut self, region: &RegionNodes) {
         let index = match self.states.last() {
             Some(n) if n > &1 => self.reduce_last_state(region),
             _ => self.reduce(region),
@@ -148,7 +148,7 @@ impl Chain {
     }
 
     #[inline(always)]
-    pub fn reduce(&mut self, region: &RegionNodes) -> usize {
+    fn reduce(&mut self, region: &RegionNodes) -> usize {
         self.states.pop();
         let index = self.indices.pop().unwrap();
         self.usage_counts.cost -= region.costs[index];
@@ -157,7 +157,7 @@ impl Chain {
     }
 
     #[inline(always)]
-    pub fn reduce_last_state(&mut self, region: &RegionNodes) -> usize {
+    fn reduce_last_state(&mut self, region: &RegionNodes) -> usize {
         *self.states.last_mut().unwrap() -= 1;
         let index = *self.indices.last().unwrap();
         self.usage_counts.warehouse_count += region.warehouse_counts[index];
@@ -166,14 +166,14 @@ impl Chain {
     }
 
     #[inline(always)]
-    pub fn dominates(&self, other_chain: &Chain) -> bool {
+    fn dominates(&self, other_chain: &Chain) -> bool {
         !(other_chain.usage_counts.cost == self.usage_counts.cost
             && other_chain.usage_counts.worker_count >= self.usage_counts.worker_count
             && other_chain.usage_counts.warehouse_count > self.usage_counts.warehouse_count)
     }
 
     #[inline(always)]
-    pub fn dominates_all(&self, others: &[Chain]) -> bool {
+    fn dominates_all(&self, others: &[Chain]) -> bool {
         others.iter().all(|other| self.dominates(other))
     }
 
@@ -204,7 +204,7 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
     Ok(())
 }
 
-pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
+fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
     let mut chain = Chain::new(cli, region);
     let mut chains = Vec::<Chain>::new();
     let mut counter = 0;
@@ -222,11 +222,11 @@ pub(crate) fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<Cha
     Ok(chains)
 }
 
-pub(crate) fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     generate_dominating_chains(cli, region)
 }
 
-pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let job_controls = job_controls_from_region(cli, region)?;
     let results = job_controls
         .into_par_iter()
@@ -237,7 +237,7 @@ pub(crate) fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<Cha
 }
 
 #[inline(always)]
-pub(crate) fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let mut chain = Chain::new(cli, region);
     let mut chains = ChainMap::new(region);
     let mut counter: usize = 0;
@@ -292,13 +292,13 @@ fn generate_dominating_chains_par(
 type JobControlVec = Vec<JobControl>;
 
 #[derive(Clone, Debug)]
-pub(crate) struct JobControl {
-    pub job_id: usize,
-    pub chain: Chain,
-    pub stop_index: usize,
-    pub stop_value: usize,
+struct JobControl {
+    job_id: usize,
+    chain: Chain,
+    stop_index: usize,
+    stop_value: usize,
     #[allow(unused)]
-    pub stop_state: usize,
+    stop_state: usize,
 }
 
 fn job_controls_from_region(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
@@ -395,7 +395,7 @@ fn job_stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: 
     )
 }
 
-pub(crate) fn print_starting_status(region: &RegionNodes) {
+fn print_starting_status(region: &RegionNodes) {
     let building_chain_count = count_subtrees(region.root, &region.parents, &region.children);
     let multistate_count = count_subtrees_multistate(
         region.root,
