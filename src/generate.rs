@@ -37,7 +37,7 @@ impl FlattenDominating for Vec<ChainMap> {
 
 #[derive(Clone, Debug)]
 struct ChainMap {
-    seen: Vec<bool>,
+    cost: Vec<u16>,
     keys: ExternStableVec<usize>,
     chains: ExternStableVec<Chain>,
 }
@@ -45,27 +45,26 @@ struct ChainMap {
 impl ChainMap {
     fn new(region: &RegionNodes) -> Self {
         let len = (std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1).pow(2);
-        let seen = vec![false; len];
+        let cost = vec![u16::MAX; len];
         let mut keys = ExternStableVec::<usize>::new();
         keys.reserve(len);
         let chains = ExternStableVec::<Chain>::new();
-        Self { seen, keys, chains }
+        Self { cost, keys, chains }
     }
 
     #[inline(always)]
     fn insert_or_update(&mut self, chain: &Chain) {
         let key = chain.elegant_pair();
-        unsafe {
-            if *self.seen.get_unchecked(key) {
+        if self.cost[key] == u16::MAX {
+            self.cost[key] = chain.usage_counts.cost as u16;
+            let index = self.chains.push(chain.to_owned());
+            self.keys.insert(key, index);
+        } else if self.cost[key] > chain.usage_counts.cost as u16 {
+            self.cost[key] = chain.usage_counts.cost as u16;
+            unsafe {
                 let index = self.keys.get_unchecked(key);
                 let entry = self.chains.get_unchecked_mut(*index);
-                if chain.usage_counts.cost < entry.usage_counts.cost {
-                    chain.clone_into(entry);
-                }
-            } else {
-                *self.seen.get_unchecked_mut(key) = true;
-                let index = self.chains.push(chain.to_owned());
-                self.keys.insert(key, index);
+                chain.clone_into(entry);
             }
         }
     }
