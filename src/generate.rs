@@ -12,9 +12,30 @@ use crate::cli_args::Cli;
 use crate::houseinfo::*;
 use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
-use crate::retain_traits::SplitLastRetain;
 
 type ChainVec = Vec<Chain>;
+
+trait RetainDominating {
+    fn retain_dominating(&mut self);
+}
+
+impl RetainDominating for Vec<Chain> {
+    #[inline(always)]
+    fn retain_dominating(&mut self) {
+        let mut j = 0;
+        for i in 0..self.len() {
+            // v[0..j] will be kept v[j..i] will be removed
+            if (0..j)
+                .chain(i + 1..self.len())
+                .all(|a| !self[a].dominates(&self[i]))
+            {
+                self.swap(i, j);
+                j += 1;
+            }
+        }
+        self.truncate(j);
+    }
+}
 
 type ChainMapVec = Vec<ChainMap>;
 
@@ -69,18 +90,17 @@ impl ChainMap {
         }
     }
 
+    #[inline(always)]
     fn retain_dominating_to_vec(&self) -> ChainVec {
         let mut chains = self.values_to_vec();
         println!("Captured chain count: {:?}", chains.len());
-
+        chains.retain_dominating();
         chains.sort_unstable_by_key(|chain| {
             (
                 chain.usage_counts.worker_count,
                 chain.usage_counts.warehouse_count,
             )
         });
-
-        chains.retain_split_last(|chain, remaining_chains| chain.dominates_all(remaining_chains));
         chains
     }
 
@@ -165,15 +185,15 @@ impl Chain {
     }
 
     #[inline(always)]
-    fn dominates(&self, other_chain: &Chain) -> bool {
-        !(other_chain.usage_counts.cost == self.usage_counts.cost
-            && other_chain.usage_counts.worker_count >= self.usage_counts.worker_count
-            && other_chain.usage_counts.warehouse_count > self.usage_counts.warehouse_count)
-    }
-
-    #[inline(always)]
-    fn dominates_all(&self, others: &[Chain]) -> bool {
-        others.iter().all(|other| self.dominates(other))
+    fn dominates(&self, other: &Chain) -> bool {
+        // Self strictly dominates other when we can get the same or more for less or the same.
+        // No domination of self when equal to other.
+        self.usage_counts.cost <= other.usage_counts.cost
+            && self.usage_counts.warehouse_count >= other.usage_counts.warehouse_count
+            && self.usage_counts.worker_count >= other.usage_counts.worker_count
+            && !(self.usage_counts.cost == other.usage_counts.cost
+                && self.usage_counts.warehouse_count == other.usage_counts.warehouse_count
+                && self.usage_counts.worker_count == other.usage_counts.worker_count)
     }
 
     #[inline(always)]
@@ -246,9 +266,9 @@ fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMa
         chain.next_state(region);
 
         counter += 1;
-        if counter == 2_500_000_000 {
-            break;
-        }
+        // if counter == 2_500_000_000 {
+        //     break;
+        // }
     }
 
     println!("  [{:?}] Visited {} combinations.", Utc::now(), counter);
