@@ -14,7 +14,6 @@ mod list_crafts;
 mod list_regions;
 mod node_manipulation;
 mod region_nodes;
-mod retain_traits;
 
 use anyhow::{Ok, Result};
 use clap::Parser;

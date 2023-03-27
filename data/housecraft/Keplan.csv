@@ -1,502 +1,503 @@
-((0, 0), Chain { indices: [0], states: [0], usage_counts: UsageCounters { cost: 0, warehouse_count: 0, worker_count: 0 } })
-((0, 3), Chain { indices: [0, 1], states: [0, 1], usage_counts: UsageCounters { cost: 1, warehouse_count: 3, worker_count: 0 } })
-((0, 6), Chain { indices: [0, 1, 10], states: [0, 1, 1], usage_counts: UsageCounters { cost: 2, warehouse_count: 6, worker_count: 0 } })
-((0, 10), Chain { indices: [0, 17, 18], states: [0, 1, 1], usage_counts: UsageCounters { cost: 3, warehouse_count: 10, worker_count: 0 } })
-((0, 15), Chain { indices: [0, 17, 18, 19], states: [0, 1, 1, 1], usage_counts: UsageCounters { cost: 4, warehouse_count: 15, worker_count: 0 } })
-((0, 18), Chain { indices: [0, 1, 2, 3, 4], states: [0, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 5, warehouse_count: 18, worker_count: 0 } })
-((0, 21), Chain { indices: [0, 1, 2, 3, 4, 10], states: [0, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 6, warehouse_count: 21, worker_count: 0 } })
-((0, 23), Chain { indices: [0, 1, 2, 3, 4, 17], states: [0, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 7, warehouse_count: 23, worker_count: 0 } })
-((0, 28), Chain { indices: [0, 1, 2, 3, 4, 17, 18], states: [0, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 8, warehouse_count: 28, worker_count: 0 } })
-((0, 33), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 9, warehouse_count: 33, worker_count: 0 } })
-((0, 35), Chain { indices: [0, 1, 2, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 11, warehouse_count: 35, worker_count: 0 } })
-((0, 36), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 10, warehouse_count: 36, worker_count: 0 } })
-((0, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 12, warehouse_count: 41, worker_count: 0 } })
-((0, 45), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 13, warehouse_count: 45, worker_count: 0 } })
-((0, 48), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 14, warehouse_count: 48, worker_count: 0 } })
-((0, 49), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 15, warehouse_count: 49, worker_count: 0 } })
-((0, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 16, warehouse_count: 53, worker_count: 0 } })
-((0, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 17, warehouse_count: 57, worker_count: 0 } })
-((0, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 18, warehouse_count: 60, worker_count: 0 } })
-((0, 61), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 19, warehouse_count: 61, worker_count: 0 } })
-((0, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 20, warehouse_count: 65, worker_count: 0 } })
-((0, 69), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 21, warehouse_count: 69, worker_count: 0 } })
-((0, 72), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 22, warehouse_count: 72, worker_count: 0 } })
-((0, 73), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 23, warehouse_count: 73, worker_count: 0 } })
-((0, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 24, warehouse_count: 77, worker_count: 0 } })
-((0, 80), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 25, warehouse_count: 80, worker_count: 0 } })
-((0, 82), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 26, warehouse_count: 82, worker_count: 0 } })
-((0, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 27, warehouse_count: 85, worker_count: 0 } })
-((0, 88), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 28, warehouse_count: 88, worker_count: 0 } })
-((0, 90), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 29, warehouse_count: 90, worker_count: 0 } })
-((0, 92), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 31, warehouse_count: 92, worker_count: 0 } })
-((0, 94), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 30, warehouse_count: 94, worker_count: 0 } })
-((0, 98), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 32, warehouse_count: 98, worker_count: 0 } })
-((0, 102), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 33, warehouse_count: 102, worker_count: 0 } })
-((0, 105), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 35, warehouse_count: 105, worker_count: 0 } })
-((0, 106), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 34, warehouse_count: 106, worker_count: 0 } })
-((0, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 38, warehouse_count: 109, worker_count: 0 } })
-((0, 110), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 36, warehouse_count: 110, worker_count: 0 } })
-((0, 114), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 37, warehouse_count: 114, worker_count: 0 } })
-((0, 115), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 39, warehouse_count: 115, worker_count: 0 } })
-((0, 116), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 42, warehouse_count: 116, worker_count: 0 } })
-((0, 117), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 41, warehouse_count: 117, worker_count: 0 } })
-((0, 122), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 40, warehouse_count: 122, worker_count: 0 } })
-((0, 127), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 127, worker_count: 0 } })
-((0, 130), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 44, warehouse_count: 130, worker_count: 0 } })
-((0, 134), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 134, worker_count: 0 } })
-((0, 135), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 47, warehouse_count: 135, worker_count: 0 } })
-((0, 138), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 48, warehouse_count: 138, worker_count: 0 } })
-((0, 142), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 142, worker_count: 0 } })
-((0, 143), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 143, worker_count: 0 } })
-((0, 147), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 147, worker_count: 0 } })
-((0, 150), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 53, warehouse_count: 150, worker_count: 0 } })
-((0, 155), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 155, worker_count: 0 } })
-((0, 158), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 57, warehouse_count: 158, worker_count: 0 } })
-((0, 163), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 163, worker_count: 0 } })
-((1, 0), Chain { indices: [0, 17], states: [0, 2], usage_counts: UsageCounters { cost: 2, warehouse_count: 0, worker_count: 1 } })
-((1, 5), Chain { indices: [0, 17, 18], states: [0, 2, 1], usage_counts: UsageCounters { cost: 3, warehouse_count: 5, worker_count: 1 } })
-((1, 10), Chain { indices: [0, 17, 18, 19], states: [0, 2, 1, 1], usage_counts: UsageCounters { cost: 4, warehouse_count: 10, worker_count: 1 } })
-((1, 13), Chain { indices: [0, 1, 2, 3, 4], states: [0, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 5, warehouse_count: 13, worker_count: 1 } })
-((1, 16), Chain { indices: [0, 1, 2, 3, 4, 10], states: [0, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 6, warehouse_count: 16, worker_count: 1 } })
-((1, 18), Chain { indices: [0, 1, 2, 3, 4, 17], states: [0, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 7, warehouse_count: 18, worker_count: 1 } })
-((1, 23), Chain { indices: [0, 1, 2, 3, 4, 17, 18], states: [0, 1, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 8, warehouse_count: 23, worker_count: 1 } })
-((1, 28), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 9, warehouse_count: 28, worker_count: 1 } })
-((1, 30), Chain { indices: [0, 1, 2, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 11, warehouse_count: 30, worker_count: 1 } })
-((1, 31), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 10, warehouse_count: 31, worker_count: 1 } })
-((1, 36), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 12, warehouse_count: 36, worker_count: 1 } })
-((1, 40), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 13, warehouse_count: 40, worker_count: 1 } })
-((1, 43), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 14, warehouse_count: 43, worker_count: 1 } })
-((1, 44), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 15, warehouse_count: 44, worker_count: 1 } })
-((1, 48), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 16, warehouse_count: 48, worker_count: 1 } })
-((1, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 17, warehouse_count: 52, worker_count: 1 } })
-((1, 55), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 18, warehouse_count: 55, worker_count: 1 } })
-((1, 56), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 19, warehouse_count: 56, worker_count: 1 } })
-((1, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 20, warehouse_count: 60, worker_count: 1 } })
-((1, 64), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 21, warehouse_count: 64, worker_count: 1 } })
-((1, 67), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 22, warehouse_count: 67, worker_count: 1 } })
-((1, 68), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 23, warehouse_count: 68, worker_count: 1 } })
-((1, 72), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 24, warehouse_count: 72, worker_count: 1 } })
-((1, 75), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 25, warehouse_count: 75, worker_count: 1 } })
-((1, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 26, warehouse_count: 77, worker_count: 1 } })
-((1, 80), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 27, warehouse_count: 80, worker_count: 1 } })
-((1, 83), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 28, warehouse_count: 83, worker_count: 1 } })
-((1, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 29, warehouse_count: 85, worker_count: 1 } })
-((1, 87), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 31, warehouse_count: 87, worker_count: 1 } })
-((1, 89), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 30, warehouse_count: 89, worker_count: 1 } })
-((1, 93), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 32, warehouse_count: 93, worker_count: 1 } })
-((1, 97), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 33, warehouse_count: 97, worker_count: 1 } })
-((1, 100), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 35, warehouse_count: 100, worker_count: 1 } })
-((1, 101), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 34, warehouse_count: 101, worker_count: 1 } })
-((1, 105), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 36, warehouse_count: 105, worker_count: 1 } })
-((1, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 37, warehouse_count: 109, worker_count: 1 } })
-((1, 110), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 39, warehouse_count: 110, worker_count: 1 } })
-((1, 111), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 42, warehouse_count: 111, worker_count: 1 } })
-((1, 117), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 40, warehouse_count: 117, worker_count: 1 } })
-((1, 122), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 122, worker_count: 1 } })
-((1, 125), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 44, warehouse_count: 125, worker_count: 1 } })
-((1, 129), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 129, worker_count: 1 } })
-((1, 130), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 47, warehouse_count: 130, worker_count: 1 } })
-((1, 133), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 48, warehouse_count: 133, worker_count: 1 } })
-((1, 137), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 137, worker_count: 1 } })
-((1, 138), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 138, worker_count: 1 } })
-((1, 142), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 142, worker_count: 1 } })
-((1, 145), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 53, warehouse_count: 145, worker_count: 1 } })
-((1, 150), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 150, worker_count: 1 } })
-((1, 153), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 57, warehouse_count: 153, worker_count: 1 } })
-((1, 158), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 158, worker_count: 1 } })
-((2, 3), Chain { indices: [0, 1, 2, 3], states: [0, 1, 2, 2], usage_counts: UsageCounters { cost: 4, warehouse_count: 3, worker_count: 2 } })
-((2, 8), Chain { indices: [0, 1, 2, 3, 4], states: [0, 1, 2, 2, 1], usage_counts: UsageCounters { cost: 5, warehouse_count: 8, worker_count: 2 } })
-((2, 11), Chain { indices: [0, 1, 2, 3, 4, 10], states: [0, 1, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 6, warehouse_count: 11, worker_count: 2 } })
-((2, 13), Chain { indices: [0, 1, 2, 3, 4, 17], states: [0, 1, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 7, warehouse_count: 13, worker_count: 2 } })
-((2, 18), Chain { indices: [0, 1, 2, 3, 4, 17, 18], states: [0, 1, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 8, warehouse_count: 18, worker_count: 2 } })
-((2, 23), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 9, warehouse_count: 23, worker_count: 2 } })
-((2, 25), Chain { indices: [0, 1, 2, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 11, warehouse_count: 25, worker_count: 2 } })
-((2, 26), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 10, warehouse_count: 26, worker_count: 2 } })
-((2, 31), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 12, warehouse_count: 31, worker_count: 2 } })
-((2, 35), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 13, warehouse_count: 35, worker_count: 2 } })
-((2, 38), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 14, warehouse_count: 38, worker_count: 2 } })
-((2, 39), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 15, warehouse_count: 39, worker_count: 2 } })
-((2, 43), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 16, warehouse_count: 43, worker_count: 2 } })
-((2, 47), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 17, warehouse_count: 47, worker_count: 2 } })
-((2, 50), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 18, warehouse_count: 50, worker_count: 2 } })
-((2, 51), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 19, warehouse_count: 51, worker_count: 2 } })
-((2, 55), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 20, warehouse_count: 55, worker_count: 2 } })
-((2, 59), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 21, warehouse_count: 59, worker_count: 2 } })
-((2, 62), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 22, warehouse_count: 62, worker_count: 2 } })
-((2, 63), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 23, warehouse_count: 63, worker_count: 2 } })
-((2, 67), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 24, warehouse_count: 67, worker_count: 2 } })
-((2, 70), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 25, warehouse_count: 70, worker_count: 2 } })
-((2, 72), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 26, warehouse_count: 72, worker_count: 2 } })
-((2, 75), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 27, warehouse_count: 75, worker_count: 2 } })
-((2, 78), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 28, warehouse_count: 78, worker_count: 2 } })
-((2, 80), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 29, warehouse_count: 80, worker_count: 2 } })
-((2, 84), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 30, warehouse_count: 84, worker_count: 2 } })
-((2, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 85, worker_count: 2 } })
-((2, 88), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 32, warehouse_count: 88, worker_count: 2 } })
-((2, 92), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 33, warehouse_count: 92, worker_count: 2 } })
-((2, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 35, warehouse_count: 95, worker_count: 2 } })
-((2, 96), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 34, warehouse_count: 96, worker_count: 2 } })
-((2, 100), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 36, warehouse_count: 100, worker_count: 2 } })
-((2, 104), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 37, warehouse_count: 104, worker_count: 2 } })
-((2, 105), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 39, warehouse_count: 105, worker_count: 2 } })
-((2, 106), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 106, worker_count: 2 } })
-((2, 112), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 40, warehouse_count: 112, worker_count: 2 } })
-((2, 114), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 114, worker_count: 2 } })
-((2, 118), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 118, worker_count: 2 } })
-((2, 122), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 122, worker_count: 2 } })
-((2, 126), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 126, worker_count: 2 } })
-((2, 127), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 47, warehouse_count: 127, worker_count: 2 } })
-((2, 130), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 130, worker_count: 2 } })
-((2, 134), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 134, worker_count: 2 } })
-((2, 135), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 135, worker_count: 2 } })
-((2, 139), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 139, worker_count: 2 } })
-((2, 142), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 53, warehouse_count: 142, worker_count: 2 } })
-((2, 147), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 147, worker_count: 2 } })
-((2, 150), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 57, warehouse_count: 150, worker_count: 2 } })
-((2, 155), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 155, worker_count: 2 } })
-((3, 3), Chain { indices: [0, 1, 2, 3, 4], states: [0, 1, 2, 2, 2], usage_counts: UsageCounters { cost: 5, warehouse_count: 3, worker_count: 3 } })
-((3, 6), Chain { indices: [0, 1, 2, 3, 4, 10], states: [0, 1, 2, 2, 2, 1], usage_counts: UsageCounters { cost: 6, warehouse_count: 6, worker_count: 3 } })
-((3, 8), Chain { indices: [0, 1, 2, 3, 4, 17], states: [0, 1, 2, 2, 2, 1], usage_counts: UsageCounters { cost: 7, warehouse_count: 8, worker_count: 3 } })
-((3, 13), Chain { indices: [0, 1, 2, 3, 4, 17, 18], states: [0, 1, 2, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 8, warehouse_count: 13, worker_count: 3 } })
-((3, 18), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 9, warehouse_count: 18, worker_count: 3 } })
-((3, 19), Chain { indices: [0, 1, 2, 3, 4, 5, 7], states: [0, 1, 2, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 11, warehouse_count: 19, worker_count: 3 } })
-((3, 21), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 10, warehouse_count: 21, worker_count: 3 } })
-((3, 26), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 12, warehouse_count: 26, worker_count: 3 } })
-((3, 30), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 13, warehouse_count: 30, worker_count: 3 } })
-((3, 33), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 14, warehouse_count: 33, worker_count: 3 } })
-((3, 34), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 15, warehouse_count: 34, worker_count: 3 } })
-((3, 38), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 16, warehouse_count: 38, worker_count: 3 } })
-((3, 42), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 17, warehouse_count: 42, worker_count: 3 } })
-((3, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 18, warehouse_count: 45, worker_count: 3 } })
-((3, 46), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 19, warehouse_count: 46, worker_count: 3 } })
-((3, 50), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 20, warehouse_count: 50, worker_count: 3 } })
-((3, 54), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 21, warehouse_count: 54, worker_count: 3 } })
-((3, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 22, warehouse_count: 57, worker_count: 3 } })
-((3, 58), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 23, warehouse_count: 58, worker_count: 3 } })
-((3, 62), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 24, warehouse_count: 62, worker_count: 3 } })
-((3, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 25, warehouse_count: 65, worker_count: 3 } })
-((3, 67), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 26, warehouse_count: 67, worker_count: 3 } })
-((3, 70), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 27, warehouse_count: 70, worker_count: 3 } })
-((3, 73), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 28, warehouse_count: 73, worker_count: 3 } })
-((3, 75), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 29, warehouse_count: 75, worker_count: 3 } })
-((3, 79), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 30, warehouse_count: 79, worker_count: 3 } })
-((3, 80), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 80, worker_count: 3 } })
-((3, 83), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 32, warehouse_count: 83, worker_count: 3 } })
-((3, 87), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 33, warehouse_count: 87, worker_count: 3 } })
-((3, 90), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 35, warehouse_count: 90, worker_count: 3 } })
-((3, 91), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 34, warehouse_count: 91, worker_count: 3 } })
-((3, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 36, warehouse_count: 95, worker_count: 3 } })
-((3, 99), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 37, warehouse_count: 99, worker_count: 3 } })
-((3, 100), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 39, warehouse_count: 100, worker_count: 3 } })
-((3, 101), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 101, worker_count: 3 } })
-((3, 107), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 40, warehouse_count: 107, worker_count: 3 } })
-((3, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 109, worker_count: 3 } })
-((3, 113), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 113, worker_count: 3 } })
-((3, 117), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 117, worker_count: 3 } })
-((3, 121), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 121, worker_count: 3 } })
-((3, 122), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 47, warehouse_count: 122, worker_count: 3 } })
-((3, 125), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 125, worker_count: 3 } })
-((3, 129), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 129, worker_count: 3 } })
-((3, 130), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 130, worker_count: 3 } })
-((3, 134), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 134, worker_count: 3 } })
-((3, 137), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 53, warehouse_count: 137, worker_count: 3 } })
-((3, 142), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 142, worker_count: 3 } })
-((3, 145), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 57, warehouse_count: 145, worker_count: 3 } })
-((3, 150), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 150, worker_count: 3 } })
-((4, 3), Chain { indices: [0, 1, 2, 3, 4, 17], states: [0, 1, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 7, warehouse_count: 3, worker_count: 4 } })
-((4, 8), Chain { indices: [0, 1, 2, 3, 4, 17, 18], states: [0, 1, 2, 2, 2, 2, 1], usage_counts: UsageCounters { cost: 8, warehouse_count: 8, worker_count: 4 } })
-((4, 13), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19], states: [0, 1, 2, 2, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 9, warehouse_count: 13, worker_count: 4 } })
-((4, 14), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11], states: [0, 1, 2, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 11, warehouse_count: 14, worker_count: 4 } })
-((4, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 10, warehouse_count: 16, worker_count: 4 } })
-((4, 21), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 12, warehouse_count: 21, worker_count: 4 } })
-((4, 25), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 13, warehouse_count: 25, worker_count: 4 } })
-((4, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 14, warehouse_count: 28, worker_count: 4 } })
-((4, 29), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 15, warehouse_count: 29, worker_count: 4 } })
-((4, 33), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 16, warehouse_count: 33, worker_count: 4 } })
-((4, 37), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 17, warehouse_count: 37, worker_count: 4 } })
-((4, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 18, warehouse_count: 40, worker_count: 4 } })
-((4, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 19, warehouse_count: 41, worker_count: 4 } })
-((4, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 20, warehouse_count: 45, worker_count: 4 } })
-((4, 49), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 21, warehouse_count: 49, worker_count: 4 } })
-((4, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 22, warehouse_count: 52, worker_count: 4 } })
-((4, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 23, warehouse_count: 53, worker_count: 4 } })
-((4, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 24, warehouse_count: 57, worker_count: 4 } })
-((4, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 25, warehouse_count: 60, worker_count: 4 } })
-((4, 62), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 26, warehouse_count: 62, worker_count: 4 } })
-((4, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 27, warehouse_count: 65, worker_count: 4 } })
-((4, 68), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 28, warehouse_count: 68, worker_count: 4 } })
-((4, 70), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 29, warehouse_count: 70, worker_count: 4 } })
-((4, 74), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 30, warehouse_count: 74, worker_count: 4 } })
-((4, 75), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 75, worker_count: 4 } })
-((4, 78), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 32, warehouse_count: 78, worker_count: 4 } })
-((4, 82), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 33, warehouse_count: 82, worker_count: 4 } })
-((4, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 35, warehouse_count: 85, worker_count: 4 } })
-((4, 86), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 34, warehouse_count: 86, worker_count: 4 } })
-((4, 90), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 36, warehouse_count: 90, worker_count: 4 } })
-((4, 94), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 37, warehouse_count: 94, worker_count: 4 } })
-((4, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 39, warehouse_count: 95, worker_count: 4 } })
-((4, 96), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 96, worker_count: 4 } })
-((4, 102), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 40, warehouse_count: 102, worker_count: 4 } })
-((4, 104), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 104, worker_count: 4 } })
-((4, 108), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 108, worker_count: 4 } })
-((4, 112), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 112, worker_count: 4 } })
-((4, 116), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 116, worker_count: 4 } })
-((4, 118), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 118, worker_count: 4 } })
-((4, 120), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 120, worker_count: 4 } })
-((4, 124), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 124, worker_count: 4 } })
-((4, 125), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 125, worker_count: 4 } })
-((4, 126), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 126, worker_count: 4 } })
-((4, 129), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 129, worker_count: 4 } })
-((4, 134), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 134, worker_count: 4 } })
-((4, 139), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 139, worker_count: 4 } })
-((4, 142), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 57, warehouse_count: 142, worker_count: 4 } })
-((4, 147), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 147, worker_count: 4 } })
-((5, 6), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17], states: [0, 1, 2, 2, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 10, warehouse_count: 6, worker_count: 5 } })
-((5, 11), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18], states: [0, 1, 2, 2, 2, 1, 2, 2, 1], usage_counts: UsageCounters { cost: 11, warehouse_count: 11, worker_count: 5 } })
-((5, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 12, warehouse_count: 16, worker_count: 5 } })
-((5, 18), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 13, warehouse_count: 18, worker_count: 5 } })
-((5, 21), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 14, warehouse_count: 21, worker_count: 5 } })
-((5, 24), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 15, warehouse_count: 24, worker_count: 5 } })
-((5, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 16, warehouse_count: 28, worker_count: 5 } })
-((5, 30), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 17, warehouse_count: 30, worker_count: 5 } })
-((5, 33), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 18, warehouse_count: 33, worker_count: 5 } })
-((5, 36), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 19, warehouse_count: 36, worker_count: 5 } })
-((5, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 20, warehouse_count: 40, worker_count: 5 } })
-((5, 42), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 21, warehouse_count: 42, worker_count: 5 } })
-((5, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 22, warehouse_count: 45, worker_count: 5 } })
-((5, 48), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1], usage_counts: UsageCounters { cost: 23, warehouse_count: 48, worker_count: 5 } })
-((5, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 24, warehouse_count: 52, worker_count: 5 } })
-((5, 54), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 25, warehouse_count: 54, worker_count: 5 } })
-((5, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 26, warehouse_count: 57, worker_count: 5 } })
-((5, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 27, warehouse_count: 60, worker_count: 5 } })
-((5, 62), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 28, warehouse_count: 62, worker_count: 5 } })
-((5, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 29, warehouse_count: 65, worker_count: 5 } })
-((5, 69), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 30, warehouse_count: 69, worker_count: 5 } })
-((5, 70), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 70, worker_count: 5 } })
-((5, 73), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 32, warehouse_count: 73, worker_count: 5 } })
-((5, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 33, warehouse_count: 77, worker_count: 5 } })
-((5, 80), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 35, warehouse_count: 80, worker_count: 5 } })
-((5, 81), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 34, warehouse_count: 81, worker_count: 5 } })
-((5, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1], usage_counts: UsageCounters { cost: 36, warehouse_count: 85, worker_count: 5 } })
-((5, 89), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 37, warehouse_count: 89, worker_count: 5 } })
-((5, 90), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 39, warehouse_count: 90, worker_count: 5 } })
-((5, 91), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 91, worker_count: 5 } })
-((5, 97), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 40, warehouse_count: 97, worker_count: 5 } })
-((5, 99), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 99, worker_count: 5 } })
-((5, 103), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 103, worker_count: 5 } })
-((5, 107), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 107, worker_count: 5 } })
-((5, 111), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 111, worker_count: 5 } })
-((5, 113), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 113, worker_count: 5 } })
-((5, 115), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 115, worker_count: 5 } })
-((5, 119), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 119, worker_count: 5 } })
-((5, 120), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 120, worker_count: 5 } })
-((5, 121), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 121, worker_count: 5 } })
-((5, 124), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 124, worker_count: 5 } })
-((5, 129), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 129, worker_count: 5 } })
-((5, 134), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 134, worker_count: 5 } })
-((5, 137), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 57, warehouse_count: 137, worker_count: 5 } })
-((5, 142), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 142, worker_count: 5 } })
-((6, 3), Chain { indices: [0, 1, 2, 3, 4, 17, 21], states: [0, 1, 2, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 11, warehouse_count: 3, worker_count: 6 } })
-((6, 8), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 21], states: [0, 1, 2, 2, 2, 2, 1, 2], usage_counts: UsageCounters { cost: 12, warehouse_count: 8, worker_count: 6 } })
-((6, 13), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 13, warehouse_count: 13, worker_count: 6 } })
-((6, 14), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 17, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 15, warehouse_count: 14, worker_count: 6 } })
-((6, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 14, warehouse_count: 16, worker_count: 6 } })
-((6, 21), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 16, warehouse_count: 21, worker_count: 6 } })
-((6, 25), Chain { indices: [0, 1, 2, 3, 4, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 17, warehouse_count: 25, worker_count: 6 } })
-((6, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 18, warehouse_count: 28, worker_count: 6 } })
-((6, 29), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 19, warehouse_count: 29, worker_count: 6 } })
-((6, 33), Chain { indices: [0, 1, 2, 3, 4, 5, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 20, warehouse_count: 33, worker_count: 6 } })
-((6, 37), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 21, warehouse_count: 37, worker_count: 6 } })
-((6, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 22, warehouse_count: 40, worker_count: 6 } })
-((6, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 23, warehouse_count: 41, worker_count: 6 } })
-((6, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 24, warehouse_count: 45, worker_count: 6 } })
-((6, 49), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 25, warehouse_count: 49, worker_count: 6 } })
-((6, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 26, warehouse_count: 52, worker_count: 6 } })
-((6, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 27, warehouse_count: 53, worker_count: 6 } })
-((6, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 28, warehouse_count: 57, worker_count: 6 } })
-((6, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 29, warehouse_count: 60, worker_count: 6 } })
-((6, 62), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 30, warehouse_count: 62, worker_count: 6 } })
-((6, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 65, worker_count: 6 } })
-((6, 68), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 32, warehouse_count: 68, worker_count: 6 } })
-((6, 70), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 33, warehouse_count: 70, worker_count: 6 } })
-((6, 72), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2], usage_counts: UsageCounters { cost: 35, warehouse_count: 72, worker_count: 6 } })
-((6, 74), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 34, warehouse_count: 74, worker_count: 6 } })
-((6, 78), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 36, warehouse_count: 78, worker_count: 6 } })
-((6, 82), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 37, warehouse_count: 82, worker_count: 6 } })
-((6, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 39, warehouse_count: 85, worker_count: 6 } })
-((6, 86), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 86, worker_count: 6 } })
-((6, 90), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 40, warehouse_count: 90, worker_count: 6 } })
-((6, 92), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 42, warehouse_count: 92, worker_count: 6 } })
-((6, 94), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 94, worker_count: 6 } })
-((6, 98), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 98, worker_count: 6 } })
-((6, 100), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 45, warehouse_count: 100, worker_count: 6 } })
-((6, 102), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 102, worker_count: 6 } })
-((6, 106), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 106, worker_count: 6 } })
-((6, 108), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 108, worker_count: 6 } })
-((6, 110), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 110, worker_count: 6 } })
-((6, 114), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 114, worker_count: 6 } })
-((6, 115), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 115, worker_count: 6 } })
-((6, 116), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 116, worker_count: 6 } })
-((6, 119), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 119, worker_count: 6 } })
-((6, 124), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 124, worker_count: 6 } })
-((6, 129), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 129, worker_count: 6 } })
-((6, 132), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 57, warehouse_count: 132, worker_count: 6 } })
-((6, 137), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 137, worker_count: 6 } })
-((7, 6), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 2], usage_counts: UsageCounters { cost: 14, warehouse_count: 6, worker_count: 7 } })
-((7, 11), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 2], usage_counts: UsageCounters { cost: 15, warehouse_count: 11, worker_count: 7 } })
-((7, 14), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 2], usage_counts: UsageCounters { cost: 17, warehouse_count: 14, worker_count: 7 } })
-((7, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 16, warehouse_count: 16, worker_count: 7 } })
-((7, 21), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 18, warehouse_count: 21, worker_count: 7 } })
-((7, 24), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 19, warehouse_count: 24, worker_count: 7 } })
-((7, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 20, warehouse_count: 28, worker_count: 7 } })
-((7, 29), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 21, warehouse_count: 29, worker_count: 7 } })
-((7, 33), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 22, warehouse_count: 33, worker_count: 7 } })
-((7, 36), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 23, warehouse_count: 36, worker_count: 7 } })
-((7, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 24, warehouse_count: 40, worker_count: 7 } })
-((7, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 25, warehouse_count: 41, worker_count: 7 } })
-((7, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 26, warehouse_count: 45, worker_count: 7 } })
-((7, 48), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 27, warehouse_count: 48, worker_count: 7 } })
-((7, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 28, warehouse_count: 52, worker_count: 7 } })
-((7, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 29, warehouse_count: 53, worker_count: 7 } })
-((7, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 30, warehouse_count: 57, worker_count: 7 } })
-((7, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 60, worker_count: 7 } })
-((7, 61), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 32, warehouse_count: 61, worker_count: 7 } })
-((7, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 33, warehouse_count: 65, worker_count: 7 } })
-((7, 67), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 35, warehouse_count: 67, worker_count: 7 } })
-((7, 69), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 34, warehouse_count: 69, worker_count: 7 } })
-((7, 73), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 36, warehouse_count: 73, worker_count: 7 } })
-((7, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 37, warehouse_count: 77, worker_count: 7 } })
-((7, 80), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2], usage_counts: UsageCounters { cost: 39, warehouse_count: 80, worker_count: 7 } })
-((7, 81), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 81, worker_count: 7 } })
-((7, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 40, warehouse_count: 85, worker_count: 7 } })
-((7, 87), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 42, warehouse_count: 87, worker_count: 7 } })
-((7, 89), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 89, worker_count: 7 } })
-((7, 93), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 43, warehouse_count: 93, worker_count: 7 } })
-((7, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 45, warehouse_count: 95, worker_count: 7 } })
-((7, 97), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 97, worker_count: 7 } })
-((7, 101), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 46, warehouse_count: 101, worker_count: 7 } })
-((7, 103), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 103, worker_count: 7 } })
-((7, 105), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 105, worker_count: 7 } })
-((7, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1], usage_counts: UsageCounters { cost: 49, warehouse_count: 109, worker_count: 7 } })
-((7, 110), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 51, warehouse_count: 110, worker_count: 7 } })
-((7, 111), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 111, worker_count: 7 } })
-((7, 114), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 114, worker_count: 7 } })
-((7, 119), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 119, worker_count: 7 } })
-((7, 124), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 124, worker_count: 7 } })
-((7, 127), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 57, warehouse_count: 127, worker_count: 7 } })
-((7, 132), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 132, worker_count: 7 } })
-((8, 6), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 17, warehouse_count: 6, worker_count: 8 } })
-((8, 11), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 18, warehouse_count: 11, worker_count: 8 } })
-((8, 14), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 20, warehouse_count: 14, worker_count: 8 } })
-((8, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 19, warehouse_count: 16, worker_count: 8 } })
-((8, 21), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 21, warehouse_count: 21, worker_count: 8 } })
-((8, 24), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 22, warehouse_count: 24, worker_count: 8 } })
-((8, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 23, warehouse_count: 28, worker_count: 8 } })
-((8, 29), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 24, warehouse_count: 29, worker_count: 8 } })
-((8, 33), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 25, warehouse_count: 33, worker_count: 8 } })
-((8, 36), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 26, warehouse_count: 36, worker_count: 8 } })
-((8, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 27, warehouse_count: 40, worker_count: 8 } })
-((8, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 28, warehouse_count: 41, worker_count: 8 } })
-((8, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 29, warehouse_count: 45, worker_count: 8 } })
-((8, 48), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 30, warehouse_count: 48, worker_count: 8 } })
-((8, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 52, worker_count: 8 } })
-((8, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 32, warehouse_count: 53, worker_count: 8 } })
-((8, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 33, warehouse_count: 57, worker_count: 8 } })
-((8, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 34, warehouse_count: 60, worker_count: 8 } })
-((8, 62), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 35, warehouse_count: 62, worker_count: 8 } })
-((8, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 36, warehouse_count: 65, worker_count: 8 } })
-((8, 69), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 37, warehouse_count: 69, worker_count: 8 } })
-((8, 70), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 70, worker_count: 8 } })
-((8, 74), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 39, warehouse_count: 74, worker_count: 8 } })
-((8, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 40, warehouse_count: 77, worker_count: 8 } })
-((8, 81), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 81, worker_count: 8 } })
-((8, 82), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 42, warehouse_count: 82, worker_count: 8 } })
-((8, 86), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 43, warehouse_count: 86, worker_count: 8 } })
-((8, 89), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 89, worker_count: 8 } })
-((8, 90), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 45, warehouse_count: 90, worker_count: 8 } })
-((8, 94), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 46, warehouse_count: 94, worker_count: 8 } })
-((8, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 48, warehouse_count: 95, worker_count: 8 } })
-((8, 98), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 98, worker_count: 8 } })
-((8, 102), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 49, warehouse_count: 102, worker_count: 8 } })
-((8, 105), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 51, warehouse_count: 105, worker_count: 8 } })
-((8, 106), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 106, worker_count: 8 } })
-((8, 108), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 55, warehouse_count: 108, worker_count: 8 } })
-((8, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 52, warehouse_count: 109, worker_count: 8 } })
-((8, 114), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 114, worker_count: 8 } })
-((8, 119), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 119, worker_count: 8 } })
-((8, 122), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 57, warehouse_count: 122, worker_count: 8 } })
-((8, 127), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 127, worker_count: 8 } })
-((9, 6), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 17, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 19, warehouse_count: 6, worker_count: 9 } })
-((9, 11), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2], usage_counts: UsageCounters { cost: 20, warehouse_count: 11, worker_count: 9 } })
-((9, 14), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 22, warehouse_count: 14, worker_count: 9 } })
-((9, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 21, warehouse_count: 16, worker_count: 9 } })
-((9, 21), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 23, warehouse_count: 21, worker_count: 9 } })
-((9, 24), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 24, warehouse_count: 24, worker_count: 9 } })
-((9, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 25, warehouse_count: 28, worker_count: 9 } })
-((9, 29), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 26, warehouse_count: 29, worker_count: 9 } })
-((9, 33), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 27, warehouse_count: 33, worker_count: 9 } })
-((9, 36), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 28, warehouse_count: 36, worker_count: 9 } })
-((9, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 29, warehouse_count: 40, worker_count: 9 } })
-((9, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 30, warehouse_count: 41, worker_count: 9 } })
-((9, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 45, worker_count: 9 } })
-((9, 48), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 32, warehouse_count: 48, worker_count: 9 } })
-((9, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 33, warehouse_count: 52, worker_count: 9 } })
-((9, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 34, warehouse_count: 53, worker_count: 9 } })
-((9, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 35, warehouse_count: 57, worker_count: 9 } })
-((9, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 36, warehouse_count: 60, worker_count: 9 } })
-((9, 64), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 37, warehouse_count: 64, worker_count: 9 } })
-((9, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 65, worker_count: 9 } })
-((9, 69), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 39, warehouse_count: 69, worker_count: 9 } })
-((9, 72), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 40, warehouse_count: 72, worker_count: 9 } })
-((9, 73), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 73, worker_count: 9 } })
-((9, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 42, warehouse_count: 77, worker_count: 9 } })
-((9, 79), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 79, worker_count: 9 } })
-((9, 81), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 43, warehouse_count: 81, worker_count: 9 } })
-((9, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 45, warehouse_count: 85, worker_count: 9 } })
-((9, 89), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 46, warehouse_count: 89, worker_count: 9 } })
-((9, 92), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 92, worker_count: 9 } })
-((9, 93), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 93, worker_count: 9 } })
-((9, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 51, warehouse_count: 95, worker_count: 9 } })
-((9, 97), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2], usage_counts: UsageCounters { cost: 49, warehouse_count: 97, worker_count: 9 } })
-((9, 101), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 101, worker_count: 9 } })
-((9, 102), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 52, warehouse_count: 102, worker_count: 9 } })
-((9, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 109, worker_count: 9 } })
-((9, 114), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 56, warehouse_count: 114, worker_count: 9 } })
-((9, 117), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2], usage_counts: UsageCounters { cost: 57, warehouse_count: 117, worker_count: 9 } })
-((9, 122), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1], usage_counts: UsageCounters { cost: 60, warehouse_count: 122, worker_count: 9 } })
-((10, 6), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 17, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 22, warehouse_count: 6, worker_count: 10 } })
-((10, 11), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 23, warehouse_count: 11, worker_count: 10 } })
-((10, 14), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2], usage_counts: UsageCounters { cost: 25, warehouse_count: 14, worker_count: 10 } })
-((10, 16), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 24, warehouse_count: 16, worker_count: 10 } })
-((10, 21), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 26, warehouse_count: 21, worker_count: 10 } })
-((10, 24), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 27, warehouse_count: 24, worker_count: 10 } })
-((10, 28), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 28, warehouse_count: 28, worker_count: 10 } })
-((10, 29), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 29, warehouse_count: 29, worker_count: 10 } })
-((10, 33), Chain { indices: [0, 1, 2, 3, 4, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 30, warehouse_count: 33, worker_count: 10 } })
-((10, 36), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 31, warehouse_count: 36, worker_count: 10 } })
-((10, 40), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 32, warehouse_count: 40, worker_count: 10 } })
-((10, 41), Chain { indices: [0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 33, warehouse_count: 41, worker_count: 10 } })
-((10, 45), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 34, warehouse_count: 45, worker_count: 10 } })
-((10, 48), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 35, warehouse_count: 48, worker_count: 10 } })
-((10, 52), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 36, warehouse_count: 52, worker_count: 10 } })
-((10, 53), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 37, warehouse_count: 53, worker_count: 10 } })
-((10, 57), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 38, warehouse_count: 57, worker_count: 10 } })
-((10, 60), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 39, warehouse_count: 60, worker_count: 10 } })
-((10, 64), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 40, warehouse_count: 64, worker_count: 10 } })
-((10, 65), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 41, warehouse_count: 65, worker_count: 10 } })
-((10, 69), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 42, warehouse_count: 69, worker_count: 10 } })
-((10, 72), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 43, warehouse_count: 72, worker_count: 10 } })
-((10, 73), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 44, warehouse_count: 73, worker_count: 10 } })
-((10, 77), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 45, warehouse_count: 77, worker_count: 10 } })
-((10, 79), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2, 2], usage_counts: UsageCounters { cost: 47, warehouse_count: 79, worker_count: 10 } })
-((10, 81), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 46, warehouse_count: 81, worker_count: 10 } })
-((10, 85), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 48, warehouse_count: 85, worker_count: 10 } })
-((10, 89), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 49, warehouse_count: 89, worker_count: 10 } })
-((10, 92), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 51, warehouse_count: 92, worker_count: 10 } })
-((10, 93), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 50, warehouse_count: 93, worker_count: 10 } })
-((10, 95), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2, 2], usage_counts: UsageCounters { cost: 54, warehouse_count: 95, worker_count: 10 } })
-((10, 97), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 52, warehouse_count: 97, worker_count: 10 } })
-((10, 100), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 2], usage_counts: UsageCounters { cost: 55, warehouse_count: 100, worker_count: 10 } })
-((10, 101), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 53, warehouse_count: 101, worker_count: 10 } })
-((10, 109), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 56, warehouse_count: 109, worker_count: 10 } })
-((10, 117), Chain { indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], states: [0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2], usage_counts: UsageCounters { cost: 60, warehouse_count: 117, worker_count: 10 } })
+lodging,storage,cost,indices,states
+0,0,0,[0],[0]
+0,3,1,[0, 1],[0, 1]
+0,6,2,[0, 1, 10],[0, 1, 1]
+0,10,3,[0, 17, 18],[0, 1, 1]
+0,15,4,[0, 17, 18, 19],[0, 1, 1, 1]
+0,18,5,[0, 1, 2, 3, 4],[0, 1, 1, 1, 1]
+0,21,6,[0, 1, 2, 3, 4, 10],[0, 1, 1, 1, 1, 1]
+0,23,7,[0, 1, 2, 3, 4, 17],[0, 1, 1, 1, 1, 1]
+0,28,8,[0, 1, 2, 3, 4, 17, 18],[0, 1, 1, 1, 1, 1, 1]
+0,33,9,[0, 1, 2, 3, 4, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1]
+0,35,11,[0, 1, 2, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1]
+0,36,10,[0, 1, 2, 3, 4, 10, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1]
+0,41,12,[0, 1, 2, 3, 4, 5, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1]
+0,45,13,[0, 1, 2, 3, 4, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1]
+0,48,14,[0, 1, 2, 3, 4, 10, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,49,15,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,53,16,[0, 1, 2, 3, 4, 5, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,57,17,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,60,18,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,61,19,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,65,20,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,69,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,72,22,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,73,23,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,77,24,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,80,25,[0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,82,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,85,27,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,88,28,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,90,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,92,31,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,94,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,98,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,102,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,105,35,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,106,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,109,38,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,110,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,114,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,115,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,116,42,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,117,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,122,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,127,43,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,130,44,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,134,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,135,47,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,138,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,142,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,143,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,147,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,150,53,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,155,56,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,158,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+0,163,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,0,2,[0, 17],[0, 2]
+1,5,3,[0, 17, 18],[0, 2, 1]
+1,10,4,[0, 17, 18, 19],[0, 2, 1, 1]
+1,13,5,[0, 1, 2, 3, 4],[0, 1, 2, 1, 1]
+1,16,6,[0, 1, 2, 3, 4, 10],[0, 1, 2, 1, 1, 1]
+1,18,7,[0, 1, 2, 3, 4, 17],[0, 1, 2, 1, 1, 1]
+1,23,8,[0, 1, 2, 3, 4, 17, 18],[0, 1, 2, 1, 1, 1, 1]
+1,28,9,[0, 1, 2, 3, 4, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1]
+1,30,11,[0, 1, 2, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1]
+1,31,10,[0, 1, 2, 3, 4, 10, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1]
+1,36,12,[0, 1, 2, 3, 4, 5, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1]
+1,40,13,[0, 1, 2, 3, 4, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1]
+1,43,14,[0, 1, 2, 3, 4, 10, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+1,44,15,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+1,48,16,[0, 1, 2, 3, 4, 5, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+1,52,17,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+1,55,18,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+1,56,19,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+1,60,20,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+1,64,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+1,67,22,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,68,23,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,72,24,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,75,25,[0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,77,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,80,27,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,83,28,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,85,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,87,31,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,89,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,93,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,97,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,100,35,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,101,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,105,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,109,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,110,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,111,42,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,117,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,122,43,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,125,44,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,129,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,130,47,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,133,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,137,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,138,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,142,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,145,53,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,150,56,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,153,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+1,158,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,3,4,[0, 1, 2, 3],[0, 1, 2, 2]
+2,8,5,[0, 1, 2, 3, 4],[0, 1, 2, 2, 1]
+2,11,6,[0, 1, 2, 3, 4, 10],[0, 1, 2, 2, 1, 1]
+2,13,7,[0, 1, 2, 3, 4, 17],[0, 1, 2, 2, 1, 1]
+2,18,8,[0, 1, 2, 3, 4, 17, 18],[0, 1, 2, 2, 1, 1, 1]
+2,23,9,[0, 1, 2, 3, 4, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1]
+2,25,11,[0, 1, 2, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1]
+2,26,10,[0, 1, 2, 3, 4, 10, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1]
+2,31,12,[0, 1, 2, 3, 4, 5, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1]
+2,35,13,[0, 1, 2, 3, 4, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1]
+2,38,14,[0, 1, 2, 3, 4, 10, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1]
+2,39,15,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1]
+2,43,16,[0, 1, 2, 3, 4, 5, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1]
+2,47,17,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1]
+2,50,18,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+2,51,19,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+2,55,20,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+2,59,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+2,62,22,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+2,63,23,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+2,67,24,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+2,70,25,[0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,72,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,75,27,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,78,28,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,80,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,84,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,85,31,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+2,88,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,92,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,95,35,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,96,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,100,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,104,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,105,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,106,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+2,112,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2,114,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+2,118,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+2,122,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+2,126,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+2,127,47,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+2,130,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+2,134,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+2,135,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+2,139,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+2,142,53,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+2,147,56,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+2,150,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+2,155,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+3,3,5,[0, 1, 2, 3, 4],[0, 1, 2, 2, 2]
+3,6,6,[0, 1, 2, 3, 4, 10],[0, 1, 2, 2, 2, 1]
+3,8,7,[0, 1, 2, 3, 4, 17],[0, 1, 2, 2, 2, 1]
+3,13,8,[0, 1, 2, 3, 4, 17, 18],[0, 1, 2, 2, 2, 1, 1]
+3,18,9,[0, 1, 2, 3, 4, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1]
+3,19,11,[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 2, 2, 1, 1]
+3,21,10,[0, 1, 2, 3, 4, 10, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1]
+3,26,12,[0, 1, 2, 3, 4, 5, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1]
+3,30,13,[0, 1, 2, 3, 4, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1]
+3,33,14,[0, 1, 2, 3, 4, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+3,34,15,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+3,38,16,[0, 1, 2, 3, 4, 5, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+3,42,17,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+3,45,18,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1]
+3,46,19,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1]
+3,50,20,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1]
+3,54,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1]
+3,57,22,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+3,58,23,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+3,62,24,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+3,65,25,[0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+3,67,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,70,27,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+3,73,28,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,75,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,79,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,80,31,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+3,83,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,87,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,90,35,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,91,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,95,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,99,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,100,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,101,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+3,107,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+3,109,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+3,113,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+3,117,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+3,121,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+3,122,47,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+3,125,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+3,129,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+3,130,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+3,134,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+3,137,53,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+3,142,56,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+3,145,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+3,150,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+4,3,7,[0, 1, 2, 3, 4, 17],[0, 1, 2, 2, 2, 2]
+4,8,8,[0, 1, 2, 3, 4, 17, 18],[0, 1, 2, 2, 2, 2, 1]
+4,13,9,[0, 1, 2, 3, 4, 17, 18, 19],[0, 1, 2, 2, 2, 2, 1, 1]
+4,14,11,[0, 1, 2, 3, 4, 5, 10, 11],[0, 1, 2, 2, 2, 1, 1, 2]
+4,16,10,[0, 1, 2, 3, 4, 10, 17, 18, 19],[0, 1, 2, 2, 2, 1, 2, 1, 1]
+4,21,12,[0, 1, 2, 3, 4, 5, 17, 18, 19],[0, 1, 2, 2, 2, 1, 2, 1, 1]
+4,25,13,[0, 1, 2, 3, 4, 17, 18, 19, 20],[0, 1, 2, 2, 2, 2, 1, 1, 1]
+4,28,14,[0, 1, 2, 3, 4, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 2, 1, 1, 1]
+4,29,15,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1]
+4,33,16,[0, 1, 2, 3, 4, 5, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 2, 1, 1, 1]
+4,37,17,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1]
+4,40,18,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1]
+4,41,19,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1]
+4,45,20,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1]
+4,49,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1]
+4,52,22,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1]
+4,53,23,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1]
+4,57,24,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1]
+4,60,25,[0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1]
+4,62,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,65,27,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1]
+4,68,28,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1]
+4,70,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,74,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+4,75,31,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+4,78,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,82,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+4,85,35,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,86,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+4,90,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+4,94,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+4,95,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+4,96,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+4,102,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+4,104,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+4,108,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,112,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+4,116,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,118,47,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+4,120,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+4,124,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+4,125,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+4,126,50,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+4,129,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+4,134,53,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+4,139,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+4,142,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+4,147,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+5,6,10,[0, 1, 2, 3, 4, 10, 11, 17],[0, 1, 2, 2, 2, 1, 2, 2]
+5,11,11,[0, 1, 2, 3, 4, 10, 11, 17, 18],[0, 1, 2, 2, 2, 1, 2, 2, 1]
+5,16,12,[0, 1, 2, 3, 4, 10, 11, 17, 18, 19],[0, 1, 2, 2, 2, 1, 2, 2, 1, 1]
+5,18,13,[0, 1, 2, 3, 4, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2]
+5,21,14,[0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1]
+5,24,15,[0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1]
+5,28,16,[0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1]
+5,30,17,[0, 1, 2, 3, 4, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2]
+5,33,18,[0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1]
+5,36,19,[0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1]
+5,40,20,[0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1]
+5,42,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2]
+5,45,22,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1]
+5,48,23,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1]
+5,52,24,[0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1]
+5,54,25,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2]
+5,57,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1]
+5,60,27,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1]
+5,62,28,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2]
+5,65,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1]
+5,69,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1]
+5,70,31,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+5,73,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1]
+5,77,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1]
+5,80,35,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1]
+5,81,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1]
+5,85,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1]
+5,89,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1]
+5,90,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1]
+5,91,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+5,97,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1]
+5,99,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+5,103,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+5,107,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+5,111,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+5,113,47,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+5,115,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+5,119,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+5,120,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+5,121,50,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+5,124,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+5,129,53,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+5,134,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+5,137,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+5,142,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+6,3,11,[0, 1, 2, 3, 4, 17, 21],[0, 1, 2, 2, 2, 2, 2]
+6,8,12,[0, 1, 2, 3, 4, 17, 18, 21],[0, 1, 2, 2, 2, 2, 1, 2]
+6,13,13,[0, 1, 2, 3, 4, 17, 18, 19, 21],[0, 1, 2, 2, 2, 2, 1, 1, 2]
+6,14,15,[0, 1, 2, 3, 4, 5, 10, 17, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2]
+6,16,14,[0, 1, 2, 3, 4, 10, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 1, 1, 2]
+6,21,16,[0, 1, 2, 3, 4, 5, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 1, 1, 2]
+6,25,17,[0, 1, 2, 3, 4, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 2, 1, 1, 1, 2]
+6,28,18,[0, 1, 2, 3, 4, 10, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2]
+6,29,19,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2]
+6,33,20,[0, 1, 2, 3, 4, 5, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2]
+6,37,21,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2]
+6,40,22,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 2]
+6,41,23,[0, 1, 2, 3, 4, 5, 7, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1, 2]
+6,45,24,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 2]
+6,49,25,[0, 1, 2, 3, 4, 5, 6, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1, 2]
+6,52,26,[0, 1, 2, 3, 4, 5, 6, 10, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+6,53,27,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 2]
+6,57,28,[0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+6,60,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+6,62,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,65,31,[0, 1, 2, 3, 4, 5, 6, 7, 9, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+6,68,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+6,70,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,72,35,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2]
+6,74,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+6,78,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,82,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+6,85,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2]
+6,86,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2]
+6,90,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+6,92,42,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+6,94,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2]
+6,98,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+6,100,45,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+6,102,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2]
+6,106,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+6,108,47,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,110,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2]
+6,114,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1]
+6,115,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1]
+6,116,50,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,119,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+6,124,53,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,129,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+6,132,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+6,137,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+7,6,14,[0, 1, 2, 3, 4, 10, 11, 17, 21],[0, 1, 2, 2, 2, 1, 2, 2, 2]
+7,11,15,[0, 1, 2, 3, 4, 10, 11, 17, 18, 21],[0, 1, 2, 2, 2, 1, 2, 2, 1, 2]
+7,14,17,[0, 1, 2, 3, 4, 5, 10, 11, 17, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2, 2]
+7,16,16,[0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2]
+7,21,18,[0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2]
+7,24,19,[0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2]
+7,28,20,[0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1, 2]
+7,29,21,[0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 2]
+7,33,22,[0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 2]
+7,36,23,[0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2]
+7,40,24,[0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2]
+7,41,25,[0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+7,45,26,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+7,48,27,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2]
+7,52,28,[0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2]
+7,53,29,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+7,57,30,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+7,60,31,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2]
+7,61,32,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+7,65,33,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+7,67,35,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2]
+7,69,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2]
+7,73,36,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+7,77,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2]
+7,80,39,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2]
+7,81,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+7,85,40,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2]
+7,87,42,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+7,89,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+7,93,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1]
+7,95,45,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2]
+7,97,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+7,101,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1]
+7,103,47,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+7,105,48,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+7,109,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1]
+7,110,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1]
+7,111,50,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+7,114,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1]
+7,119,53,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+7,124,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+7,127,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+7,132,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+8,6,17,[0, 1, 2, 3, 4, 10, 11, 17, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 2, 2]
+8,11,18,[0, 1, 2, 3, 4, 10, 11, 17, 18, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2]
+8,14,20,[0, 1, 2, 3, 4, 5, 10, 11, 17, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2]
+8,16,19,[0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 2]
+8,21,21,[0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2]
+8,24,22,[0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2]
+8,28,23,[0, 1, 2, 3, 4, 10, 11, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2]
+8,29,24,[0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2]
+8,33,25,[0, 1, 2, 3, 4, 10, 11, 12, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+8,36,26,[0, 1, 2, 3, 4, 5, 10, 11, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2]
+8,40,27,[0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2]
+8,41,28,[0, 1, 2, 3, 4, 5, 10, 11, 12, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+8,45,29,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2]
+8,48,30,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2]
+8,52,31,[0, 1, 2, 3, 4, 5, 6, 10, 11, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2]
+8,53,32,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2]
+8,57,33,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+8,60,34,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2]
+8,62,35,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2]
+8,65,36,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+8,69,37,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2]
+8,70,38,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2]
+8,74,39,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+8,77,40,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2]
+8,81,41,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2]
+8,82,42,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+8,86,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2]
+8,89,44,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2]
+8,90,45,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2]
+8,94,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2]
+8,95,48,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1]
+8,98,47,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+8,102,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2]
+8,105,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2]
+8,106,50,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+8,108,55,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+8,109,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+8,114,53,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+8,119,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+8,122,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2]
+8,127,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1]
+9,6,19,[0, 1, 2, 3, 4, 10, 11, 15, 17, 21],[0, 1, 2, 2, 2, 1, 2, 2, 2, 2]
+9,11,20,[0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 21],[0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2]
+9,14,22,[0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2]
+9,16,21,[0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2]
+9,21,23,[0, 1, 2, 3, 4, 10, 11, 12, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2]
+9,24,24,[0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2]
+9,28,25,[0, 1, 2, 3, 4, 10, 11, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2]
+9,29,26,[0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2]
+9,33,27,[0, 1, 2, 3, 4, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2]
+9,36,28,[0, 1, 2, 3, 4, 5, 10, 11, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2]
+9,40,29,[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2]
+9,41,30,[0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2]
+9,45,31,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2]
+9,48,32,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 2]
+9,52,33,[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2]
+9,53,34,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2]
+9,57,35,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2]
+9,60,36,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2]
+9,64,37,[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2]
+9,65,38,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2]
+9,69,39,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2]
+9,72,40,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2]
+9,73,41,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2]
+9,77,42,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2]
+9,79,44,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2]
+9,81,43,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+9,85,45,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2]
+9,89,46,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+9,92,48,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2]
+9,93,47,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+9,95,51,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2]
+9,97,49,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2]
+9,101,50,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+9,102,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1]
+9,109,53,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+9,114,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1]
+9,117,57,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2]
+9,122,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1]
+10,6,22,[0, 1, 2, 3, 4, 10, 11, 15, 17, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2]
+10,11,23,[0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2]
+10,14,25,[0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2]
+10,16,24,[0, 1, 2, 3, 4, 10, 11, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 2]
+10,21,26,[0, 1, 2, 3, 4, 10, 11, 12, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2]
+10,24,27,[0, 1, 2, 3, 4, 5, 10, 11, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 2]
+10,28,28,[0, 1, 2, 3, 4, 10, 11, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2, 2]
+10,29,29,[0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2]
+10,33,30,[0, 1, 2, 3, 4, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2]
+10,36,31,[0, 1, 2, 3, 4, 5, 10, 11, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2]
+10,40,32,[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2]
+10,41,33,[0, 1, 2, 3, 4, 5, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2]
+10,45,34,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2]
+10,48,35,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2]
+10,52,36,[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2]
+10,53,37,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2]
+10,57,38,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2]
+10,60,39,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2]
+10,64,40,[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2]
+10,65,41,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2]
+10,69,42,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2]
+10,72,43,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2]
+10,73,44,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2]
+10,77,45,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2]
+10,79,47,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2, 2]
+10,81,46,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2]
+10,85,48,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2]
+10,89,49,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2]
+10,92,51,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 2]
+10,93,50,[0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+10,95,54,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2, 2]
+10,97,52,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2]
+10,100,55,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 2]
+10,101,53,[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+10,109,56,[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]
+10,117,60,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],[0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2]

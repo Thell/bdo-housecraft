@@ -1,3 +1,4 @@
-((0, 0), Chain { indices: [0], states: [0], usage_counts: UsageCounters { cost: 0, warehouse_count: 0, worker_count: 0 } })
-((0, 16), Chain { indices: [0, 1], states: [0, 1], usage_counts: UsageCounters { cost: 2, warehouse_count: 16, worker_count: 0 } })
-((0, 32), Chain { indices: [0, 1, 2], states: [0, 1, 1], usage_counts: UsageCounters { cost: 5, warehouse_count: 32, worker_count: 0 } })
+lodging,storage,cost,indices,states
+0,0,0,[0],[0]
+0,16,2,[0, 1],[0, 1]
+0,32,5,[0, 1, 2],[0, 1, 1]
