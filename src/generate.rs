@@ -246,7 +246,7 @@ fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
 }
 
 fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    let job_controls = job_controls_from_region(cli, region)?;
+    let job_controls = JobControl::many_from_regions(cli, region)?;
     let results = job_controls
         .into_par_iter()
         .map(|job| generate_dominating_chains_par(cli.clone(), region.clone(), job).unwrap())
@@ -320,98 +320,100 @@ struct JobControl {
     stop_state: usize,
 }
 
-fn job_controls_from_region(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
-    let mut prefix_chains = job_prefixes(cli, region)?;
-    let min_index = prefix_chains[0].indices.last().unwrap() + 1;
-    let base_indices = (0..min_index).collect::<HashSet<_>>();
-    let indices = (0..region.num_nodes).collect::<Vec<_>>();
+impl JobControl {
+    fn many_from_regions(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
+        let mut prefix_chains = Self::prefixes(cli, region)?;
+        let min_index = prefix_chains[0].indices.last().unwrap() + 1;
+        let base_indices = (0..min_index).collect::<HashSet<_>>();
+        let indices = (0..region.num_nodes).collect::<Vec<_>>();
 
-    let mut job_controls = vec![];
-    for (job_id, chain) in prefix_chains.iter_mut().enumerate() {
-        let deactivated_nodes = chain.indices_difference_from_set(&base_indices);
-        let stop_value = job_stop_value(region, &deactivated_nodes, min_index);
-        let stop_index = chain.indices.len();
-        let stop_state = region.states[stop_value];
-        let tmp = &indices[stop_value..];
-        chain.indices.extend_from_slice(tmp);
-        let tmp = &region.states[stop_value..];
-        chain.states.extend_from_slice(tmp);
+        let mut job_controls = vec![];
+        for (job_id, chain) in prefix_chains.iter_mut().enumerate() {
+            let deactivated_nodes = chain.indices_difference_from_set(&base_indices);
+            let stop_value = Self::stop_value(region, &deactivated_nodes, min_index);
+            let stop_index = chain.indices.len();
+            let stop_state = region.states[stop_value];
+            let tmp = &indices[stop_value..];
+            chain.indices.extend_from_slice(tmp);
+            let tmp = &region.states[stop_value..];
+            chain.states.extend_from_slice(tmp);
 
-        chain.usage_counts = UsageCounters::new();
-        for (i, &state) in chain.states.iter().enumerate().skip(1) {
-            let building = region
-                .buildings
-                .get(&region.children[chain.indices[i]])
-                .unwrap();
-            chain.usage_counts.cost += building.cost;
-            if state == 1 {
-                chain.usage_counts.warehouse_count += building.warehouse_count;
-            } else if state == 2 {
-                chain.usage_counts.worker_count += building.worker_count;
+            chain.usage_counts = UsageCounters::new();
+            for (i, &state) in chain.states.iter().enumerate().skip(1) {
+                let building = region
+                    .buildings
+                    .get(&region.children[chain.indices[i]])
+                    .unwrap();
+                chain.usage_counts.cost += building.cost;
+                if state == 1 {
+                    chain.usage_counts.warehouse_count += building.warehouse_count;
+                } else if state == 2 {
+                    chain.usage_counts.worker_count += building.worker_count;
+                }
             }
+
+            job_controls.push(JobControl {
+                job_id,
+                chain: chain.clone(),
+                stop_index,
+                stop_value,
+                stop_state,
+            });
         }
 
-        job_controls.push(JobControl {
-            job_id,
-            chain: chain.clone(),
-            stop_index,
-            stop_value,
-            stop_state,
-        });
-    }
-
-    println!(
-        "Using {} jobs of {:?} requested.",
-        job_controls.len(),
-        cli.jobs.unwrap()
-    );
-    if cli.progress {
-        println!("--- Job Controls");
-        job_controls.iter().for_each(|j| println!("{:?}", j));
-        println!();
-    }
-    Ok(job_controls)
-}
-
-fn job_prefixes(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
-    let num_jobs = min(
-        cli.jobs.unwrap_or(num_cpus::get() as u8) as usize,
-        num_cpus::get(),
-    );
-
-    let mut chains = ChainVec::new();
-    for num_nodes in 1..=num_jobs {
-        let tmp_chains = job_prefix_chains(cli, region, num_nodes)?;
-        if tmp_chains.len() > num_jobs {
-            break;
+        println!(
+            "Using {} jobs of {:?} requested.",
+            job_controls.len(),
+            cli.jobs.unwrap()
+        );
+        if cli.progress {
+            println!("--- Job Controls");
+            job_controls.iter().for_each(|j| println!("{:?}", j));
+            println!();
         }
-        chains = tmp_chains;
+        Ok(job_controls)
     }
 
-    if cli.progress {
-        println!("--- Job Prefix Chains");
-        chains.iter().for_each(|j| println!("{:?}", j));
+    fn prefixes(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
+        let num_jobs = min(
+            cli.jobs.unwrap_or(num_cpus::get() as u8) as usize,
+            num_cpus::get(),
+        );
+
+        let mut chains = ChainVec::new();
+        for num_nodes in 1..=num_jobs {
+            let tmp_chains = Self::prefix_chains(cli, region, num_nodes)?;
+            if tmp_chains.len() > num_jobs {
+                break;
+            }
+            chains = tmp_chains;
+        }
+
+        if cli.progress {
+            println!("--- Job Prefix Chains");
+            chains.iter().for_each(|j| println!("{:?}", j));
+        }
+        Ok(chains)
     }
-    Ok(chains)
-}
 
-fn job_prefix_chains(cli: &Cli, region: &RegionNodes, num_nodes: usize) -> Result<ChainVec> {
-    let mut prefix_region = region.clone();
-    prefix_region.num_nodes = num_nodes;
-    prefix_region.jump_indices = region.jump_indices[0..num_nodes].to_vec();
-    prefix_region.states = region.states[0..num_nodes].to_vec();
-    generate_all_chains(cli, &prefix_region)
-}
+    fn prefix_chains(cli: &Cli, region: &RegionNodes, num_nodes: usize) -> Result<ChainVec> {
+        let mut prefix_region = region.clone();
+        prefix_region.num_nodes = num_nodes;
+        prefix_region.jump_indices = region.jump_indices[0..num_nodes].to_vec();
+        prefix_region.states = region.states[0..num_nodes].to_vec();
+        generate_all_chains(cli, &prefix_region)
+    }
 
-fn job_stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: usize) -> usize {
-    std::cmp::max(
-        deactivated_nodes
-            .iter()
-            .map(|i| region.jump_indices[*i])
-            .max()
-            .unwrap_or(min_index),
-        min_index,
-    )
+    fn stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: usize) -> usize {
+        std::cmp::max(
+            deactivated_nodes
+                .iter()
+                .map(|i| region.jump_indices[*i])
+                .max()
+                .unwrap_or(min_index),
+            min_index,
+        )
+    }
 }
 
 fn print_starting_status(region: &RegionNodes) {
@@ -435,6 +437,9 @@ fn print_starting_status(region: &RegionNodes) {
     );
 }
 
+// Pre-moving this into the ChainVec Trait bench shows (142, 142, 142)s on 12.5 j15
+// Moving this into the ChainVec Trait increased the time for 142 to (145, 147, 145)s on 12.5 j15
+// After moving this back bench shows (142, 142, 142)s on 12.5 j15
 fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
