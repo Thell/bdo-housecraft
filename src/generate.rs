@@ -14,91 +14,8 @@ use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
 
 type ChainVec = Vec<Chain>;
-
-// impl RetainDominating for Vec<Chain> {
-// removing this from the impl reduced times from solid 142 to (136, 135)s on 12.5 j15 bench
-// and kept the full Altinova run good with 3385 (best is 3357)
-#[inline(always)]
-fn retain_dominating(chains: &mut ChainVec) {
-    let mut j = 0;
-    for i in 0..chains.len() {
-        // v[0..j] will be kept v[j..i] will be removed
-        if (0..j)
-            .chain(i + 1..chains.len())
-            .all(|a| !chains[a].dominates(&chains[i]))
-        {
-            chains.swap(i, j);
-            j += 1;
-        }
-    }
-    chains.truncate(j);
-}
-
 type ChainMapVec = Vec<ChainMap>;
-
-// Moving this out of impl makes no difference on the 12.5B bench.
-#[inline(always)]
-fn flatten_dominating(chain_maps: &mut ChainMapVec) -> ChainMap {
-    let mut chains = chain_maps[0].clone();
-    chain_maps
-        .iter()
-        .skip(1)
-        .for_each(|cm| cm.chains.values().for_each(|c| chains.insert_or_update(c)));
-    chains
-}
-
-#[derive(Clone, Debug)]
-struct ChainMap {
-    cost: Vec<u16>,
-    keys: ExternStableVec<usize>,
-    chains: ExternStableVec<Chain>,
-}
-
-impl ChainMap {
-    fn new(region: &RegionNodes) -> Self {
-        let len = (std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1).pow(2);
-        let cost = vec![u16::MAX; len];
-        let mut keys = ExternStableVec::<usize>::new();
-        keys.reserve(len);
-        let chains = ExternStableVec::<Chain>::new();
-        Self { cost, keys, chains }
-    }
-
-    #[inline(always)]
-    fn insert_or_update(&mut self, chain: &Chain) {
-        let key = chain.elegant_pair();
-        if self.cost[key] == u16::MAX {
-            self.cost[key] = chain.usage_counts.cost as u16;
-            let index = self.chains.push(chain.to_owned());
-            self.keys.insert(key, index);
-        } else if self.cost[key] > chain.usage_counts.cost as u16 {
-            self.cost[key] = chain.usage_counts.cost as u16;
-            unsafe {
-                let index = self.keys.get_unchecked(key);
-                let entry = self.chains.get_unchecked_mut(*index);
-                chain.clone_into(entry);
-            }
-        }
-    }
-
-    #[inline(always)]
-    fn retain_dominating_to_vec(&self) -> ChainVec {
-        let mut chains = self.values_to_vec();
-        println!("Captured chain count: {:?}", chains.len());
-        retain_dominating(&mut chains);
-        chains.sort_unstable_by_key(|chain| {
-            (
-                chain.usage_counts.worker_count,
-                chain.usage_counts.warehouse_count,
-            )
-        });
-        chains
-    }
-
-    fn values_to_vec(&self) -> ChainVec {
-        self.chains.values().map(|c| c.to_owned()).collect()
-    }
-}
+type JobControlVec = Vec<JobControl>;
 
 #[derive(Clone, Debug)]
 struct Chain {
@@ -195,107 +112,84 @@ impl Chain {
     }
 }
 
-pub(crate) fn generate(cli: Cli) -> Result<()> {
-    let region_name = cli.region.clone().unwrap();
-    let region_buildings = get_region_buildings(Some(region_name.clone()))?;
-    let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
-    print_starting_status(&region);
-
-    println!("[{:?}] generating...", Utc::now());
-    let chains = match cli.jobs.unwrap_or(1) {
-        1 => generate_dominating(&cli, &region)?,
-        _ => generate_dominating_par(&cli, &region)?,
-    };
-    println!("[{:?}] retaining...", Utc::now());
-    let chains = chains.retain_dominating_to_vec();
-    println!("[{:?}] writing...", Utc::now());
-    write_chains(&cli, &chains)?;
-
-    Ok(())
+#[derive(Clone, Debug)]
+struct ChainMap {
+    cost: Vec<u16>,
+    keys: ExternStableVec<usize>,
+    chains: ExternStableVec<Chain>,
 }
 
-fn generate_all(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
-    let mut chain = Chain::new(cli, region);
-    let mut chains = Vec::<Chain>::new();
-    let mut counter = 0;
-
-    while !chain.indices.is_empty() {
-        chains.push(chain.clone());
-        chain.next_state(region);
-
-        counter += 1;
+impl ChainMap {
+    fn new(region: &RegionNodes) -> Self {
+        let len = (std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1).pow(2);
+        let cost = vec![u16::MAX; len];
+        let mut keys = ExternStableVec::<usize>::new();
+        keys.reserve(len);
+        let chains = ExternStableVec::<Chain>::new();
+        Self { cost, keys, chains }
     }
 
-    if cli.progress {
-        println!("\tVisited {counter} combinations.");
-    }
-    Ok(chains)
-}
-
-#[inline(always)]
-fn generate_dominating(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    let mut chain = Chain::new(cli, region);
-    let mut chains = ChainMap::new(region);
-    let mut counter: usize = 0;
-
-    while !chain.indices.is_empty() {
-        chains.insert_or_update(&chain);
-        chain.next_state(region);
-
-        counter += 1;
-        // if counter == 2_500_000_000 {
-        //     break;
-        // }
-    }
-
-    println!("  [{:?}] Visited {} combinations.", Utc::now(), counter);
-    Ok(chains)
-}
-
-fn generate_dominating_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    let job_controls = JobControl::many_from_regions(cli, region)?;
-    let mut results = job_controls
-        .into_par_iter()
-        .map(|job| generate_dominating_par_worker(cli.clone(), region.clone(), job).unwrap())
-        .collect::<ChainMapVec>();
-    let results = flatten_dominating(&mut results);
-    Ok(results)
-}
-
-#[inline(always)]
-fn generate_dominating_par_worker(
-    _cli: Cli,
-    region: RegionNodes,
-    job: JobControl,
-) -> Result<ChainMap> {
-    let mut chains = ChainMap::new(&region);
-    let mut chain = job.chain;
-    let mut counter: usize = 0;
-
-    while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
-        chains.insert_or_update(&chain);
-        chain.next_state(&region);
-
-        counter += 1;
-        if counter == 12_500_000_000 {
-            break;
+    #[inline(always)]
+    fn insert_or_update(&mut self, chain: &Chain) {
+        let key = chain.elegant_pair();
+        if self.cost[key] == u16::MAX {
+            self.cost[key] = chain.usage_counts.cost as u16;
+            let index = self.chains.push(chain.to_owned());
+            self.keys.insert(key, index);
+        } else if self.cost[key] > chain.usage_counts.cost as u16 {
+            self.cost[key] = chain.usage_counts.cost as u16;
+            unsafe {
+                let index = self.keys.get_unchecked(key);
+                let entry = self.chains.get_unchecked_mut(*index);
+                chain.clone_into(entry);
+            }
         }
     }
-    counter += 1;
-    chains.insert_or_update(&chain);
+    // Moving this out of ChainMapVec impl makes no difference on the 12.5B bench.
+    // (After having removed Chainvec impl previously.)
+    #[inline(always)]
+    fn flatten_many_by_insert_update(chain_maps: &mut ChainMapVec) -> ChainMap {
+        let mut chains = chain_maps[0].clone();
+        chain_maps
+            .iter()
+            .skip(1)
+            .for_each(|cm| cm.chains.values().for_each(|c| chains.insert_or_update(c)));
+        chains
+    }
 
-    println!(
-        "  [{:?}] Job {} visited {} combinations yielding {:?} chains.",
-        Utc::now(),
-        job.job_id,
-        counter,
-        chains.chains.num_elements()
-    );
+    // impl RetainDominating for Vec<Chain> {
+    // removing this from the ChainVec impl reduced times from 142 to (136, 135)s on 12.5 j15 bench
+    // and kept the full Altinova run good with 3385 (best is 3357)
+    #[inline(always)]
+    fn retain_dominating(chains: &mut ChainVec) {
+        let mut j = 0;
+        for i in 0..chains.len() {
+            // v[0..j] will be kept v[j..i] will be removed
+            if (0..j)
+                .chain(i + 1..chains.len())
+                .all(|a| !chains[a].dominates(&chains[i]))
+            {
+                chains.swap(i, j);
+                j += 1;
+            }
+        }
+        chains.truncate(j);
+    }
 
-    Ok(chains)
+    #[inline(always)]
+    fn retain_dominating_to_vec(&self) -> ChainVec {
+        let mut chains: ChainVec = self.chains.values().map(|c| c.to_owned()).collect();
+        println!("Captured chain count: {:?}", chains.len());
+        Self::retain_dominating(&mut chains);
+        chains.sort_unstable_by_key(|chain| {
+            (
+                chain.usage_counts.worker_count,
+                chain.usage_counts.warehouse_count,
+            )
+        });
+        chains
+    }
 }
-
-type JobControlVec = Vec<JobControl>;
 
 #[derive(Clone, Debug)]
 struct JobControl {
@@ -401,6 +295,106 @@ impl JobControl {
             min_index,
         )
     }
+}
+
+pub(crate) fn generate(cli: Cli) -> Result<()> {
+    let region_name = cli.region.clone().unwrap();
+    let region_buildings = get_region_buildings(Some(region_name.clone()))?;
+    let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
+    print_starting_status(&region);
+
+    println!("[{:?}] generating...", Utc::now());
+    let chains = match cli.jobs.unwrap_or(1) {
+        1 => generate_dominating(&cli, &region)?,
+        _ => generate_dominating_par(&cli, &region)?,
+    };
+    println!("[{:?}] retaining...", Utc::now());
+    let chains = chains.retain_dominating_to_vec();
+    println!("[{:?}] writing...", Utc::now());
+    write_chains(&cli, &chains)?;
+
+    Ok(())
+}
+
+fn generate_all(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
+    let mut chain = Chain::new(cli, region);
+    let mut chains = Vec::<Chain>::new();
+    let mut counter = 0;
+
+    while !chain.indices.is_empty() {
+        chains.push(chain.clone());
+        chain.next_state(region);
+
+        counter += 1;
+    }
+
+    if cli.progress {
+        println!("\tVisited {counter} combinations.");
+    }
+    Ok(chains)
+}
+
+#[inline(always)]
+fn generate_dominating(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+    let mut chain = Chain::new(cli, region);
+    let mut chains = ChainMap::new(region);
+    let mut counter: usize = 0;
+
+    while !chain.indices.is_empty() {
+        chains.insert_or_update(&chain);
+        chain.next_state(region);
+
+        counter += 1;
+        // if counter == 2_500_000_000 {
+        //     break;
+        // }
+    }
+
+    println!("  [{:?}] Visited {} combinations.", Utc::now(), counter);
+    Ok(chains)
+}
+
+fn generate_dominating_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+    let job_controls = JobControl::many_from_regions(cli, region)?;
+    let mut results = job_controls
+        .into_par_iter()
+        .map(|job| generate_dominating_par_worker(cli.clone(), region.clone(), job).unwrap())
+        .collect::<ChainMapVec>();
+    let results = ChainMap::flatten_many_by_insert_update(&mut results);
+    Ok(results)
+}
+
+#[inline(always)]
+fn generate_dominating_par_worker(
+    _cli: Cli,
+    region: RegionNodes,
+    job: JobControl,
+) -> Result<ChainMap> {
+    let mut chains = ChainMap::new(&region);
+    let mut chain = job.chain;
+    let mut counter: usize = 0;
+
+    while chain.indices.len() > job.stop_index && chain.indices[job.stop_index] >= job.stop_value {
+        chains.insert_or_update(&chain);
+        chain.next_state(&region);
+
+        counter += 1;
+        if counter == 12_500_000_000 {
+            break;
+        }
+    }
+    counter += 1;
+    chains.insert_or_update(&chain);
+
+    println!(
+        "  [{:?}] Job {} visited {} combinations yielding {:?} chains.",
+        Utc::now(),
+        job.job_id,
+        counter,
+        chains.chains.num_elements()
+    );
+
+    Ok(chains)
 }
 
 fn print_starting_status(region: &RegionNodes) {
