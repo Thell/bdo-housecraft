@@ -15,45 +15,36 @@ use crate::region_nodes::RegionNodes;
 
 type ChainVec = Vec<Chain>;
 
-trait RetainDominating {
-    fn retain_dominating(&mut self);
-}
-
-impl RetainDominating for Vec<Chain> {
-    #[inline(always)]
-    fn retain_dominating(&mut self) {
-        let mut j = 0;
-        for i in 0..self.len() {
-            // v[0..j] will be kept v[j..i] will be removed
-            if (0..j)
-                .chain(i + 1..self.len())
-                .all(|a| !self[a].dominates(&self[i]))
-            {
-                self.swap(i, j);
-                j += 1;
-            }
+// impl RetainDominating for Vec<Chain> {
+// removing this from the impl reduced times from solid 142 to (136, 135)s on 12.5 j15 bench
+// and kept the full Altinova run good with 3385 (best is 3357)
+#[inline(always)]
+fn retain_dominating(chains: &mut ChainVec) {
+    let mut j = 0;
+    for i in 0..chains.len() {
+        // v[0..j] will be kept v[j..i] will be removed
+        if (0..j)
+            .chain(i + 1..chains.len())
+            .all(|a| !chains[a].dominates(&chains[i]))
+        {
+            chains.swap(i, j);
+            j += 1;
         }
-        self.truncate(j);
     }
+    chains.truncate(j);
 }
 
 type ChainMapVec = Vec<ChainMap>;
 
-trait FlattenDominating {
-    type Output;
-    fn flatten_dominating(&mut self) -> Self::Output;
-}
-
-impl FlattenDominating for Vec<ChainMap> {
-    type Output = ChainMap;
-    #[inline(always)]
-    fn flatten_dominating(&mut self) -> ChainMap {
-        let mut chains = self[0].clone();
-        self.iter()
-            .skip(1)
-            .for_each(|cm| cm.chains.values().for_each(|c| chains.insert_or_update(c)));
-        chains
-    }
+// Moving this out of impl makes no difference on the 12.5B bench.
+#[inline(always)]
+fn flatten_dominating(chain_maps: &mut ChainMapVec) -> ChainMap {
+    let mut chains = chain_maps[0].clone();
+    chain_maps
+        .iter()
+        .skip(1)
+        .for_each(|cm| cm.chains.values().for_each(|c| chains.insert_or_update(c)));
+    chains
 }
 
 #[derive(Clone, Debug)]
@@ -94,7 +85,7 @@ impl ChainMap {
     fn retain_dominating_to_vec(&self) -> ChainVec {
         let mut chains = self.values_to_vec();
         println!("Captured chain count: {:?}", chains.len());
-        chains.retain_dominating();
+        retain_dominating(&mut chains);
         chains.sort_unstable_by_key(|chain| {
             (
                 chain.usage_counts.worker_count,
@@ -247,11 +238,11 @@ fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
 
 fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let job_controls = JobControl::many_from_regions(cli, region)?;
-    let results = job_controls
+    let mut results = job_controls
         .into_par_iter()
         .map(|job| generate_dominating_chains_par(cli.clone(), region.clone(), job).unwrap())
-        .collect::<ChainMapVec>()
-        .flatten_dominating();
+        .collect::<ChainMapVec>();
+    let results = flatten_dominating(&mut results);
     Ok(results)
 }
 
