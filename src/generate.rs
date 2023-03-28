@@ -203,8 +203,8 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
 
     println!("[{:?}] generating...", Utc::now());
     let chains = match cli.jobs.unwrap_or(1) {
-        1 => generate_chains(&cli, &region)?,
-        _ => generate_chains_par(&cli, &region)?,
+        1 => generate_dominating(&cli, &region)?,
+        _ => generate_dominating_par(&cli, &region)?,
     };
     println!("[{:?}] retaining...", Utc::now());
     let chains = chains.retain_dominating_to_vec();
@@ -214,7 +214,7 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
     Ok(())
 }
 
-fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
+fn generate_all(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
     let mut chain = Chain::new(cli, region);
     let mut chains = Vec::<Chain>::new();
     let mut counter = 0;
@@ -232,22 +232,8 @@ fn generate_all_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainVec> {
     Ok(chains)
 }
 
-fn generate_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    generate_dominating_chains(cli, region)
-}
-
-fn generate_chains_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    let job_controls = JobControl::many_from_regions(cli, region)?;
-    let mut results = job_controls
-        .into_par_iter()
-        .map(|job| generate_dominating_chains_par(cli.clone(), region.clone(), job).unwrap())
-        .collect::<ChainMapVec>();
-    let results = flatten_dominating(&mut results);
-    Ok(results)
-}
-
 #[inline(always)]
-fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+fn generate_dominating(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
     let mut chain = Chain::new(cli, region);
     let mut chains = ChainMap::new(region);
     let mut counter: usize = 0;
@@ -266,8 +252,18 @@ fn generate_dominating_chains(cli: &Cli, region: &RegionNodes) -> Result<ChainMa
     Ok(chains)
 }
 
+fn generate_dominating_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
+    let job_controls = JobControl::many_from_regions(cli, region)?;
+    let mut results = job_controls
+        .into_par_iter()
+        .map(|job| generate_dominating_par_worker(cli.clone(), region.clone(), job).unwrap())
+        .collect::<ChainMapVec>();
+    let results = flatten_dominating(&mut results);
+    Ok(results)
+}
+
 #[inline(always)]
-fn generate_dominating_chains_par(
+fn generate_dominating_par_worker(
     _cli: Cli,
     region: RegionNodes,
     job: JobControl,
@@ -392,7 +388,7 @@ impl JobControl {
         prefix_region.num_nodes = num_nodes;
         prefix_region.jump_indices = region.jump_indices[0..num_nodes].to_vec();
         prefix_region.states = region.states[0..num_nodes].to_vec();
-        generate_all_chains(cli, &prefix_region)
+        generate_all(cli, &prefix_region)
     }
 
     fn stop_value(region: &RegionNodes, deactivated_nodes: &[usize], min_index: usize) -> usize {
