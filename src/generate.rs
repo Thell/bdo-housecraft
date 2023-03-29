@@ -390,7 +390,7 @@ fn generate_dominating(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
 }
 
 fn generate_dominating_par(cli: &Cli, region: &RegionNodes) -> Result<ChainMap> {
-    let job_controls = JobControl::many_from_regions(cli, region)?;
+    let job_controls = JobControl::many_from_region(cli, region)?;
     let mut results = job_controls
         .into_par_iter()
         .map(|job| generate_dominating_par_worker(cli.clone(), region.clone(), job).unwrap())
