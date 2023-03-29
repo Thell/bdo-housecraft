@@ -142,6 +142,19 @@ impl Chain {
     }
 }
 
+/// An Elegantly Indexed Arena.
+///
+/// The main store for dominant chains is within a StableVec to reduce re-allocations and moves as
+/// dominant chains are added. It is similar to an arena allocator and guarantees stable indices.
+/// The indices are stored in another StableVec with a fixed capacity so that they can be accessed
+/// directly by using an identity index.
+/// Finally a third vector indicates which identities have been seen by storing the cost to unseat
+/// the incumbant.
+/// The identity is calculated using Elegant Pair matrix indexing which is a `mul` and `add` instead
+/// of going through the division, mod, shift and mask of the stablevec's `has_element_at` at the
+/// cost of some extra memory since a `n×n` matrix must be used.
+/// I thought using an `n×m` matrix and `x+y×stride` would be more efficient in terms of memory
+/// and time but in testing it was always a few percentage points slower.
 #[derive(Clone, Debug)]
 struct ChainMap {
     cost: Vec<u16>,
@@ -175,8 +188,7 @@ impl ChainMap {
             }
         }
     }
-    // Moving this out of ChainMapVec impl makes no difference on the 12.5B bench.
-    // (After having removed Chainvec impl previously.)
+
     #[inline(always)]
     fn flatten_many_by_insert_update(chain_maps: &mut ChainMapVec) -> ChainMap {
         let mut chains = chain_maps[0].clone();
