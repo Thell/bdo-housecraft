@@ -1,3 +1,31 @@
+//! Generate dominating building chain combinations.
+//!
+//! Implmentation of the pop_jump_push algorithm for iterating over all combinations of nodes in
+//! an arborescence. The algorithm has been modified to handle multiple states for each node, namely
+//! warehouse and worker usage states of buildings from houseinfo and to track the resulting counts
+//! of those values.
+//!
+//! Each combination chain has its building node indices, states, cost, worker and warehouse counts
+//! tracked. After each is generated its worker and warehouse counts are used to create an indentity
+//! key (using elegant_pair) and its cost is entered into a lookup table to indicate that it has
+//! been seen and the chain is stored into an arena (stable-vec). Future chains with the same worker
+//! and warehouse counts and lower cost replace existing chains.
+//!
+//! After all chains are generated the chains stored in the arena are then sifted to retain only
+//! dominant chains. A dominant chain strictly dominates a different chain when it provides the same
+//! or more workers and or warehouse counts for less or the same cost. The resulting chains are the
+//! exact best-of-the-best chains for any combination of cost, worker and warehouse counts.
+//!
+//! The single and parallel versions of this modified version of the pop_jump_push algorithm perform
+//! at about 35% of the reference pop_jump_push implementation with visits consisting of a blackbox
+//! function call. This is expected since the reference implmentation pops and extends a single
+//! vector using a single lookup and is now popping and extending two vectors (indices and states)
+//! as well as the extra lookups and cycles for the count tracking along with storing the dominant
+//! chains. The `insert_or_update` time is about 17% of the overall time in the generate function
+//! so greater than 50% more popping/extending plus the 17% for accounting puts us right about 35%
+//! of the reference performance. In short, about 35% of pop_jump_push's blackbox throughput with
+//! ~200M/s single and ~1.425B/s for 15x threads.
+
 use std::cmp::min;
 use std::collections::HashSet;
 use std::fs::File;
@@ -94,8 +122,10 @@ impl Chain {
 
     #[inline(always)]
     fn dominates(&self, other: &Chain) -> bool {
-        // Self strictly dominates other when we can get the same or more for less or the same.
-        // No domination of self when equal to other.
+        // Dominate when we can get the same or more for less or the same.
+        // No domination when equal. While the equality test is not needed if the caller
+        // guarantees to not test self the testing for that would have to be done on all
+        // calls rather than the check here being done only on the dominant chains.
         self.usage_counts.cost <= other.usage_counts.cost
             && self.usage_counts.warehouse_count >= other.usage_counts.warehouse_count
             && self.usage_counts.worker_count >= other.usage_counts.worker_count
@@ -157,14 +187,10 @@ impl ChainMap {
         chains
     }
 
-    // impl RetainDominating for Vec<Chain> {
-    // removing this from the ChainVec impl reduced times from 142 to (136, 135)s on 12.5 j15 bench
-    // and kept the full Altinova run good with 3385 (best is 3357)
     #[inline(always)]
     fn retain_dominating(chains: &mut ChainVec) {
         let mut j = 0;
         for i in 0..chains.len() {
-            // v[0..j] will be kept v[j..i] will be removed
             if (0..j)
                 .chain(i + 1..chains.len())
                 .all(|a| !chains[a].dominates(&chains[i]))
@@ -202,7 +228,16 @@ struct JobControl {
 }
 
 impl JobControl {
-    fn many_from_regions(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
+    /// Returns job controls for parallel dominating chains generation.
+    ///
+    /// While the problem space for all combinations of nodes can be equally chunked for a number of
+    /// workers the chains can not be as easily divided since the connected chains not contiguous
+    /// within the domain. However, jobs can be assigned a starting chain and a stopping point. This
+    /// is done by creating length limited chains until there would be more than the max number of
+    /// workers and determining when the job should stop generating chain states so the jobs don't
+    /// duplicate work. While this can under utilize hardware it works well for chunking the chain
+    /// generation without needing to consider the full domain space.
+    fn many_from_region(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
         let mut prefix_chains = Self::prefixes(cli, region)?;
         let min_index = prefix_chains[0].indices.last().unwrap() + 1;
         let base_indices = (0..min_index).collect::<HashSet<_>>();
@@ -418,9 +453,6 @@ fn print_starting_status(region: &RegionNodes) {
     );
 }
 
-// Pre-moving this into the ChainVec Trait bench shows (142, 142, 142)s on 12.5 j15
-// Moving this into the ChainVec Trait increased the time for 142 to (145, 147, 145)s on 12.5 j15
-// After moving this back bench shows (142, 142, 142)s on 12.5 j15
 fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
