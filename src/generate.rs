@@ -473,7 +473,7 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
     writeln!(&mut output, "lodging,storage,cost,indices,states")?;
     let mut buf = Vec::<String>::new();
     chains.iter().for_each(|chain| {
-        let _ = buf.push(format!(
+        buf.push(format!(
             "{:?},{:?},{:?},{:?},{:?}\n",
             chain.usage_counts.worker_count,
             chain.usage_counts.warehouse_count,
