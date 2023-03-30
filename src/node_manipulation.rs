@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 pub(crate) fn group_indices_by_value(values: &[usize]) -> HashMap<usize, Vec<usize>> {
-    /*!  - Returns HashMap keyed by unique values with occurance indices as the values. */
+    /*!  - Returns HashMap keyed by unique values with occurrence indices as the values. */
     let mut groups: HashMap<usize, Vec<usize>> = HashMap::new();
     for (index, &value) in values.iter().enumerate() {
         groups.entry(value).or_default().push(index);

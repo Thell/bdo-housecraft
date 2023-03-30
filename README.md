@@ -7,7 +7,7 @@
 
 The `_usage` values are the combinadics rank of the buildings, warehouse and worker usages when the region's building nodes are preorder and sorted with the largest subtrees to the right with binary indexing from left to right.
 
-> **Note**: Calpheon City and Valencia City are **not** included in the exact results.
+> **Note**: Calpheon City, Valencia City and Heidel are **not** included in the exact results.
 
 ## Retrieval Usage
 To retrieve a particular housecraft usage for a given city, warehouse count and worker count.

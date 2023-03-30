@@ -69,7 +69,7 @@ fn main() -> Result<()> {
         }
         println!("if this was implemented...");
         println!("{region} would be listed showing results with {desired_warehouse_count} storage and {desired_worker_count} lodging.");
-        println!("using the given output and context flags which haven't been implmented yet.");
+        println!("using the given output and context flags which haven't been implemented yet.");
     }
 
     Ok(())

@@ -9,7 +9,7 @@ pub(crate) enum ContextType {
 }
 
 /// A BDO buildings chain tool.
-/// (Calpheon City and Valencia City are not available for exact score listings.)
+/// (Calpheon City, Valencia City and Heidel are not available for exact score listings.)
 #[derive(Clone, Debug, Parser)]
 #[command(author, version, about, long_about = None)]
 #[clap(group(

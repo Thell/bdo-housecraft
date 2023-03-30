@@ -1,12 +1,12 @@
 //! Generate dominating building chain combinations.
 //!
-//! Implmentation of the pop_jump_push algorithm for iterating over all combinations of nodes in
+//! Implementation of the pop_jump_push algorithm for iterating over all combinations of nodes in
 //! an arborescence. The algorithm has been modified to handle multiple states for each node, namely
 //! warehouse and worker usage states of buildings from houseinfo and to track the resulting counts
 //! of those values.
 //!
 //! Each combination chain has its building node indices, states, cost, worker and warehouse counts
-//! tracked. After each is generated its worker and warehouse counts are used to create an indentity
+//! tracked. After each is generated its worker and warehouse counts are used to create an identity
 //! key (using elegant_pair) and its cost is entered into a lookup table to indicate that it has
 //! been seen and the chain is stored into an arena (stable-vec). Future chains with the same worker
 //! and warehouse counts and lower cost replace existing chains.
@@ -18,7 +18,7 @@
 //!
 //! The single and parallel versions of this modified version of the pop_jump_push algorithm perform
 //! at about 35% of the reference pop_jump_push implementation with visits consisting of a blackbox
-//! function call. This is expected since the reference implmentation pops and extends a single
+//! function call. This is expected since the reference implementation pops and extends a single
 //! vector using a single lookup and is now popping and extending two vectors (indices and states)
 //! as well as the extra lookups and cycles for the count tracking along with storing the dominant
 //! chains. The `insert_or_update` time is about 17% of the overall time in the generate function
@@ -149,7 +149,7 @@ impl Chain {
 /// The indices are stored in another StableVec with a fixed capacity so that they can be accessed
 /// directly by using an identity index.
 /// Finally a third vector indicates which identities have been seen by storing the cost to unseat
-/// the incumbant.
+/// the incumbent.
 /// The identity is calculated using Elegant Pair matrix indexing which is a `mul` and `add` instead
 /// of going through the division, mod, shift and mask of the stablevec's `has_element_at` at the
 /// cost of some extra memory since a `n×n` matrix must be used.
@@ -243,7 +243,7 @@ impl JobControl {
     /// Returns job controls for parallel dominating chains generation.
     ///
     /// While the problem space for all combinations of nodes can be equally chunked for a number of
-    /// workers the chains can not be as easily divided since the connected chains not contiguous
+    /// workers the chains can not be as easily divided since the connected chains aren't contiguous
     /// within the domain. However, jobs can be assigned a starting chain and a stopping point. This
     /// is done by creating length limited chains until there would be more than the max number of
     /// workers and determining when the job should stop generating chain states so the jobs don't
@@ -346,6 +346,16 @@ impl JobControl {
 
 pub(crate) fn generate(cli: Cli) -> Result<()> {
     let region_name = cli.region.clone().unwrap();
+    if ["Calpheon City", "Valencia City", "Heidel"]
+        .iter()
+        .any(|&s| s == region_name)
+    {
+        println!(
+            "*** Generating exact results for {} will take years. ***",
+            region_name
+        );
+        println!("***    It is suggested you cancel this operation.    ***");
+    }
     let region_buildings = get_region_buildings(Some(region_name.clone()))?;
     let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
     print_starting_status(&region);
