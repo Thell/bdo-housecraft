@@ -16,7 +16,7 @@ mod node_manipulation;
 mod region_nodes;
 
 use anyhow::{Ok, Result};
-use clap::Parser;
+use clap::{CommandFactory, Parser};
 
 use cli_args::Cli;
 use find_crafts::find_craft_buildings;
@@ -70,6 +70,9 @@ fn main() -> Result<()> {
         println!("if this was implemented...");
         println!("{region} would be listed showing results with {desired_warehouse_count} storage and {desired_worker_count} lodging.");
         println!("using the given output and context flags which haven't been implemented yet.");
+    } else {
+        let mut cmd = cli_args::Cli::command();
+        let _ = cmd.print_help();
     }
 
     Ok(())
