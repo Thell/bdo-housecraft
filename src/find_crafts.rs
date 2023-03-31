@@ -109,10 +109,10 @@ fn filter_craft_buildings(
     Ok(filtered_regions)
 }
 
-pub(crate) fn find_craft_buildings(town_name: Option<String>, craft: String) -> Result<()> {
+pub(crate) fn find_craft_buildings(region: Option<String>, craft: String) -> Result<()> {
     let mut regions_buildings = parse_houseinfo_data()?;
-    if let Some(town_name) = town_name {
-        regions_buildings.retain(|k, _| *k == town_name);
+    if let Some(region) = region {
+        regions_buildings.retain(|k, _| *k == region);
     }
     let craft_buildings = filter_craft_buildings(regions_buildings, craft)?;
     let crafts_summary = summarize_craft_buildings(craft_buildings)?;

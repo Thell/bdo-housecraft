@@ -56,10 +56,10 @@ fn summarize_crafts(regions_buildings: RegionBuildingMap) -> Result<RegionCrafti
     Ok(crafts_summary)
 }
 
-pub(crate) fn list_crafts(town_name: Option<String>) -> Result<()> {
+pub(crate) fn list_crafts(region: Option<String>) -> Result<()> {
     let mut regions_buildings = parse_houseinfo_data()?;
-    if let Some(town_name) = town_name {
-        regions_buildings.retain(|k, _| *k == town_name);
+    if let Some(region) = region {
+        regions_buildings.retain(|k, _| *k == region);
     }
     let crafts_summary = summarize_crafts(regions_buildings)?;
     print_listing(crafts_summary)
