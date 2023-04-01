@@ -59,13 +59,6 @@ struct Chain {
     states: Vec<usize>,
 }
 
-// #[derive(Clone, Debug)]
-// struct Chain {
-//     indices: Vec<usize>,
-//     states: Vec<usize>,
-//     usage_counts: UsageCounters,
-// }
-
 impl Chain {
     fn new(cli: &Cli, region: &RegionNodes) -> Self {
         let chain = Self {
@@ -276,7 +269,9 @@ impl JobControl {
             chain.indices.extend_from_slice(tmp);
             let tmp = &region.states[stop_value..];
             chain.states.extend_from_slice(tmp);
-
+            chain.worker_count = 0;
+            chain.warehouse_count = 0;
+            chain.cost = 0;
             for (i, &state) in chain.states.iter().enumerate().skip(1) {
                 let building = region
                     .buildings
