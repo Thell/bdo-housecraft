@@ -43,11 +43,11 @@ pub(crate) struct Cli {
 
     /// warehouse storage slots count minimum
     #[arg(short = 'S', long, group = "listing", help_heading = Some("Listing"))]
-    pub(crate) storage_count: Option<u8>,
+    pub(crate) storage: Option<u16>,
 
     /// worker lodging slots count minimum
     #[arg(short = 'L', long, group = "listing", help_heading = Some("Listing"))]
-    pub(crate) lodging_count: Option<u8>,
+    pub(crate) lodging: Option<u16>,
 
     /// short listing
     #[arg(short = 's', long, requires = "listing", group = "output", help_heading = Some("Output control"))]

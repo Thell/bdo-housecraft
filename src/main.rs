@@ -43,8 +43,8 @@ fn main() -> Result<()> {
     } else if cli.optimize {
         // This is going to be the last section implemented.
         let region = cli.region.unwrap();
-        let desired_warehouse_count = cli.storage_count.unwrap();
-        let desired_worker_count = cli.lodging_count.unwrap();
+        let desired_warehouse_count = cli.storage.unwrap();
+        let desired_worker_count = cli.lodging.unwrap();
         let progress = cli.progress;
         let workers = cli.jobs.unwrap_or(1);
         println!("running an optimizer for {region} with {desired_warehouse_count} storage and {desired_worker_count} lodging");
@@ -52,7 +52,6 @@ fn main() -> Result<()> {
         println!("is not implemented yet.")
     // Main listing dispatch
     } else if cli.region.is_some() {
-        println!("WIP... implementing");
         list_buildings(cli)?
     } else {
         let mut cmd = cli_args::Cli::command();

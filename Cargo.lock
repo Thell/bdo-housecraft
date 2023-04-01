@@ -349,6 +349,7 @@ dependencies = [
  "lazy_static",
  "mimalloc",
  "num_cpus",
+ "once_cell",
  "rayon",
  "regex",
  "serde",

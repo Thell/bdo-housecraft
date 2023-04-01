@@ -490,7 +490,7 @@ fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
     let json = to_string_pretty(chains)?;
     let json = re
         .replace_all(&json, |caps: &regex::Captures<'_>| {
-            caps[0].replace("\n", "").replace(" ", "")
+            caps[0].replace(['\n', ' '], "")
         })
         .to_string();
     output.write_all(json.as_bytes())?;
