@@ -34,6 +34,9 @@ use std::io::Write;
 use anyhow::{Ok, Result};
 use chrono::Utc;
 use rayon::prelude::*;
+use regex::Regex;
+use serde::Serialize;
+use serde_json::to_string_pretty;
 use stable_vec::ExternStableVec;
 
 use crate::cli_args::Cli;
@@ -45,17 +48,23 @@ type ChainVec = Vec<Chain>;
 type ChainMapVec = Vec<ChainMap>;
 type JobControlVec = Vec<JobControl>;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
 struct Chain {
+    #[serde(rename = "lodging")]
+    worker_count: usize,
+    #[serde(rename = "storage")]
+    warehouse_count: usize,
+    cost: usize,
     indices: Vec<usize>,
     states: Vec<usize>,
-    usage_counts: UsageCounters,
 }
 
 impl Chain {
     fn new(cli: &Cli, region: &RegionNodes) -> Self {
         let chain = Self {
-            usage_counts: region.usage_counts.clone(),
+            worker_count: region.usage_counts.worker_count,
+            warehouse_count: region.usage_counts.warehouse_count,
+            cost: region.usage_counts.cost,
             indices: (0..region.num_nodes).collect::<Vec<_>>(),
             states: region.states.clone(),
         };
@@ -67,8 +76,8 @@ impl Chain {
 
     #[inline(always)]
     fn elegant_pair(&self) -> usize {
-        let x = self.usage_counts.worker_count;
-        let y = self.usage_counts.warehouse_count;
+        let x = self.worker_count;
+        let y = self.warehouse_count;
 
         if x != std::cmp::max(x, y) {
             y.pow(2) + x
@@ -84,10 +93,10 @@ impl Chain {
             let state = region.states[i];
             self.states.push(state);
             match state {
-                1 => self.usage_counts.warehouse_count += region.warehouse_counts[i],
-                _ => self.usage_counts.worker_count += region.worker_counts[i],
+                1 => self.warehouse_count += region.warehouse_counts[i],
+                _ => self.worker_count += region.worker_counts[i],
             }
-            self.usage_counts.cost += region.costs[i];
+            self.cost += region.costs[i];
         }
     }
 
@@ -106,8 +115,8 @@ impl Chain {
     fn reduce(&mut self, region: &RegionNodes) -> usize {
         self.states.pop();
         let index = self.indices.pop().unwrap();
-        self.usage_counts.cost -= region.costs[index];
-        self.usage_counts.warehouse_count -= region.warehouse_counts[index];
+        self.cost -= region.costs[index];
+        self.warehouse_count -= region.warehouse_counts[index];
         region.jump_indices[index]
     }
 
@@ -115,8 +124,8 @@ impl Chain {
     fn reduce_last_state(&mut self, region: &RegionNodes) -> usize {
         *self.states.last_mut().unwrap() -= 1;
         let index = *self.indices.last().unwrap();
-        self.usage_counts.warehouse_count += region.warehouse_counts[index];
-        self.usage_counts.worker_count -= region.worker_counts[index];
+        self.warehouse_count += region.warehouse_counts[index];
+        self.worker_count -= region.worker_counts[index];
         index + 1
     }
 
@@ -126,12 +135,12 @@ impl Chain {
         // No domination when equal. While the equality test is not needed if the caller
         // guarantees to not test self the testing for that would have to be done on all
         // calls rather than the check here being done only on the dominant chains.
-        self.usage_counts.cost <= other.usage_counts.cost
-            && self.usage_counts.warehouse_count >= other.usage_counts.warehouse_count
-            && self.usage_counts.worker_count >= other.usage_counts.worker_count
-            && !(self.usage_counts.cost == other.usage_counts.cost
-                && self.usage_counts.warehouse_count == other.usage_counts.warehouse_count
-                && self.usage_counts.worker_count == other.usage_counts.worker_count)
+        self.cost <= other.cost
+            && self.warehouse_count >= other.warehouse_count
+            && self.worker_count >= other.worker_count
+            && !(self.cost == other.cost
+                && self.warehouse_count == other.warehouse_count
+                && self.worker_count == other.worker_count)
     }
 
     #[inline(always)]
@@ -176,11 +185,11 @@ impl ChainMap {
     fn insert_or_update(&mut self, chain: &Chain) {
         let key = chain.elegant_pair();
         if self.cost[key] == u16::MAX {
-            self.cost[key] = chain.usage_counts.cost as u16;
+            self.cost[key] = chain.cost as u16;
             let index = self.chains.push(chain.to_owned());
             self.keys.insert(key, index);
-        } else if self.cost[key] > chain.usage_counts.cost as u16 {
-            self.cost[key] = chain.usage_counts.cost as u16;
+        } else if self.cost[key] > chain.cost as u16 {
+            self.cost[key] = chain.cost as u16;
             unsafe {
                 let index = self.keys.get_unchecked(key);
                 let entry = self.chains.get_unchecked_mut(*index);
@@ -219,12 +228,7 @@ impl ChainMap {
         let mut chains: ChainVec = self.chains.values().map(|c| c.to_owned()).collect();
         println!("Captured chain count: {:?}", chains.len());
         Self::retain_dominating(&mut chains);
-        chains.sort_unstable_by_key(|chain| {
-            (
-                chain.usage_counts.worker_count,
-                chain.usage_counts.warehouse_count,
-            )
-        });
+        chains.sort_unstable_by_key(|chain| (chain.worker_count, chain.warehouse_count));
         chains
     }
 }
@@ -265,18 +269,19 @@ impl JobControl {
             chain.indices.extend_from_slice(tmp);
             let tmp = &region.states[stop_value..];
             chain.states.extend_from_slice(tmp);
-
-            chain.usage_counts = UsageCounters::new();
+            chain.worker_count = 0;
+            chain.warehouse_count = 0;
+            chain.cost = 0;
             for (i, &state) in chain.states.iter().enumerate().skip(1) {
                 let building = region
                     .buildings
                     .get(&region.children[chain.indices[i]])
                     .unwrap();
-                chain.usage_counts.cost += building.cost;
+                chain.cost += building.cost;
                 if state == 1 {
-                    chain.usage_counts.warehouse_count += building.warehouse_count;
+                    chain.warehouse_count += building.warehouse_count;
                 } else if state == 2 {
-                    chain.usage_counts.worker_count += building.worker_count;
+                    chain.worker_count += building.worker_count;
                 }
             }
 
@@ -478,21 +483,17 @@ fn print_starting_status(region: &RegionNodes) {
 fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
-    let path = format!("./data/housecraft/{}.csv", file_name);
+    let path = format!("./data/housecraft/{}.json", file_name);
     let mut output = File::create(path.clone())?;
-    writeln!(&mut output, "lodging,storage,cost,indices,states")?;
-    let mut buf = Vec::<String>::new();
-    chains.iter().for_each(|chain| {
-        buf.push(format!(
-            "{:?},{:?},{:?},{:?},{:?}\n",
-            chain.usage_counts.worker_count,
-            chain.usage_counts.warehouse_count,
-            chain.usage_counts.cost,
-            chain.indices,
-            chain.states,
-        ));
-    });
-    let _ = output.write_all(buf.concat().as_bytes());
+
+    let re = Regex::new(r"\{[^}]*?\}").unwrap();
+    let json = to_string_pretty(chains)?;
+    let json = re
+        .replace_all(&json, |caps: &regex::Captures<'_>| {
+            caps[0].replace(['\n', ' '], "")
+        })
+        .to_string();
+    output.write_all(json.as_bytes())?;
 
     println!(
         "Result: {} 'best of best' scored storage/lodging chains written to {}.",

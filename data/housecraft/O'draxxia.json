@@ -1,0 +1,23 @@
+[
+  {"lodging":0,"storage":0,"cost":0,"indices":[0],"states":[0]},
+  {"lodging":0,"storage":16,"cost":2,"indices":[0,1],"states":[0,1]},
+  {"lodging":0,"storage":32,"cost":4,"indices":[0,1,2],"states":[0,1,1]},
+  {"lodging":0,"storage":48,"cost":7,"indices":[0,1,2,3],"states":[0,1,1,1]},
+  {"lodging":0,"storage":64,"cost":11,"indices":[0,1,2,3,4],"states":[0,1,1,1,1]},
+  {"lodging":0,"storage":80,"cost":16,"indices":[0,1,2,3,4,5],"states":[0,1,1,1,1,1]},
+  {"lodging":1,"storage":0,"cost":2,"indices":[0,1],"states":[0,2]},
+  {"lodging":2,"storage":16,"cost":4,"indices":[0,1,2],"states":[0,1,2]},
+  {"lodging":2,"storage":32,"cost":7,"indices":[0,1,2,3],"states":[0,1,2,1]},
+  {"lodging":3,"storage":0,"cost":4,"indices":[0,1,2],"states":[0,2,2]},
+  {"lodging":4,"storage":16,"cost":7,"indices":[0,1,2,3],"states":[0,1,2,2]},
+  {"lodging":4,"storage":48,"cost":11,"indices":[0,1,2,3,4],"states":[0,1,1,1,2]},
+  {"lodging":4,"storage":64,"cost":16,"indices":[0,1,2,3,4,5],"states":[0,1,1,1,2,1]},
+  {"lodging":5,"storage":0,"cost":7,"indices":[0,1,2,3],"states":[0,2,2,2]},
+  {"lodging":6,"storage":32,"cost":11,"indices":[0,1,2,3,4],"states":[0,1,2,1,2]},
+  {"lodging":8,"storage":16,"cost":11,"indices":[0,1,2,3,4],"states":[0,1,2,2,2]},
+  {"lodging":8,"storage":48,"cost":16,"indices":[0,1,2,3,4,5],"states":[0,1,1,1,2,2]},
+  {"lodging":9,"storage":0,"cost":11,"indices":[0,1,2,3,4],"states":[0,2,2,2,2]},
+  {"lodging":10,"storage":32,"cost":16,"indices":[0,1,2,3,4,5],"states":[0,1,2,1,2,2]},
+  {"lodging":12,"storage":16,"cost":16,"indices":[0,1,2,3,4,5],"states":[0,1,2,2,2,2]},
+  {"lodging":13,"storage":0,"cost":16,"indices":[0,1,2,3,4,5],"states":[0,2,2,2,2,2]}
+]
