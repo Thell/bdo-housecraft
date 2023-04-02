@@ -16,14 +16,9 @@ pub(crate) enum ContextType {
     ArgGroup::new("listing")
         .required(false)
         .multiple(true)
-        .args(&["storage_count", "lodging_count"]),
+        .args(&["storage", "lodging"]),
 ))]
-#[clap(group(
-            ArgGroup::new("contexts")
-        .required(false)
-        .multiple(true)
-        .args(&["before_context", "after_context", "context"]),
-))]
+
 pub(crate) struct Cli {
     /// list warehouse regions
     #[arg(short = 'l', long)]
@@ -49,42 +44,6 @@ pub(crate) struct Cli {
     #[arg(short = 'L', long, group = "listing", help_heading = Some("Listing"))]
     pub(crate) lodging: Option<u16>,
 
-    /// short listing
-    #[arg(short = 's', long, requires = "listing", group = "output", help_heading = Some("Output control"))]
-    pub(crate) short: bool,
-
-    /// detailed listing
-    #[arg(short = 'd', long, requires = "listing", group = "output", help_heading = Some("Output control"))]
-    pub(crate) detailed: bool,
-
-    /// format as json
-    #[arg(long, requires = "listing", group = "output", help_heading = Some("Output control"))]
-    pub(crate) json: bool,
-
-    /// print NUM entries of leading context
-    #[arg(short = 'B', long, requires = "listing", group = "contexts", help_heading = Some("Context control"))]
-    pub(crate) before_context: Option<Option<u8>>,
-
-    /// print NUM entries of trailing context
-    #[arg(short = 'A', long, requires = "listing", group = "contexts", help_heading = Some("Context control"))]
-    pub(crate) after_context: Option<Option<u8>>,
-
-    /// print NUM entries of context
-    #[arg(
-        short = 'C',
-        long,
-        requires = "listing",
-        group = "contexts",
-        conflicts_with = "before_context",
-        conflicts_with = "after_context",
-        help_heading = Some("Context control")
-    )]
-    pub(crate) context: Option<Option<u8>>,
-
-    /// lock context
-    #[arg(short = 'T', long, requires = "listing", requires = "contexts", help_heading = Some("Context control"))]
-    pub(crate) lock_context: Option<ContextType>,
-
     /// generate exact scored houseinfo building chains
     #[arg(long, group = "generation", requires = "region", conflicts_with = "listing", help_heading = Some("Generation"))]
     pub(crate) generate: bool,
@@ -92,10 +51,6 @@ pub(crate) struct Cli {
     /// find optimal houseinfo building chain for region, storage and lodging
     #[arg(long, group = "generation", requires = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
-
-    /// optimizer will only consider chains containing buildings (excluded storage/lodging counts)
-    #[arg(long, requires = "optimize", group = "listing", help_heading = Some("Listing"))]
-    pub(crate) require_buildings: Option<Vec<String>>,
 
     /// print periodic generation progress report
     #[arg(long, requires = "generation", help_heading = Some("Generation"))]
