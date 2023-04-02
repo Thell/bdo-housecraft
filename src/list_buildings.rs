@@ -96,7 +96,8 @@ fn initialize_region(cli: &Cli) -> Result<String> {
              *** Once the optimizer is implemented listing will work. ***",
             region_name
         );
-        bail!("{}", msg);
+        error!("{}", msg);
+        bail!(std::io::ErrorKind::InvalidInput);
     }
     let region = get_region_buildings(Some(region_name.clone()))?;
     let region = RegionNodes::new(region.get(&region_name).unwrap())?;
@@ -111,12 +112,11 @@ pub(crate) fn list_buildings(cli: Cli) -> Result<()> {
 
     if chains.is_empty() {
         let region = REGION.get().unwrap();
-        bail!(
+        error!(
             "The maximum storage and lodging counts for {} are {} and {}.",
-            region.region_name,
-            region.max_warehouse_count,
-            region.max_worker_count
+            region.region_name, region.max_warehouse_count, region.max_worker_count
         );
+        bail!(std::io::ErrorKind::InvalidInput);
     } else {
         println!();
         chains.iter().for_each(|chain| println!("{chain}"));
