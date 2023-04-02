@@ -32,6 +32,9 @@ pub(crate) struct Cli {
     #[arg(short = 'f', long)]
     pub(crate) find_craft: Option<String>,
 
+    #[clap(flatten)]
+    pub(crate) verbose: clap_verbosity_flag::Verbosity,
+
     /// warehouse region
     #[arg(short = 'R', long, help_heading = Some("Listing"))]
     pub(crate) region: Option<String>,
@@ -51,10 +54,6 @@ pub(crate) struct Cli {
     /// find optimal houseinfo building chain for region, storage and lodging
     #[arg(long, group = "generation", requires = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
-
-    /// print periodic generation progress report
-    #[arg(long, requires = "generation", help_heading = Some("Generation"))]
-    pub(crate) progress: bool,
 
     /// use NUM parallel jobs
     #[arg(short, long, requires = "generation", help_heading = Some("Generation"))]
