@@ -359,7 +359,26 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
     }
 
     let region_buildings = get_region_buildings(Some(region_name.clone()))?;
+    region_buildings.iter().for_each(|b| trace!("{:#?}", b));
     let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
+    debug!(
+        "Region node parameters...\
+        \n         parents: {:?}\
+        \n        children: {:?}\
+        \n           costs: {:?}\
+        \n          states: {:?}\
+        \nwarehouse_counts: {:?}\
+        \n   worker_counts: {:?}\
+        \n    jump_indices: {:?}\n",
+        region.parents,
+        region.children,
+        region.costs,
+        region.states,
+        region.warehouse_counts,
+        region.worker_counts,
+        region.jump_indices,
+    );
+
     if !cli.verbose.is_silent() {
         print_starting_status(&region);
     }
