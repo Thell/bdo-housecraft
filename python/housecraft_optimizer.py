@@ -32,10 +32,10 @@ state_2_values = [
 ]
 
 
-def main(_region, storage, lodging):
+def main(region_name, desired_storage, desired_lodging):
     Solution = namedtuple("Solution", 'cost storage lodging items states')
-    solution = Solution(
-        *optimize(items, item_reqs, weights, state_1_values, state_2_values, storage, lodging))
+    solution = Solution(*optimize(items, item_reqs, weights, state_1_values, state_2_values,
+                                  desired_storage, desired_lodging))
     print(solution)
 
 
