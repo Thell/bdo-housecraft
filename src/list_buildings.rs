@@ -43,6 +43,7 @@ impl fmt::Display for Chain {
         let mut table = Table::new();
         table.load_preset(HOUSECRAFT_TABLE_STYLE);
         table.set_header(vec![
+            Cell::new("Key").add_attribute(Attribute::Dim),
             Cell::new("Building").add_attribute(Attribute::Dim),
             Cell::new("🪙"),
             Cell::new("📦"),
@@ -50,13 +51,14 @@ impl fmt::Display for Chain {
         ]);
 
         for (index, state) in self.indices.iter().zip(self.states.iter()).skip(1) {
-            let building = &region.buildings[&region.children[*index]];
+            let building = &region.buildings.get(index).unwrap();
             let (warehouse_count, worker_count) = if *state == 1 {
                 (building.warehouse_count.to_string(), "".to_string())
             } else {
                 ("".to_string(), building.worker_count.to_string())
             };
             table.add_row(vec![
+                &building.key.to_string(),
                 &building.building_name,
                 &building.cost.to_string(),
                 &warehouse_count,
@@ -66,6 +68,7 @@ impl fmt::Display for Chain {
 
         table.add_row(vec![
             Cell::new("Totals").add_attribute(Attribute::Bold),
+            Cell::new("").add_attribute(Attribute::Bold),
             Cell::new(self.cost).add_attribute(Attribute::Bold),
             Cell::new(self.storage).add_attribute(Attribute::Bold),
             Cell::new(self.lodging).add_attribute(Attribute::Bold),
