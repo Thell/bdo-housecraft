@@ -60,12 +60,18 @@ def optimize_subset_selection(items, item_reqs, weights, state_1_values, state_2
     state_1_constraint = solver.Constraint(state_1_sum_values_lb, solver.infinity())
     state_2_constraint = solver.Constraint(state_2_sum_values_lb, solver.infinity())
     for i, (item, item_flag) in enumerate(item_flags.items()):
-        # The "state_1_value" constraint.
+        if i == 0:
+            continue
+        # The "state_1_value" constraints.
         state_1_constraint.SetCoefficient(state_1_flags[item], state_1_values[i])
         solver.Add(state_1_flags[item] <= item_flag)
-        # The "state_2_value" constraint.
+        solver.Add(state_1_flags[item] <= state_1_flags[item] * state_1_values[i])
+
+        # The "state_2_value" constraints.
         state_2_constraint.SetCoefficient(state_2_flags[item], state_2_values[i])
         solver.Add(state_2_flags[item] <= item_flag)
+        solver.Add(state_2_flags[item] <= state_2_flags[item] * state_2_values[i])
+
         # The state flag "mutual exclusivity" constraint.
         solver.Add(state_1_flags[item] + state_2_flags[item] <= 1)
         # The mandatory state flag constraint on flagged items.
