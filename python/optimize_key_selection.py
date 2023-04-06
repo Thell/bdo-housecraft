@@ -7,6 +7,8 @@ and feature selection.
 The module uses the CBC solver from OR-Tools via pywraplp to find an optimal solution.
 """
 
+import os
+import sys
 from collections import defaultdict
 from ortools.linear_solver import pywraplp
 
@@ -26,6 +28,12 @@ def optimize_subset_selection(items, item_reqs, weights, state_1_values, state_2
 
     # Use the COIN Branch and Cut solver
     solver = pywraplp.Solver('subset_selection', pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)
+    # Redirect standard error to os.devnull
+    stderr_fileno = sys.stderr.fileno()
+    stderr_save = os.dup(stderr_fileno)
+    sys.stderr.flush()
+    stderr_null = open(os.devnull, 'w')
+    os.dup2(stderr_null.fileno(), stderr_fileno)
 
     # The decision variables.
     # Variables to flag selected items and indicate the state of the item.
@@ -91,6 +99,11 @@ def optimize_subset_selection(items, item_reqs, weights, state_1_values, state_2
                 state_1_sum += state_1_values[i]
             elif state_2_flags[item].solution_value() == 1:
                 state_2_sum += state_2_values[i]
+
+    sys.stderr.flush()
+    os.dup2(stderr_save, stderr_fileno)
+    os.close(stderr_save)
+    stderr_null.close()
 
     # Extract the solution.
     if result_status == pywraplp.Solver.OPTIMAL:
