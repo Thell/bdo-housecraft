@@ -389,9 +389,9 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
         _ => generate_dominating_par(&cli, &region)?,
     };
     info!("retaining...");
-    let chains = chains.retain_dominating_to_vec();
+    let mut chains = chains.retain_dominating_to_vec();
     info!("writing...");
-    write_chains(&cli, &chains)?;
+    write_chains(&cli, &region, &mut chains)?;
 
     Ok(())
 }
@@ -498,7 +498,15 @@ fn print_starting_status(region: &RegionNodes) {
     );
 }
 
-fn write_chains(cli: &Cli, chains: &Vec<Chain>) -> Result<()> {
+fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Result<()> {
+    for i in 0..chains.len() {
+        chains[i].indices = chains[i]
+            .indices
+            .iter()
+            .map(|j| region.children[*j])
+            .collect();
+    }
+
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
     let path = format!("./data/housecraft/{}.json", file_name);
