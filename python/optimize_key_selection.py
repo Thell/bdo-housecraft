@@ -7,8 +7,6 @@ and feature selection.
 The module uses the CBC solver from OR-Tools via pywraplp to find an optimal solution.
 """
 
-import os
-import sys
 from collections import defaultdict
 from ortools.linear_solver import pywraplp
 
@@ -28,12 +26,6 @@ def optimize_subset_selection(items, item_reqs, weights, state_1_values, state_2
 
     # Use the COIN Branch and Cut solver
     solver = pywraplp.Solver('subset_selection', pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)
-    # Redirect standard error to os.devnull
-    stderr_fileno = sys.stderr.fileno()
-    stderr_save = os.dup(stderr_fileno)
-    sys.stderr.flush()
-    stderr_null = open(os.devnull, 'w')
-    os.dup2(stderr_null.fileno(), stderr_fileno)
 
     # The decision variables.
     # Variables to flag selected items and indicate the state of the item.
@@ -68,8 +60,9 @@ def optimize_subset_selection(items, item_reqs, weights, state_1_values, state_2
     state_1_constraint = solver.Constraint(state_1_sum_values_lb, solver.infinity())
     state_2_constraint = solver.Constraint(state_2_sum_values_lb, solver.infinity())
     for i, (item, item_flag) in enumerate(item_flags.items()):
-        if i == 0:
+        if i == 0:  # skip the root item
             continue
+
         # The "state_1_value" constraints.
         state_1_constraint.SetCoefficient(state_1_flags[item], state_1_values[i])
         solver.Add(state_1_flags[item] <= item_flag)
@@ -88,35 +81,28 @@ def optimize_subset_selection(items, item_reqs, weights, state_1_values, state_2
     # Solve the problem.
     result_status = solver.Solve()
 
-    # Manually sum up the total solution weight and sums used in the state constraints
-    total_weight = 0
-    state_1_sum = 0
-    state_2_sum = 0
-    for i, (item, item_flag) in enumerate(item_flags.items()):
-        if item_flag.solution_value() == 1:
-            total_weight += weights[i]
-            if state_1_flags[item].solution_value() == 1:
-                state_1_sum += state_1_values[i]
-            elif state_2_flags[item].solution_value() == 1:
-                state_2_sum += state_2_values[i]
-
-    sys.stderr.flush()
-    os.dup2(stderr_save, stderr_fileno)
-    os.close(stderr_save)
-    stderr_null.close()
-
     # Extract the solution.
     if result_status == pywraplp.Solver.OPTIMAL:
+        # Sum the total solution weight and sums used in the state constraints
+        # and collect the selected items and their states.
+        total_weight = 0
+        state_1_sum = 0
+        state_2_sum = 0
         selected_keys = []
         selected_key_states = []
+
         for i, (item, item_flag) in enumerate(item_flags.items()):
             if i == 0:
                 continue
             if item_flag.solution_value() == 1:
                 selected_keys += [item]
+                total_weight += weights[i]
                 if state_1_flags[item].solution_value() == 1:
                     selected_key_states += [1]
+                    state_1_sum += state_1_values[i]
                 elif state_2_flags[item].solution_value() == 1:
                     selected_key_states += [2]
+                    state_2_sum += state_2_values[i]
+
         return (total_weight, state_1_sum, state_2_sum, selected_keys, selected_key_states)
     return (None, None, None, None, None)
