@@ -13,7 +13,7 @@ import random
 import sys
 
 from houseinfo import get_region_buildings
-from optimize_key_selection import optimize_subset_selection
+from optimize_key_selection import subset_selection, subset_selection_par
 
 OptimizerResult = namedtuple("Solution", 'cost storage lodging items states')
 Solution = namedtuple("Solution", 'lodging storage cost items states')
@@ -49,8 +49,8 @@ def get_exact_region_solutions(region_name):
 
 
 def optimize(region: RegionInfo, lodging, storage):
-    s = optimize_subset_selection(region.items, region.item_reqs, region.weights,
-                                  region.state_1_values, region.state_2_values, storage, lodging)
+    s = subset_selection(region.items, region.item_reqs, region.weights, region.state_1_values,
+                         region.state_2_values, storage, lodging)
     result = OptimizerResult(*s)
     return Solution(result.lodging, result.storage, result.cost, result.items, result.states)
 
@@ -107,19 +107,22 @@ def optimize_all_state_pairs_par(args, region_info: RegionInfo):
 
 
 def optimize_all_state_pairs_par_worker(worker_args):
-    region_info = worker_args["region_info"]
+    region = worker_args["region_info"]
+    subset_solutions = subset_selection_par(region.items, region.item_reqs, region.weights,
+                                            region.state_1_values, region.state_2_values,
+                                            worker_args["params"])
     solutions = []
-    for lodging, storage in worker_args["params"]:
-        solution = optimize(region_info, lodging, storage)
-        if solution.items is not None:
-            solutions.append(solution)
+    for solution in subset_solutions:
+        result = OptimizerResult(*solution)
+        s = Solution(result.lodging, result.storage, result.cost, result.items, result.states)
+        solutions.append(s)
     return solutions
 
 
 def optimizer_par_worker_args(args, region_info):
     max_storage = sum(region_info.state_1_values)
     max_lodging = sum(region_info.state_2_values)
-    lodging_storage_pairs = list(itertools.product(range(max_lodging + 1), range(max_storage + 1)))
+    lodging_storage_pairs = list(itertools.product(range(max_storage + 1), range(max_lodging + 1)))
     random.shuffle(lodging_storage_pairs)
     chunked_pairs = split_list_into_n_parts(lodging_storage_pairs, args.jobs)
 
