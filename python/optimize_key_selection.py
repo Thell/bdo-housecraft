@@ -7,6 +7,10 @@ and feature selection.
 The module uses the CBC solver from OR-Tools via pywraplp to find an optimal solution.
 """
 
+import os
+import re
+import sys
+
 from collections import defaultdict
 from ortools.linear_solver import pywraplp
 
@@ -42,21 +46,17 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
         state_2_flags[item] = solver.BoolVar(f"state_2_flag_{item}")
 
     # The item requirements constraints.
-    # This constraint is transitive to all ancestors of item such that every item selected requires
-    # all ancestor items to be selected where item_req => item is a parent => child relation.
     for parent, children in item_req_tree.items():
         for child in children:
+            # The parent -> child constraint.
+            # This constraint is transitive to all ancestors of item such that every item selected
+            # requires all ancestor items to be selected.
             solver.Add(item_flags[child] <= item_flags[parent])
 
-    # The state flag constraints.
-    for item, item_flag in item_flags.items():
-        # The no state on non-selected items constraint.
-        solver.Add(state_1_flags[item] <= item_flag)
-        solver.Add(state_2_flags[item] <= item_flag)
-        # The mandatory state flag constraint on flagged items.
-        solver.Add(state_1_flags[item] + state_2_flags[item] <= item_flag)
-        # The state flag "mutual exclusivity" constraint.
-        solver.Add(state_1_flags[item] + state_2_flags[item] <= 1)
+            # # The state flag constraints.
+            # Ensure no state on non-selected items constraint.
+            # Ensure one state on selected items.
+            solver.Add(state_1_flags[child] + state_2_flags[child] == item_flags[child])
 
     # The state sum LB expressions (the coefficients).
     state_1_constraint = solver.Constraint(0, solver.infinity(), "state_1_lb")
@@ -144,3 +144,25 @@ def extract_solution(solver, items, weights, state_1_values, state_2_values):
                 state_2_sum += state_2_values[i]
 
     return (total_weight, state_1_sum, state_2_sum, selected_keys, selected_key_states)
+
+
+def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_2_values):
+    solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
+    state_1_constraint = solver.LookupConstraint("state_1_lb")
+    state_2_constraint = solver.LookupConstraint("state_2_lb")
+    state_1_constraint.SetBounds(9999, solver.infinity())
+    state_2_constraint.SetBounds(9999, solver.infinity())
+    model_text = solver.ExportModelAsMpsFormat(fixed_format=False, obfuscated=False)
+    write_to_file(model_text, "subset_select.mps")
+    sys.exit("Model written.")
+
+
+def write_to_file(data, filename):
+    i = 1
+    name, ext = os.path.splitext(filename)
+    while os.path.exists(filename):
+        name = re.sub(r'\(\d+\)$', '', name)
+        filename = f"{name}({i}){ext}"
+        i += 1
+    with open(filename, 'w') as f:
+        f.write(data)
