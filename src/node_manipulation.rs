@@ -76,12 +76,12 @@ pub(crate) fn arrange_largest_subtrees(
         let b_count = count_subtrees_at(children[*b], &child_indices, children);
         if a_count == b_count {
             // Keep stable order when equal (there is likely a better way to do this).
-            a_count += 1;
-            b_count.cmp(&a_count)
+            a_count += 1.0;
+            b_count.partial_cmp(&a_count).unwrap()
         } else if left {
-            b_count.cmp(&a_count)
+            b_count.partial_cmp(&a_count).unwrap()
         } else {
-            a_count.cmp(&b_count)
+            a_count.partial_cmp(&b_count).unwrap()
         }
     };
 
@@ -101,25 +101,25 @@ pub(crate) fn arrange_largest_subtrees(
     (result_parents, result_children)
 }
 
-pub(crate) fn count_subtrees(root: usize, parents: &[usize], children: &Vec<usize>) -> usize {
+pub(crate) fn count_subtrees(root: usize, parents: &[usize], children: &Vec<usize>) -> f64 {
     /*!  - Return the total number of possible subtrees rooted at root. */
     let child_indices = group_indices_by_value(parents);
-    count_subtrees_at(root, &child_indices, children) - 1
+    count_subtrees_at(root, &child_indices, children) - 1.0
 }
 
 pub(crate) fn count_subtrees_at(
     root: usize,
     child_indices: &HashMap<usize, Vec<usize>>,
     children: &Vec<usize>,
-) -> usize {
+) -> f64 {
     /*!  - Returns the number of subtrees rooted at the given node. */
-    let mut count = 1;
+    let mut count = 1.0;
     if let Some(c) = child_indices.get(&root) {
         for child in c {
             count *= count_subtrees_at(children[*child], child_indices, children);
         }
     }
-    count + 1
+    count + 1.0
 }
 
 pub(crate) fn count_subtrees_multistate(
@@ -127,10 +127,10 @@ pub(crate) fn count_subtrees_multistate(
     parents: &[usize],
     children: &Vec<usize>,
     states: &Vec<usize>,
-) -> usize {
+) -> f64 {
     /*!  - Return the total number of possible subtrees rooted at root. */
     let child_indices = group_indices_by_value(parents);
-    count_subtrees_multistate_at(root, 1, &child_indices, children, states) - 1
+    count_subtrees_multistate_at(root, 1, &child_indices, children, states) - 1.0
 }
 
 pub(crate) fn count_subtrees_multistate_at(
@@ -139,9 +139,9 @@ pub(crate) fn count_subtrees_multistate_at(
     child_indices: &HashMap<usize, Vec<usize>>,
     children: &Vec<usize>,
     states: &Vec<usize>,
-) -> usize {
+) -> f64 {
     /*!  - Returns the number of subtrees rooted at the given node. */
-    let mut count = state;
+    let mut count = state as f64;
     if let Some(c) = child_indices.get(&root) {
         for child in c {
             count *= count_subtrees_multistate_at(
@@ -153,7 +153,7 @@ pub(crate) fn count_subtrees_multistate_at(
             );
         }
     }
-    count + 1
+    count + 1.0
 }
 
 pub(crate) fn generate_jump_indices(parents: &[usize], children: &[usize]) -> Vec<usize> {
