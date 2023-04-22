@@ -51,7 +51,7 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
     # Transitive; ensures children must have all ancestors back to root.
     for parent, children in item_req_tree.items():
         for child in children:
-            if parent == item_reqs[0]:
+            if parent == items[0] or parent == 0:
                 continue
             solver.Add(item_flags[child] - item_flags[parent] <= 0)
 

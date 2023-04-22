@@ -211,8 +211,8 @@ def validate_solutions(args, optimized_solutions):
 
 
 def main(args):
-    if args.validate and args.region in ["Calpheon City", "Valencia City", "Heidel"]:
-        sys.exit("Exact results are unavailable to validate the optimizer against.")
+    # if args.validate and args.region in ["Calpheon City", "Valencia City", "Heidel"]:
+    #     sys.exit("Exact results are unavailable to validate the optimizer against.")
 
     region_info = get_region_info(args.region)
     if args.write:
