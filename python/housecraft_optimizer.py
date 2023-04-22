@@ -13,7 +13,7 @@ import random
 import sys
 
 from houseinfo import get_region_buildings
-from optimize_key_selection import subset_selection, subset_selection_par
+from optimize_key_selection import subset_selection, subset_selection_par, write_subset_selection_mps
 
 OptimizerResult = namedtuple("Solution", 'cost storage lodging items states')
 Solution = namedtuple("Solution", 'lodging storage cost items states')
@@ -46,6 +46,11 @@ def get_exact_region_solutions(region_name):
     with open(f"./data/housecraft/{region_name}.json", encoding="UTF-8") as file:
         exact_solutions = json.load(file)
     return exact_solutions
+
+
+def write_model(region: RegionInfo, _lodging, _storage):
+    write_subset_selection_mps(region.items, region.item_reqs, region.weights,
+                               region.state_1_values, region.state_2_values)
 
 
 def optimize(region: RegionInfo, lodging, storage):
@@ -93,6 +98,7 @@ def optimize_all_state_pairs(region_info: RegionInfo):
             solution = optimize(region_info, lodging, storage)
             if solution.items is not None:
                 solutions.append(solution)
+    print(f"Captured count {len(solutions)}")
     return solutions
 
 
@@ -103,6 +109,8 @@ def optimize_all_state_pairs_par(args, region_info: RegionInfo):
         worker_solutions = pool.map(optimize_all_state_pairs_par_worker, worker_args)
     for worker_solution in worker_solutions:
         solutions += worker_solution
+
+    print(f"Captured count {len(solutions)}")
     return solutions
 
 
@@ -196,7 +204,10 @@ def validate_solutions(args, optimized_solutions):
             print("[failed]")
             print(f"  os: {os}")
             print(f"  es: {es}")
-    print(f"compared {len(optimized_solutions)} of {len(exact_solutions)} exact solutions: passed.")
+    passed = len(optimized_solutions) == len(exact_solutions)
+    print(
+        f"{len(optimized_solutions)} optimized of {len(exact_solutions)} exact solutions: {passed}."
+    )
 
 
 def main(args):
@@ -204,7 +215,9 @@ def main(args):
         sys.exit("Exact results are unavailable to validate the optimizer against.")
 
     region_info = get_region_info(args.region)
-    if args.all:
+    if args.write:
+        write_model(region_info, args.lodging, args.storage)
+    elif args.all:
         optimize_all(args, region_info)
     else:
         solution = optimize(region_info, args.lodging, args.storage)
@@ -230,5 +243,9 @@ if __name__ == '__main__':
     parser.add_argument("-V",
                         "--validate",
                         help="validate against exact (only has meaning with --All)",
+                        action=argparse.BooleanOptionalAction)
+    parser.add_argument("-W",
+                        "--write",
+                        help="write model to mps file (ignores all other arguments)",
                         action=argparse.BooleanOptionalAction)
     main(parser.parse_args())

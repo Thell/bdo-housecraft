@@ -37,6 +37,8 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
     solver = pywraplp.Solver('subset_selection', pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)
 
     # Variables to flag selected items and indicate the state of the selected item.
+    # solver.BoolVar() returns an anonymous variable index.
+    # solver allows assignment and retrieval by name.
     item_flags = {}
     state_1_flags = {}
     state_2_flags = {}
@@ -46,28 +48,35 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
         state_2_flags[item] = solver.BoolVar(f"state_2_flag_{item}")
 
     # The item requirements constraints.
+    # Transitive; ensures children must have all ancestors back to root.
     for parent, children in item_req_tree.items():
         for child in children:
-            # The parent -> child constraint.
-            # This constraint is transitive to all ancestors of item such that every item selected
-            # requires all ancestor items to be selected.
-            solver.Add(item_flags[child] <= item_flags[parent])
+            if parent == item_reqs[0]:
+                continue
+            solver.Add(item_flags[child] - item_flags[parent] <= 0)
 
-            # # The state flag constraints.
-            # Ensure no state on non-selected items constraint.
-            # Ensure one state on selected items.
-            solver.Add(state_1_flags[child] + state_2_flags[child] == item_flags[child])
+    for item in items:
+        if item == items[0]:
+            continue
+        # Item selection constraint one state on flagged items, no state otherwise.
+        solver.Add(state_1_flags[item] + state_2_flags[item] - item_flags[item] == 0)
 
-    # The state sum LB expressions (the coefficients).
-    state_1_constraint = solver.Constraint(0, solver.infinity(), "state_1_lb")
-    state_2_constraint = solver.Constraint(0, solver.infinity(), "state_2_lb")
+    state_1_sum_constraint = solver.Constraint(9999, solver.infinity(), "state_1_lb")
+    state_2_sum_constraint = solver.Constraint(9999, solver.infinity(), "state_2_lb")
     for i, item in enumerate(items):
-        state_1_constraint.SetCoefficient(state_1_flags[item], state_1_values[i])
-        state_2_constraint.SetCoefficient(state_2_flags[item], state_2_values[i])
+        if i == 0:
+            continue
+        # Item selected as state 1 values
+        state_1_sum_constraint.SetCoefficient(state_1_flags[item], state_1_values[i])
+        # Item selected as state 2 values
+        state_2_sum_constraint.SetCoefficient(state_2_flags[item], state_2_values[i])
 
     # The objective: select "items" that minimize the weight subject to value sum lb constraints.
     objective = solver.Objective()
     for i, item in enumerate(items):
+        if i == 0:
+            continue
+        # Item selection cost.
         objective.SetCoefficient(item_flags[item], weights[i])
     objective.SetMinimization()
 
@@ -152,7 +161,7 @@ def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_
     state_2_constraint = solver.LookupConstraint("state_2_lb")
     state_1_constraint.SetBounds(9999, solver.infinity())
     state_2_constraint.SetBounds(9999, solver.infinity())
-    model_text = solver.ExportModelAsMpsFormat(fixed_format=False, obfuscated=False)
+    model_text = solver.ExportModelAsMpsFormat(fixed_format=True, obfuscated=True)
     write_to_file(model_text, "subset_select.mps")
     sys.exit("Model written.")
 
