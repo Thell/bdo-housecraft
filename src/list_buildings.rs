@@ -83,25 +83,16 @@ fn filter_by_storage_and_lodging(chains: &mut ChainVec, cli: Cli) {
     if cli.storage.is_none() && cli.lodging.is_none() {
         return;
     }
-    let cost_anchor = OnceCell::new();
     let lodging = cli.lodging.unwrap_or(0);
     let storage = cli.storage.unwrap_or(0);
     chains.retain(|chain| chain.storage >= storage && chain.lodging >= lodging);
-    chains.retain(|chain| chain.cost == *cost_anchor.get_or_init(|| chain.cost));
+    let cost_anchor = chains.iter().min_by_key(|chain| chain.cost).unwrap().cost;
+    chains.retain(|chain| chain.cost == cost_anchor);
 }
 
 fn initialize_region(cli: &Cli) -> Result<String> {
     let region_name = cli.region.as_ref().unwrap().clone();
-    let forbidden_regions = ["Calpheon City", "Valencia City", "Heidel"];
-    if forbidden_regions.contains(&region_name.as_str()) {
-        let msg = format!(
-            "*** Generating exact results for {} will take years. ***\n \
-             *** Once the optimizer is implemented listing will work. ***",
-            region_name
-        );
-        error!("{}", msg);
-        bail!(std::io::ErrorKind::InvalidInput);
-    }
+    let region_name = region_name.replace('_', " ");
     let region = get_region_buildings(Some(region_name.clone()))?;
     let region = RegionNodes::new(region.get(&region_name).unwrap())?;
     let _region = REGION.get_or_init(|| region);
