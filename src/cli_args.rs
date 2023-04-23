@@ -55,6 +55,10 @@ pub(crate) struct Cli {
     #[arg(long, group = "generation", requires = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
 
+    /// limit warehouse to 172 slots (Max of 196 - the 16 given for free)
+    #[arg(long, group = "generation", help_heading = Some("Generation"))]
+    pub(crate) limit_warehouse: bool,
+
     /// use NUM parallel jobs
     #[arg(short, long, requires = "generation", help_heading = Some("Generation"))]
     pub(crate) jobs: Option<u8>,

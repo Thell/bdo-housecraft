@@ -61,7 +61,7 @@ impl Chain {
                 row_dual.as_mut_ptr(),
             );
         };
-        debug!("Solution values:\n\t{:?}", col_value);
+        trace!("Solution values:\n\t{:?}", col_value);
         let indices: Vec<_> = col_value
             .chunks_exact(3)
             .take(num_nodes)
@@ -88,11 +88,11 @@ impl Chain {
         let chain = Self {
             worker_count: worker_count as usize,
             warehouse_count: warehouse_count as usize,
-            cost: cost as usize,
+            cost,
             indices,
             states,
         };
-        debug!("{:?}", chain);
+        trace!("{:?}", chain);
         chain
     }
 
@@ -210,23 +210,32 @@ struct SubsetModel {
 }
 
 impl SubsetModel {
-    pub fn new() -> Self {
+    pub fn new(job: usize) -> Self {
         SubsetModel {
             highs_ptr: unsafe {
                 let highs = Highs_create();
+                let do_logging = log_enabled!(log::Level::Debug) as i32;
 
                 let option = CString::new("output_flag").unwrap();
-                Highs_setBoolOptionValue(highs, option.as_ptr(), 0);
+                Highs_setBoolOptionValue(highs, option.as_ptr(), do_logging);
 
                 let option = CString::new("log_to_console").unwrap();
-                Highs_setBoolOptionValue(highs, option.as_ptr(), 0);
+                Highs_setBoolOptionValue(highs, option.as_ptr(), do_logging);
 
-                // let option = CString::new("log_file").unwrap();
-                // let option_value = CString::new("subset_select_highs.log").unwrap();
-                // Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
+                if do_logging == 1 {
+                    let option = CString::new("log_file").unwrap();
+                    let option_value =
+                        CString::new(format!("subset_select_job{job}_highs.log")).unwrap();
+                    Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
+                }
 
                 let option = CString::new("threads").unwrap();
                 Highs_setIntOptionValue(highs, option.as_ptr(), 1);
+
+                // Most of the errors encountered are presolve assertions in the `latest` branch.
+                // let option = CString::new("presolve").unwrap();
+                // let option_value = CString::new("off").unwrap();
+                // Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
 
                 highs
             },
@@ -234,37 +243,35 @@ impl SubsetModel {
     }
 
     fn populate_problem(&mut self, region: &RegionNodes) {
-        info!("Populating HiGHS problem for {}", region.region_name);
-
         let items: Vec<_> = region.children.iter().map(|x| *x as u32).collect();
         let item_reqs: Vec<_> = region.parents.iter().map(|x| *x as u32).collect();
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
 
-        // Item parent -> child relation tree.
-        let mut item_req_tree: HashMap<u32, Vec<u32>> = HashMap::new();
-        for (i, &item_req) in item_reqs.iter().enumerate() {
-            if item_req == 0 {
-                item_req_tree.entry(items[0]).or_default().push(items[i]);
-            } else {
-                item_req_tree.entry(item_req).or_default().push(items[i]);
-            }
-        }
-
-        // Flags {item_id: column_id}
-        // Bool values, so bounds of 0,1 and coeff of 1?
-        let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
-        let mut item_flags: HashMap<u32, i32> = HashMap::new();
-        let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
-        let mut state_2_flags: HashMap<u32, i32> = HashMap::new();
-
         unsafe {
+            // parent -> child relation tree for item selection requirements.
+            let mut item_req_tree: HashMap<u32, Vec<u32>> = HashMap::new();
+            for (i, &item_req) in item_reqs.iter().enumerate() {
+                if item_req == 0 {
+                    item_req_tree.entry(items[0]).or_default().push(items[i]);
+                } else {
+                    item_req_tree.entry(item_req).or_default().push(items[i]);
+                }
+            }
+
+            // Use the HiGHS optimizer.
             let highs = self.highs_ptr;
-            let highs_inf = Highs_getInfinity(highs);
+
+            // Variables to flag selected items and indicate the state of the selected item.
+            // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
+            let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
+            let mut item_flags: HashMap<u32, i32> = HashMap::new();
+            let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
+            let mut state_2_flags: HashMap<u32, i32> = HashMap::new();
 
             let mut column_id = 0;
             for (i, item) in items.iter().enumerate() {
-                // item_flags
+                // item_flags (with objective item selection costs)
                 if Highs_addCol(highs, costs[i], 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
                     Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
                     item_flags.insert(*item, column_id);
@@ -284,7 +291,11 @@ impl SubsetModel {
                 }
             }
 
+            // The item requirements constraints.
+            let highs_inf = Highs_getInfinity(highs);
+
             // The item parent <- child requirements constraints.
+            // Transitive; ensures children must have all ancestors back to root.
             for (parent, children) in item_req_tree.iter() {
                 for child in children.iter() {
                     if *parent == items[0] || *parent == 0 {
@@ -293,22 +304,18 @@ impl SubsetModel {
                     // item_flags[child] - item_flags[parent] <= 0
                     let aindex: [i32; 2] = [item_flags[child], item_flags[parent]];
                     let avalue: [f64; 2] = [1.0, -1.0];
-                    if Highs_addRow(
+                    Highs_addRow(
                         highs,
                         -highs_inf,
                         0.0,
                         aindex.len() as i32,
                         aindex.as_ptr(),
                         avalue.as_ptr(),
-                    ) != kHighsStatusOk
-                    {
-                        println!(
-                            "!kHighsStatusOk on item_flags[{}] - item_flags[{}] <= 0",
-                            child, parent
-                        );
-                    }
+                    );
                 }
             }
+
+            // Item selection constraint: one state on flagged items, no state otherwise.
             for item in items.iter() {
                 if *item == items[0] {
                     continue;
@@ -316,25 +323,20 @@ impl SubsetModel {
                 // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
                 let aindex: [i32; 3] = [state_1_flags[item], state_2_flags[item], item_flags[item]];
                 let avalue: [f64; 3] = [1.0, 1.0, -1.0];
-                if Highs_addRow(
+                Highs_addRow(
                     highs,
                     0.0,
                     0.0,
                     aindex.len() as i32,
                     aindex.as_ptr(),
                     avalue.as_ptr(),
-                ) != kHighsStatusOk
-                {
-                    println!(
-                        "!kHighsStatusOk on state_1_flags[{}] + state_2_flags[{}] - items_flag[{}] == 0",
-                        item, item, item
-                    );
-                }
+                );
             }
 
+            // State values sum constraints.
+            // Sum items selected as state 1 values
             let mut aindex: Vec<i32> = Vec::new();
             let mut avalue: Vec<f64> = Vec::new();
-
             for (i, item) in items.iter().enumerate() {
                 if state_1_values[i] > 0.0 {
                     aindex.push(state_1_flags[item]);
@@ -350,6 +352,7 @@ impl SubsetModel {
                 avalue.as_ptr(),
             );
 
+            // Sum items selected as state 2 values
             aindex.clear();
             avalue.clear();
             for (i, item) in items.iter().enumerate() {
@@ -366,31 +369,7 @@ impl SubsetModel {
                 aindex.as_ptr(),
                 avalue.as_ptr(),
             );
-
-            let option = CString::new("allow_unbounded_or_infeasible").unwrap();
-            // let value: f64 = (region.costs.iter().sum::<usize>()) as f64;
-            Highs_setBoolOptionValue(
-                highs,
-                option.as_ptr(),
-                kHighsModelStatusUnboundedOrInfeasible,
-            );
-
-            let option = CString::new("presolve").unwrap();
-            let option_value = CString::new("off").unwrap();
-            Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
-
-            // let option_value = CString::new("subset_select_highs_crafted.mps").unwrap();
-            // Highs_writeModel(highs, option_value.as_ptr());
-
-            // Highs_destroy(highs);
         }
-
-        // unsafe {
-        //     let highs = self.highs_ptr;
-
-        //     let mps_file = CString::new("subset_selection.mps").unwrap();
-        //     Highs_readModel(highs, mps_file.as_ptr());
-        // }
     }
 
     fn mut_ptr(&mut self) -> *mut c_void {
@@ -415,19 +394,23 @@ struct JobControl {
 impl JobControl {
     /// Returns job controls for parallel dominating chains optimization.
     fn new(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
-        let mut job_controls = vec![];
-        let state_lb_pairs = Self::chunk_state_value_pairs(cli, region);
-        for job_id in 0..cli.jobs.unwrap_or(1) as usize {
-            job_controls.push(JobControl {
+        Ok(Self::chunk_state_value_pairs(cli, region)
+            .iter()
+            .enumerate()
+            .map(|(job_id, pairs)| JobControl {
                 job_id,
-                state_value_sum_lb_pairs: state_lb_pairs[job_id].clone(),
-            });
-        }
-        Ok(job_controls)
+                state_value_sum_lb_pairs: pairs.to_vec(),
+            })
+            .collect::<Vec<_>>())
     }
 
     fn chunk_state_value_pairs(cli: &Cli, region: &RegionNodes) -> Vec<Vec<(u32, u32)>> {
-        let mut state_value_sum_pairs = (0..region.max_warehouse_count as u32 + 1)
+        let warehouse_count_ub = if cli.limit_warehouse {
+            std::cmp::min(172, region.max_warehouse_count + 1) as u32
+        } else {
+            (region.max_warehouse_count + 1) as u32
+        };
+        let mut state_value_sum_pairs = (0..warehouse_count_ub)
             .cartesian_product(0..region.max_worker_count as u32 + 1)
             .collect::<Vec<_>>();
         let mut rng = thread_rng();
@@ -482,7 +465,7 @@ fn optimize_par(region: &RegionNodes, jobs: JobControlVec) -> Result<ChainMap> {
 fn optimize_par_worker(region: RegionNodes, job: JobControl) -> Result<ChainMap> {
     let mut chains = ChainMap::new(&region);
     let mut counter = 0;
-    let mut highs = SubsetModel::new();
+    let mut highs = SubsetModel::new(job.job_id);
     highs.populate_problem(&region);
     let highs_inf = unsafe { Highs_getInfinity(highs.mut_ptr()) };
 
@@ -492,7 +475,7 @@ fn optimize_par_worker(region: RegionNodes, job: JobControl) -> Result<ChainMap>
     debug!("state lb rows: [{}, {}]", state_1_sum_row, state_2_sum_row);
 
     info!(
-        "Job {} processing {} combinations on {} nodes using {} cols and {} rows.",
+        "START: Job {} with {} combinations on {} nodes using {} cols and {} rows.",
         job.job_id,
         job.state_value_sum_lb_pairs.len(),
         region.num_nodes,
@@ -514,9 +497,18 @@ fn optimize_par_worker(region: RegionNodes, job: JobControl) -> Result<ChainMap>
                 *state_2_sum_lb as f64,
                 highs_inf,
             );
-            Highs_run(highs.mut_ptr());
+            debug!("running for ({},{})...", state_1_sum_lb, state_2_sum_lb);
+            let result = Highs_run(highs.mut_ptr());
+            debug!(
+                "run result for ({},{}): {}",
+                state_1_sum_lb, state_2_sum_lb, result
+            );
             Highs_getModelStatus(highs.mut_ptr())
         };
+        debug!(
+            "model status for ({},{}): {}",
+            state_1_sum_lb, state_2_sum_lb, status
+        );
         if status == MODEL_STATUS_OPTIMAL {
             counter += 1;
             let chain = Chain::from_highs(&highs, *state_1_sum_lb, *state_2_sum_lb, &region);
@@ -525,7 +517,7 @@ fn optimize_par_worker(region: RegionNodes, job: JobControl) -> Result<ChainMap>
     }
 
     info!(
-        "Job {} processed {} combinations with {} feasible yielding {:?} chains.",
+        "COMPLETE: Job {} with {} combinations with {} feasible yielding {:?} chains.",
         job.job_id,
         job.state_value_sum_lb_pairs.len(),
         counter,
@@ -576,14 +568,9 @@ fn print_starting_status(region: &RegionNodes) {
 }
 
 fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Result<()> {
-    for i in 0..chains.len() {
-        chains[i].indices = chains[i]
-            .indices
-            .iter()
-            .map(|j| region.children[*j])
-            .collect();
+    for chain in chains.iter_mut() {
+        chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
     }
-
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
     let path = format!("./data/housecraft/{}.json", file_name);
