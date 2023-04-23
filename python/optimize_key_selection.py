@@ -58,7 +58,7 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
     for item in items:
         if item == items[0]:
             continue
-        # Item selection constraint one state on flagged items, no state otherwise.
+        # Item selection constraint: one state on flagged items, no state otherwise.
         solver.Add(state_1_flags[item] + state_2_flags[item] - item_flags[item] == 0)
 
     state_1_sum_constraint = solver.Constraint(9999, solver.infinity(), "state_1_lb")
@@ -111,6 +111,7 @@ def subset_selection(items, item_reqs, weights, state_1_values, state_2_values,
 
 def subset_selection_par(items, item_reqs, weights, state_1_values, state_2_values,
                          state_values_sum_lb_pairs):
+    """ Optimize all state pairs in parallel. """
     solutions = []
     solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
 
@@ -129,9 +130,11 @@ def subset_selection_par(items, item_reqs, weights, state_1_values, state_2_valu
 
 
 def extract_solution(solver, items, weights, state_1_values, state_2_values):
+    """
     # Extract the solution.
     # Sum the total solution weight and sums used in the state constraints
     # and collect the selected items and their states.
+    """
     total_weight = 0
     state_1_sum = 0
     state_2_sum = 0
@@ -156,6 +159,7 @@ def extract_solution(solver, items, weights, state_1_values, state_2_values):
 
 
 def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_2_values):
+    """ Instantiate model and write to mps file 'subset_select(N).mps'"""
     solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
     state_1_constraint = solver.LookupConstraint("state_1_lb")
     state_2_constraint = solver.LookupConstraint("state_2_lb")
@@ -167,11 +171,12 @@ def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_
 
 
 def write_to_file(data, filename):
+    """ Write mps file with incremental (n) suffix."""
     i = 1
     name, ext = os.path.splitext(filename)
     while os.path.exists(filename):
         name = re.sub(r'\(\d+\)$', '', name)
         filename = f"{name}({i}){ext}"
         i += 1
-    with open(filename, 'w') as f:
-        f.write(data)
+    with open(filename, 'w', encoding="UTF-8") as file:
+        file.write(data)
