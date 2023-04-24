@@ -33,7 +33,7 @@ use list_regions::list_regions;
 use optimize::optimize;
 
 fn main() -> Result<()> {
-    let cli = Cli::parse();
+    let mut cli = Cli::parse();
     env_logger::Builder::new()
         .filter_level(cli.verbose.log_level_filter())
         .format_timestamp_nanos()
@@ -54,7 +54,7 @@ fn main() -> Result<()> {
     } else if cli.generate {
         generate(cli)?
     } else if cli.optimize {
-        optimize(cli)?
+        optimize(&mut cli)?
     } else if cli.region.is_some() {
         list_buildings(cli)?
     } else {

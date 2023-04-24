@@ -248,6 +248,14 @@ impl SubsetModel {
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
 
+        // unsafe {
+        //     let highs = self.highs_ptr;
+        //     let filename = CString::new("subset_select.mps").unwrap();
+        //     Highs_readModel(highs, filename.as_ptr());
+        //     let filename = CString::new("subset_select_highs_inout.mps").unwrap();
+        //     Highs_writeModel(highs, filename.as_ptr());
+        // }
+
         unsafe {
             // parent -> child relation tree for item selection requirements.
             let mut item_req_tree: HashMap<u32, Vec<u32>> = HashMap::new();
@@ -369,6 +377,9 @@ impl SubsetModel {
                 aindex.as_ptr(),
                 avalue.as_ptr(),
             );
+
+            // let filename = CString::new("subset_select_highs.mps").unwrap();
+            // Highs_writeModel(highs, filename.as_ptr());
         }
     }
 
@@ -406,6 +417,7 @@ impl JobControl {
 
     fn chunk_state_value_pairs(cli: &Cli, region: &RegionNodes) -> Vec<Vec<(u32, u32)>> {
         let warehouse_count_ub = if cli.limit_warehouse {
+            info!("limiting warehouse count to 172...");
             std::cmp::min(172, region.max_warehouse_count + 1) as u32
         } else {
             (region.max_warehouse_count + 1) as u32
@@ -425,29 +437,36 @@ impl JobControl {
     }
 }
 
-pub(crate) fn optimize(cli: Cli) -> Result<()> {
+pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
     info!("preparing...");
     let region_name = cli.region.clone().unwrap();
-    let region_buildings = get_region_buildings(Some(region_name.clone()))?;
-    let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
-    let jobs = JobControl::new(&cli, &region)?;
+    let all_region_buildings: RegionBuildingMap = if region_name == "ALL".to_string() {
+        parse_houseinfo_data()?
+    } else {
+        get_region_buildings(Some(region_name.clone()))?
+    };
 
-    if !cli.verbose.is_silent() {
-        trace!("Buildings");
-        region_buildings.iter().for_each(|b| trace!("{:#?}", b));
-        debug!("Job Controls");
-        jobs.iter().for_each(|j| debug!("  {:?}", j));
-        print_region_specs(&region);
-        print_starting_status(&region);
+    for (region_name, region_buildings) in all_region_buildings.iter() {
+        cli.region = Some(region_name.to_owned());
+        let region = RegionNodes::new(region_buildings)?;
+        let jobs = JobControl::new(&cli, &region)?;
+
+        if !cli.verbose.is_silent() {
+            trace!("Buildings");
+            region_buildings.iter().for_each(|b| trace!("{:#?}", b));
+            debug!("Job Controls");
+            jobs.iter().for_each(|j| debug!("  {:?}", j));
+            print_region_specs(&region);
+            print_starting_status(&region);
+        }
+
+        info!("optimizing...");
+        let chains = optimize_par(&region, jobs)?;
+        info!("retaining...");
+        let mut chains = chains.retain_dominating_to_vec();
+        info!("writing...");
+        write_chains(&cli, &region, &mut chains)?;
     }
-
-    info!("optimizing...");
-    let chains = optimize_par(&region, jobs)?;
-    info!("retaining...");
-    let mut chains = chains.retain_dominating_to_vec();
-    info!("writing...");
-    write_chains(&cli, &region, &mut chains)?;
-
     Ok(())
 }
 
