@@ -148,3 +148,48 @@ Captured chain count: 795
 [2023-04-02T08:56:59.954715Z] writing...
 Result: 252 'best of best' scored storage/lodging chains written to ./data/housecraft/Velia.json
 ```
+
+# Optimize building chains.
+
+- Calculates node chain costs for warehouse and workers using HiGHS.
+- Data is written to a file `/data/housecraft/{region_name}.json` containing storage, lodging, building and usage states sorted by warehouse and worker count in ascending order.
+
+```md
+> housecraft.exe --optimize -R Velia
+[2023-04-25T22:56:47.468527300Z INFO  housecraft] Start up
+[2023-04-25T22:56:47.468602200Z INFO  housecraft::optimize] preparing...
+Optimizing values for Velia consisting of 23 buildings in 186624 chains with 1166400 storage/lodging combinations
+With a maximum cost of 45 with 7 lodging and 98 storage (out of 117 possible).
+[2023-04-25T22:56:47.473279400Z INFO  housecraft::optimize] optimizing...
+[2023-04-25T22:56:47.474107800Z INFO  housecraft::optimize] START: Job 0 with 944 combinations on 24 nodes using 72 cols and 37 rows.
+[2023-04-25T22:56:48.237550900Z INFO  housecraft::optimize] COMPLETE: Job 0 with 944 combinations with 878 feasible yielding 878 chains.
+[2023-04-25T22:56:48.237850100Z INFO  housecraft::optimize] merging...
+[2023-04-25T22:56:48.238293500Z INFO  housecraft::optimize] Captured chain count: 878
+[2023-04-25T22:56:48.238523600Z INFO  housecraft::optimize] retaining...
+[2023-04-25T22:56:48.239145700Z INFO  housecraft::optimize] Retained chain count: 252
+[2023-04-25T22:56:48.239284200Z INFO  housecraft::optimize] writing...
+Result: 252 'best of best' scored storage/lodging chains written to ./data/housecraft/Velia.json.
+[2023-04-25T22:56:48.240876000Z INFO  housecraft] Complete
+```
+
+## Generation/Optimization Notes
+
+Even though the generator visits _all_ combinations of all buildings in all states and the optimizer visits all combinations of storage and lodging they both yield only the dominating chains.
+
+> A dominant chain strictly dominates a different chain when it provides the same or more workers and or warehouse counts for less or the same cost.
+
+The resulting chains are the best-of-the-best chains for any combination of cost, worker and warehouse counts.
+
+All of the following regions have had exact results generated: Ancado Inner Harbor, Arehaza, Duvencrune, Eilton, Glish, Grána, Iliya Island, Keplan, Muiquun, O'draxxia, Old Wisdom Tree, Olvia, Port Epheria, Sand Grain Bazaar, Shakatu, Tarif, Trent, Velia, and Altinova.
+
+The exact results validated the results of the both the Python implmentated optimizer using CBC and the Rust implemented optimizer using HiGHS with 100% matches. Then both implementations optimized the regions of Heidel, Valencia City and Calpheon City with only a single resulting difference. That difference was on an instance that would never happen in reality; it utilized 6 lodging, and either 399 or 400 storage slots both with a cost of 152.
+
+
+# Building
+
+External requirements for building on Windows:
+
+- cmake
+- clang
+- libz
+- ninja

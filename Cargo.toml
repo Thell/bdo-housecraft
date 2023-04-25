@@ -1,13 +1,13 @@
 [package]
 name = "housecraft"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 # Can not build RelWithDebInfo on Windows. See https://github.com/ERGO-Code/HiGHS/issues/1271
-# [profile.release]
-# debug = true
+[profile.release]
+debug = true
 
 [dependencies]
 anyhow = "1.0.69"

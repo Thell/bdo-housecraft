@@ -52,7 +52,7 @@ pub(crate) struct Cli {
     pub(crate) generate: bool,
 
     /// find optimal houseinfo building chain for region, storage and lodging
-    #[arg(long, group = "generation", requires = "listing", help_heading = Some("Generation"))]
+    #[arg(long, group = "generation", requires = "region", conflicts_with = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
 
     /// limit warehouse to 172 slots (Max of 196 - the 16 given for free)
