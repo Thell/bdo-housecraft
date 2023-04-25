@@ -499,14 +499,9 @@ fn print_starting_status(region: &RegionNodes) {
 }
 
 fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Result<()> {
-    for i in 0..chains.len() {
-        chains[i].indices = chains[i]
-            .indices
-            .iter()
-            .map(|j| region.children[*j])
-            .collect();
+    for chain in chains.iter_mut() {
+        chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
     }
-
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
     let path = format!("./data/housecraft/{}.json", file_name);
