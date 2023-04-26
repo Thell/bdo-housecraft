@@ -1,7 +1,7 @@
-use std::fmt;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::PathBuf;
+use std::{fmt, process};
 
 use anyhow::{bail, Context, Ok, Result};
 use comfy_table::{Attribute, Cell, Table};
@@ -86,7 +86,12 @@ fn filter_by_storage_and_lodging(chains: &mut ChainVec, cli: Cli) {
     let lodging = cli.lodging.unwrap_or(0);
     let storage = cli.storage.unwrap_or(0);
     chains.retain(|chain| chain.storage >= storage && chain.lodging >= lodging);
-    let cost_anchor = chains.iter().min_by_key(|chain| chain.cost).unwrap().cost;
+    if chains.len() == 0 {
+        println!("No chains match your query! Check your storage and lodging values.");
+        process::exit(1);
+    }
+    let cost_anchor = chains.iter().min_by_key(|chain| chain.cost);
+    let cost_anchor = cost_anchor.unwrap().cost;
     chains.retain(|chain| chain.cost == cost_anchor);
 }
 
