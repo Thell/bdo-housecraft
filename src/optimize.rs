@@ -232,11 +232,6 @@ impl SubsetModel {
                 let option = CString::new("threads").unwrap();
                 Highs_setIntOptionValue(highs, option.as_ptr(), 1);
 
-                // Most of the errors encountered are presolve assertions in the `latest` branch.
-                // let option = CString::new("presolve").unwrap();
-                // let option_value = CString::new("off").unwrap();
-                // Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
-
                 highs
             },
         }
@@ -247,14 +242,6 @@ impl SubsetModel {
         let item_reqs: Vec<_> = region.parents.iter().map(|x| *x as u32).collect();
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
-
-        // unsafe {
-        //     let highs = self.highs_ptr;
-        //     let filename = CString::new("subset_select.mps").unwrap();
-        //     Highs_readModel(highs, filename.as_ptr());
-        //     let filename = CString::new("subset_select_highs_inout.mps").unwrap();
-        //     Highs_writeModel(highs, filename.as_ptr());
-        // }
 
         unsafe {
             // parent -> child relation tree for item selection requirements.
@@ -269,6 +256,16 @@ impl SubsetModel {
 
             // Use the HiGHS optimizer.
             let highs = self.highs_ptr;
+
+            // Presolve fails on a few known instances.
+            // See https://github.com/ERGO-Code/HiGHS/issues/1273
+            let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
+            if no_presolve_regions.contains(&region.region_name.as_str()) {
+                debug!("Disabling HiGHS presolve for {}.", region.region_name);
+                let option = CString::new("presolve").unwrap();
+                let option_value = CString::new("off").unwrap();
+                Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
+            }
 
             // Variables to flag selected items and indicate the state of the selected item.
             // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
@@ -377,9 +374,6 @@ impl SubsetModel {
                 aindex.as_ptr(),
                 avalue.as_ptr(),
             );
-
-            // let filename = CString::new("subset_select_highs.mps").unwrap();
-            // Highs_writeModel(highs, filename.as_ptr());
         }
     }
 
