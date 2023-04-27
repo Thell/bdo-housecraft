@@ -59,6 +59,10 @@ pub(crate) struct Cli {
     #[arg(long, requires = "generation", help_heading = Some("Generation"))]
     pub(crate) limit_warehouse: bool,
 
+    /// output only the lodging, storage and cost to /data/housecraft/validation
+    #[arg(long, requires = "generation", help_heading = Some("Generation"))]
+    pub(crate) for_validation: bool,
+
     /// use NUM parallel jobs
     #[arg(short, long, requires = "generation", help_heading = Some("Generation"))]
     pub(crate) jobs: Option<u8>,

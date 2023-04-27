@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use std::ffi::{c_void, CString};
-use std::fs::File;
+use std::fs::{self, File};
 use std::io::Write;
 use std::ptr::null;
 
@@ -587,12 +587,25 @@ fn print_starting_status(region: &RegionNodes) {
 }
 
 fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Result<()> {
-    for chain in chains.iter_mut() {
-        chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
+    if cli.for_validation {
+        for chain in chains.iter_mut() {
+            chain.indices.clear();
+            chain.states.clear();
+        }
+    } else {
+        for chain in chains.iter_mut() {
+            chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
+        }
     }
+
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
-    let path = format!("./data/housecraft/{}.json", file_name);
+    let path = if cli.for_validation {
+        format!("./data/housecraft/validation/HiGHS/{}.json", file_name)
+    } else {
+        format!("./data/housecraft/{}.json", file_name)
+    };
+    fs::create_dir_all(path.clone())?;
     let mut output = File::create(path.clone())?;
 
     let re = Regex::new(r"\{[^}]*?\}").unwrap();

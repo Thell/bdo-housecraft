@@ -52,7 +52,7 @@ fn main() -> Result<()> {
     } else if let Some(craft) = cli.find_craft {
         find_craft_buildings(cli.region, craft)?
     } else if cli.generate {
-        generate(cli)?
+        generate(&mut cli)?
     } else if cli.optimize {
         optimize(&mut cli)?
     } else if cli.region.is_some() {

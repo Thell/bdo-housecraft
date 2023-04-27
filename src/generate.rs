@@ -28,7 +28,7 @@
 
 use std::cmp::min;
 use std::collections::HashSet;
-use std::fs::File;
+use std::fs::{self, File};
 use std::io::Write;
 
 use anyhow::{Ok, Result};
@@ -346,7 +346,8 @@ impl JobControl {
     }
 }
 
-pub(crate) fn generate(cli: Cli) -> Result<()> {
+pub(crate) fn generate(cli: &mut Cli) -> Result<()> {
+    info!("preparing");
     let region_name = cli.region.clone().unwrap();
     let forbidden_regions = ["Calpheon City", "Valencia City", "Heidel"];
     if forbidden_regions.contains(&region_name.as_str()) {
@@ -358,41 +359,42 @@ pub(crate) fn generate(cli: Cli) -> Result<()> {
         warn!("{}", msg);
     }
 
-    let region_buildings = get_region_buildings(Some(region_name.clone()))?;
-    region_buildings.iter().for_each(|b| trace!("{:#?}", b));
-    let region = RegionNodes::new(region_buildings.get(&region_name).unwrap())?;
-    debug!(
-        "Region node parameters...\
-        \n         parents: {:?}\
-        \n        children: {:?}\
-        \n           costs: {:?}\
-        \n          states: {:?}\
-        \nwarehouse_counts: {:?}\
-        \n   worker_counts: {:?}\
-        \n    jump_indices: {:?}\n",
-        region.parents,
-        region.children,
-        region.costs,
-        region.states,
-        region.warehouse_counts,
-        region.worker_counts,
-        region.jump_indices,
-    );
-
-    if !cli.verbose.is_silent() {
-        print_starting_status(&region);
-    }
-
-    info!("generating...");
-    let chains = match cli.jobs.unwrap_or(1) {
-        1 => generate_dominating(&region)?,
-        _ => generate_dominating_par(&cli, &region)?,
+    let mut do_all = false;
+    let all_region_buildings: RegionBuildingMap = if region_name == "ALL".to_string() {
+        do_all = true;
+        parse_houseinfo_data()?
+    } else {
+        get_region_buildings(Some(region_name.clone()))?
     };
-    info!("retaining...");
-    let mut chains = chains.retain_dominating_to_vec();
-    info!("writing...");
-    write_chains(&cli, &region, &mut chains)?;
 
+    for (region_name, region_buildings) in all_region_buildings.iter() {
+        if do_all && forbidden_regions.contains(&region_name.as_str()) {
+            continue;
+        }
+        cli.region = Some(region_name.to_owned());
+        let region = RegionNodes::new(region_buildings)?;
+
+        if !cli.verbose.is_silent() {
+            trace!("Buildings");
+            region_buildings.iter().for_each(|b| trace!("{:#?}", b));
+            print_region_specs(&region);
+            print_starting_status(&region);
+        }
+
+        if region.num_nodes < 20 {
+            cli.jobs = Some(1);
+        }
+
+        info!("generating...");
+        let chains = match cli.jobs.unwrap_or(1) {
+            1 => generate_dominating(&region)?,
+            _ => generate_dominating_par(&cli, &region)?,
+        };
+        info!("retaining...");
+        let mut chains = chains.retain_dominating_to_vec();
+        info!("writing...");
+        write_chains(&cli, &region, &mut chains)?;
+    }
     Ok(())
 }
 
@@ -477,6 +479,26 @@ fn generate_dominating_par_worker(
     Ok(chains)
 }
 
+fn print_region_specs(region: &RegionNodes) {
+    debug!(
+        "Region node parameters...\
+        \n         parents: {:?}\
+        \n        children: {:?}\
+        \n           costs: {:?}\
+        \n          states: {:?}\
+        \nwarehouse_counts: {:?}\
+        \n   worker_counts: {:?}\
+        \n    jump_indices: {:?}\n",
+        region.parents,
+        region.children,
+        region.costs,
+        region.states,
+        region.warehouse_counts,
+        region.worker_counts,
+        region.jump_indices,
+    );
+}
+
 fn print_starting_status(region: &RegionNodes) {
     let building_chain_count = count_subtrees(region.root, &region.parents, &region.children);
     let multistate_count = count_subtrees_multistate(
@@ -499,12 +521,27 @@ fn print_starting_status(region: &RegionNodes) {
 }
 
 fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Result<()> {
-    for chain in chains.iter_mut() {
-        chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
+    if cli.for_validation {
+        for chain in chains.iter_mut() {
+            chain.indices.clear();
+            chain.states.clear();
+        }
+    } else {
+        for chain in chains.iter_mut() {
+            chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
+        }
     }
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
-    let path = format!("./data/housecraft/{}.json", file_name);
+    let path = if cli.for_validation {
+        format!(
+            "./data/housecraft/validation/popjumppush/{}.json",
+            file_name
+        )
+    } else {
+        format!("./data/housecraft/{}.json", file_name)
+    };
+    fs::create_dir_all(path.clone())?;
     let mut output = File::create(path.clone())?;
 
     let re = Regex::new(r"\{[^}]*?\}").unwrap();
