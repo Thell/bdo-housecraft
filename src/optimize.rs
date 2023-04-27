@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::ffi::{c_void, CString};
 use std::fs::{self, File};
 use std::io::Write;
+use std::path::PathBuf;
 use std::ptr::null;
 
 use anyhow::{Ok, Result};
@@ -599,7 +600,8 @@ fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Res
     } else {
         format!("./data/housecraft/{}.json", file_name)
     };
-    fs::create_dir_all(path.clone())?;
+    let path = PathBuf::from(path);
+    fs::create_dir_all(path.clone().parent().unwrap())?;
     let mut output = File::create(path.clone())?;
 
     let re = Regex::new(r"\{[^}]*?\}").unwrap();
@@ -615,7 +617,7 @@ fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Res
         println!(
             "Result: {} 'best of best' scored storage/lodging chains written to {}.",
             chains.len(),
-            path
+            path.to_str().unwrap()
         );
     }
 
