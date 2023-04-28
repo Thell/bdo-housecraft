@@ -86,7 +86,7 @@ fn filter_by_storage_and_lodging(chains: &mut ChainVec, cli: Cli) {
     let lodging = cli.lodging.unwrap_or(0);
     let storage = cli.storage.unwrap_or(0);
     chains.retain(|chain| chain.storage >= storage && chain.lodging >= lodging);
-    if chains.len() == 0 {
+    if chains.is_empty() {
         println!("No chains match your query! Check your storage and lodging values.");
         process::exit(1);
     }

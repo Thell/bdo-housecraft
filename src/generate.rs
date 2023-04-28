@@ -361,11 +361,11 @@ pub(crate) fn generate(cli: &mut Cli) -> Result<()> {
     }
 
     let mut do_all = false;
-    let all_region_buildings: RegionBuildingMap = if region_name == "ALL".to_string() {
+    let all_region_buildings: RegionBuildingMap = if region_name == *"ALL" {
         do_all = true;
         parse_houseinfo_data()?
     } else {
-        get_region_buildings(Some(region_name.clone()))?
+        get_region_buildings(Some(region_name))?
     };
 
     for (region_name, region_buildings) in all_region_buildings.iter() {
@@ -389,12 +389,12 @@ pub(crate) fn generate(cli: &mut Cli) -> Result<()> {
         info!("generating...");
         let chains = match cli.jobs.unwrap_or(1) {
             1 => generate_dominating(&region)?,
-            _ => generate_dominating_par(&cli, &region)?,
+            _ => generate_dominating_par(cli, &region)?,
         };
         info!("retaining...");
         let mut chains = chains.retain_dominating_to_vec();
         info!("writing...");
-        write_chains(&cli, &region, &mut chains)?;
+        write_chains(cli, &region, &mut chains)?;
     }
     Ok(())
 }
@@ -543,7 +543,7 @@ fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Res
         format!("./data/housecraft/{}.json", file_name)
     };
     let path = PathBuf::from(path);
-    fs::create_dir_all(path.clone().parent().unwrap())?;
+    fs::create_dir_all(path.parent().unwrap())?;
     let mut output = File::create(path.clone())?;
 
     let re = Regex::new(r"\{[^}]*?\}").unwrap();
