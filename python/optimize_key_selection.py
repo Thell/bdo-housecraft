@@ -155,7 +155,12 @@ def extract_solution(solver, items, weights, state_1_values, state_2_values):
                 selected_key_states += [2]
                 state_2_sum += state_2_values[i]
 
-    return (total_weight, state_1_sum, state_2_sum, selected_keys, selected_key_states)
+    # Since the results of this model are only being used to validate the model and cross-check
+    # the results of the HiGHS results from the Rust optimization we do not need the selected_keys
+    # or selected_key_states since different optimizers and different ordering of the input will
+    # readily yield different item groups that meet the constraints.
+    # return (total_weight, state_1_sum, state_2_sum, selected_keys, selected_key_states)
+    return (total_weight, state_1_sum, state_2_sum, [], [])
 
 
 def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_2_values):

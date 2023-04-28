@@ -5,12 +5,13 @@ This module is simply a front-end interface to the optimize_subset_selection.
 import argparse
 from collections import namedtuple
 import copy
+from datetime import datetime
 import itertools
 import json
 from math import ceil
 import multiprocessing as mp
+import os.path
 import random
-import sys
 
 from houseinfo import get_region_buildings
 from optimize_key_selection import subset_selection, subset_selection_par, write_subset_selection_mps
@@ -19,11 +20,6 @@ OptimizerResult = namedtuple("Solution", 'cost storage lodging items states')
 Solution = namedtuple("Solution", 'lodging storage cost items states')
 RegionInfo = namedtuple("RegionInfo",
                         'buildings, items, item_reqs, weights, state_1_values, state_2_values')
-
-
-def are_solutions_equal(s_1, s_2):
-    return (s_1.cost == s_2.cost) and (s_1.storage == s_2.storage) and (
-        s_1.lodging == s_2.lodging) and (s_1.items == s_2.items) and (s_1.states == s_2.states)
 
 
 def dominates(s1: Solution, s2: Solution):
@@ -37,20 +33,31 @@ def elegant_pair(x, y):
     return pow(x, 2) + x + y
 
 
-def get_region_info(region_name):
-    return RegionInfo(*get_region_buildings(region_name))
+def have_validation_files(region_name):
+    if region_name in ["Altinova", "Heidel", "Valencia City", "Calpheon City"]:
+        return os.path.exists(f"./data/housecraft/validation/highs/{region_name}.json")
+    return os.path.exists(
+        f"./data/housecraft/validation/highs/{region_name}.json") and os.path.exists(
+            f"./data/housecraft/validation/popjumppush/{region_name}.json")
 
 
-def get_exact_region_solutions(region_name):
+def get_highs_solutions(region_name):
     region_name = region_name.replace(" ", "_")
-    with open(f"./data/housecraft/{region_name}.json", encoding="UTF-8") as file:
+    with open(f"./data/housecraft/validation/highs/{region_name}.json", encoding="UTF-8") as file:
         exact_solutions = json.load(file)
     return exact_solutions
 
 
-def write_model(region: RegionInfo, _lodging, _storage):
-    write_subset_selection_mps(region.items, region.item_reqs, region.weights,
-                               region.state_1_values, region.state_2_values)
+def get_popjumppush_solutions(region_name):
+    region_name = region_name.replace(" ", "_")
+    with open(f"./data/housecraft/validation/popjumppush/{region_name}.json",
+              encoding="UTF-8") as file:
+        exact_solutions = json.load(file)
+    return exact_solutions
+
+
+def get_region_info(region_name):
+    return RegionInfo(*get_region_buildings(region_name))
 
 
 def optimize(region: RegionInfo, lodging, storage):
@@ -63,7 +70,7 @@ def optimize(region: RegionInfo, lodging, storage):
 def optimize_all(args, region_info: RegionInfo):
     max_storage = sum(region_info.state_1_values)
     max_lodging = sum(region_info.state_2_values)
-    print(
+    time_log(
         f"Generating for {args.region} with max lodging and storage of ({max_lodging}, {max_storage})"
     )
 
@@ -72,21 +79,28 @@ def optimize_all(args, region_info: RegionInfo):
     else:
         solutions = optimize_all_state_pairs(region_info)
 
+    time_log("post-processing...sorting")
     solutions = sorted(solutions, key=lambda os: (os.lodging, os.storage, os.cost))
 
-    solutions = remove_duplicates(solutions)
+    time_log("post-processing... retaining")
     solutions = retain_top_by_lodging_storage(region_info, solutions)
+
+    time_log("post-processing... dominating")
     solutions = retain_dominating(solutions)
+
+    print(
+        f"{datetime.now().isoformat(sep=' ', timespec='milliseconds')}: post-processing... sorting")
     solutions = sorted(solutions, key=lambda os: (os.lodging, os.storage, os.cost))
 
     if args.validate:
+        time_log(f"Retained count {len(solutions)}")
         validate_solutions(args, solutions)
     else:
         solutions = [json.dumps(s._asdict()) for s in solutions]
         if not args.quiet:
             for solution in solutions:
                 print(solution)
-        print(f"Generated: {len(solutions)} dominating lodging/storage chains.")
+        time_log(f"Generated: {len(solutions)} dominating lodging/storage chains.")
 
 
 def optimize_all_state_pairs(region_info: RegionInfo):
@@ -98,7 +112,7 @@ def optimize_all_state_pairs(region_info: RegionInfo):
             solution = optimize(region_info, lodging, storage)
             if solution.items is not None:
                 solutions.append(solution)
-    print(f"Captured count {len(solutions)}")
+    time_log(f"Captured count {len(solutions)}")
     return solutions
 
 
@@ -110,7 +124,7 @@ def optimize_all_state_pairs_par(args, region_info: RegionInfo):
     for worker_solution in worker_solutions:
         solutions += worker_solution
 
-    print(f"Captured count {len(solutions)}")
+    time_log(f"Captured count {len(solutions)}")
     return solutions
 
 
@@ -144,25 +158,23 @@ def optimizer_par_worker_args(args, region_info):
     return worker_args
 
 
-def remove_duplicates(solutions_list):
-    unique_solutions = []
-    for solution in solutions_list:
-        if not any(
-                are_solutions_equal(solution, unique_solution)
-                for unique_solution in unique_solutions):
-            unique_solutions.append(solution)
-    return unique_solutions
+def retain_dominating(solutions: list[Solution]):
+    print(len(solutions))
 
 
 def retain_dominating(solutions: list[Solution]):
-    j = 0
     n = len(solutions)
+    dominated_indices = set()
     for i in range(n):
-        if all(not dominates(solutions[a], solutions[i])
-               for a in list(range(0, j)) + list(range(i + 1, n))):
-            solutions[i], solutions[j] = solutions[j], solutions[i]
-            j += 1
-    return solutions[:j]
+        if i not in dominated_indices:
+            for j in range(i + 1, n):
+                if dominates(solutions[i], solutions[j]):
+                    dominated_indices.add(j)
+                elif dominates(solutions[j], solutions[i]):
+                    dominated_indices.add(i)
+                    break
+    result = [solutions[i] for i in range(n) if i not in dominated_indices]
+    return result
 
 
 def retain_top_by_lodging_storage(region_info, solutions):
@@ -193,37 +205,110 @@ def split_list_into_n_parts(lst, n):
     return list(map(lambda x: lst[x * size:x * size + size], list(range(n))))
 
 
-def validate_solutions(args, optimized_solutions):
-    print("Validating...", end=" ")
-    exact_solutions = get_exact_region_solutions(args.region)
-    exact_solutions = sorted(exact_solutions,
-                             key=lambda es: (es["lodging"], es["storage"], es["cost"]))
+def time_log(msg):
+    print(f"{datetime.now().isoformat(sep=' ', timespec='milliseconds')}: {msg}")
 
-    for os, es in zip(optimized_solutions, exact_solutions):
-        if os.cost != es["cost"] or os.lodging != es["lodging"] or os.storage != es["storage"]:
-            print("[failed]")
-            print(f"  os: {os}")
-            print(f"  es: {es}")
-    passed = len(optimized_solutions) == len(exact_solutions)
-    print(
-        f"{len(optimized_solutions)} optimized of {len(exact_solutions)} exact solutions: {passed}."
-    )
+
+def validate_solutions(args, cbc_solutions):
+    """ Validate optimizer solutions.
+        Passing conditions:
+          - CBC == popjumppush == HiGHS for all regions < Heidel
+          - CBC == HiGHS for all regions >= Heidel
+    """
+    cbc = dict.fromkeys([tuple(s[0:3]) for s in cbc_solutions])
+    highs = dict.fromkeys([tuple(s.values())[0:3] for s in get_highs_solutions(args.region)])
+
+    time_log(f"Validating {args.region}...")
+    if args.region not in ["Altinova", "Heidel", "Valencia City", "Calpheon City"]:
+        popjumppush = dict.fromkeys(
+            [tuple(s.values())[0:3] for s in get_popjumppush_solutions(args.region)])
+
+        print("  CBC == popjumppush:", end=" ")
+        if cbc == popjumppush:
+            print("passed")
+        else:
+            cbc = set(cbc.keys())
+            popjumppush = set(popjumppush.keys())
+            diff1 = list(cbc - popjumppush)
+            diff1 = sorted(diff1, key=lambda s: (s[0], s[1]))
+            diff2 = list(popjumppush - cbc)
+            diff2 = sorted(diff2, key=lambda s: (s[0], s[1]))
+            print("failed")
+            print(f"    popjumppush - CBC:\n  {list(popjumppush - cbc).sort()}")
+            print(f"    CBC - popjumppush:\n  {list(cbc - popjumppush).sort()}")
+
+        print("  HiGHS == popjumppush:", end=" ")
+        if highs == popjumppush:
+            print("passed")
+        else:
+            highs = set(highs.keys())
+            popjumppush = set(popjumppush.keys())
+            diff1 = list(highs - popjumppush)
+            diff1 = sorted(diff1, key=lambda s: (s[0], s[1]))
+            diff2 = list(popjumppush - highs)
+            diff2 = sorted(diff2, key=lambda s: (s[0], s[1]))
+            print("failed")
+            print(f"    popjumppush - HiGHS:\n  {diff2}")
+            print(f"    HiGHS - popjumppush:\n  {diff1}")
+    else:
+        print("  CBC == HiGHS:", end=" ")
+        if cbc == highs:
+            print("passed")
+        else:
+            cbc = set(cbc.keys())
+            highs = set(highs.keys())
+            diff1 = list(cbc - highs)
+            diff1 = sorted(diff1, key=lambda s: (s[0], s[1]))
+            diff2 = list(highs - cbc)
+            diff2 = sorted(diff2, key=lambda s: (s[0], s[1]))
+            print("failed")
+            print(f"    CBC - HiGHS:\n  {cbc - highs}")
+            print(f"    HiGHS - CBC:\n  {highs - cbc}")
+    print()
+
+
+def write_model(region: RegionInfo, _lodging, _storage):
+    write_subset_selection_mps(region.items, region.item_reqs, region.weights,
+                               region.state_1_values, region.state_2_values)
 
 
 def main(args):
-    # if args.validate and args.region in ["Calpheon City", "Valencia City", "Heidel"]:
-    #     sys.exit("Exact results are unavailable to validate the optimizer against.")
+    # yapf: disable
+    regions = ["Velia", "Glish", "Keplan", "Trent", "Iliya Island", "Tarif", "Shakatu",
+               "Sand Grain Bazaar", "Ancado Inner Harbor", "Arehaza", "Muiquun", "Old Wisdom Tree",
+               "Grána", "Duvencrune", "O'draxxia", "Eilton", "Olvia", "Port Epheria", "Altinova",
+               "Heidel", "Valencia City", "Calpheon City"]
+    # yapf: enable
 
-    region_info = get_region_info(args.region)
-    if args.write:
-        write_model(region_info, args.lodging, args.storage)
-    elif args.all:
-        optimize_all(args, region_info)
+    if args.region == "ALL":
+        for region in regions:
+            if args.validate and not have_validation_files(args.region):
+                print(f"Validation files for {region} must be generated/optimized.")
+                continue
+            args.region = region
+            region_info = get_region_info(args.region)
+            if args.write:
+                write_model(region_info, args.lodging, args.storage)
+            elif args.all:
+                optimize_all(args, region_info)
+            else:
+                solution = optimize(region_info, args.lodging, args.storage)
+                print(
+                    f"cost: {solution.cost}, lodging: {solution.lodging}, storage: {solution.storage}\n"
+                    f"items: {solution.items}\n"
+                    f"states: {solution.states}\n")
     else:
-        solution = optimize(region_info, args.lodging, args.storage)
-        print(f"cost: {solution.cost}, lodging: {solution.lodging}, storage: {solution.storage}\n"
-              f"items: {solution.items}\n"
-              f"states: {solution.states}\n")
+        region_info = get_region_info(args.region)
+        if args.write:
+            write_model(region_info, args.lodging, args.storage)
+        elif args.all:
+            optimize_all(args, region_info)
+        else:
+            solution = optimize(region_info, args.lodging, args.storage)
+            print(
+                f"cost: {solution.cost}, lodging: {solution.lodging}, storage: {solution.storage}\n"
+                f"items: {solution.items}\n"
+                f"states: {solution.states}\n")
 
 
 if __name__ == '__main__':

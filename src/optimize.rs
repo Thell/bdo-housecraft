@@ -1,7 +1,8 @@
 use std::collections::HashMap;
 use std::ffi::{c_void, CString};
-use std::fs::File;
+use std::fs::{self, File};
 use std::io::Write;
+use std::path::PathBuf;
 use std::ptr::null;
 
 use anyhow::{Ok, Result};
@@ -232,11 +233,6 @@ impl SubsetModel {
                 let option = CString::new("threads").unwrap();
                 Highs_setIntOptionValue(highs, option.as_ptr(), 1);
 
-                // Most of the errors encountered are presolve assertions in the `latest` branch.
-                // let option = CString::new("presolve").unwrap();
-                // let option_value = CString::new("off").unwrap();
-                // Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
-
                 highs
             },
         }
@@ -247,14 +243,6 @@ impl SubsetModel {
         let item_reqs: Vec<_> = region.parents.iter().map(|x| *x as u32).collect();
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
-
-        // unsafe {
-        //     let highs = self.highs_ptr;
-        //     let filename = CString::new("subset_select.mps").unwrap();
-        //     Highs_readModel(highs, filename.as_ptr());
-        //     let filename = CString::new("subset_select_highs_inout.mps").unwrap();
-        //     Highs_writeModel(highs, filename.as_ptr());
-        // }
 
         unsafe {
             // parent -> child relation tree for item selection requirements.
@@ -269,6 +257,16 @@ impl SubsetModel {
 
             // Use the HiGHS optimizer.
             let highs = self.highs_ptr;
+
+            // Presolve fails on a few known instances.
+            // See https://github.com/ERGO-Code/HiGHS/issues/1273
+            let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
+            if no_presolve_regions.contains(&region.region_name.as_str()) {
+                debug!("Disabling HiGHS presolve for {}.", region.region_name);
+                let option = CString::new("presolve").unwrap();
+                let option_value = CString::new("off").unwrap();
+                Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
+            }
 
             // Variables to flag selected items and indicate the state of the selected item.
             // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
@@ -377,9 +375,6 @@ impl SubsetModel {
                 aindex.as_ptr(),
                 avalue.as_ptr(),
             );
-
-            // let filename = CString::new("subset_select_highs.mps").unwrap();
-            // Highs_writeModel(highs, filename.as_ptr());
         }
     }
 
@@ -587,12 +582,26 @@ fn print_starting_status(region: &RegionNodes) {
 }
 
 fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Result<()> {
-    for chain in chains.iter_mut() {
-        chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
+    if cli.for_validation {
+        for chain in chains.iter_mut() {
+            chain.indices.clear();
+            chain.states.clear();
+        }
+    } else {
+        for chain in chains.iter_mut() {
+            chain.indices = chain.indices.iter().map(|j| region.children[*j]).collect();
+        }
     }
+
     let region_name = cli.region.clone().unwrap();
     let file_name = region_name.replace(' ', "_");
-    let path = format!("./data/housecraft/{}.json", file_name);
+    let path = if cli.for_validation {
+        format!("./data/housecraft/validation/HiGHS/{}.json", file_name)
+    } else {
+        format!("./data/housecraft/{}.json", file_name)
+    };
+    let path = PathBuf::from(path);
+    fs::create_dir_all(path.clone().parent().unwrap())?;
     let mut output = File::create(path.clone())?;
 
     let re = Regex::new(r"\{[^}]*?\}").unwrap();
@@ -608,7 +617,7 @@ fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Res
         println!(
             "Result: {} 'best of best' scored storage/lodging chains written to {}.",
             chains.len(),
-            path
+            path.to_str().unwrap()
         );
     }
 
