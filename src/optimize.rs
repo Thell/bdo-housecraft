@@ -258,123 +258,131 @@ impl SubsetModel {
             // Use the HiGHS optimizer.
             let highs = self.highs_ptr;
 
-            // Presolve fails on a few known instances.
-            // See https://github.com/ERGO-Code/HiGHS/issues/1273
-            let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
-            if no_presolve_regions.contains(&region.region_name.as_str()) {
-                debug!("Disabling HiGHS presolve for {}.", region.region_name);
-                let option = CString::new("presolve").unwrap();
-                let option_value = CString::new("off").unwrap();
-                Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
-            }
+            // // Presolve fails on a few known instances.
+            // // See https://github.com/ERGO-Code/HiGHS/issues/1273
+            // let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
+            // if no_presolve_regions.contains(&region.region_name.as_str()) {
+            //     debug!("Disabling HiGHS presolve for {}.", region.region_name);
+            //     let option = CString::new("presolve").unwrap();
+            //     let option_value = CString::new("off").unwrap();
+            //     Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
+            // }
 
-            // Variables to flag selected items and indicate the state of the selected item.
-            // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
-            let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
-            let mut item_flags: HashMap<u32, i32> = HashMap::new();
-            let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
-            let mut state_2_flags: HashMap<u32, i32> = HashMap::new();
+            // // Variables to flag selected items and indicate the state of the selected item.
+            // // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
+            // let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
+            // let mut item_flags: HashMap<u32, i32> = HashMap::new();
+            // let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
+            // let mut state_2_flags: HashMap<u32, i32> = HashMap::new();
 
-            let mut column_id = 0;
-            for (i, item) in items.iter().enumerate() {
-                // item_flags (with objective item selection costs)
-                if Highs_addCol(highs, costs[i], 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
-                    Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
-                    item_flags.insert(*item, column_id);
-                    column_id += 1;
-                }
-                // state_1_flags
-                if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
-                    Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
-                    state_1_flags.insert(*item, column_id);
-                    column_id += 1;
-                }
-                // state_2_flags
-                if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
-                    Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
-                    state_2_flags.insert(*item, column_id);
-                    column_id += 1;
-                }
-            }
+            // let mut column_id = 0;
+            // for (i, item) in items.iter().enumerate() {
+            //     // item_flags (with objective item selection costs)
+            //     if Highs_addCol(highs, costs[i], 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
+            //         Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
+            //         item_flags.insert(*item, column_id);
+            //         column_id += 1;
+            //     }
+            //     // state_1_flags
+            //     if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
+            //         Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
+            //         state_1_flags.insert(*item, column_id);
+            //         column_id += 1;
+            //     }
+            //     // state_2_flags
+            //     if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
+            //         Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
+            //         state_2_flags.insert(*item, column_id);
+            //         column_id += 1;
+            //     }
+            // }
 
-            // The item requirements constraints.
-            let highs_inf = Highs_getInfinity(highs);
+            // // The item requirements constraints.
+            // let highs_inf = Highs_getInfinity(highs);
 
-            // The item parent <- child requirements constraints.
-            // Transitive; ensures children must have all ancestors back to root.
-            for (parent, children) in item_req_tree.iter() {
-                for child in children.iter() {
-                    if *parent == items[0] || *parent == 0 {
-                        continue;
-                    }
-                    // item_flags[child] - item_flags[parent] <= 0
-                    let aindex: [i32; 2] = [item_flags[child], item_flags[parent]];
-                    let avalue: [f64; 2] = [1.0, -1.0];
-                    Highs_addRow(
-                        highs,
-                        -highs_inf,
-                        0.0,
-                        aindex.len() as i32,
-                        aindex.as_ptr(),
-                        avalue.as_ptr(),
-                    );
-                }
-            }
+            // // The item parent <- child requirements constraints.
+            // // Transitive; ensures children must have all ancestors back to root.
+            // for (parent, children) in item_req_tree.iter() {
+            //     for child in children.iter() {
+            //         if *parent == items[0] || *parent == 0 {
+            //             continue;
+            //         }
+            //         // item_flags[child] - item_flags[parent] <= 0
+            //         let aindex: [i32; 2] = [item_flags[child], item_flags[parent]];
+            //         let avalue: [f64; 2] = [1.0, -1.0];
+            //         Highs_addRow(
+            //             highs,
+            //             -highs_inf,
+            //             0.0,
+            //             aindex.len() as i32,
+            //             aindex.as_ptr(),
+            //             avalue.as_ptr(),
+            //         );
+            //     }
+            // }
 
-            // Item selection constraint: one state on flagged items, no state otherwise.
-            for item in items.iter() {
-                if *item == items[0] {
-                    continue;
-                }
-                // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
-                let aindex: [i32; 3] = [state_1_flags[item], state_2_flags[item], item_flags[item]];
-                let avalue: [f64; 3] = [1.0, 1.0, -1.0];
-                Highs_addRow(
-                    highs,
-                    0.0,
-                    0.0,
-                    aindex.len() as i32,
-                    aindex.as_ptr(),
-                    avalue.as_ptr(),
-                );
-            }
+            // // Item selection constraint: one state on flagged items, no state otherwise.
+            // for item in items.iter() {
+            //     if *item == items[0] {
+            //         continue;
+            //     }
+            //     // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
+            //     let aindex: [i32; 3] = [state_1_flags[item], state_2_flags[item], item_flags[item]];
+            //     let avalue: [f64; 3] = [1.0, 1.0, -1.0];
+            //     Highs_addRow(
+            //         highs,
+            //         0.0,
+            //         0.0,
+            //         aindex.len() as i32,
+            //         aindex.as_ptr(),
+            //         avalue.as_ptr(),
+            //     );
+            // }
 
-            // State values sum constraints.
-            // Sum items selected as state 1 values
-            let mut aindex: Vec<i32> = Vec::new();
-            let mut avalue: Vec<f64> = Vec::new();
-            for (i, item) in items.iter().enumerate() {
-                if state_1_values[i] > 0.0 {
-                    aindex.push(state_1_flags[item]);
-                    avalue.push(state_1_values[i]);
-                }
-            }
-            Highs_addRow(
-                highs,
-                9999.0,
-                highs_inf,
-                aindex.len() as i32,
-                aindex.as_ptr(),
-                avalue.as_ptr(),
-            );
+            // // State values sum constraints.
+            // // Sum items selected as state 1 values
+            // let mut aindex: Vec<i32> = Vec::new();
+            // let mut avalue: Vec<f64> = Vec::new();
+            // for (i, item) in items.iter().enumerate() {
+            //     if state_1_values[i] > 0.0 {
+            //         aindex.push(state_1_flags[item]);
+            //         avalue.push(state_1_values[i]);
+            //     }
+            // }
+            // Highs_addRow(
+            //     highs,
+            //     9999.0,
+            //     highs_inf,
+            //     aindex.len() as i32,
+            //     aindex.as_ptr(),
+            //     avalue.as_ptr(),
+            // );
 
-            // Sum items selected as state 2 values
-            aindex.clear();
-            avalue.clear();
-            for (i, item) in items.iter().enumerate() {
-                if state_2_values[i] > 0.0 {
-                    aindex.push(state_2_flags[item]);
-                    avalue.push(state_2_values[i]);
-                }
-            }
-            Highs_addRow(
-                highs,
-                9999.0,
-                highs_inf,
-                aindex.len() as i32,
-                aindex.as_ptr(),
-                avalue.as_ptr(),
-            );
+            // // Sum items selected as state 2 values
+            // aindex.clear();
+            // avalue.clear();
+            // for (i, item) in items.iter().enumerate() {
+            //     if state_2_values[i] > 0.0 {
+            //         aindex.push(state_2_flags[item]);
+            //         avalue.push(state_2_values[i]);
+            //     }
+            // }
+            // Highs_addRow(
+            //     highs,
+            //     9999.0,
+            //     highs_inf,
+            //     aindex.len() as i32,
+            //     aindex.as_ptr(),
+            //     avalue.as_ptr(),
+            // );
+
+            let filename = CString::new(format!("subset_select_in.mps.gz")).unwrap();
+            Highs_readModel(highs, filename.as_ptr());
+            println!("mps file has been read");
+
+            let filename = CString::new(format!("subset_select_out.mps")).unwrap();
+            Highs_writeModel(highs, filename.as_ptr());
+            println!("mps file has been written");
         }
     }
 
