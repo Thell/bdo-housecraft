@@ -108,8 +108,7 @@ def optimize_all(args, region_info: RegionInfo):
     time_log("post-processing... dominating")
     solutions = retain_dominating(solutions)
 
-    print(
-        f"{datetime.now().isoformat(sep=' ', timespec='milliseconds')}: post-processing... sorting")
+    time_log("post-processing... sorting")
     solutions = sorted(solutions, key=lambda os: (os.lodging, os.storage, os.cost))
 
     if args.validate:
