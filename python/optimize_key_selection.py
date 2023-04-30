@@ -110,21 +110,26 @@ def subset_selection(items, item_reqs, weights, state_1_values, state_2_values,
 
 
 def subset_selection_par(items, item_reqs, weights, state_1_values, state_2_values,
-                         state_values_sum_lb_pairs):
+                         state_1_values_sum_ub, state_2_values_sum_lb):
     """ Optimize all state pairs in parallel. """
     solutions = []
     solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
 
     state_1_constraint = solver.LookupConstraint("state_1_lb")
     state_2_constraint = solver.LookupConstraint("state_2_lb")
-    for state_1_sum_values_lb, state_2_sum_values_lb in state_values_sum_lb_pairs:
-        state_1_constraint.SetBounds(state_1_sum_values_lb, solver.infinity())
-        state_2_constraint.SetBounds(state_2_sum_values_lb, solver.infinity())
+
+    state_2_constraint.SetBounds(state_2_values_sum_lb, solver.infinity())
+    state_1_values_sum_lb = 0
+    while state_1_values_sum_lb <= state_1_values_sum_ub:
+        state_1_constraint.SetBounds(state_1_values_sum_lb, solver.infinity())
         result_status = solver.Solve()
 
-        if result_status != pywraplp.Solver.OPTIMAL:
-            continue
-        solutions.append(extract_solution(solver, items, weights, state_1_values, state_2_values))
+        if result_status == pywraplp.Solver.OPTIMAL:
+            solution = extract_solution(solver, items, weights, state_1_values, state_2_values)
+            solutions.append(solution)
+            state_1_values_sum_lb = solution[1] + 1
+        else:
+            break
 
     return solutions
 

@@ -128,11 +128,16 @@ def optimize_all_state_pairs(region_info: RegionInfo):
     solutions = []
     max_storage = sum(region_info.state_1_values)
     max_lodging = sum(region_info.state_2_values)
+    # Increment along the lodging axis and step along the storage axis using the solutions result.
     for lodging in range(max_lodging + 1):
-        for storage in range(max_storage + 1):
+        storage = 0
+        while storage <= max_storage + 1:
             solution = optimize(region_info, lodging, storage)
-            if solution.items is not None:
+            if solution.cost is not None:
+                storage = solution.storage + 1
                 solutions.append(solution)
+            else:
+                break
     time_log(f"Captured count {len(solutions)}")
     return solutions
 
@@ -140,9 +145,11 @@ def optimize_all_state_pairs(region_info: RegionInfo):
 def optimize_all_state_pairs_par(args, region_info: RegionInfo):
     """ optimize all lodging, storage pairs for the region using multiple workers
     """
+    # Use a single thread per lodging axis
     worker_args = optimizer_par_worker_args(args, region_info)
     solutions = []
-    with mp.Pool(args.jobs) as pool:
+    num_workers = min(len(worker_args), mp.cpu_count())
+    with mp.Pool(num_workers) as pool:
         worker_solutions = pool.map(optimize_all_state_pairs_par_worker, worker_args)
     for worker_solution in worker_solutions:
         solutions += worker_solution
@@ -157,7 +164,7 @@ def optimize_all_state_pairs_par_worker(worker_args):
     region = worker_args["region_info"]
     subset_solutions = subset_selection_par(region.items, region.item_reqs, region.weights,
                                             region.state_1_values, region.state_2_values,
-                                            worker_args["params"])
+                                            *worker_args["params"])
     solutions = []
     for solution in subset_solutions:
         result = OptimizerResult(*solution)
@@ -167,23 +174,15 @@ def optimize_all_state_pairs_par_worker(worker_args):
     return solutions
 
 
-def optimizer_par_worker_args(args, region_info):
+def optimizer_par_worker_args(_args, region_info):
     """ return a list of arguments, region and storage, lodging pairs, for each worker.
     """
-    max_storage = sum(region_info.state_1_values)
-    max_lodging = sum(region_info.state_2_values)
-    lodging_storage_pairs = list(itertools.product(range(max_storage + 1), range(max_lodging + 1)))
-    random.shuffle(lodging_storage_pairs)
-    chunked_pairs = split_list_into_n_parts(lodging_storage_pairs, args.jobs)
-
-    worker_args = []
-    for chunk in chunked_pairs:
-        worker_args.append({
-            "region_info": copy.deepcopy(region_info),
-            "params": copy.deepcopy(chunk)
-        })
-
-    return worker_args
+    state_1_sum_ub = sum(region_info.state_1_values) + 1
+    state_2_sum_ub = sum(region_info.state_2_values) + 1
+    return [{
+        "region_info": copy.deepcopy(region_info),
+        "params": (state_1_sum_ub, lb)
+    } for lb in range(state_2_sum_ub)]
 
 
 def retain_dominating(solutions: list[Solution]):
@@ -226,13 +225,6 @@ def retain_top_by_lodging_storage(region_info, solutions):
             kept_index = kept_idices[key_index]
             kept_solutions[kept_index] = solution
     return kept_solutions
-
-
-def split_list_into_n_parts(lst, n):
-    """ returns a list of n lists (splits a list into n distinct lists)
-    """
-    size = ceil(len(lst) / n)
-    return list(map(lambda x: lst[x * size:x * size + size], list(range(n))))
 
 
 def time_log(msg):
