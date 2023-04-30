@@ -45,9 +45,9 @@ impl fmt::Display for Chain {
         table.set_header(vec![
             Cell::new("Key").add_attribute(Attribute::Dim),
             Cell::new("Building").add_attribute(Attribute::Dim),
-            Cell::new("C"),
-            Cell::new("S"),
-            Cell::new("L"),
+            Cell::new("C").add_attribute(Attribute::Dim),
+            Cell::new("S").add_attribute(Attribute::Dim),
+            Cell::new("L").add_attribute(Attribute::Dim),
         ]);
 
         for (index, state) in self.indices.iter().zip(self.states.iter()).skip(1) {
