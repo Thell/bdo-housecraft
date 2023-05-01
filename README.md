@@ -1,4 +1,4 @@
-# ** Work in progress **
+# Work in progress.
 
 # About
 
@@ -52,7 +52,7 @@ Shakatu
   Lodging 1             3
   Lodging 2             2
   Lodging 3             1
-  Mineral Workbench 1   1
+  Mineral Workshop  1   1
   Mushroom Factory 1    2
   Refinery 1            1
   Refinery 2            2
@@ -63,39 +63,39 @@ Shakatu
   Storage 4             1
   Tool Workshop 1       1
   Tool Workshop 2       1
-  Wood Workbench 1      1
+  Wood Workshop  1      1
 ═══════════════════════════════
 ```
 
 ## Find buildings for a usage.
 
 ```md
-> housecraft --find-craft "Wood Workbench 2"
+> housecraft --find-craft "Wood Workshop 2"
 
 
 Duvencrune
   Crafting Usage     Key    Building                 Cost 
 ───────────────────────────────────────────────────────────
-  Wood Workbench 2   3615   Dormann Lumber Camp 2    7
-  Wood Workbench 2   3616   Khimut Lumber Camp 1-1   5
+  Wood Workshop  2   3615   Dormann Lumber Camp 2    7
+  Wood Workshop  2   3616   Khimut Lumber Camp 1-1   5
 ═══════════════════════════════════════════════════════════
 
 Eilton
   Crafting Usage     Key    Building        Cost 
 ──────────────────────────────────────────────────
-  Wood Workbench 2   3821   Camp Balacs 1   3
+  Wood Workshop  2   3821   Camp Balacs 1   3
 ══════════════════════════════════════════════════
 
 Grána
   Crafting Usage     Key    Building   Cost 
 ─────────────────────────────────────────────
-  Wood Workbench 2   3510   Grána 9    6
+  Wood Workshop  2   3510   Grána 9    6
 ═════════════════════════════════════════════
 
 O'draxxia
   Crafting Usage     Key    Building      Cost 
 ────────────────────────────────────────────────
-  Wood Workbench 2   3803   O'draxxia 3   3
+  Wood Workshop  2   3803   O'draxxia 3   3
 ════════════════════════════════════════════════
 ```
 
