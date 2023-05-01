@@ -25,8 +25,7 @@ RegionInfo = namedtuple("RegionInfo",
 def dominates(s1: Solution, s2: Solution):
     """ Returns true if the first solution dominates the second solution.
     """
-    return s1.cost <= s2.cost and s1.storage >= s2.storage and s1.lodging >= s2.lodging and not (
-        s1.cost == s2.cost and s1.storage == s2.storage and s1.lodging == s2.lodging)
+    return s1.cost <= s2.cost and s1.storage >= s2.storage and s1.lodging >= s2.lodging
 
 
 # pylint: enable=invalid-name
