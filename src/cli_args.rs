@@ -52,6 +52,7 @@ pub(crate) struct Cli {
     pub(crate) generate: bool,
 
     /// find optimal houseinfo building chain for region, storage and lodging
+    /// (Always parallel; uses all processors as needed.)
     #[arg(long, group = "generation", requires = "region", conflicts_with = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
 
@@ -64,6 +65,6 @@ pub(crate) struct Cli {
     pub(crate) for_validation: bool,
 
     /// use NUM parallel jobs
-    #[arg(short, long, requires = "generation", help_heading = Some("Generation"))]
+    #[arg(short, long, requires = "generation", conflicts_with = "optimize", help_heading = Some("Generation"))]
     pub(crate) jobs: Option<u8>,
 }
