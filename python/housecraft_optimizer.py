@@ -6,12 +6,9 @@ import argparse
 from collections import namedtuple
 import copy
 from datetime import datetime
-import itertools
 import json
-from math import ceil
 import multiprocessing as mp
 import os.path
-import random
 
 from houseinfo import get_region_buildings
 from optimize_key_selection import subset_selection, subset_selection_par,\
@@ -22,21 +19,14 @@ Solution = namedtuple("Solution", 'lodging storage cost items states')
 RegionInfo = namedtuple("RegionInfo",
                         'buildings, items, item_reqs, weights, state_1_values, state_2_values')
 
-
 # pylint: disable=invalid-name
+
+
 def dominates(s1: Solution, s2: Solution):
     """ Returns true if the first solution dominates the second solution.
     """
     return s1.cost <= s2.cost and s1.storage >= s2.storage and s1.lodging >= s2.lodging and not (
         s1.cost == s2.cost and s1.storage == s2.storage and s1.lodging == s2.lodging)
-
-
-def elegant_pair(x, y):
-    """ outputs a single non−negative integer that is uniquely associated with an x,y pair
-    """
-    if x != max(x, y):
-        return pow(y, 2) + x
-    return pow(x, 2) + x + y
 
 
 # pylint: enable=invalid-name
@@ -45,8 +35,10 @@ def elegant_pair(x, y):
 def have_validation_files(region_name):
     """ returns true if validation files exist
     """
-    if region_name in ["Altinova", "Heidel", "Valencia City", "Calpheon City"]:
-        return os.path.exists(f"./data/housecraft/validation/highs/{region_name}.json")
+    region_name = region_name.replace(" ", "_")
+    if region_name in ["Altinova", "Heidel", "Valencia_City", "Calpheon_City"]:
+        print(f"./data/housecraft/validation/HiGHS/{region_name}.json")
+        return os.path.exists(f"./data/housecraft/validation/HiGHS/{region_name}.json")
     return os.path.exists(
         f"./data/housecraft/validation/highs/{region_name}.json") and os.path.exists(
             f"./data/housecraft/validation/popjumppush/{region_name}.json")
@@ -95,21 +87,12 @@ def optimize_all(args, region_info: RegionInfo):
              ({max_lodging}, {max_storage})")
 
     if args.jobs > 0:
-        solutions = optimize_all_state_pairs_par(args, region_info)
+        solutions = optimize_all_par(args, region_info)
     else:
         solutions = optimize_all_state_pairs(region_info)
 
-    time_log("post-processing...sorting")
-    solutions = sorted(solutions, key=lambda os: (os.lodging, os.storage, os.cost))
-
-    time_log("post-processing... retaining")
-    solutions = retain_top_by_lodging_storage(region_info, solutions)
-
     time_log("post-processing... dominating")
     solutions = retain_dominating(solutions)
-
-    time_log("post-processing... sorting")
-    solutions = sorted(solutions, key=lambda os: (os.lodging, os.storage, os.cost))
 
     if args.validate:
         time_log(f"Retained count {len(solutions)}")
@@ -128,7 +111,7 @@ def optimize_all_state_pairs(region_info: RegionInfo):
     solutions = []
     max_storage = sum(region_info.state_1_values)
     max_lodging = sum(region_info.state_2_values)
-    # Increment along the lodging axis and step along the storage axis using the solutions result.
+
     for lodging in range(max_lodging + 1):
         storage = 0
         while storage <= max_storage + 1:
@@ -142,7 +125,7 @@ def optimize_all_state_pairs(region_info: RegionInfo):
     return solutions
 
 
-def optimize_all_state_pairs_par(args, region_info: RegionInfo):
+def optimize_all_par(args, region_info: RegionInfo):
     """ optimize all lodging, storage pairs for the region using multiple workers
     """
     # Use a single thread per lodging axis
@@ -150,7 +133,7 @@ def optimize_all_state_pairs_par(args, region_info: RegionInfo):
     solutions = []
     num_workers = min(len(worker_args), mp.cpu_count())
     with mp.Pool(num_workers) as pool:
-        worker_solutions = pool.map(optimize_all_state_pairs_par_worker, worker_args)
+        worker_solutions = pool.map(optimize_all_par_worker, worker_args)
     for worker_solution in worker_solutions:
         solutions += worker_solution
 
@@ -158,7 +141,7 @@ def optimize_all_state_pairs_par(args, region_info: RegionInfo):
     return solutions
 
 
-def optimize_all_state_pairs_par_worker(worker_args):
+def optimize_all_par_worker(worker_args):
     """ optimize the lodging, storage pairs given in worker_args
     """
     region = worker_args["region_info"]
@@ -200,31 +183,6 @@ def retain_dominating(solutions: list[Solution]):
                     break
     result = [solutions[i] for i in range(n) if i not in dominated_indices]
     return result
-
-
-def retain_top_by_lodging_storage(region_info, solutions):
-    """ returns a list of the optimal solutions for each storage/lodging pair
-    """
-    dim_x = sum(region_info.state_1_values)
-    dim_y = sum(region_info.state_2_values)
-    dim_len = pow(max(dim_x, dim_y) + 1, 2)
-
-    seen_cost = [9999] * dim_len
-    kept_idices = [None] * dim_len
-    kept_solutions = []
-    for solution in solutions:
-        key_index = elegant_pair(solution.lodging, solution.storage)
-        if seen_cost[key_index] == 9999:
-            # insert
-            seen_cost[key_index] = solution.cost
-            kept_idices[key_index] = len(kept_solutions)
-            kept_solutions.append(solution)
-        elif seen_cost[key_index] < solution.cost:
-            # update
-            seen_cost[key_index] = solution.cost
-            kept_index = kept_idices[key_index]
-            kept_solutions[kept_index] = solution
-    return kept_solutions
 
 
 def time_log(msg):
@@ -310,7 +268,7 @@ def main(args):
 
     if args.region == "ALL":
         for region in regions:
-            if args.validate and not have_validation_files(args.region):
+            if args.validate and not have_validation_files(region):
                 print(f"Validation files for {region} must be generated/optimized.")
                 continue
             args.region = region
