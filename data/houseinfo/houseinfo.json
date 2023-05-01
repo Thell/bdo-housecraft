@@ -2599,7 +2599,7 @@
             "need_house_key": 0,
             "house_group": 0,
             "house_floor": 0,
-            "num_craft_list_items": 3,
+            "num_craft_list_items": 4,
             "craft_list": [
                 {
                     "house_level": 1,
@@ -2608,6 +2608,10 @@
                 {
                     "house_level": 1,
                     "item_craft_index": 1
+                },
+                {
+                    "house_level": 3,
+                    "item_craft_index": 1412
                 },
                 {
                     "house_level": 1,
@@ -7148,7 +7152,7 @@
             "need_house_key": 2696,
             "house_group": 0,
             "house_floor": 0,
-            "num_craft_list_items": 4,
+            "num_craft_list_items": 5,
             "craft_list": [
                 {
                     "house_level": 2,
@@ -7161,6 +7165,10 @@
                 {
                     "house_level": 2,
                     "item_craft_index": 1404
+                },
+                {
+                    "house_level": 3,
+                    "item_craft_index": 1410
                 },
                 {
                     "house_level": 1,
@@ -12914,11 +12922,15 @@
             "need_house_key": 0,
             "house_group": 0,
             "house_floor": 0,
-            "num_craft_list_items": 3,
+            "num_craft_list_items": 4,
             "craft_list": [
                 {
                     "house_level": 1,
                     "item_craft_index": 2
+                },
+                {
+                    "house_level": 3,
+                    "item_craft_index": 1411
                 },
                 {
                     "house_level": 1,

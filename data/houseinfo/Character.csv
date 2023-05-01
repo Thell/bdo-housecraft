@@ -1113,6 +1113,8 @@ Param0,String
 1651,[Event] Gold Barley
 1701,Kuku Nest
 1702,[Event] Fresh Tulip
+1703,[Event] Healthy Sapling
+1704,Cherry Blossom Tree
 2001,Strong Fence Garden
 2002,Shabby Fence Garden
 2003,Ordinary Garden
@@ -3055,6 +3057,19 @@ Param0,String
 8043,Artisan Human Worker
 8044,Darifu
 8045,Torres
+8046,Artisan Torres Worker
+8047,Dokkebi Worker
+8048,Skilled Dokkebi Worker
+8049,Professional Dokkebi Worker
+8050,Artisan Dokkebi Worker
+8051,Dolswe Worker
+8052,Skilled Dolswe Worker
+8053,Professional Dolswe Worker
+8054,Artisan Dolswe Worker
+8055,Shellfolk Worker
+8056,Skilled Shellfolk Worker
+8057,Professional Shellfolk Worker
+8058,Artisan Shellfolk Worker
 8501,Lion
 8502,Kzarka Priest
 8503,Stone Scale Iguana
@@ -3301,6 +3316,10 @@ Param0,String
 9115,Donkey
 9117,[Event] Lynch Cannon
 9118,Flimsy Wooden Fence
+9119,Donkey
+9120,Donkey
+9121,Donkey
+9122,Strong Black Donkey
 9401,Cat
 9402,Cat
 9403,Cat
@@ -4839,8 +4858,8 @@ Param0,String
 13208,[Halloween] Bat Chandelier
 13209,Margoria Whale Chandelier
 13210,Flower Chandelier
-13211,Flower Decorated Frame(Ceiling)
-13212,Wooden Shelf(Ceiling)
+13211,Flower Decorated Frame (Ceiling)
+13212,Wooden Shelf (Ceiling)
 13213,Coral Chandelier
 13214,[Sweet Halloween] Feather Hat Ceiling Deco
 13215,[Sweet Halloween] Diamond Pattern Hat Ceiling Deco
@@ -4875,7 +4894,7 @@ Param0,String
 13715,Green Bell Floor
 13716,Walnut Floor
 13717,Red Oak Floor
-13718,Maron stone Floor
+13718,Maron Stone Floor
 13719,Armo Floor
 13720,Hidaisy Floor
 13721,Gorton Floor
@@ -5376,11 +5395,11 @@ Param0,String
 16226,Over the Rocky Mountain
 16227,Arehaza Scenery
 16228,Areha Palm Forest
-16229,Flower Cushion Set
-16230,Flower Cushion and Book Set
-16231,Dessert Set
+16229,Spring Picnic Flower Cushion Set
+16230,Spring Picnic Flower Cushion and Book Set
+16231,Spring Picnic Dessert Set
 16232,Coffee Set
-16233,Lamp Set
+16233,Spring Picnic Lamp Set
 16234,Spring Shelf
 16235,Golden Trophy
 16236,Sterling Silver Trophy
@@ -5812,6 +5831,9 @@ Param0,String
 16990,[Event] Skillful Piku Horn Decoration
 16991,Paw-doodle: Woosa
 16992,Paw-doodle: Maegu
+16993,Worker Expansion Item
+16994,Wharf Expansion Item
+16995,Do not use
 17001,Plain Wall Tapestry
 17002,Glamorous Patterned Tapestry
 17003,Mediah Patterned Tapestry
@@ -6027,6 +6049,111 @@ Param0,String
 17669,Winter Wood Furnace
 17670,Winter Candle Stand
 17671,[Jukebox] Memories of Port Ratt
+17672,Spring Shelf
+17673,Spring Flower Drawers
+17674,Spring Flower Wardrobe
+17675,Spring Flower Dining Table
+17676,Spring Flower Table
+17677,Spring Flower Chair
+17678,Spring Flower Sofa
+17679,Spring Flower Desk
+17680,Spring Flower Bed
+17681,Natural Log Bedside Table
+17682,Natural Log Drawers
+17683,Natural Log Wardrobe
+17684,Natural Log Dining Table
+17685,Natural Log Table
+17686,Natural Log Chair
+17687,Natural Log Sofa
+17688,Natural Log Bookshelf
+17689,Natural Log Bed
+17690,Spring Picnic Flower Decorated Frame (Ceiling)
+17691,Wooden Shelf (Ceiling)
+17692,Spring Picnic Flower Cushion Set
+17693,Spring Picnic Flower Cushion and Book Set
+17694,Spring Picnic Dessert Set
+17695,Spring Picnic Lamp Set
+17696,Spring Picnic Cushion A
+17697,Spring Picnic Cushion C
+17698,Spring Picnic Flower Box A
+17699,Spring Picnic Flower Box B
+17700,Spring Picnic Flower Box C
+17701,Spring Picnic Flower Pot A
+17702,Spring Picnic Flower Pot B
+17703,Spring Picnic Flower Pot C
+17704,Spring Picnic Flower Pot D
+17705,Spring Picnic Flower Pot E
+17706,Spring Picnic Flower Pot F
+17707,Spring Picnic Flower Pot G
+17708,Spring Picnic Hat H
+17709,Spring Picnic Hat I
+17710,Spring Picnic Basket
+17711,Spring Picnic Flower Basket
+17712,Spring Picnic Flower Box
+17713,Spring Picnic Box A
+17714,Spring Picnic Kettle B
+17715,Flower Decorated Straw Hat
+17716,Flower Door Frame
+17717,Pink Cushion
+17718,Spring Picnic Flower Pot Set
+17719,Opened Flower Partition
+17720,Half-folded Flower Partition
+17721,Suitcase Set
+17722,Spring Picnic Carpet A
+17723,Spring Picnic Carpet B
+17724,Spring Picnic Flower Pot J
+17725,Spring Picnic Flower Pot M
+17726,Spring Love Wall
+17727,Spring Sea Wall
+17728,Spring Aroma Wall
+17729,Spring Song Wall
+17730,Spring Scent Wall
+17731,Spring Picnic Wall
+17732,Picnic Day Wall
+17733,Maron Stone Floor
+17734,Armo Floor
+17735,Hidaisy Floor
+17736,Gorton Floor
+17737,Breezy Floor
+17738,Volcanic Rock Decorated Bedside Table
+17739,Volcanic Rock Decorated Drawers
+17740,Volcanic Rock Decorated Wardrobe
+17741,Volcanic Rock Decorated Dining Table
+17742,Volcanic Rock Decorated Table
+17743,Volcanic Rock Decorated Chair
+17744,Volcanic Rock Decorated Sofa
+17745,Volcanic Rock Decorated Bookshelf
+17746,Volcanic Rock Decorated Bed
+17747,Keplan Marble Bedside Table
+17748,Keplan Marble Drawers
+17749,Keplan Marble Wardrobe
+17750,Keplan Marble Dining Table
+17751,Keplan Marble Table
+17752,Keplan Marble Chair
+17753,Keplan Marble Sofa
+17754,Keplan Marble Bookshelf
+17755,Keplan Marble Bed
+17756,Coffee Bean Pouch
+17757,Coffee Grinder
+17758,Coffee Siphon
+17759,Coffee Maker
+17760,Coffee Syrup A
+17761,Coffee Syrup B
+17762,Coffee Syrup C
+17763,Coffee Kettle A
+17764,Coffee Kettle B
+17765,Coffee Kettle C
+17766,Empty Tea Cup
+17767,Cup of Coffee
+17768,Waffle Plate
+17769,Cookie Plate
+17770,Piece of Cake Plate
+17771,Tiramisu Plate
+17772,Marble-stacked Wall
+17773,Plastered Wall
+17774,Marble Floor
+17775,Forun Marble Floor
+17776,Panyo Marble Floor
 18001,Single Display Stand
 18002,Wide Triple Display Stand
 18003,Round Display Stand
@@ -6108,8 +6235,8 @@ Param0,String
 18079,Margoria Whale Stand Lamp
 18080,Flower Pattern Carpet
 18081,Pink Cushion
-18082,Flower Pots
-18083,Flower Baskets
+18082,Spring Picnic Flower Pot Set
+18083,Spring Picnic Flower Basket Set
 18084,Opened Flower Partition
 18085,Half-folded Flower Partition
 18086,Picnic Set
@@ -10786,6 +10913,7 @@ Param0,String
 26315,Saunil Mobile Catapult
 26316,Saunil Siege Captain
 26317,Savage Ogre
+26388,Black Bear
 26398,Dark Portal
 26399,Blood Relic
 26400,Blood Relic
@@ -11496,6 +11624,7 @@ Param0,String
 27552,Pirate Scarecrow
 27553,Vatroth
 27554,Worn Crate of Keepsakes
+27560,Neurotic Wild Animal
 27601,Giant Lioness
 27602,Giant Lion
 27603,Giant Bison
@@ -15062,6 +15191,8 @@ Param0,String
 49755,Broken Oog Mk VIII
 49757,Goblin
 49758,Donghwa
+49759,Shepherd Boy
+49760,Sheep
 50001,Tiny Nose
 50002,Andrei
 50003,Fairy Nest
@@ -18068,6 +18199,38 @@ Param0,String
 59880,Choppy
 59881,Choppy
 59885,Quest NPC
+59898,Oquilla Ferry
+59899,Guard
+59900,Wheelbarrow
+59907,Trading
+59908,Villager
+59909,Villager
+59910,Villager
+59911,Villager
+59912,Villager
+59913,Villager
+59914,Villager
+59915,Villager
+59918,Sub NPC
+59919,Sub NPC
+59920,Sub NPC
+59921,Sub NPC
+59922,Villager
+59923,Villager
+59924,Villager
+59925,Villager
+59926,Villager
+59927,Villager
+59928,Villager
+59929,Villager
+59941,Life Goose Egg
+59942,Star Pattern Goose Egg
+59943,Raindrop Goose Egg
+59944,Rainbow Goose Egg
+59945,Black Spirit Goose Egg
+59946,Valentine
+59965,Quest NPC
+59966,Quest NPC
 60000,New Continent NPC 9999
 60010,Black Thorn Tentacle
 60011,Black Thorn Tentacle

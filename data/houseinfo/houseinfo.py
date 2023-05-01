@@ -12,18 +12,18 @@
 #  $EXE = "$WS\bdo\client_dumps\BlackDesert64_DP_REBUILD_2023_03_08.exe"
 #  $OUT = ".\data\houseinfo\"
 #
-#  . $BDO_CLI pad extract -f $BDO_ROOT\Paz --query-file houseinfo.bss --out-dir .
+#  . $CLI pad extract -f $BDO_ROOT\Paz --query-file houseinfo.bss --out-dir .
 #  mv -force .\gamecommondata\binary\houseinfo.bss .\data\houseinfo\
 #  rm .\gamecommondata\binary\
-#  $DEST = $OUT\Character.csv
-#  . $CLI client language-data -f $EXE --group 6  --param3 0 -F param0,string -o $DEST
-#  $DEST = $OUT\HouseInfoReceipe.csv
-#  . $CLI client language-data -f $EXE --group 16 --param3 0 -F param0,string -o $DEST
-#  $DEST = $OUT\RegionInfo.csv
-#  . $CLI client language-data -f $EXE --group 17 --param3 0 -F param0,string -o $DEST
-#  $DEST = $OUT\Exploration.csv
-#  . $CLI client language-data -f $EXE --group 29 --param3 0 -F param0,string -o $DEST
-#  cd $Env:OUT_PATH
+#  $DEST = $OUT + "Character.csv"
+#  . $CLI client language-data -b $BDO_ROOT -f $EXE --group 6  --param3 0 -F param0,string -o $DEST
+#  $DEST = $OUT + "HouseInfoReceipe.csv"
+#  . $CLI client language-data -b $BDO_ROOT -f $EXE --group 16 --param3 0 -F param0,string -o $DEST
+#  $DEST = $OUT + "RegionInfo.csv"
+#  . $CLI client language-data -b $BDO_ROOT -f $EXE --group 17 --param3 0 -F param0,string -o $DEST
+#  $DEST = $OUT + "Exploration.csv"
+#  . $CLI client language-data -b $BDO_ROOT -f $EXE --group 29 --param3 0 -F param0,string -o $DEST
+#  cd $OUT
 #  python .\houseinfo.py -i houseinfo.bss -o houseinfo.json
 #
 #  Town counts:
