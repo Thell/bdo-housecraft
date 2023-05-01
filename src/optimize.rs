@@ -7,14 +7,10 @@ use std::ptr::null;
 
 use anyhow::{Ok, Result};
 use highs_sys::*;
-use itertools::Itertools;
-use rand::seq::SliceRandom;
-use rand::thread_rng;
 use rayon::prelude::*;
 use regex::Regex;
 use serde::Serialize;
 use serde_json::to_string_pretty;
-use stable_vec::ExternStableVec;
 
 use crate::cli_args::Cli;
 use crate::houseinfo::*;
@@ -22,8 +18,20 @@ use crate::node_manipulation::{count_subtrees, count_subtrees_multistate};
 use crate::region_nodes::RegionNodes;
 
 type ChainVec = Vec<Chain>;
-type ChainMapVec = Vec<ChainMap>;
-type JobControlVec = Vec<JobControl>;
+
+fn retain_dominating(chains: &mut ChainVec) {
+    let mut j = 0;
+    for i in 0..chains.len() {
+        if (0..j)
+            .chain(i + 1..chains.len())
+            .all(|a| !chains[a].dominates(&chains[i]))
+        {
+            chains.swap(i, j);
+            j += 1;
+        }
+    }
+    chains.truncate(j);
+}
 
 #[derive(Clone, Debug, Serialize)]
 struct Chain {
@@ -37,12 +45,7 @@ struct Chain {
 }
 
 impl Chain {
-    fn from_highs(
-        highs: &SubsetModel,
-        warehouse_count: u32,
-        worker_count: u32,
-        region: &RegionNodes,
-    ) -> Self {
+    fn from_highs(highs: &SubsetModel, region: &RegionNodes) -> Self {
         let highs = highs.highs_ptr;
         let cost = unsafe { Highs_getObjectiveValue(highs).round() as usize };
         let num_cols = unsafe { Highs_getNumCols(highs) };
@@ -63,6 +66,9 @@ impl Chain {
             );
         };
         trace!("Solution values:\n\t{:?}", col_value);
+
+        let mut warehouse_count = 0;
+        let mut worker_count = 0;
         let indices: Vec<_> = col_value
             .chunks_exact(3)
             .take(num_nodes)
@@ -76,8 +82,10 @@ impl Chain {
                 } else if item_flag == 0 {
                     None
                 } else if state_1_flag == 1 {
+                    warehouse_count += region.warehouse_counts[i];
                     Some((i, 1))
                 } else if state_2_flag == 1 {
+                    worker_count += region.worker_counts[i];
                     Some((i, 2))
                 } else {
                     None
@@ -87,26 +95,14 @@ impl Chain {
         let (indices, states): (Vec<_>, Vec<_>) = indices.iter().cloned().unzip();
 
         let chain = Self {
-            worker_count: worker_count as usize,
-            warehouse_count: warehouse_count as usize,
+            worker_count,
+            warehouse_count,
             cost,
             indices,
             states,
         };
         trace!("{:?}", chain);
         chain
-    }
-
-    #[inline(always)]
-    fn elegant_pair(&self) -> usize {
-        let x = self.worker_count;
-        let y = self.warehouse_count;
-
-        if x != std::cmp::max(x, y) {
-            y.pow(2) + x
-        } else {
-            x.pow(2) + x + y
-        }
     }
 
     #[inline(always)]
@@ -118,91 +114,6 @@ impl Chain {
         self.cost <= other.cost
             && self.warehouse_count >= other.warehouse_count
             && self.worker_count >= other.worker_count
-            && !(self.cost == other.cost
-                && self.warehouse_count == other.warehouse_count
-                && self.worker_count == other.worker_count)
-    }
-}
-
-/// An Elegantly Indexed Arena.
-///
-/// The main store for dominant chains is within a StableVec to reduce re-allocations and moves as
-/// dominant chains are added. It is similar to an arena allocator and guarantees stable indices.
-/// The indices are stored in another StableVec with a fixed capacity so that they can be accessed
-/// directly by using an identity index.
-/// Finally a third vector indicates which identities have been seen by storing the cost to unseat
-/// the incumbent.
-/// The identity is calculated using Elegant Pair matrix indexing which is a `mul` and `add` instead
-/// of going through the division, mod, shift and mask of the stablevec's `has_element_at` at the
-/// cost of some extra memory since a `n×n` matrix must be used.
-/// I thought using an `n×m` matrix and `x+y×stride` would be more efficient in terms of memory
-/// and time but in testing it was always a few percentage points slower.
-#[derive(Clone, Debug)]
-struct ChainMap {
-    cost: Vec<u16>,
-    keys: ExternStableVec<usize>,
-    chains: ExternStableVec<Chain>,
-}
-
-impl ChainMap {
-    fn new(region: &RegionNodes) -> Self {
-        let len = (std::cmp::max(region.max_worker_count, region.max_warehouse_count) + 1).pow(2);
-        let cost = vec![u16::MAX; len];
-        let mut keys = ExternStableVec::<usize>::new();
-        keys.reserve(len);
-        let chains = ExternStableVec::<Chain>::new();
-        Self { cost, keys, chains }
-    }
-
-    #[inline(always)]
-    fn insert_or_update(&mut self, chain: &Chain) {
-        let key = chain.elegant_pair();
-        if self.cost[key] == u16::MAX {
-            self.cost[key] = chain.cost as u16;
-            let index = self.chains.push(chain.to_owned());
-            self.keys.insert(key, index);
-        } else if self.cost[key] > chain.cost as u16 {
-            self.cost[key] = chain.cost as u16;
-            unsafe {
-                let index = self.keys.get_unchecked(key);
-                let entry = self.chains.get_unchecked_mut(*index);
-                chain.clone_into(entry);
-            }
-        }
-    }
-
-    #[inline(always)]
-    fn flatten_many_by_insert_update(chain_maps: &mut ChainMapVec) -> ChainMap {
-        let mut chains = chain_maps[0].clone();
-        chain_maps
-            .iter()
-            .skip(1)
-            .for_each(|cm| cm.chains.values().for_each(|c| chains.insert_or_update(c)));
-        chains
-    }
-
-    #[inline(always)]
-    fn retain_dominating(chains: &mut ChainVec) {
-        let mut j = 0;
-        for i in 0..chains.len() {
-            if (0..j)
-                .chain(i + 1..chains.len())
-                .all(|a| !chains[a].dominates(&chains[i]))
-            {
-                chains.swap(i, j);
-                j += 1;
-            }
-        }
-        chains.truncate(j);
-    }
-
-    #[inline(always)]
-    fn retain_dominating_to_vec(&self) -> ChainVec {
-        let mut chains: ChainVec = self.chains.values().map(|c| c.to_owned()).collect();
-        Self::retain_dominating(&mut chains);
-        info!("Retained chain count: {:?}", chains.len());
-        chains.sort_unstable_by_key(|chain| (chain.worker_count, chain.warehouse_count));
-        chains
     }
 }
 
@@ -211,11 +122,11 @@ struct SubsetModel {
 }
 
 impl SubsetModel {
-    pub fn new(job: usize) -> Self {
-        SubsetModel {
+    pub fn new(region: &RegionNodes, state_2_lb: usize) -> Self {
+        let mut model = SubsetModel {
             highs_ptr: unsafe {
                 let highs = Highs_create();
-                let do_logging = log_enabled!(log::Level::Debug) as i32;
+                let do_logging = log_enabled!(log::Level::Trace) as i32;
 
                 let option = CString::new("output_flag").unwrap();
                 Highs_setBoolOptionValue(highs, option.as_ptr(), do_logging);
@@ -226,7 +137,7 @@ impl SubsetModel {
                 if do_logging == 1 {
                     let option = CString::new("log_file").unwrap();
                     let option_value =
-                        CString::new(format!("subset_select_job{job}_highs.log")).unwrap();
+                        CString::new(format!("subset_select_{state_2_lb}_highs.log")).unwrap();
                     Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
                 }
 
@@ -235,7 +146,9 @@ impl SubsetModel {
 
                 highs
             },
-        }
+        };
+        Self::populate_problem(&mut model, region);
+        model
     }
 
     fn populate_problem(&mut self, region: &RegionNodes) {
@@ -391,47 +304,6 @@ impl Drop for SubsetModel {
     }
 }
 
-#[derive(Clone, Debug)]
-struct JobControl {
-    job_id: usize,
-    state_value_sum_lb_pairs: Vec<(u32, u32)>,
-}
-
-impl JobControl {
-    /// Returns job controls for parallel dominating chains optimization.
-    fn new(cli: &Cli, region: &RegionNodes) -> Result<JobControlVec> {
-        Ok(Self::chunk_state_value_pairs(cli, region)
-            .iter()
-            .enumerate()
-            .map(|(job_id, pairs)| JobControl {
-                job_id,
-                state_value_sum_lb_pairs: pairs.to_vec(),
-            })
-            .collect::<Vec<_>>())
-    }
-
-    fn chunk_state_value_pairs(cli: &Cli, region: &RegionNodes) -> Vec<Vec<(u32, u32)>> {
-        let warehouse_count_ub = if cli.limit_warehouse {
-            info!("limiting warehouse count to 172...");
-            std::cmp::min(172, region.max_warehouse_count + 1) as u32
-        } else {
-            (region.max_warehouse_count + 1) as u32
-        };
-        let mut state_value_sum_pairs = (0..warehouse_count_ub)
-            .cartesian_product(0..region.max_worker_count as u32 + 1)
-            .collect::<Vec<_>>();
-        let mut rng = thread_rng();
-        state_value_sum_pairs.shuffle(&mut rng);
-
-        let jobs = cli.jobs.unwrap_or(1) as usize;
-        let chunk_size = (state_value_sum_pairs.len() + jobs) / jobs;
-        state_value_sum_pairs
-            .chunks(chunk_size)
-            .map(|chunk| chunk.into())
-            .collect()
-    }
-}
-
 pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
     info!("preparing...");
     let region_name = cli.region.clone().unwrap();
@@ -444,100 +316,81 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
     for (region_name, region_buildings) in all_region_buildings.iter() {
         cli.region = Some(region_name.to_owned());
         let region = RegionNodes::new(region_buildings)?;
-        let jobs = JobControl::new(cli, &region)?;
 
         if !cli.verbose.is_silent() {
             trace!("Buildings");
             region_buildings.iter().for_each(|b| trace!("{:#?}", b));
-            debug!("Job Controls");
-            jobs.iter().for_each(|j| debug!("  {:?}", j));
             print_region_specs(&region);
             print_starting_status(&region);
         }
 
         info!("optimizing...");
-        let chains = optimize_par(&region, jobs)?;
+        // Use one thread per worker_worker count.
+        let mut chains: ChainVec = (0..=region.max_worker_count)
+            .into_par_iter()
+            .map(|state_2_lb| optimize_worker(cli.clone(), region.clone(), state_2_lb))
+            .flatten()
+            .collect();
+        info!("Captured chain count: {:?}", chains.len());
         info!("retaining...");
-        let mut chains = chains.retain_dominating_to_vec();
+        retain_dominating(&mut chains);
         info!("writing...");
         write_chains(cli, &region, &mut chains)?;
     }
     Ok(())
 }
 
-fn optimize_par(region: &RegionNodes, jobs: JobControlVec) -> Result<ChainMap> {
-    let mut results = jobs
-        .into_par_iter()
-        .map(|job| optimize_par_worker(region.clone(), job).unwrap())
-        .collect::<ChainMapVec>();
-    info!("merging...");
-    let results = ChainMap::flatten_many_by_insert_update(&mut results);
-    info!("Captured chain count: {:?}", results.chains.num_elements());
-    Ok(results)
-}
-
-fn optimize_par_worker(region: RegionNodes, job: JobControl) -> Result<ChainMap> {
-    let mut chains = ChainMap::new(&region);
-    let mut counter = 0;
-    let mut highs = SubsetModel::new(job.job_id);
-    highs.populate_problem(&region);
+fn optimize_worker(cli: Cli, region: RegionNodes, state_2_sum_lb: usize) -> ChainVec {
+    let mut highs = SubsetModel::new(&region, state_2_sum_lb);
     let highs_inf = unsafe { Highs_getInfinity(highs.mut_ptr()) };
-
-    // Change these to use Highs_getRowByName when it's available.
     let state_1_sum_row: HighsInt = unsafe { Highs_getNumRows(highs.mut_ptr()) - 2 };
     let state_2_sum_row: HighsInt = state_1_sum_row + 1;
-    debug!("state lb rows: [{}, {}]", state_1_sum_row, state_2_sum_row);
 
-    info!(
-        "START: Job {} with {} combinations on {} nodes using {} cols and {} rows.",
-        job.job_id,
-        job.state_value_sum_lb_pairs.len(),
-        region.num_nodes,
-        unsafe { Highs_getNumCols(highs.mut_ptr()) },
-        unsafe { Highs_getNumRows(highs.mut_ptr()) },
-    );
+    info!("START: Job {state_2_sum_lb}");
+    debug!("state lb rows: [{state_1_sum_row}, {state_2_sum_row}]");
 
-    for (state_1_sum_lb, state_2_sum_lb) in job.state_value_sum_lb_pairs.iter() {
+    unsafe {
+        Highs_changeRowBounds(
+            highs.mut_ptr(),
+            state_2_sum_row,
+            state_2_sum_lb as f64,
+            highs_inf,
+        );
+    };
+
+    let state_1_sum_ub = if cli.limit_warehouse {
+        std::cmp::min(region.max_warehouse_count, 172)
+    } else {
+        region.max_warehouse_count
+    };
+    let mut chains = ChainVec::with_capacity(state_1_sum_ub);
+
+    let mut state_1_sum_lb = 0;
+    while state_1_sum_lb <= state_1_sum_ub {
         let status = unsafe {
             Highs_changeRowBounds(
                 highs.mut_ptr(),
                 state_1_sum_row,
-                *state_1_sum_lb as f64,
+                state_1_sum_lb as f64,
                 highs_inf,
             );
-            Highs_changeRowBounds(
-                highs.mut_ptr(),
-                state_2_sum_row,
-                *state_2_sum_lb as f64,
-                highs_inf,
-            );
-            debug!("running for ({},{})...", state_1_sum_lb, state_2_sum_lb);
-            let result = Highs_run(highs.mut_ptr());
-            debug!(
-                "run result for ({},{}): {}",
-                state_1_sum_lb, state_2_sum_lb, result
-            );
+            Highs_run(highs.mut_ptr());
             Highs_getModelStatus(highs.mut_ptr())
         };
-        debug!(
-            "model status for ({},{}): {}",
-            state_1_sum_lb, state_2_sum_lb, status
-        );
         if status == MODEL_STATUS_OPTIMAL {
-            counter += 1;
-            let chain = Chain::from_highs(&highs, *state_1_sum_lb, *state_2_sum_lb, &region);
-            chains.insert_or_update(&chain);
+            let chain = Chain::from_highs(&highs, &region);
+            state_1_sum_lb = chain.warehouse_count + 1;
+            chains.push(chain);
+        } else {
+            break;
         };
     }
 
     info!(
-        "COMPLETE: Job {} with {} combinations with {} feasible yielding {:?} chains.",
-        job.job_id,
-        job.state_value_sum_lb_pairs.len(),
-        counter,
-        chains.chains.num_elements(),
+        "COMPLETE: Job {state_2_sum_lb} yielding {} chains.",
+        chains.len()
     );
-    Ok(chains)
+    chains
 }
 
 fn print_region_specs(region: &RegionNodes) {
