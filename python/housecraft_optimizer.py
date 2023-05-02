@@ -47,7 +47,7 @@ def get_highs_solutions(region_name):
     """ read the HiGHS solutions json
     """
     region_name = region_name.replace(" ", "_")
-    with open(f"./data/housecraft/validation/highs/{region_name}.json", encoding="UTF-8") as file:
+    with open(f"./data/housecraft/validation/HiGHS/{region_name}.json", encoding="UTF-8") as file:
         solutions = json.load(file)
     return solutions
 
