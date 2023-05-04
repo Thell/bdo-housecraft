@@ -46,53 +46,31 @@ struct Chain {
 
 impl Chain {
     fn from_highs(highs: &SubsetModel, region: &RegionNodes) -> Self {
-        let highs = highs.highs_ptr;
-        let cost = unsafe { Highs_getObjectiveValue(highs).round() as usize };
-        let num_cols = unsafe { Highs_getNumCols(highs) };
-        let num_rows = unsafe { Highs_getNumRows(highs) };
+        let cost = unsafe { Highs_getObjectiveValue(highs.highs_ptr).round() as usize };
+        let col_values = unsafe { highs.solution_col_values() };
+
         let num_nodes = region.num_nodes;
-
-        let mut col_value: Vec<f64> = vec![0.; num_cols as usize];
-        let mut col_dual: Vec<f64> = vec![0.; num_cols as usize];
-        let mut row_value: Vec<f64> = vec![0.; num_rows as usize];
-        let mut row_dual: Vec<f64> = vec![0.; num_rows as usize];
-        unsafe {
-            Highs_getSolution(
-                highs,
-                col_value.as_mut_ptr(),
-                col_dual.as_mut_ptr(),
-                row_value.as_mut_ptr(),
-                row_dual.as_mut_ptr(),
-            );
-        };
-        trace!("Solution values:\n\t{:?}", col_value);
-
         let mut warehouse_count = 0;
         let mut worker_count = 0;
-        let indices: Vec<_> = col_value
-            .chunks_exact(3)
-            .take(num_nodes)
-            .enumerate()
-            .filter_map(|(i, col)| {
-                let item_flag: u32 = col[0].round() as u32;
-                let state_1_flag: u32 = col[1].round() as u32;
-                let state_2_flag: u32 = col[2].round() as u32;
-                if i == 0 {
-                    Some((i, 0))
-                } else if item_flag == 0 {
-                    None
-                } else if state_1_flag == 1 {
-                    warehouse_count += region.warehouse_counts[i];
-                    Some((i, 1))
-                } else if state_2_flag == 1 {
-                    worker_count += region.worker_counts[i];
-                    Some((i, 2))
-                } else {
-                    None
-                }
-            })
-            .collect();
-        let (indices, states): (Vec<_>, Vec<_>) = indices.iter().cloned().unzip();
+        let mut indices = vec![0];
+        let mut states = vec![0];
+
+        for (i, col) in col_values.chunks_exact(3).take(num_nodes).enumerate() {
+            if col[0] != 1 {
+                // item_flag
+                continue;
+            } else if col[1] == 1 {
+                // state_1_flag
+                warehouse_count += region.warehouse_counts[i];
+                indices.push(i);
+                states.push(1);
+            } else if col[2] == 1 {
+                // state_2_flag
+                worker_count += region.worker_counts[i];
+                indices.push(i);
+                states.push(2);
+            }
+        }
 
         let chain = Self {
             worker_count,
@@ -122,168 +100,156 @@ struct SubsetModel {
 }
 
 impl SubsetModel {
-    pub fn new(region: &RegionNodes, state_2_lb: usize) -> Self {
+    pub fn new(region: &RegionNodes, worker_id: usize) -> Self {
         let mut model = SubsetModel {
-            highs_ptr: unsafe {
-                let highs = Highs_create();
-                let do_logging = log_enabled!(log::Level::Trace) as i32;
-
-                let option = CString::new("output_flag").unwrap();
-                Highs_setBoolOptionValue(highs, option.as_ptr(), do_logging);
-
-                let option = CString::new("log_to_console").unwrap();
-                Highs_setBoolOptionValue(highs, option.as_ptr(), do_logging);
-
-                if do_logging == 1 {
-                    let option = CString::new("log_file").unwrap();
-                    let option_value =
-                        CString::new(format!("subset_select_{state_2_lb}_highs.log")).unwrap();
-                    Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
-                }
-
-                let option = CString::new("threads").unwrap();
-                Highs_setIntOptionValue(highs, option.as_ptr(), 1);
-
-                highs
-            },
+            highs_ptr: unsafe { Highs_create() },
         };
-        Self::populate_problem(&mut model, region);
+        unsafe {
+            Self::set_options(&mut model, worker_id);
+            Self::initialize(&mut model, region);
+        }
         model
     }
 
-    fn populate_problem(&mut self, region: &RegionNodes) {
+    unsafe fn initialize(&mut self, region: &RegionNodes) {
         let items: Vec<_> = region.children.iter().map(|x| *x as u32).collect();
         let item_reqs: Vec<_> = region.parents.iter().map(|x| *x as u32).collect();
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
 
-        unsafe {
-            // parent -> child relation tree for item selection requirements.
-            let mut item_req_tree: HashMap<u32, Vec<u32>> = HashMap::new();
-            for (i, &item_req) in item_reqs.iter().enumerate() {
-                if item_req == 0 {
-                    item_req_tree.entry(items[0]).or_default().push(items[i]);
-                } else {
-                    item_req_tree.entry(item_req).or_default().push(items[i]);
-                }
+        // Presolve -> MIP fails on a few known instances.
+        // See https://github.com/ERGO-Code/HiGHS/issues/1273
+        // This is a workaround.
+        let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
+        if no_presolve_regions.contains(&region.region_name.as_str()) {
+            warn!("Setting tolerance for {}.", region.region_name);
+            let option = CString::new("mip_feasibility_tolerance").unwrap();
+            unsafe {
+                Highs_setDoubleOptionValue(self.highs_ptr, option.as_ptr(), 0.0027);
+            };
+        }
+
+        let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
+        let mut item_flags: HashMap<u32, i32> = HashMap::new();
+        let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
+        let mut state_2_flags: HashMap<u32, i32> = HashMap::new();
+
+        self.initialize_flag_variables(
+            &items,
+            &costs,
+            &mut item_flags,
+            &mut state_1_flags,
+            &mut state_2_flags,
+        );
+        self.initialize_item_requirement_constraints(&items, &item_flags, &item_reqs);
+        self.initialize_item_selection_constraints(
+            &items,
+            &item_flags,
+            &state_1_flags,
+            &state_2_flags,
+        );
+        self.initialize_state_value_sum_constraints(&items, &state_1_flags, &state_1_values);
+        self.initialize_state_value_sum_constraints(&items, &state_2_flags, &state_2_values);
+    }
+
+    unsafe fn initialize_flag_variables(
+        &mut self,
+        items: &[u32],
+        costs: &[f64],
+        item_flags: &mut HashMap<u32, i32>,
+        state_1_flags: &mut HashMap<u32, i32>,
+        state_2_flags: &mut HashMap<u32, i32>,
+    ) {
+        // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
+
+        let highs = self.highs_ptr;
+        let mut column_id = 0;
+        for (i, item) in items.iter().enumerate() {
+            // item_flags (with objective item selection costs)
+            if Highs_addCol(highs, costs[i], 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
+                Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
+                item_flags.insert(*item, column_id);
+                column_id += 1;
             }
-
-            // Use the HiGHS optimizer.
-            let highs = self.highs_ptr;
-
-            // Presolve fails on a few known instances.
-            // See https://github.com/ERGO-Code/HiGHS/issues/1273
-            let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
-            if no_presolve_regions.contains(&region.region_name.as_str()) {
-                debug!("Disabling HiGHS presolve for {}.", region.region_name);
-                let option = CString::new("presolve").unwrap();
-                let option_value = CString::new("off").unwrap();
-                Highs_setStringOptionValue(highs, option.as_ptr(), option_value.as_ptr());
+            // state_1_flags
+            if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
+                Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
+                state_1_flags.insert(*item, column_id);
+                column_id += 1;
             }
-
-            // Variables to flag selected items and indicate the state of the selected item.
-            // Map {item: column_id} since HiGHS doesn't have assignment/retrieval by name yet.
-            let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
-            let mut item_flags: HashMap<u32, i32> = HashMap::new();
-            let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
-            let mut state_2_flags: HashMap<u32, i32> = HashMap::new();
-
-            let mut column_id = 0;
-            for (i, item) in items.iter().enumerate() {
-                // item_flags (with objective item selection costs)
-                if Highs_addCol(highs, costs[i], 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
-                    Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
-                    item_flags.insert(*item, column_id);
-                    column_id += 1;
-                }
-                // state_1_flags
-                if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
-                    Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
-                    state_1_flags.insert(*item, column_id);
-                    column_id += 1;
-                }
-                // state_2_flags
-                if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
-                    Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
-                    state_2_flags.insert(*item, column_id);
-                    column_id += 1;
-                }
+            // state_2_flags
+            if Highs_addCol(highs, 0.0, 0.0, 1.0, 0, null(), null()) == kHighsStatusOk {
+                Highs_changeColIntegrality(highs, column_id, kHighsVarTypeInteger);
+                state_2_flags.insert(*item, column_id);
+                column_id += 1;
             }
+        }
+    }
 
-            // The item requirements constraints.
-            let highs_inf = Highs_getInfinity(highs);
-
-            // The item parent <- child requirements constraints.
-            // Transitive; ensures children must have all ancestors back to root.
-            for (parent, children) in item_req_tree.iter() {
-                for child in children.iter() {
-                    if *parent == items[0] || *parent == 0 {
-                        continue;
-                    }
-                    // item_flags[child] - item_flags[parent] <= 0
-                    let aindex: [i32; 2] = [item_flags[child], item_flags[parent]];
-                    let avalue: [f64; 2] = [1.0, -1.0];
-                    Highs_addRow(
-                        highs,
-                        -highs_inf,
-                        0.0,
-                        aindex.len() as i32,
-                        aindex.as_ptr(),
-                        avalue.as_ptr(),
-                    );
-                }
+    fn initialize_item_req_tree(items: &[u32], item_reqs: &[u32]) -> HashMap<u32, Vec<u32>> {
+        // parent -> child relation tree for item selection requirements.
+        let mut item_req_tree: HashMap<u32, Vec<u32>> = HashMap::new();
+        for (i, &item_req) in item_reqs.iter().enumerate() {
+            if item_req == 0 {
+                item_req_tree.entry(items[0]).or_default().push(items[i]);
+            } else {
+                item_req_tree.entry(item_req).or_default().push(items[i]);
             }
+        }
+        item_req_tree
+    }
 
-            // Item selection constraint: one state on flagged items, no state otherwise.
-            for item in items.iter() {
-                if *item == items[0] {
+    unsafe fn initialize_item_requirement_constraints(
+        &mut self,
+        items: &[u32],
+        item_flags: &HashMap<u32, i32>,
+        item_reqs: &[u32],
+    ) {
+        // The item parent <- child requirements constraints.
+        // Transitive; ensures children must have all ancestors back to root.
+
+        let highs_inf = Highs_getInfinity(self.highs_ptr);
+        let item_req_tree = Self::initialize_item_req_tree(items, item_reqs);
+
+        for (parent, children) in item_req_tree.iter() {
+            for child in children.iter() {
+                if *parent == items[0] || *parent == 0 {
                     continue;
                 }
-                // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
-                let aindex: [i32; 3] = [state_1_flags[item], state_2_flags[item], item_flags[item]];
-                let avalue: [f64; 3] = [1.0, 1.0, -1.0];
+                // item_flags[child] - item_flags[parent] <= 0
+                let aindex: [i32; 2] = [item_flags[child], item_flags[parent]];
+                let avalue: [f64; 2] = [1.0, -1.0];
                 Highs_addRow(
-                    highs,
-                    0.0,
+                    self.highs_ptr,
+                    -highs_inf,
                     0.0,
                     aindex.len() as i32,
                     aindex.as_ptr(),
                     avalue.as_ptr(),
                 );
             }
+        }
+    }
 
-            // State values sum constraints.
-            // Sum items selected as state 1 values
-            let mut aindex: Vec<i32> = Vec::new();
-            let mut avalue: Vec<f64> = Vec::new();
-            for (i, item) in items.iter().enumerate() {
-                if state_1_values[i] > 0.0 {
-                    aindex.push(state_1_flags[item]);
-                    avalue.push(state_1_values[i]);
-                }
+    unsafe fn initialize_item_selection_constraints(
+        &mut self,
+        items: &[u32],
+        item_flags: &HashMap<u32, i32>,
+        state_1_flags: &HashMap<u32, i32>,
+        state_2_flags: &HashMap<u32, i32>,
+    ) {
+        // Item selection constraint: one state on flagged items, no state otherwise.
+        for item in items.iter() {
+            if *item == items[0] {
+                continue;
             }
+            // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
+            let aindex: [i32; 3] = [state_1_flags[item], state_2_flags[item], item_flags[item]];
+            let avalue: [f64; 3] = [1.0, 1.0, -1.0];
             Highs_addRow(
-                highs,
-                9999.0,
-                highs_inf,
-                aindex.len() as i32,
-                aindex.as_ptr(),
-                avalue.as_ptr(),
-            );
-
-            // Sum items selected as state 2 values
-            aindex.clear();
-            avalue.clear();
-            for (i, item) in items.iter().enumerate() {
-                if state_2_values[i] > 0.0 {
-                    aindex.push(state_2_flags[item]);
-                    avalue.push(state_2_values[i]);
-                }
-            }
-            Highs_addRow(
-                highs,
-                9999.0,
-                highs_inf,
+                self.highs_ptr,
+                0.0,
+                0.0,
                 aindex.len() as i32,
                 aindex.as_ptr(),
                 avalue.as_ptr(),
@@ -291,8 +257,75 @@ impl SubsetModel {
         }
     }
 
+    unsafe fn initialize_state_value_sum_constraints(
+        &mut self,
+        items: &[u32],
+        state_flags: &HashMap<u32, i32>,
+        state_values: &[f64],
+    ) {
+        // Sum state values for selected items in the given state.
+        let mut aindex: Vec<i32> = Vec::new();
+        let mut avalue: Vec<f64> = Vec::new();
+        for (i, item) in items.iter().enumerate() {
+            if state_values[i] > 0.0 {
+                aindex.push(state_flags[item]);
+                avalue.push(state_values[i]);
+            }
+        }
+        // lb is set to an arbitrary value for now and is assigned prior to solving the model.
+        Highs_addRow(
+            self.highs_ptr,
+            9999.0,
+            Highs_getInfinity(self.highs_ptr),
+            aindex.len() as i32,
+            aindex.as_ptr(),
+            avalue.as_ptr(),
+        );
+    }
+
     fn mut_ptr(&mut self) -> *mut c_void {
         self.highs_ptr
+    }
+
+    unsafe fn set_options(&mut self, worker_id: usize) {
+        let do_logging = log_enabled!(log::Level::Trace) as i32;
+
+        let option = CString::new("output_flag").unwrap();
+        Highs_setBoolOptionValue(self.highs_ptr, option.as_ptr(), do_logging);
+
+        let option = CString::new("log_to_console").unwrap();
+        Highs_setBoolOptionValue(self.highs_ptr, option.as_ptr(), do_logging);
+
+        if do_logging == 1 {
+            let option = CString::new("log_file").unwrap();
+            let option_value =
+                CString::new(format!("subset_select_{worker_id}_highs.log")).unwrap();
+            Highs_setStringOptionValue(self.highs_ptr, option.as_ptr(), option_value.as_ptr());
+        }
+
+        let option = CString::new("threads").unwrap();
+        Highs_setIntOptionValue(self.highs_ptr, option.as_ptr(), 1);
+    }
+
+    unsafe fn solution_col_values(&self) -> Vec<u32> {
+        let num_cols = unsafe { Highs_getNumCols(self.highs_ptr) };
+        let num_rows = unsafe { Highs_getNumRows(self.highs_ptr) };
+        let mut col_value: Vec<f64> = vec![0.; num_cols as usize];
+        let mut col_dual: Vec<f64> = vec![0.; num_cols as usize];
+        let mut row_value: Vec<f64> = vec![0.; num_rows as usize];
+        let mut row_dual: Vec<f64> = vec![0.; num_rows as usize];
+        unsafe {
+            Highs_getSolution(
+                self.highs_ptr,
+                col_value.as_mut_ptr(),
+                col_dual.as_mut_ptr(),
+                row_value.as_mut_ptr(),
+                row_dual.as_mut_ptr(),
+            );
+        };
+        let col_value: Vec<_> = col_value.iter().map(|v| v.round() as u32).collect();
+        trace!("Solution values:\n\t{:?}", col_value);
+        col_value
     }
 }
 
@@ -325,7 +358,6 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
         }
 
         info!("optimizing...");
-        // Use one thread per worker_worker count.
         let mut chains: ChainVec = (0..=region.max_worker_count)
             .into_par_iter()
             .map(|state_2_lb| optimize_worker(cli.clone(), region.clone(), state_2_lb))
@@ -334,6 +366,7 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
         info!("Captured chain count: {:?}", chains.len());
         info!("retaining...");
         retain_dominating(&mut chains);
+        info!("Retained chain count: {:?}", chains.len());
         info!("writing...");
         write_chains(cli, &region, &mut chains)?;
     }
