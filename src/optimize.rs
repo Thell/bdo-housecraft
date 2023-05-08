@@ -391,10 +391,12 @@ fn optimize_worker(cli: Cli, region: RegionNodes, state_2_sum_lb: usize) -> Chai
         );
     };
 
-    let state_1_sum_ub = if cli.limit_warehouse {
-        std::cmp::min(region.max_warehouse_count, 172)
-    } else {
-        region.max_warehouse_count
+    let state_1_sum_ub = match cli.limit_warehouse {
+        Some(argument) => match argument {
+            Some(limit) => std::cmp::min(region.max_warehouse_count, limit),
+            _ => 176,
+        },
+        _ => region.max_warehouse_count,
     };
     let mut chains = ChainVec::with_capacity(state_1_sum_ub);
 

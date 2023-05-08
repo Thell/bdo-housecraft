@@ -58,7 +58,7 @@ pub(crate) struct Cli {
 
     /// limit warehouse to 172 slots (Max of 196 - the 16 given for free)
     #[arg(long, requires = "generation", help_heading = Some("Generation"))]
-    pub(crate) limit_warehouse: bool,
+    pub(crate) limit_warehouse: Option<Option<usize>>,
 
     /// output only the lodging, storage and cost to /data/housecraft/validation
     #[arg(long, requires = "generation", help_heading = Some("Generation"))]
