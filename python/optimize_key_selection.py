@@ -7,6 +7,15 @@ and feature selection.
 The module uses the CBC solver from OR-Tools via pywraplp to find an optimal solution.
 """
 
+# Note:
+# The speed of the CBC solver can be improved by limiting the variable entries for the states to
+# only those with a positive value. HiGHS will do this while the model is being created but for CBC
+# they need to be validated prior to inserting them into the model.
+#
+# For this particular problem and the sample datasets the improvement is around 20% but I opt to
+# keep the modelling more general and inline with the Rust/HiGHS solution for comparison and ease
+# of understanding and testing.
+
 import os
 import re
 import sys
