@@ -56,7 +56,7 @@ pub(crate) struct Cli {
     #[arg(long, group = "generation", requires = "region", conflicts_with = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
 
-    /// limit warehouse to 176 slots (Max of 192 - the 16 given for free)
+    /// limit warehouse to 172 slots (Max of 196 - the 16 given for free)
     #[arg(long, requires = "generation", help_heading = Some("Generation"))]
     pub(crate) limit_warehouse: bool,
 

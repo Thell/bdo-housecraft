@@ -392,7 +392,7 @@ fn optimize_worker(cli: Cli, region: RegionNodes, state_2_sum_lb: usize) -> Chai
     };
 
     let state_1_sum_ub = if cli.limit_warehouse {
-        std::cmp::min(region.max_warehouse_count, 176)
+        std::cmp::min(region.max_warehouse_count, 172)
     } else {
         region.max_warehouse_count
     };
