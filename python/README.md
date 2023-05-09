@@ -13,7 +13,7 @@ where:
     otherwise.
 
 **Subject to**:
-  - xᵢ - xⱼ ≤ 0 for all (i, j) such that item j is a descendant of item i
+  - xᵢ - xⱼ ≤ 0 for all (i, j) such that item j is the parent of item i
   - ∑ v₁ᵢ y₁ᵢ ≥ lb₁
   - ∑ v₂ᵢ y₂ᵢ ≥ lb₂
   - y₁ᵢ + y₂ᵢ - xᵢ = 0
