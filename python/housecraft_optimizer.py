@@ -262,7 +262,8 @@ def main(args):
     regions = ["Velia", "Glish", "Keplan", "Trent", "Iliya Island", "Tarif", "Shakatu",
                "Sand Grain Bazaar", "Ancado Inner Harbor", "Arehaza", "Muiquun", "Old Wisdom Tree",
                "Grána", "Duvencrune", "O'draxxia", "Eilton", "Olvia", "Port Epheria", "Altinova",
-               "Heidel", "Valencia City", "Calpheon City"]
+               "Heidel", "Valencia City", "Calpheon City", "Dalbeol Village",
+                "Nampo's Moodle Village", "Nopsae's Byeot County"]
     # yapf: enable
 
     if args.region == "ALL":

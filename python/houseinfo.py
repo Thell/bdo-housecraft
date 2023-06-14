@@ -53,6 +53,12 @@ def get_affiliated_town_key(name):
         return 955
     if name == "Eilton":
         return 1124
+    if name == "Dalbeol Village":
+        return 1210
+    if name == "Nampo's Moodle Village":
+        return 1219
+    if name == "Nopsae's Byeot County":
+        return 1246
     return 0
 
 
