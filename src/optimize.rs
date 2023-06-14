@@ -120,12 +120,12 @@ impl SubsetModel {
         // Presolve -> MIP fails on a few known instances.
         // See https://github.com/ERGO-Code/HiGHS/issues/1273
         // This is a workaround.
-        let no_presolve_regions = ["Port Epheria", "Altinova", "Heidel"];
+        let no_presolve_regions = ["Altinova", "Heidel"];
         if no_presolve_regions.contains(&region.region_name.as_str()) {
-            warn!("Setting tolerance for {}.", region.region_name);
-            let option = CString::new("mip_feasibility_tolerance").unwrap();
+            let option = CString::new("presolve").unwrap();
+            let value = CString::new("off").unwrap();
             unsafe {
-                Highs_setDoubleOptionValue(self.highs_ptr, option.as_ptr(), 0.0027);
+                Highs_setStringOptionValue(self.highs_ptr, option.as_ptr(), value.as_ptr());
             };
         }
 

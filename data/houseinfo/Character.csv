@@ -8,7 +8,7 @@ Param0,String
 7,Sage
 8,Warrior Use3
 9,Guardian
-10,Berserker Unused 1
+10,PNYM
 11,Drakania
 12,Nova
 13,Corsair
@@ -40,7 +40,7 @@ Param0,String
 107,Sage
 108,Warrior Use3
 109,Guardian
-110,Ranger Unused 2
+110,PNYM
 111,Drakania
 112,Sorceress Unused 1
 113,Sorceress Unused 2
@@ -102,7 +102,7 @@ Param0,String
 267,Stun Trap
 268,Striker Clone
 269,Spirit_CA
-270,Heilang_CA
+270,Heuklang_CA
 271,Dragon_CA
 272,Cartian_CA
 273,Flame Buster_CA
@@ -121,6 +121,7 @@ Param0,String
 286,Markthanan's_Breath_CA
 287,Revered Fox Spirit_CA
 288,Foxspirit Charm_CA
+289,Sari Flower_CA
 301,Awakened Skill Reset
 302,Combat Skills Reset: All
 303,Combat Skills Reset: Partial
@@ -249,7 +250,7 @@ Param0,String
 427,Balenos_NPC_Fixed
 428,Serendia_NPC_Fixed
 429,DelpheCastle_NPC_Fixed
-430,Invisible Character for Talking
+430,Tutorial_Illezra_Move
 431,Villager
 432,Villager
 433,Villager
@@ -756,6 +757,7 @@ Param0,String
 1069,Custom Cooking Utensil
 1070,Sturdy Advanced Cooking Utensil
 1071,Sturdy Supreme Cooking Utensil
+1072,Morning Light Traditional Cooking Utensil
 1201,Pepper Crop
 1202,Garlic Crop
 1203,Onion Crop
@@ -964,6 +966,27 @@ Param0,String
 1412,Warm plant
 1413,Red Tulip
 1414,Mysterious Dictyophora Hypha
+1415,Napa Cabbage Seed
+1416,High-quality Napa Cabbage Seed
+1417,Special Napa Cabbage Seed
+1418,Magical Napa Cabbage Seed
+1419,Mystical Napa Cabbage Seed
+1420,Radish Seed
+1421,High-quality Radish Seed
+1422,Special Radish Seed
+1423,Magical Radish Seed
+1424,Mystical Radish Seed
+1425,Sesame Seed
+1426,High-quality Sesame Seed
+1427,Special Sesame Seed
+1428,Magical Sesame Seed
+1429,Mystical Sesame Seed
+1430,Rice Seed
+1431,High-quality Rice Seed
+1432,Special Rice Seed
+1433,Magical Rice Seed
+1434,Mystical Rice Seed
+1435,Strange and Beautiful Rice Seed
 1451,Withered Wheat Seed
 1452,Withered Grape Seed
 1453,Withered Sunrise Herb Seed
@@ -1010,6 +1033,7 @@ Param0,String
 1532,Supreme Alchemy Tool
 1533,Sturdy Supreme Cooking Utensil
 1534,Sturdy Supreme Alchemy Tool
+1535,Morning Light Traditional Alchemy Tool
 1551,Mysterious Pepper Crop
 1552,Mysterious Garlic Crop
 1553,Mysterious Onion Crop
@@ -1115,6 +1139,7 @@ Param0,String
 1702,[Event] Fresh Tulip
 1703,[Event] Healthy Sapling
 1704,Cherry Blossom Tree
+1705,[Event] Fragrant Tulip
 2001,Strong Fence Garden
 2002,Shabby Fence Garden
 2003,Ordinary Garden
@@ -1191,7 +1216,7 @@ Param0,String
 2094,Dark Power Strong Fort
 2095,Command Post
 2096,Field HQ
-2097,Square Fort
+2097,Field Command Post
 2098,Strong Square Fort
 2099,Sturdy Octagonal Fort
 2101,Velia 4
@@ -2002,6 +2027,28 @@ Param0,String
 3820,Eilton 5
 3821,Camp Balacs 1
 3822,Camp Balacs 2
+3823,Morning Light Nampo 1
+3824,Morning Light Nampo 2
+3825,Morning Light Nampo 3
+3826,Morning Light Nampo 4
+3827,Morning Light Dalbeol 1
+3828,Morning Light Dalbeol 2
+3829,Morning Light Dalbeol 3
+3830,Morning Light Dalbeol 4
+3831,Morning Light Dalbeol 5
+3832,Morning Light Nopsae 1
+3833,Morning Light Nopsae 2
+3834,Morning Light Nopsae 3
+3835,Morning Light Nopsae 4
+3836,Morning Light Nopsae 5
+3837,Dokkebi Jar
+3838,Dokkebi Jar
+3839,Dokkebi Jar
+3840,Dokkebi Jar
+3841,Shimhyangje
+3842,Shimhyangje
+3843,Solbaram Neowa House
+3844,Solbaram Neowa House
 4001,Container
 4002,Stuffed Bear Head
 4003,Bear Hide Carpet
@@ -2270,7 +2317,7 @@ Param0,String
 4475,Dev Plant34- Bigriverbirch_Dead
 4476,Dev Plant35- Bigriverbirch_Dead
 4477,Dev Plant36- JapaneseCherry
-4478,Dev Plant37- JapaneseCherry
+4478,Cherry Tree
 4479,Dev Plant38- RiverBirch
 4480,Dev Plant39- RiverBirch
 4481,Dev Plant40- RiverBirch
@@ -2375,7 +2422,7 @@ Param0,String
 4710,Goblin-style Furniture Set
 4711,Python Furniture Set
 4712,Thunderstruck Maple Furniture Set
-4713,Mountain Sheep Horn Decorated Furniture Set
+4713,Mountain Sheep Horn Furniture Set
 4714,Antique Zen Furniture Set
 4715,Volcanic Rock Decorated Furniture Set
 4716,Naga Decorated Furniture Set
@@ -2473,7 +2520,7 @@ Param0,String
 5213,Goblin-Style Bedside Table
 5214,Python Bedside Table
 5215,Thunderstruck Maple Bedside Table
-5216,Mountain Sheep Horn Decorated Bedside Table
+5216,Mountain Sheep Horn Bedside Table
 5217,Natural Log Drawers
 5218,Leather Drawers
 5219,Keplan Marble Drawers
@@ -2483,7 +2530,7 @@ Param0,String
 5223,Goblin-Style Drawers
 5224,Python Drawers
 5225,Thunderstruck Maple Drawers
-5226,Mountain Sheep Horn Decorated Drawers
+5226,Mountain Sheep Horn Drawers
 5227,Antique Zen Bedside Table
 5228,Antique Zen Drawers
 5229,Volcanic Rock Decorated Bedside Table
@@ -2545,7 +2592,7 @@ Param0,String
 5710,Goblin-Style Wardrobe
 5711,Python Wardrobe
 5712,Thunderstruck Maple Wardrobe
-5713,Mountain Sheep Horn Decorated Wardrobe
+5713,Mountain Sheep Horn Wardrobe
 5714,Antique Zen Wardrobe
 5715,Volcanic Rock Decorated Wardrobe
 5716,Naga Decorated Wardrobe
@@ -2614,7 +2661,7 @@ Param0,String
 6213,Goblin-Style Dining Table
 6214,Python Dining Table
 6215,Thunderstruck Maple Dining Table
-6216,Mountain Sheep Horn Decorated Dining Table
+6216,Mountain Sheep Horn Dining Table
 6217,Natural Log Table
 6218,Leather Table
 6219,Keplan Marble Table
@@ -2624,7 +2671,7 @@ Param0,String
 6223,Goblin-Style Table
 6224,Python Table
 6225,Thunderstruck Maple Table
-6226,Mountain Sheep Horn Decorated Table
+6226,Mountain Sheep Horn Table
 6227,Antique Zen Dining Table
 6228,Antique Zen Table
 6229,Volcanic Rock Decorated Dining Table
@@ -2635,7 +2682,7 @@ Param0,String
 6234,Halloween Decorated Table
 6235,Palm Tree Dinning Table
 6236,Palm Tree Table
-6237,Christmas Decorated Table
+6237,Christmas Decorated Dining Table
 6238,Christmas Decorated Table
 6239,Urimok Dining Table
 6240,Urimok Table
@@ -2716,7 +2763,7 @@ Param0,String
 6713,Goblin-Style Chair
 6714,Python Chair
 6715,Thunderstruck Maple Chair
-6716,Mountain Sheep Horn Decorated Chair
+6716,Mountain Sheep Horn Chair
 6717,Natural Log Sofa
 6718,Leather Sofa
 6719,Keplan Marble Sofa
@@ -2726,7 +2773,7 @@ Param0,String
 6723,Goblin-Style Sofa
 6724,Python Sofa
 6725,Thunderstruck Maple Sofa
-6726,Mountain Sheep Horn Decorated Sofa
+6726,Mountain Sheep Horn Sofa
 6727,Antique Zen Chair
 6728,Antique Zen Sofa
 6729,Volcanic Rock Decorated Chair
@@ -2947,6 +2994,7 @@ Param0,String
 7170,Essence of Luthraghon
 7171,Crystal Preset Expansion Coupon
 7172,Crystal Inventory Expansion Coupon
+7186,Weight Limit +400LT
 7201,Premium Pack I (30 days)
 7202,Premium Pack I (60 days)
 7203,Premium Pack I (90 days)
@@ -3070,6 +3118,8 @@ Param0,String
 8056,Skilled Shellfolk Worker
 8057,Professional Shellfolk Worker
 8058,Artisan Shellfolk Worker
+8059,Afuaru
+8060,Zobadi
 8501,Lion
 8502,Kzarka Priest
 8503,Stone Scale Iguana
@@ -3217,7 +3267,7 @@ Param0,String
 9014,Bomb
 9015,Fortress Gate Lever
 9016,Ladder
-9017,Summoned Heilang
+9017,Summoned Heuklang
 9018,Shabby Wagon
 9019,Strong Wagon
 9020,White Wagon
@@ -4681,6 +4731,7 @@ Param0,String
 11993,Ice
 11994,Ice
 11995,Ice
+11996,Feldspar
 12001,Heidelian Bed
 12002,Heidelian Handcrafted Bed
 12003,Velian Bed
@@ -4703,7 +4754,7 @@ Param0,String
 12210,Goblin-Style Bed
 12211,Python Bed
 12212,Thunderstruck Maple Bed
-12213,Mountain Sheep Horn Decorated Bed
+12213,Mountain Sheep Horn Bed
 12214,Antique Zen Bed
 12215,Volcanic Rock Decorated Bed
 12216,Naga Decorated Bed
@@ -4848,8 +4899,8 @@ Param0,String
 13048,Nineshark Chandelier
 13049,Ocean Stalker Chandelier
 13050,Atoraxxion Chandelier
-13201,Bianstimi's Chandelier (Red)
-13202,Bianstimi's Chandelier (White)
+13201,Ruby Chandelier (Fluorescent)
+13202,Crystal Chandelier (White)
 13203,Golden Amethyst Chandelier (Fluorescent)
 13204,Platinum Chandelier
 13205,Halloween Pumpkin Chandelier
@@ -4907,7 +4958,7 @@ Param0,String
 13728,Prairie Green Coral Floor
 13729,Daybreak Blue Coral Floor
 13730,Breezy White Coral Floor
-13731,Earth's Sand Coral Floor
+13731,Great Sands Coral Floor
 13732,Manos Blue Coral Floor
 13733,Wood Star Floor
 13734,Snowbell Floor
@@ -5043,6 +5094,139 @@ Param0,String
 15035,[Jukebox] Obliterated Orzeca
 15036,[Jukebox] Snow Flower
 15037,[Jukebox] Gayageum
+15038,[Jukebox] Fox Orb
+15201,Corner Decorated Vanity
+15202,[Manor] Janggu
+15203,Traditional Mattress
+15204,Traditional Cushion
+15205,Traditional Long Pillow
+15206,Traditional Backrest
+15207,Traditional Pillow
+15208,[Manor] Seesaw
+15209,[Manor] Stepping Stone
+15210,[Manor] Sundial
+15211,[Manor] Royal Throne
+15212,Muntin Partition
+15213,[Manor] Traditional Muntin Outdoor Chair
+15214,[Manor] Traditional Muntin Chair
+15215,High-quality Nacre Cabinet
+15216,Wooden Writing Box
+15217,High-quality Muntin Partition
+15218,Wooden Wall Shelf
+15219,[Manor] Square Open Bedside Table
+15220,[Manor] Book Storage Collection
+15221,Cloud Design Tapestry Carpet
+15222,Traditional Ramie Patchwork Cloth
+15223,Book of Etiquette (Vol. 1)
+15224,Book of Etiquette (Vol. 2)
+15225,Institute Printing
+15226,Banggak Novel
+15227,Government-issued Book of Strategy
+15228,Tale of the Gumiho
+15229,Where Is My Leg?
+15233,Square Wooden Plate
+15234,Round White Porcelain Plate
+15235,[Manor] Stone Rail Pillar
+15236,[Manor] Stone Rail
+15237,[Manor] Stone Pillar
+15247,[Manor] Rice Straw Cover
+15248,Four-tiered Bookshelf
+15249,Two-tiered Closed Shelf
+15250,Four-tiered Luxury Shelf
+15251,[Manor] Wood Bench
+15252,[Manor] A-frame Carrier
+15253,[Manor] Straw Mat
+15254,[Manor] Straw Roll
+15255,[Manor] Millstone
+15256,[Manor] Mortar
+15257,Pestle
+15258,[Manor] Storage Bamboo Basket
+15259,[Manor] Round Bamboo Basket
+15260,[Manor] Bamboo Colander
+15261,[Manor] Small Round Dining Table
+15262,[Manor] Red Pine Bedside Table
+15263,Bamboo Scroll
+15264,Maehwa Scroll
+15265,Chrysanthemum Scroll
+15266,Orchid Scroll
+15267,Wooden Baduk Board
+15268,Black Baduk Stone
+15269,White Baduk Stone
+15270,High-quality Nacre Snack Tray
+15271,Fish Wind Chime
+15272,Orchid Celadon Flowerpot
+15273,Four-tiered Luxury Wide Cabinet
+15274,Four-tiered Wide Cabinet
+15275,Corner Decorated Cabinet
+15276,High-quality Nacre Cabinet
+15277,Spread Hanji
+15278,Rolled Hanji
+15279,Hanji with Wise Words
+15280,Hanji with Drawing
+15281,Red Hanji Bundle for Crafts
+15282,Hanji Bundle for Crafts
+15283,White Hanji Bundle for Crafts
+15284,Ink Wash Painting Folding Screen
+15285,Four-fold Muntin Screen
+15286,Six-fold Muntin Screen
+15287,[Manor] Jar
+15288,[Manor] Open Jar
+15289,[Manor] Large Jar
+15290,[Manor] Earthen Jar
+15291,Marquetry Celadon
+15292,[Manor] Moon Jar
+15293,White Porcelain Gourd Bottle
+15294,Marquetry Gourd Kettle
+15295,Marquetry Vase
+15296,[Manor] Fermenting Jar
+15298,Ironwood Cutlery Set
+15299,Wooden Writing Box
+15300,[Manor] Corner Decorated Drawer
+15301,High-quality Writing Desk
+15304,Ink and Inkstone
+15305,Calligraphy Brush
+15306,Round Brush Stand
+15310,[Manor] Square Stone Flowerbed (For Trees)
+15311,[Manor] Rectangular Stone Flowerbed (For Trees)
+15312,[Manor] Elegant Hexagonal Gazebo
+15313,[Manor] Elegant Square Belfry
+15314,[Manor] Two Story Fireplace
+15315,Blue Cloud Pattern Wallpaper
+15316,Crane Pattern Silk Wallpaper
+15317,Blue Muntin Wallpaper
+15318,Woven Pattern Floor
+15319,Traditional Design Floor
+15320,Traditional Stone Floor
+15322,[Manor] Blue Pine Tree
+15323,[Manor] Bristlegrass
+15324,[Manor] Light Pink Azalea
+15325,[Manor] Deep Pink Azalea
+15326,[Manor] Pink Maehwa Tree
+15327,[Manor] Village Mugunghwa
+15328,[Manor] Village Small Pine Tree
+15329,[Manor] Yellow Ginger Flower
+15330,[Manor] Ripe Persimmon Tree
+15331,[Manor] Bountiful Jujube Tree
+15332,[Manor] Pleasantly Plump Gourd Vine
+15333,[Manor] Ginkgo Tree
+15334,[Manor] Maple Tree
+15342,[Manor] A-frame Carrier Loaded with Straw Mats
+15343,[Manor] A-frame Carrier Loaded with Straw
+15344,Blue Mist Flower Porcelain Vase
+15345,Blue Mist Flower Vase
+15346,Morning Muntin Lamp (Ceiling)
+15347,Morning Muntin Wall Lamp
+15348,Oil Candle Lamp
+15349,Wooden Candle Stand
+15350,Morning Muntin Floor Lamp
+15351,Hanji Wish Lantern Lamp (Ceiling)
+15352,Three Layer Hanji Wish Lantern Lamp (Ceiling)
+15353,Well-kept Two-tiered Closed Shelf
+15354,Well-kept Four-tiered High-quality Shelf
+15355,Sagoonja Brush
+15356,[Manor] Well-managed Village Mugunghwa
+15357,[Manor] Small Tangerine Tree
+15358,[Manor] Red Camellia Tree
 15501,Tied-Up Curtain
 15502,Open Curtain
 15503,Cotton Curtain
@@ -5272,9 +5456,9 @@ Param0,String
 16103,Round Pottery
 16104,Quagmire Pottery
 16105,Long Pottery
-16106,Ruby Gourd-Shaped Bottle
+16106,Ruby Gourd Bottle
 16107,Fancy Sapphire Vase
-16108,Emerald Gourd-Shaped Bottle
+16108,Emerald Gourd Bottle
 16109,Fancy Topaz Kettle
 16110,Beautiful Opal Vase
 16111,Golden Hand Vase
@@ -5353,7 +5537,7 @@ Param0,String
 16184,Takoyaki Plate
 16185,Rice Ball Plate
 16186,Zen Cherry Blossom Lamp
-16187,Zen Bottle
+16187,Japanese Liquor Bottle
 16188,Floral China Water Vessel
 16189,Floral China Tea Container
 16190,Floral China Water Cooling Bowl
@@ -5381,7 +5565,7 @@ Param0,String
 16212,Florin Dawn Wall Carpet
 16213,Florin Autumn Leaves Wall Carpet
 16214,Florin Sunset Wall Carpet
-16215,Tarif Gourd-Shaped Bottle
+16215,Tarif Gourd Bottle
 16216,Tarif Pot
 16217,Yisar Pjetyo Amulet
 16218,Allan Serbin Amulet
@@ -5541,7 +5725,7 @@ Param0,String
 16372,Haso Celadon B
 16373,Wings of Burning Passion
 16374,Winter Candle Stand
-16375,Duvencrune Bonk Lamp
+16375,Duvencrune Bronk Lamp
 16376,Duvencrune Crescent Lamp
 16377,Kamasylvia Plate
 16378,Mourning Doll
@@ -6154,6 +6338,144 @@ Param0,String
 17774,Marble Floor
 17775,Forun Marble Floor
 17776,Panyo Marble Floor
+17777,Vell Pirates Bedside Table
+17778,Vell Pirates Drawers
+17779,Vell Pirates Wardrobe
+17780,Vell Pirates Dining Table
+17781,Vell Pirates Table
+17782,Vell Pirates Chair
+17783,Vell Pirates Sofa
+17784,Vell Pirates Bookshelf
+17785,Vell Pirates Bed
+17786,Fintomaria Hourglass
+17787,Fintomaria Galley Model
+17788,Fintomaria Sailing Log I
+17789,Fintomaria Sailing Log II
+17790,Fintomaria Sailing Log III
+17791,Fintomaria Telescope
+17792,Fintomaria Quill Pen
+17793,Fintomaria Sailing Tool
+17794,Fintomaria Sailing Map
+17795,Margoria Whale Bedside Table
+17796,Margoria Whale Drawers
+17797,Margoria Whale Wardrobe
+17798,Margoria Whale Dining Table
+17799,Margoria Whale Table
+17800,Margoria Whale Chair
+17801,Margoria Whale Sofa
+17802,Margoria Whale Bookshelf
+17803,Margoria Whale Bed
+17804,Margoria Whale Drapeless Curtain
+17805,Margoria Whale Tab Drapeless Curtain
+17806,Margoria Whale Chandelier
+17807,[Jukebox] Margorian Waves
+17808,Margoria Whale Table Clock
+17809,Margoria Whale Wine Glass
+17810,Margoria Whale Wine Rack
+17811,Margoria Whale Tiara Rack
+17812,Margoria Whale Vase
+17813,Margoria Whale Round Lamp
+17814,Margoria Whale Candle Stand
+17815,Margoria Whale Octopus Decoration Candle Stand
+17816,Margoria Whale Partition
+17817,Margoria Whale Hexagonal Fish Tank
+17818,Margoria Whale Stand Lamp
+17819,Emerald Great Sea Fish Tank
+17820,Emerald Great Sea Fountain
+17821,Ants Wall
+17822,Classic Lynch Wall
+17823,Wet Fog Floor
+17824,Grassland Floor
+17825,Red Oak Floor
+17826,Mountain Sheep Horn Bedside Table
+17827,Mountain Sheep Horn Drawers
+17828,Mountain Sheep Horn Wardrobe
+17829,Mountain Sheep Horn Dining Table
+17830,Mountain Sheep Horn Table
+17831,Mountain Sheep Horn Chair
+17832,Mountain Sheep Horn Sofa
+17833,Mountain Sheep Horn Bookshelf
+17834,Mountain Sheep Horn Bed
+17835,Python Bedside Table
+17836,Python Drawers
+17837,Python Wardrobe
+17838,Python Dining Table
+17839,Python Table
+17840,Python Chair
+17841,Python Sofa
+17842,Python Bookshelf
+17843,Python Bed
+17844,Heidelian Wine
+17845,Heidelian Wine Bucket
+17846,Heidelian Wine Holder
+17847,Heidelian Wine Opener
+17848,Heidelian Rose Wine Glass
+17849,Heidelian Red Wine Glass
+17850,Heidelian Sparkling Wine Glass
+17851,Heidelian Wine Decanter
+17852,Heidelian Wine Box
+17853,Assorted Heidelian Wine Desserts
+17854,Heidelian Wine Flower Vase
+17855,Heidelian Wine Deco Lamp
+17856,Heidelian Trent-Wine Cabinet
+17857,Heidelian Cedar Wine Cabinet
+17858,Crystal Chandelier (White)
+17859,Antique Gray Wall
+17860,Walnut Floor
+17861,Shandi Floor
+17862,Juniper Floor
+17863,Litsche Marble Floor
+17864,Comb-pattern Wood Floor
+17865,Wooden Floor
+17866,Brown Fabric Floor
+17867,Coral Drawers
+17868,Coral Wardrobe
+17869,Coral Dining Table
+17870,Coral Table
+17871,Coral Chair 1
+17872,Coral Sofa
+17873,Coral Chair 2
+17874,Coral Bookshelf
+17875,Coral Bed
+17876,Coral Sink
+17877,Coral Dish
+17878,Coral Comb Rack
+17879,Coral Candle Stand
+17880,Coral Fish Tank
+17881,Coral Basket
+17882,Coral Magic Jar
+17883,Rare Coral Pottery
+17884,Pottery with Clam
+17885,Coral Kettle
+17886,Pottery with Coral
+17887,Cup with Blue Coral
+17888,Exotic Coral Carpet
+17889,Wave Coral Carpet
+17890,Coral Pattern Carpet
+17891,Bandless Coral Carpet
+17892,Coral Harp
+17893,Coral Shine White Conch Pot
+17894,Coral Shine Blue Shell Pot
+17895,Coral Shine Sand Conch Pot
+17896,Coral Stand Lamp
+17897,Coral Wall Candle Stand
+17898,Coral Chandelier
+17899,Coral Mirror
+17900,Coral Shine White Conch Wall Pot
+17901,Coral Shine Blue Shell Wall Pot
+17902,Coral Shine Star Shell Wall Pot
+17903,Coral Star Ornament
+17904,Coral Shelf
+17905,Blue Coral Wall
+17906,Striped Coral Wall
+17907,White Coral Wall
+17908,Yellow Starfish Wall
+17909,Blue Ocean Wall
+17910,Prairie Green Coral Floor
+17911,Daybreak Blue Coral Floor
+17912,Breezy White Coral Floor
+17913,Great Sands Coral Floor
+17914,Manos Blue Coral Floor
 18001,Single Display Stand
 18002,Wide Triple Display Stand
 18003,Round Display Stand
@@ -6276,7 +6598,7 @@ Param0,String
 18120,Dice Fireplace
 18121,Winter Chair
 18122,Small Wicker Table with Tokkuri
-18123,Flower Pot Decorated with Snowflake
+18123,Snowflake Flower Pot
 18124,Pocket Flower Pot
 18125,Flower Pot with Soft Lighting
 18126,Flower Pot with Warm Lighting
@@ -6359,6 +6681,80 @@ Param0,String
 18205,[Event] Irori Set
 18206,[Event] Black Stone Bed
 18207,[Event] Black Spirit Globe
+18501,Pine Tree
+18502,Pine Tree
+18503,Pine Tree
+18504,Pink Rosebay
+18505,Pink Rosebay
+18506,Pink Rosebay
+18507,Scarlet Rosebay
+18508,Scarlet Rosebay
+18509,Maehwa
+18510,Maehwa
+18511,Goosefoot
+18512,Goosefoot
+18513,Rice Stalk
+18514,Rice Stalk
+18515,Tigerflower
+18516,Tigerflower
+18517,Wild Berry
+18518,Wild Berry
+18519,Wild Berry
+18520,Reishi Mushroom
+18521,Reed
+18522,Reed
+18523,Cedar Tree
+18524,Cedar Tree
+18525,Cedar Tree
+18526,Bamboo Sprout
+18527,Bamboo Sprout
+18528,Bamboo Sprout
+18529,Bamboo Sprout
+18532,Persimmon Tree
+18533,Persimmon Tree
+18534,Jujube Tree
+18535,Jujube Tree
+18541,Ginkgo Tree
+18542,Ginkgo Tree
+18543,Maple Tree
+18544,Maple Tree
+18545,Viola
+18546,Viola
+18547,Weeds
+18548,Weeds
+18549,Bracken
+18550,Bracken
+18551,Napa Cabbage
+18552,Napa Cabbage
+18553,Radish
+18554,Radish
+18555,Perilla
+18556,Perilla
+18557,Perilla
+18558,Rice Stalk
+18559,Rice Stalk
+18560,Rice Stalk
+18561,Pine Mushroom
+18562,Stuffed Boar Head
+18563,[Manor] Stuffed Tiger
+18564,Stuffed Bear Head
+18565,[Manor] Stuffed Hawk
+18566,Stuffed Ferocious Boar Head
+18567,Stuffed Ferocious Bear Head
+18568,Stuffed Thunderpaw Head
+18569,[Manor] Special Stuffed Boar Head_02
+18570,[Manor] Special Stuffed Hawk_02
+18571,[Manor] Special Stuffed Hawk_03
+18572,[Manor] Special Stuffed Hawk_04
+18573,[Manor] Special Stuffed Tiger_02
+18574,[Manor] Special Stuffed Tiger_03
+18575,[Manor] Special Stuffed Tiger_04
+18576,Breath-imbued Stuffed Boar Head
+18577,[Manor] Breath-imbued Stuffed Tiger
+18578,Breath-imbued Stuffed Bear Head
+18579,[Manor] Breath-imbued Stuffed Hawk
+18580,Breath-imbued Stuffed Ferocious Boar Head
+18581,Breath-imbued Stuffed Ferocious Bear Head
 18901,Vatu's Carpet
 18902,Everfrost High-quality Carpet
 18903,Everfrost Bench
@@ -6385,15 +6781,15 @@ Param0,String
 18924,Charbonneau Succulent
 18925,Jade Starlight Candle Stand
 18926,Jade Starlight Wall Candle Stand
-18927,Vatu's Outdoor Chair
-18928,Jade Starlight Large Brazier
+18927,[Manor] Vatu's Outdoor Chair
+18928,[Manor] Jade Starlight Large Brazier
 18929,Vatu's Shabby Chair
-18930,Chopping Stump
-18931,Piled Firewood
-18932,Jade Starlight Pagoda Brazier
+18930,[Manor] Chopping Stump
+18931,[Manor] Piled Firewood
+18932,[Manor] Jade Starlight Pagoda Brazier
 18933,Vatu's Circular Outdoor Dining Table
 18934,Vatu's High-quality Dining Table
-18935,Balacs Triangular Outdoor Tent
+18935,[Manor] Balacs Triangular Outdoor Tent
 18951,Fairy Irene
 18952,Fairy Irene
 18953,Fairy Risty
@@ -6485,7 +6881,7 @@ Param0,String
 19510,Goblin-Style Bookshelf
 19511,Python Bookshelf
 19512,Thunderstruck Maple Bookshelf
-19513,Mountain Sheep Horn Decorated Bookshelf
+19513,Mountain Sheep Horn Bookshelf
 19514,Antique Zen Bookshelf
 19515,Volcanic Rock Decorated Bookshelf
 19516,Naga Decorated Bookshelf
@@ -7570,11 +7966,11 @@ Param0,String
 21073,Centaurus Axeman
 21074,Centaurus Seeker
 21075,Centaurus 3
-21076,Centaurus 4
-21077,Centaurus 5
-21078,Centaurus 6
-21079,Centaurus 7
-21080,Centaurus 8
+21076,Haeshin's Trial
+21077,Kitskala
+21078,Calestra
+21079,Charpene
+21080,Gigagord
 21081,Centaurus 9
 21082,Centaurus 10
 21083,Centaurus 11
@@ -7584,7 +7980,7 @@ Param0,String
 21087,Centaurus 15
 21088,Centaurus 16
 21089,Centaurus 17
-21090,Centaurus 18
+21090,Hawk
 21091,Stone Worm
 21092,Stone Waragon
 21093,Stone Mutant Waragon
@@ -7775,7 +8171,7 @@ Param0,String
 21287,Stone Mutant Waragon
 21301,Aakman Elite Guardian
 21302,Aakman Elite Watcher
-21303,Ancient Civilization Priest
+21303,Aakman Flamen
 21304,Aakman Airbender
 21305,Aakman Punisher
 21306,Aakman Watcher
@@ -7822,6 +8218,15 @@ Param0,String
 21347,Grudged Skeleton Warrior
 21348,Gabel
 21349,Desert Fogan Seer
+21350,Memory Piece
+21351,Geuseunsae
+21352,Geuseunsae
+21353,Geuseunsae
+21354,Geuseunsae
+21355,Burning Oil
+21356,Protector of the Fallen Kingdom
+21357,Morning Sun
+21361,Boredkebi
 21401,Candidum
 21402,Hekaru
 21403,Black Rust
@@ -7951,7 +8356,7 @@ Param0,String
 21535,Black Sand Mole
 21536,Silk Shade Flamingo
 21537,Tiny Bee Swarm
-21538,Big Horn Boar
+21538,Big Horned Wild Boar
 21539,Baby Boar
 21540,Rainbow Lizard
 21541,Kamasylvia Small Lizard
@@ -8621,7 +9026,7 @@ Param0,String
 22622,Red Orc Sentinel
 22623,Khuruto Executor
 22624,Khuruto Sheriff
-22625,Rhutum Chief Priest
+22625,Rhutum Chief Shaman
 22626,Abandoned Iron Mine Executor
 22627,Wandering Rogue Elementalist
 22628,Wandering Rogue Fighter
@@ -8669,7 +9074,7 @@ Param0,String
 22670,Red Orc Sentinel
 22671,Khuruto Executor
 22672,Khuruto Sheriff
-22673,Rhutum Chief Priest
+22673,Rhutum Chief Shaman
 22674,Abandoned Iron Mine Executor
 22675,Wandering Rogue Elementalist
 22676,Wandering Rogue Fighter
@@ -8899,6 +9304,92 @@ Param0,String
 22904,Dark Knight
 22905,Baby Rock Gargoyle
 22906,Rock Gargoyle
+22911,Black Energy
+22912,Suspicious Item
+22913,Questionable Existence
+22914,Military Officer
+22915,Dolswe
+22916,Yeonhwa
+22917,Geuseunsae
+22918,Military Officer
+22919,Pig
+22920,Yeonhwa
+22921,Changui
+22922,Changui
+22923,Changui
+22924,Historikkebi
+22925,Praykkebi
+22926,Dokkebi
+22927,Dokkebi
+22928,Dokkebi
+22929,Dokkebi
+22930,Dokkebi Soul
+22931,Haeshin's Trial
+22932,Haeshin's Trial
+22933,Haeshin's Trial
+22934,Haeshin's Trial
+22935,Haeshin's Trial
+22936,Haeshin's Trial
+22937,Haeshin's Trial
+22938,Haeshin's Trial
+22939,Child
+22940,Altar
+22941,Bamboo Legion Archer
+22942,Bamboo Legion Lieutenant
+22943,Bamboo Legion Spearman
+22944,Bamboo Legion Swordsman
+22945,Bamboo Legion Archer
+22946,Bamboo Legion Spearman
+22947,Bamboo Legion Swordsman
+22948,Bamboo Legion Archer
+22949,Bamboo Legion Archer
+22950,Bamboo Legion Spearman
+22951,Bamboo Legion Swordsman
+22952,Bamboo Legion Archer
+22953,Bamboo Legion Lieutenant
+22954,Bamboo Legion Cavalry
+22955,Bamboo Legion
+22956,Bamboo Legion Scout
+22957,Bamboo Legion Scout
+22958,Bamboo Legion Scout
+22959,Bamboo Legion Spearman
+22960,Bamboo Legion Swordsman
+22961,Bamboo Legion Archer
+22962,Bamboo Legion
+22963,Bamboo Legion
+22964,Bamboo Legion Spearman
+22965,Bamboo Legion Swordsman
+22966,Bamboo Legion Archer
+22967,Fierce Bambooling
+22968,Fierce Bambooling
+22969,Fierce Bambooling
+22970,Bamboo Legion Spearman
+22971,Bamboo Legion Swordsman
+22972,Bamboo Legion Archer
+22973,Servile Wraith
+22974,Gulgak
+22975,Yiol
+22976,Yukhon
+22977,Tiger Changui
+22978,Tigerbeast
+22979,Jang Iksoon
+22980,Skewer
+22981,Dokkebi
+22982,Bamboo Legion
+22983,Changui
+22984,Servile Wraith
+22985,Dokkebi
+22986,Dokkebi
+22987,Dokkebi
+22988,Dokkebi
+22989,Tiger Changui
+22990,Changui
+22991,Changui
+22992,Changui
+22993,Dokkebi
+22994,Dokkebi
+22995,Dokkebi
+22996,Songakshi
 23001,"Kzarka, the Lord of Corruption"
 23002,Titium
 23003,Muskan
@@ -9125,10 +9616,86 @@ Param0,String
 23315,Shultz Guard Gladiator
 23318,Shultz Guard Tent
 23319,Kunga
+23320,Golden Pig King
+23321,Burning Oil
+23322,Gumiho
+23323,Gumiho
+23324,Foxfire
+23325,Gumiho
+23326,Gumiho
+23327,Gumiho
+23328,Bari
+23329,Servile Wraith
+23330,Saetani
+23331,Vengeful Ghost
+23332,Bari
+23333,Gumiho
+23334,Sangoon
+23335,Duoksini
+23336,Curse
+23337,Corrupt Dangsan Tree
+23338,Bari
+23339,Oduksini
+23340,Lee Duksoo
+23341,Oduksini
+23342,Oduksini
+23343,Oduksini's Soul
+23344,Oduksini
+23345,Oduksini
+23346,Yukhon
+23347,Tiger Changui
+23348,Geuseunsae
+23349,Geuseunsae
+23350,Geuseunsae
 23351,The Lost Face
 23352,The Lost Face
 23353,The Lost Face
 23354,The Lost Face
+23355,Geuseunsae
+23356,Geuseunsae
+23357,Geuseunsae
+23358,Apex Changui
+23359,Gulgak
+23360,Yiol
+23361,Yukhon
+23362,Tiger Changui
+23363,Duoksini
+23364,Soldierkkebi
+23365,Soldierkkebi
+23366,Soldierkkebi
+23367,Dokkebi
+23368,Dokkebi Soul
+23369,Dokkebi Soul
+23370,Duoksini
+23371,Duoksini
+23372,Sangoon
+23373,Sangoon
+23374,Sangoon
+23375,Sangoon
+23376,Sangoon
+23377,Sangoon
+23378,Sangoon
+23379,Sangoon
+23380,Sangoon
+23381,Oduksini
+23382,Oduksini
+23383,Oduksini
+23384,Oduksini
+23385,Oduksini
+23386,Bamboo Legion Lieutenant
+23387,Altar
+23388,Bamboo Legion Spearman
+23389,Bamboo Legion Swordsman
+23390,Bamboo Legion Archer
+23391,Bamboo Legion Spearman
+23392,Bamboo Legion Swordsman
+23393,Bamboo Legion Archer
+23394,Bamboo Legion Archer
+23395,Bamboo Legion Spearman
+23396,Bamboo Legion Swordsman
+23397,Bamboo Legion Archer
+23398,Bamboo Legion Lieutenant
+23399,Bamboo Legion Cavalry
 23400,Erebjork
 23401,Vercedes
 23402,Vercedes
@@ -9330,6 +9897,105 @@ Param0,String
 23598,Origenus
 23599,Origenus
 23600,Origenus
+23601,Lynx Bandit
+23602,Fox Bandit
+23603,Raccoon Bandit
+23604,Boar Bandit
+23605,Fox Bandit
+23606,Elite Golden Pig
+23607,Raider Golden Pig
+23608,Golden Pig King
+23609,Gimmick Use
+23610,Burning Oil
+23611,Golden Pig King
+23612,Burning Oil
+23613,Golden Pig King
+23614,Burning Oil
+23615,Golden Pig King
+23616,Burning Oil
+23617,Golden Pig King
+23618,Burning Oil
+23619,Golden Pig King
+23620,Burning Oil
+23621,Golden Pig King
+23622,Burning Oil
+23623,Golden Pig King
+23624,Burning Oil
+23625,Golden Pig King
+23626,Burning Oil
+23627,Golden Pig King
+23628,Burning Oil
+23629,Golden Pig King
+23630,Burning Oil
+23631,Apex Changui
+23632,Gulgak
+23633,Yiol
+23634,Yukhon
+23635,Tiger Changui
+23636,Gulgak
+23637,Yiol
+23638,Yukhon
+23639,Tiger Changui
+23640,Apex Changui
+23641,Gulgak
+23642,Yiol
+23643,Yukhon
+23644,Tiger Changui
+23645,Yiol
+23646,Yiol
+23647,Yiol
+23648,Tiger Changui
+23649,Yiol
+23650,Yiol
+23651,Soldierkkebi
+23652,Soldierkkebi
+23653,Soldierkkebi
+23654,Soldierkkebi
+23655,Fierce Bambooling
+23656,Fierce Bambooling
+23657,Baeklang
+23658,Tigerbeast
+23659,Changui
+23660,Changui
+23661,Gumiho
+23662,Gumiho
+23663,Foxfire
+23664,Gumiho
+23665,Gumiho
+23666,Gourd Bottle
+23667,Gumiho
+23669,Gumiho
+23670,Gumiho
+23671,Foxfire
+23672,Gumiho
+23673,Gumiho
+23674,Gumiho
+23675,Gumiho
+23676,Gumiho
+23677,Foxfire
+23678,Gumiho
+23679,Gumiho
+23680,Gumiho
+23681,Gumiho
+23682,Gumiho
+23683,Foxfire
+23684,Gumiho
+23685,Gumiho
+23686,Gumiho
+23687,Gumiho
+23688,Gumiho
+23689,Foxfire
+23690,Gumiho
+23691,Golden Pig King
+23692,Sangoon
+23693,Duoksini
+23694,Songakshi
+23695,Bamboo Legion
+23696,Changui
+23697,Oduksini
+23698,Yeongam of the East
+23699,Mudang Wraith
+23700,Gumiho
 23701,Red Nose
 23702,Giath
 23703,Dastard Bheg
@@ -9493,6 +10159,29 @@ Param0,String
 23875,Illusion's Cloud
 23876,Illezra's Dark Shadow
 23877,Dark Shadow's Illusory Double
+23878,Poongmool Troupe
+23879,Songakshi
+23880,Songakshi
+23881,Songakshi
+23882,Songakshi
+23883,Songakshi
+23884,Songakshi
+23885,Songakshi
+23886,Songakshi
+23887,Songakshi
+23888,Songakshi
+23889,Songakshi
+23890,Songakshi
+23891,Songakshi
+23892,Songakshi
+23893,Boar
+23894,Dog
+23895,Strange and Beautiful Herb
+23896,Dokkebi
+23897,Dokkebi Soul
+23898,Dokkebi
+23899,Dokkebi
+23900,Dokkebi
 23901,Red Nose
 23902,Giath
 23903,Dastard Bheg
@@ -9582,6 +10271,7 @@ Param0,String
 23994,Urugon
 23995,Loure Ravi
 23996,Garmoth
+23997,Prankkebi
 24001,Imp Defense Tower
 24002,Goblin Watchtower
 24003,Fogan Defense Tower
@@ -10261,6 +10951,19 @@ Param0,String
 24858,Troll Elite Warrior
 24859,Grand Rhutum Chief
 24860,Fireball
+24871,Bamboo Legion
+24872,Bamboo Legion Scout
+24873,Bamboo Legion Scout
+24874,Bamboo Legion Scout
+24875,Bamboo Legion Spearman
+24876,Bamboo Legion Swordsman
+24877,Bamboo Legion Archer
+24878,Bamboo Legion
+24879,Bamboo Legion
+24880,Bamboo Legion Spearman
+24881,Bamboo Legion Swordsman
+24882,Bamboo Legion Archer
+24883,Songakshi
 24890,Young Valtarra
 24891,Young Okiara
 24892,Young Narc
@@ -10697,6 +11400,41 @@ Param0,String
 25551,Ancient Ruins Guard
 25552,Ancient Ruins Defender
 25553,Dark Rift
+25566,Dokkebi
+25567,Dokkebi
+25568,Dokkebi
+25569,Treasure Chest
+25570,Treasure Chest
+25571,Dokkebi
+25572,Dokkebi
+25573,Treasure Chest
+25574,Duoksini
+25575,Soldierkkebi
+25576,Soldierkkebi
+25577,Soldierkkebi
+25578,Dokkebi
+25579,Dokkebi Soul
+25580,Dokkebi Soul
+25581,Dokkebi Soul
+25582,Dokkebi Soul
+25583,Dokkebi Soul
+25584,Duoksini
+25585,Duoksini
+25586,Soldierkkebi
+25587,Soldierkkebi
+25588,Soldierkkebi
+25589,Soldierkkebi
+25590,Duoksini
+25591,Duoksini
+25592,Duoksini
+25593,Oduksini
+25594,Lee Duksoo
+25595,Oduksini
+25596,Oduksini
+25597,Oduksini
+25598,Oduksini's Soul
+25599,Oduksini
+25600,Oduksini
 25601,Steel Imp
 25602,Steel Imp Warrior
 25603,Steel Imp Wizard
@@ -10770,6 +11508,132 @@ Param0,String
 25671,Forest Ronaros Scout
 25672,Forest Ronaros Marksman
 25673,Voraro
+25674,Yukhon
+25675,Tiger Changui
+25676,Lee Duksoo
+25677,Elite Golden Pig
+25678,Raider Golden Pig
+25679,Lynx Bandit
+25680,Fox Bandit
+25681,Raccoon Bandit
+25682,Boar Bandit
+25683,Honglim
+25684,Lee Duksoo
+25685,Lee Duksoo
+25686,Sangoon
+25687,Sangoon
+25688,Sangoon
+25689,Sangoon
+25690,Sangoon
+25691,Sangoon
+25692,Geuseunsae
+25693,Geuseunsae
+25694,Geuseunsae
+25695,Geuseunsae
+25696,Bari
+25697,Servile Wraith
+25698,Saetani
+25699,Shia
+25700,Vengeful Ghost
+25701,Bari
+25702,Gumiho
+25703,Sangoon
+25704,Duoksini
+25705,Curse
+25706,Bari
+25707,Servile Wraith
+25708,Saetani
+25709,Vengeful Ghost
+25710,Bari
+25711,Gumiho
+25712,Sangoon
+25713,Duoksini
+25714,Curse
+25715,Bari
+25716,Servile Wraith
+25717,Saetani
+25718,Vengeful Ghost
+25719,Bari
+25720,Gumiho
+25721,Sangoon
+25722,Duoksini
+25723,Curse
+25724,Bari
+25725,Servile Wraith
+25726,Bamboo Legion Spearman
+25727,Bamboo Legion Swordsman
+25728,Bamboo Legion Archer
+25729,Servile Wraith
+25730,Tigerbeast
+25731,Jang Iksoon
+25732,Skewer
+25733,Dokkebi
+25734,Bamboo Legion
+25735,Changui
+25736,Servile Wraith
+25737,Dokkebi
+25738,Dokkebi
+25739,Dokkebi
+25740,Dokkebi
+25741,Geuseunsae
+25742,Geuseunsae
+25743,Altar
+25744,Bamboo Legion Spearman
+25745,Bamboo Legion Swordsman
+25746,Bamboo Legion Archer
+25747,Bamboo Legion Spearman
+25748,Bamboo Legion Swordsman
+25749,Bamboo Legion Archer
+25750,Bamboo Legion Archer
+25751,Bamboo Legion Spearman
+25752,Bamboo Legion Swordsman
+25753,Bamboo Legion Archer
+25754,Bamboo Legion Lieutenant
+25755,Bamboo Legion Cavalry
+25756,Bamboo Legion
+25757,Bamboo Legion Scout
+25758,Bamboo Legion Scout
+25759,Bamboo Legion Scout
+25760,Bamboo Legion Spearman
+25761,Bamboo Legion Swordsman
+25762,Bamboo Legion Archer
+25763,Bamboo Legion
+25764,Bamboo Legion
+25765,Bamboo Legion Spearman
+25766,Bamboo Legion Swordsman
+25767,Bamboo Legion Archer
+25768,Altar
+25769,Bamboo Legion Spearman
+25770,Bamboo Legion Swordsman
+25771,Bamboo Legion Archer
+25772,Bamboo Legion Spearman
+25773,Bamboo Legion Swordsman
+25774,Bamboo Legion Archer
+25775,Bamboo Legion Archer
+25776,Bamboo Legion Spearman
+25777,Bamboo Legion Swordsman
+25778,Bamboo Legion Archer
+25779,Bamboo Legion Lieutenant
+25780,Bamboo Legion Cavalry
+25781,Bamboo Legion
+25782,Bamboo Legion Scout
+25783,Bamboo Legion Scout
+25784,Bamboo Legion Scout
+25785,Bamboo Legion Spearman
+25786,Bamboo Legion Swordsman
+25787,Bamboo Legion Archer
+25788,Bamboo Legion
+25789,Bamboo Legion
+25790,Bamboo Legion Spearman
+25791,Bamboo Legion Swordsman
+25792,Bamboo Legion Archer
+25793,Altar
+25794,Bamboo Legion Spearman
+25795,Bamboo Legion Swordsman
+25796,Bamboo Legion Archer
+25797,Bamboo Legion Spearman
+25798,Bamboo Legion Swordsman
+25799,Bamboo Legion Archer
 25800,Shadow Harpy
 25801,Shadow Harpy
 25802,Ibedor's Shadow
@@ -10777,6 +11641,200 @@ Param0,String
 25804,Sarabi
 25805,Heliyak
 25806,Ibedor's Shadow
+25807,Bamboo Legion Spearman
+25808,Bamboo Legion Swordsman
+25809,Bamboo Legion Archer
+25810,Bamboo Legion Lieutenant
+25811,Bamboo Legion Cavalry
+25812,Bamboo Legion
+25813,Bamboo Legion Scout
+25814,Bamboo Legion Scout
+25815,Bamboo Legion Scout
+25816,Bamboo Legion Spearman
+25817,Bamboo Legion Swordsman
+25818,Bamboo Legion Archer
+25819,Bamboo Legion
+25820,Bamboo Legion
+25821,Bamboo Legion Spearman
+25822,Bamboo Legion Swordsman
+25823,Bamboo Legion Archer
+25824,Altar
+25825,Bamboo Legion Spearman
+25826,Bamboo Legion Swordsman
+25827,Bamboo Legion Archer
+25828,Bamboo Legion Spearman
+25829,Bamboo Legion Swordsman
+25830,Bamboo Legion Archer
+25831,Bamboo Legion Archer
+25832,Bamboo Legion Spearman
+25833,Bamboo Legion Swordsman
+25834,Bamboo Legion Archer
+25835,Bamboo Legion Lieutenant
+25836,Bamboo Legion Cavalry
+25837,Bamboo Legion
+25838,Bamboo Legion Scout
+25839,Bamboo Legion Scout
+25840,Bamboo Legion Scout
+25841,Bamboo Legion Spearman
+25842,Bamboo Legion Swordsman
+25843,Bamboo Legion Archer
+25844,Bamboo Legion
+25845,Bamboo Legion
+25846,Bamboo Legion Spearman
+25847,Bamboo Legion Swordsman
+25848,Bamboo Legion Archer
+25849,Altar
+25850,Bamboo Legion Spearman
+25851,Bamboo Legion Swordsman
+25852,Bamboo Legion Archer
+25853,Bamboo Legion Spearman
+25854,Bamboo Legion Swordsman
+25855,Bamboo Legion Archer
+25856,Bamboo Legion Archer
+25857,Bamboo Legion Spearman
+25858,Bamboo Legion Swordsman
+25859,Bamboo Legion Archer
+25860,Bamboo Legion Lieutenant
+25861,Bamboo Legion Cavalry
+25862,Bamboo Legion
+25863,Bamboo Legion Scout
+25864,Bamboo Legion Scout
+25865,Bamboo Legion Scout
+25866,Bamboo Legion Spearman
+25867,Bamboo Legion Swordsman
+25868,Bamboo Legion Archer
+25869,Bamboo Legion
+25870,Bamboo Legion
+25871,Bamboo Legion Spearman
+25872,Bamboo Legion Swordsman
+25873,Bamboo Legion Archer
+25874,Altar
+25875,Bamboo Legion Spearman
+25876,Bamboo Legion Swordsman
+25877,Bamboo Legion Archer
+25878,Bamboo Legion Spearman
+25879,Bamboo Legion Swordsman
+25880,Bamboo Legion Archer
+25881,Bamboo Legion Archer
+25882,Bamboo Legion Spearman
+25883,Bamboo Legion Swordsman
+25884,Bamboo Legion Archer
+25885,Bamboo Legion Lieutenant
+25886,Bamboo Legion Cavalry
+25887,Bamboo Legion
+25888,Bamboo Legion Scout
+25889,Bamboo Legion Scout
+25890,Bamboo Legion Scout
+25891,Bamboo Legion Spearman
+25892,Bamboo Legion Swordsman
+25893,Bamboo Legion Archer
+25894,Bamboo Legion
+25895,Bamboo Legion
+25896,Bamboo Legion Spearman
+25897,Bamboo Legion Swordsman
+25898,Bamboo Legion Archer
+25899,Altar
+25900,Bamboo Legion Spearman
+25901,Bamboo Legion Swordsman
+25902,Bamboo Legion Archer
+25903,Bamboo Legion Spearman
+25904,Bamboo Legion Swordsman
+25905,Bamboo Legion Archer
+25906,Bamboo Legion Archer
+25907,Bamboo Legion Spearman
+25908,Bamboo Legion Swordsman
+25909,Bamboo Legion Archer
+25910,Bamboo Legion Lieutenant
+25911,Bamboo Legion Cavalry
+25912,Bamboo Legion
+25913,Bamboo Legion Scout
+25914,Bamboo Legion Scout
+25915,Bamboo Legion Scout
+25916,Bamboo Legion Spearman
+25917,Bamboo Legion Swordsman
+25918,Bamboo Legion Archer
+25919,Bamboo Legion
+25920,Bamboo Legion
+25921,Bamboo Legion Spearman
+25922,Bamboo Legion Swordsman
+25923,Bamboo Legion Archer
+25924,Altar
+25925,Bamboo Legion Spearman
+25926,Bamboo Legion Swordsman
+25927,Bamboo Legion Archer
+25928,Bamboo Legion Spearman
+25929,Bamboo Legion Swordsman
+25930,Bamboo Legion Archer
+25931,Bamboo Legion Archer
+25932,Bamboo Legion Spearman
+25933,Bamboo Legion Swordsman
+25934,Bamboo Legion Archer
+25935,Bamboo Legion Lieutenant
+25936,Bamboo Legion Cavalry
+25937,Bamboo Legion
+25938,Bamboo Legion Scout
+25939,Bamboo Legion Scout
+25940,Bamboo Legion Scout
+25941,Bamboo Legion Spearman
+25942,Bamboo Legion Swordsman
+25943,Bamboo Legion Archer
+25944,Bamboo Legion
+25945,Bamboo Legion
+25946,Bamboo Legion Spearman
+25947,Bamboo Legion Swordsman
+25948,Bamboo Legion Archer
+25949,Altar
+25950,Bamboo Legion Spearman
+25951,Bamboo Legion Swordsman
+25952,Bamboo Legion Archer
+25953,Bamboo Legion Spearman
+25954,Bamboo Legion Swordsman
+25955,Bamboo Legion Archer
+25956,Bamboo Legion Archer
+25957,Bamboo Legion Spearman
+25958,Bamboo Legion Swordsman
+25959,Bamboo Legion Archer
+25960,Bamboo Legion Lieutenant
+25961,Bamboo Legion Cavalry
+25962,Bamboo Legion
+25963,Bamboo Legion Scout
+25964,Bamboo Legion Scout
+25965,Bamboo Legion Scout
+25966,Bamboo Legion Spearman
+25967,Bamboo Legion Swordsman
+25968,Bamboo Legion Archer
+25969,Bamboo Legion
+25970,Bamboo Legion
+25971,Bamboo Legion Spearman
+25972,Bamboo Legion Swordsman
+25973,Bamboo Legion Archer
+25974,Altar
+25975,Bamboo Legion Spearman
+25976,Bamboo Legion Swordsman
+25977,Bamboo Legion Archer
+25978,Bamboo Legion Spearman
+25979,Bamboo Legion Swordsman
+25980,Bamboo Legion Archer
+25981,Bamboo Legion Archer
+25982,Bamboo Legion Spearman
+25983,Bamboo Legion Swordsman
+25984,Bamboo Legion Archer
+25985,Bamboo Legion Lieutenant
+25986,Bamboo Legion Cavalry
+25987,Bamboo Legion
+25988,Bamboo Legion Scout
+25989,Bamboo Legion Scout
+25990,Bamboo Legion Scout
+25991,Bamboo Legion Spearman
+25992,Bamboo Legion Swordsman
+25993,Bamboo Legion Archer
+25994,Bamboo Legion
+25995,Bamboo Legion
+25996,Bamboo Legion Spearman
+25997,Bamboo Legion Swordsman
+25998,Bamboo Legion Archer
+25999,Duoksini
+26000,Soldierkkebi
 26001,Poisoned Area
 26002,Movement Speed Reduction Zone
 26003,Deadly Poison/Moving Speed Reduction Zone
@@ -10793,6 +11851,7 @@ Param0,String
 26014,Fire Mat
 26015,Savage Rift
 26016,Savage Rift
+26017,Soldierkkebi
 26018,Monoceros
 26019,Cetus
 26020,Lacerta
@@ -10825,6 +11884,52 @@ Param0,String
 26049,Undefeated Crab Knight
 26050,Barricade
 26051,Imp Bomber
+26052,Soldierkkebi
+26053,Dokkebi
+26054,Dokkebi Soul
+26055,Dokkebi Soul
+26056,Duoksini
+26057,Duoksini
+26058,Apex Changui
+26059,Gulgak
+26060,Yiol
+26061,Yukhon
+26062,Tiger Changui
+26063,Apex Changui
+26064,Gulgak
+26065,Yiol
+26066,Yukhon
+26067,Tiger Changui
+26068,Apex Changui
+26069,Gulgak
+26070,Yiol
+26071,Yukhon
+26072,Tiger Changui
+26073,Apex Changui
+26074,Gulgak
+26075,Yiol
+26076,Yukhon
+26077,Tiger Changui
+26078,Apex Changui
+26079,Gulgak
+26080,Yiol
+26081,Yukhon
+26082,Tiger Changui
+26083,Apex Changui
+26084,Gulgak
+26085,Yiol
+26086,Yukhon
+26087,Tiger Changui
+26088,Apex Changui
+26089,Gulgak
+26090,Yiol
+26091,Yukhon
+26092,Tiger Changui
+26093,Apex Changui
+26094,Gulgak
+26095,Yiol
+26096,Yukhon
+26097,Tiger Changui
 26100,Sealed Tower
 26101,Imp Soldier
 26102,Imp Raider
@@ -10896,6 +12001,136 @@ Param0,String
 26168,Dastard Bheg
 26169,Titium
 26170,Org
+26171,Duoksini
+26172,Soldierkkebi
+26173,Soldierkkebi
+26174,Soldierkkebi
+26175,Dokkebi
+26176,Dokkebi Soul
+26177,Dokkebi Soul
+26178,Duoksini
+26179,Duoksini
+26180,Duoksini
+26181,Soldierkkebi
+26182,Soldierkkebi
+26183,Soldierkkebi
+26184,Dokkebi
+26185,Dokkebi Soul
+26186,Dokkebi Soul
+26187,Duoksini
+26188,Duoksini
+26189,Duoksini
+26190,Soldierkkebi
+26191,Soldierkkebi
+26192,Soldierkkebi
+26193,Dokkebi
+26194,Dokkebi Soul
+26195,Dokkebi Soul
+26196,Duoksini
+26197,Duoksini
+26198,Saetani
+26199,Vengeful Ghost
+26200,Bari
+26201,Gumiho
+26202,Sangoon
+26203,Duoksini
+26204,Curse
+26205,Bari
+26206,Servile Wraith
+26207,Saetani
+26208,Vengeful Ghost
+26209,Bari
+26210,Gumiho
+26211,Sangoon
+26212,Duoksini
+26213,Curse
+26214,Bari
+26215,Servile Wraith
+26216,Saetani
+26217,Vengeful Ghost
+26218,Bari
+26219,Gumiho
+26220,Sangoon
+26221,Duoksini
+26222,Curse
+26223,Bari
+26224,Servile Wraith
+26225,Saetani
+26226,Vengeful Ghost
+26227,Bari
+26228,Gumiho
+26229,Sangoon
+26230,Duoksini
+26231,Curse
+26232,Bari
+26233,Servile Wraith
+26234,Saetani
+26235,Vengeful Ghost
+26236,Bari
+26237,Gumiho
+26238,Sangoon
+26239,Duoksini
+26240,Curse
+26241,Bari
+26242,Servile Wraith
+26243,Saetani
+26244,Vengeful Ghost
+26245,Bari
+26246,Gumiho
+26247,Sangoon
+26248,Duoksini
+26249,Curse
+26250,Bari
+26251,Servile Wraith
+26252,Saetani
+26253,Vengeful Ghost
+26254,Bari
+26255,Gumiho
+26256,Sangoon
+26257,Duoksini
+26258,Curse
+26259,Bari
+26260,Servile Wraith
+26261,Saetani
+26262,Vengeful Ghost
+26263,Bari
+26264,Gumiho
+26265,Sangoon
+26266,Duoksini
+26267,Curse
+26268,Sangoon
+26269,Sangoon
+26270,Sangoon
+26271,Sangoon
+26272,Bari
+26273,Bari
+26274,Sangoon
+26275,Sangoon
+26276,Sangoon
+26277,Sangoon
+26278,Sangoon
+26279,Sangoon
+26280,Sangoon
+26281,Bari
+26282,Bari
+26283,Sangoon
+26284,Sangoon
+26285,Sangoon
+26286,Sangoon
+26287,Sangoon
+26288,Sangoon
+26289,Sangoon
+26290,Bari
+26291,Bari
+26292,Sangoon
+26293,Sangoon
+26294,Sangoon
+26295,Sangoon
+26296,Sangoon
+26297,Sangoon
+26298,Sangoon
+26299,Bari
+26300,Bari
 26301,Wolf
 26302,Feather Wolf
 26303,Phnyl
@@ -10913,7 +12148,86 @@ Param0,String
 26315,Saunil Mobile Catapult
 26316,Saunil Siege Captain
 26317,Savage Ogre
+26318,Apex Changui
+26319,Gulgak
+26320,Yiol
+26321,Yukhon
+26322,Tiger Changui
+26323,Duoksini
+26324,Soldierkkebi
+26325,Soldierkkebi
+26326,Soldierkkebi
+26327,Dokkebi
+26328,Dokkebi Soul
+26329,Dokkebi Soul
+26330,Duoksini
+26331,Duoksini
+26332,Duoksini
+26333,Soldierkkebi
+26334,Soldierkkebi
+26335,Soldierkkebi
+26336,Dokkebi
+26337,Dokkebi Soul
+26338,Dokkebi Soul
+26339,Duoksini
+26340,Duoksini
+26341,Duoksini
+26342,Soldierkkebi
+26343,Soldierkkebi
+26344,Soldierkkebi
+26345,Dokkebi
+26346,Dokkebi Soul
+26347,Dokkebi Soul
+26348,Duoksini
+26349,Duoksini
+26350,Duoksini
+26351,Soldierkkebi
+26352,Soldierkkebi
+26353,Soldierkkebi
+26354,Dokkebi
+26355,Dokkebi Soul
+26356,Dokkebi Soul
+26357,Duoksini
+26358,Duoksini
+26359,Duoksini
+26360,Soldierkkebi
+26361,Soldierkkebi
+26362,Soldierkkebi
+26363,Dokkebi
+26364,Dokkebi Soul
+26365,Dokkebi Soul
+26366,Duoksini
+26367,Duoksini
+26368,Duoksini
+26369,Soldierkkebi
+26370,Soldierkkebi
+26371,Soldierkkebi
+26372,Dokkebi
+26373,Dokkebi Soul
+26374,Dokkebi Soul
+26375,Duoksini
+26376,Duoksini
+26377,Duoksini
+26378,Duoksini
+26379,Duoksini
+26380,Firefly
+26381,Sea Lion
+26382,Fierce Bambooling
+26383,Boar
+26384,Lynx Bandit
+26385,Fox Bandit
+26386,Raccoon Bandit
+26387,Boar Bandit
 26388,Black Bear
+26389,Fox
+26390,KkoKko
+26391,Deer
+26392,Tiger
+26393,Lunar Hare
+26394,Dog
+26395,Fox Bandit
+26396,Elite Golden Pig
+26397,Raider Golden Pig
 26398,Dark Portal
 26399,Blood Relic
 26400,Blood Relic
@@ -11014,7 +12328,7 @@ Param0,String
 26495,Khuruto Guard
 26496,Khuruto Chaser
 26497,Imp Work Supervisor
-26498,Rhutum Chief Priest
+26498,Rhutum Chief Shaman
 26499,Troll Work Supervisor
 26500,Thunder Drummer
 26501,Lightning Trumpeter
@@ -11106,6 +12420,67 @@ Param0,String
 26587,Kreator
 26588,Kreator
 26589,Red Orc Wizard
+26590,Sangoon
+26591,Sangoon
+26592,Sangoon
+26593,Sangoon
+26594,Sangoon
+26595,Sangoon
+26596,Sangoon
+26597,Sangoon
+26598,Sangoon
+26599,Sangoon
+26600,Bari
+26601,Bari
+26602,Sangoon
+26603,Sangoon
+26604,Sangoon
+26605,Sangoon
+26606,Sangoon
+26607,Sangoon
+26608,Sangoon
+26609,Bari
+26610,Bamboo Legion Lieutenant
+26611,Sangoon
+26612,Sangoon
+26613,Sangoon
+26614,Sangoon
+26615,Sangoon
+26616,Sangoon
+26617,Sangoon
+26618,Suspicious Jar
+26619,Suspicious Jar
+26620,Sangoon
+26621,Sangoon
+26622,Sangoon
+26623,Sangoon
+26624,Sangoon
+26625,Sangoon
+26626,Sangoon
+26627,Suspicious Jar
+26628,Suspicious Jar
+26629,Sangoon
+26630,Sangoon
+26631,Sangoon
+26632,Sangoon
+26633,Sangoon
+26634,Sangoon
+26635,Sangoon
+26636,Suspicious Jar
+26637,Tigerslayers
+26638,Sangoon
+26639,Sangoon
+26640,Sangoon
+26641,Sangoon
+26642,Sangoon
+26643,Sangoon
+26644,Sangoon
+26645,Sangoon
+26646,Sangoon
+26647,Sangoon
+26648,Sangoon
+26649,Sangoon
+26650,Oduksini
 26651,Cyclops
 26652,Ogre
 26653,Imp Bomber
@@ -11113,6 +12488,49 @@ Param0,String
 26655,Altar of Blood of Boss Summon
 26656,Elten
 26657,Elten
+26658,Oduksini
+26659,Oduksini
+26660,Oduksini
+26661,Oduksini
+26662,Bamboo Legion Lieutenant
+26663,Oduksini
+26664,Oduksini
+26665,Oduksini
+26666,Oduksini's Soul
+26667,Oduksini
+26668,Oduksini
+26669,Yukhon
+26670,Tiger Changui
+26671,Oduksini
+26672,Oduksini
+26673,Oduksini
+26674,Oduksini's Soul
+26675,Oduksini
+26676,Oduksini
+26677,Yukhon
+26678,Tiger Changui
+26679,Oduksini
+26680,Oduksini
+26681,Oduksini
+26682,Oduksini's Soul
+26683,Oduksini
+26684,Oduksini
+26685,Yukhon
+26686,Tiger Changui
+26687,Oduksini
+26688,Oduksini
+26689,Oduksini
+26690,Oduksini's Soul
+26691,Oduksini
+26692,Oduksini
+26693,Yukhon
+26694,Tiger Changui
+26695,Oduksini
+26696,Oduksini
+26697,Oduksini
+26698,Oduksini's Soul
+26699,Oduksini
+26700,Oduksini
 26701,Flame Tower
 26702,Hwacha
 26703,Cannon
@@ -11120,6 +12538,41 @@ Param0,String
 26705,Wooden Fence Gate
 26706,Wooden Fence
 26707,Flame Trap
+26708,Yukhon
+26709,Tiger Changui
+26710,Oduksini
+26711,Oduksini
+26712,Oduksini
+26713,Oduksini's Soul
+26714,Oduksini
+26715,Oduksini
+26716,Yukhon
+26717,Tiger Changui
+26718,Oduksini
+26719,Oduksini
+26720,Oduksini
+26721,Oduksini's Soul
+26722,Oduksini
+26723,Oduksini
+26724,Yukhon
+26725,Tiger Changui
+26726,Oduksini
+26735,Oduksini
+26736,Oduksini
+26737,Oduksini's Soul
+26738,Oduksini
+26739,Oduksini
+26740,Yukhon
+26741,Tiger Changui
+26742,Oduksini
+26743,Oduksini
+26744,Oduksini
+26745,Oduksini's Soul
+26746,Oduksini
+26747,Oduksini
+26748,Yukhon
+26749,Tiger Changui
+26750,Oduksini
 26751,Red Nose
 26752,Giath
 26753,Dastard Bheg
@@ -11148,6 +12601,27 @@ Param0,String
 26776,Centaurus Commander
 26777,Basilisk Commander
 26778,Ancient Kutum
+26779,Oduksini
+26780,Oduksini
+26781,Oduksini's Soul
+26782,Oduksini
+26783,Oduksini
+26784,Yukhon
+26785,Tiger Changui
+26786,Gumiho
+26787,Gumiho
+26788,Gumiho
+26789,Gumiho
+26790,Foxfire
+26791,Gumiho
+26792,Gumiho
+26793,Gumiho
+26794,Gumiho
+26795,Gumiho
+26796,Foxfire
+26797,Gumiho
+26798,Gumiho
+26799,Gumiho
 26800,Enter Stage 1
 26801,Enter Stage 2
 26802,Enter Stage 3
@@ -11191,6 +12665,27 @@ Param0,String
 26926,Giath
 26927,Insect
 26928,Giant Goblin Totem
+26929,Gumiho
+26930,Gumiho
+26931,Foxfire
+26932,Gumiho
+26933,Gumiho
+26934,Gumiho
+26935,Gumiho
+26936,Gumiho
+26937,Foxfire
+26938,Gumiho
+26939,Gumiho
+26940,Gumiho
+26941,Gumiho
+26942,Gumiho
+26943,Foxfire
+26944,Gumiho
+26945,Gumiho
+26946,Gumiho
+26947,Gumiho
+26948,Gumiho
+26949,Foxfire
 26950,Goblin
 26951,Red Orc Elite Soldier
 26952,Skeleton Wolf
@@ -11204,11 +12699,42 @@ Param0,String
 26960,Saunil Commander
 26961,Imp Trainer
 26962,Red Orc Wizard
+26963,Gumiho
+26964,Gumiho
+26965,Gumiho
+26966,Bamboo Legion Lieutenant
+26967,Bamboo Legion Lieutenant
+26968,Bamboo Legion Lieutenant
+26969,Bamboo Legion Lieutenant
+26970,Bamboo Legion Lieutenant
+26971,Bamboo Legion Lieutenant
+26972,Bamboo Legion Lieutenant
+26973,Bamboo Legion Lieutenant
+26974,Bamboo Legion Lieutenant
+26975,Corrupt Dangsan Tree
+26976,Corrupt Dangsan Tree
+26977,Corrupt Dangsan Tree
+26978,Corrupt Dangsan Tree
+26979,Corrupt Dangsan Tree
 26980,Giath
 26981,Org
 26982,Hexe Marie
 26983,Saunil Siege Captain
 26984,Red Nose
+26985,Corrupt Dangsan Tree
+26986,Corrupt Dangsan Tree
+26987,Corrupt Dangsan Tree
+26988,Corrupt Dangsan Tree
+26989,Corrupt Dangsan Tree
+26990,Corrupt Dangsan Tree
+26991,Bamboo Legion Lieutenant
+26992,Corrupt Dangsan Tree
+26993,Sensitive Bear
+26994,Bear
+26995,Fox
+26996,Fox
+26997,Sensitive Boar
+26998,Boar
 26999,Test Step
 27000,Test Tower
 27001,Windmill
@@ -11624,7 +13150,27 @@ Param0,String
 27552,Pirate Scarecrow
 27553,Vatroth
 27554,Worn Crate of Keepsakes
-27560,Neurotic Wild Animal
+27555,Atrocious Tiger
+27556,Tiger
+27557,Sensitive Hawk
+27558,Hawk
+27559,Sensitive Wild Animal
+27560,Sensitive Wild Animal
+27561,Bird
+27562,Lunar Hare
+27563,Atrocious Boar
+27564,Atrocious Boar
+27565,Scarecrow
+27566,Thunderpaw
+27567,Songakshi
+27568,Songakshi
+27569,Songakshi
+27570,Songakshi
+27571,Songakshi
+27572,Bear's Beloved Beehive
+27573,Tiger
+27574,Hawk
+27578,Tornado
 27601,Giant Lioness
 27602,Giant Lion
 27603,Giant Bison
@@ -11736,6 +13282,12 @@ Param0,String
 27741,Tukar Demol
 27742,Laytenn
 27743,Laytenn
+27744,Kalqueesh
+27745,Vodkhan
+27746,Tanco
+27747,Elten
+27748,Maegu
+27749,Koo Mi-eun
 27751,Shepherd Boy
 27752,Sheep
 27753,Pudge
@@ -11753,6 +13305,14 @@ Param0,String
 27766,Supreme Warrior
 27767,Elite Valkyrie
 27768,Customs and Border Protection Senior Officer
+27769,Woosa
+27770,Maegu
+27771,Koo Mi-eun
+27772,Hwadam
+27773,Gildong
+27774,Hasrah Artifact
+27775,Hasrah Artifact
+27776,Maegu
 27801,Barricade
 27802,Command Post
 27803,[Node] Square Fort
@@ -11791,6 +13351,19 @@ Param0,String
 27885,Steel Nux
 27886,Nux
 27887,Nux
+27888,Duoksini
+27889,Soldierkkebi
+27890,Soldierkkebi
+27891,Soldierkkebi
+27892,Soldierkkebi
+27893,Soldierkkebi
+27894,Dokkebi Soul
+27895,Duoksini
+27896,Duoksini
+27897,Duoksini
+27898,Duoksini
+27899,Duoksini
+27900,Oduksini
 27901,Dastard Bheg
 27902,Narc Brishka
 27903,Urugon
@@ -12279,6 +13852,13 @@ Param0,String
 29112,Hyena Human
 29120,Giant Bee
 29121,Bee
+29122,Hasrah Artifact
+29123,Ancient Ruins Guard Tower
+29124,Kalqueesh
+29125,Hasrah's Energy
+29126,Woosa
+29127,Maegu
+29129,Woosa
 29145,Garmoth
 29146,Sandstorm Elite
 29147,Sandstorm Assassin
@@ -12897,7 +14477,7 @@ Param0,String
 31018,Serendia GM Boat
 31019,Valencia GM Boat
 31020,Epheria Galleon
-31025,Epheria Frigate
+31025,Panokseon
 31026,Ballista
 31027,Epheria Cog
 31028,Epheria Sailboat
@@ -13022,6 +14602,7 @@ Param0,String
 31571,Horse
 31572,Horse
 31573,Horse
+31574,Horse
 31601,Giorga Bonneville
 32001,Phantom Man
 35000,Ogre
@@ -13341,6 +14922,7 @@ Param0,String
 35686,Guard
 35687,Seagull
 35688,Giath's Journal
+35689,Panokseon Under Construction
 36051,Imp Boss Attack Tower
 36052,Imp Boss Defense Tower
 37031,Villager's Corpse
@@ -13395,7 +14977,7 @@ Param0,String
 37080,Art of Sword for Ranger
 37081,Xian League Account Book
 37082,Golden Treasure Chest
-37083,Theophany of King Heilang
+37083,Theophany of King Heuklang
 37084,Daru
 37085,Geomudal
 37086,Life Goose Egg
@@ -14956,6 +16538,175 @@ Param0,String
 47142,Richie the Nimble Chipmunk
 47143,Santorian
 47144,Olympia
+47200,Lee Duksoo
+47201,Jang Iksoon
+47202,Yibang
+47203,Lee Mongryong
+47204,Chulong
+47205,Dalhoon
+47206,Myungho
+47207,Wolim
+47208,Old Lady Mayoung
+47209,Yooan
+47210,Naye
+47211,Doodol
+47212,Hyunyong
+47213,Morong
+47214,Yang Boksoo
+47215,Moon Bakbeol
+47216,Sanghyun
+47217,Daehyun
+47218,Minhyuk
+47219,Wandeuk
+47220,Joyoung
+47221,Nurong
+47222,Namwook
+47223,Okyoung
+47224,Surong
+47225,Hanshik
+47226,Kwaksoo
+47227,Sungyeom
+47228,Bangchul
+47229,Haehwa
+47230,Noyoung
+47231,Shinhee
+47232,Yangsook
+47233,Jedeok
+47234,Cheolsum
+47235,Yooshin
+47236,Okja
+47237,Paldeok
+47238,Gapsam
+47239,Sangyoon
+47240,Nolbu
+47241,Choi Sunwoo
+47242,Heungbu
+47243,Maksoon
+47244,Jumsoon
+47245,Old Man Jahmi
+47246,Sarang
+47247,Dayoung
+47248,Norong
+47249,Handol
+47250,Youngsoo
+47251,Dukchoon
+47252,Youngim
+47253,Dooson
+47254,Old Man Dongoo
+47255,Dukgoo
+47256,Dangho
+47257,Dooshik
+47258,Gaerong
+47259,Insong
+47260,Areum
+47261,Old Man Hodol
+47262,Soonmae
+47263,Youngchil
+47264,Sorong
+47265,Deokpal
+47266,Mr. Byeon
+47267,Yongdeok
+47268,Mister Turt
+47269,Miss Myo
+47270,Sungoo
+47271,Samdol
+47272,Old Lady Bokdeok
+47273,Choi Gyun
+47274,Hangil
+47275,Samshik
+47276,Ahryung
+47277,Geowan
+47278,Borabae
+47279,Old Man Sangcheol
+47280,Goyoung
+47281,Soryung
+47282,Yorong
+47283,Dalsoon
+47284,Moonil
+47285,Gwangho
+47286,Sohyun
+47287,Jaeho
+47288,Mandeok
+47289,Shin Taesun
+47290,Bambooling
+47291,Park Jangswe
+47292,Jangho
+47293,Old Lady Hwajung
+47294,Gamsoo
+47295,Soonam
+47296,Young-gwang
+47297,Dowan
+47298,Ondal
+47299,Gunwoo
+47300,Sungil
+47301,Daon
+47302,Youngwoo
+47303,Swolekkebi
+47304,Haon
+47305,Jungnam
+47306,Trained Bambooling
+47307,Ayool
+47308,Dodong
+47309,Gurong
+47310,Dokkebi Princess
+47311,Tombkebi
+47312,Trunkkebi
+47313,Slowkkebi
+47314,Dohoon
+47315,Galsoo
+47316,Hoyoung
+47317,Old Man Jaesun
+47318,Doaji
+47319,Cavekkebi
+47320,Haejoon
+47321,Isun
+47322,Yooshik
+47323,Yeori
+47324,Dongdong
+47325,Young-goo
+47326,Soyeol
+47327,Gyungsoo
+47328,Hyunmin
+47329,Sunho
+47330,Yoosung
+47331,Mengoo
+47332,Darirong
+47333,Seulyoon
+47334,Sacheol
+47335,Doyoung
+47336,Suskkebi
+47337,Jinsoon
+47338,Youngchul
+47339,Younghee
+47340,Gunho
+47341,Sandahl
+47342,Koo Mihyun
+47343,Seungsan
+47344,Hosan
+47345,Hansoo
+47346,Bokdari
+47347,Moyoung
+47348,Old Man Mansoo
+47349,Hyang-goong
+47350,Taesoo
+47351,Ahong
+47352,Little Sangoon
+47353,Old Man Damjae
+47354,Muyoung
+47355,Jae-oh
+47356,Bukryung
+47357,Old Lady Birigongdeok
+47358,Old Man Birigongdeok
+47359,Wardkkebi
+47360,Osun
+47361,Heosun
+47362,Fox Goddess Statue
+47363,Dangsan Tree
+47364,Tiger Victim's Grave
+47365,Hwisa's Grave
+47366,Baeklang
+47367,Gapdol
+47373,Huntkkebi
 49490,Devan
 49494,Girgo Viano
 49495,Girgo Viano
@@ -15193,6 +16944,10 @@ Param0,String
 49758,Donghwa
 49759,Shepherd Boy
 49760,Sheep
+49761,Dokkebi
+49762,Prankkebi
+49763,Zobadi
+49764,Afuaru
 50001,Tiny Nose
 50002,Andrei
 50003,Fairy Nest
@@ -17110,6 +18865,11 @@ Param0,String
 56599,Sooty Roary
 56600,Pwudgy Llama
 56601,Pwudgy Llama
+56612,Prankkebi
+56613,Prankkebi
+56614,Prankkebi
+56615,Prankkebi
+56616,Prankkebi
 57000,Endlessly Running Kuku Bird
 57001,Contaminated Villager on the Run
 57002,Unbridled Bison
@@ -17172,7 +18932,7 @@ Param0,String
 57061,Heavenly Floating Stone
 57062,Ancient Floating Stone
 57063,Transparent Quest NPC
-57064,Sleepless Soul
+57064,Restless Soul
 57065,Shakatu
 57066,Potion Box
 57067,Trade Box
@@ -18010,7 +19770,7 @@ Param0,String
 59666,Choppy
 59667,Choppy
 59668,Transparent NPC
-59669,Invisible NPC
+59669,Transparent NPC
 59670,Military Supply Wagon
 59671,NO USE [PH] Character
 59673,NO USE [PH] Character
@@ -18195,13 +19955,36 @@ Param0,String
 59865,Sub NPC
 59867,Sub NPC
 59868,Winter Gift Pile
+59875,Quest NPC
+59876,Quest NPC
+59877,Quest NPC
+59878,Quest NPC
 59879,Rabbit
 59880,Choppy
 59881,Choppy
+59882,Quest NPC
+59883,Villager
+59884,Villager
 59885,Quest NPC
+59886,Quest NPC
+59887,Villager
+59888,Villager
+59889,Villager
+59890,Villager
+59891,Villager
+59892,Villager
+59893,Villager
+59894,Knowledge NPC
+59895,Sheep
+59896,Fruit Basket
 59898,Oquilla Ferry
 59899,Guard
 59900,Wheelbarrow
+59901,Gumiho Stele
+59903,Sarang's Weapon Box
+59904,Quest NPC
+59905,Daon's Goods Box
+59906,Trunkkebi's Surprise Box
 59907,Trading
 59908,Villager
 59909,Villager
@@ -18223,14 +20006,48 @@ Param0,String
 59927,Villager
 59928,Villager
 59929,Villager
+59930,Panokseon
+59931,Panokseon Under Construction
+59932,Ship
+59933,Ship
+59934,Old Moon Rescue Boat
+59935,Dokkebi
+59936,Villager
+59937,Villager
+59938,Okja's Chick
+59939,Rice Sheaf Box
+59940,Cracked Wall
 59941,Life Goose Egg
 59942,Star Pattern Goose Egg
 59943,Raindrop Goose Egg
 59944,Rainbow Goose Egg
 59945,Black Spirit Goose Egg
 59946,Valentine
+59947,Villager
+59948,Villager
+59949,Quest NPC
+59950,Quest NPC
+59951,Villager
+59952,Villager
+59953,Villager
+59954,Villager
+59955,Villager
+59956,Villager
+59957,Quest NPC
+59961,Hanmyo
+59962,Choil
+59963,Choee
+59964,Chosam
 59965,Quest NPC
 59966,Quest NPC
+59967,Hungry Tiger
+59968,Sleeping Bear
+59969,Herb Drumstick
+59971,Atrocious Beast
+59972,Quest NPC
+59973,Transparent Wall
+59980,Villager
+59982,Prankkebi
 60000,New Continent NPC 9999
 60010,Black Thorn Tentacle
 60011,Black Thorn Tentacle
@@ -18248,66 +20065,66 @@ Param0,String
 60025,Silfiad
 60026,Silfiad
 60027,Silfiad
-60028,Heilang
-60029,Heilang
-60030,Heilang
-60031,Heilang
-60032,Heilang
-60033,Heilang
-60034,Heilang
-60035,Heilang
-60036,Heilang
-60037,Heilang
-60038,Heilang
-60039,Heilang
-60040,Heilang
-60041,Heilang
-60042,Heilang
-60043,Heilang
-60044,Heilang
-60045,Heilang
-60046,Heilang
-60047,Heilang
-60048,Heilang
-60049,Heilang
-60050,Heilang
-60051,Heilang
-60052,Heilang
-60053,Heilang
-60054,Heilang
-60055,Heilang
-60056,Heilang
-60057,Heilang
-60058,Heilang
-60059,Heilang
-60060,Heilang
-60061,Heilang
-60062,Heilang
-60063,Heilang
-60064,Heilang
-60065,Heilang
-60066,Heilang
-60067,Heilang
-60068,Heilang
-60069,Heilang
-60070,Heilang
-60071,Heilang
-60072,Heilang
-60073,Heilang
-60074,Heilang
-60075,Heilang
-60076,Heilang
-60077,Heilang
-60078,Heilang
-60079,Heilang
-60080,Heilang
-60081,Heilang
-60082,Heilang
-60083,Heilang
-60084,Heilang
-60085,Heilang
-60086,Heilang
-60087,Heilang
+60028,Heuklang
+60029,Heuklang
+60030,Heuklang
+60031,Heuklang
+60032,Heuklang
+60033,Heuklang
+60034,Heuklang
+60035,Heuklang
+60036,Heuklang
+60037,Heuklang
+60038,Heuklang
+60039,Heuklang
+60040,Heuklang
+60041,Heuklang
+60042,Heuklang
+60043,Heuklang
+60044,Heuklang
+60045,Heuklang
+60046,Heuklang
+60047,Heuklang
+60048,Heuklang
+60049,Heuklang
+60050,Heuklang
+60051,Heuklang
+60052,Heuklang
+60053,Heuklang
+60054,Heuklang
+60055,Heuklang
+60056,Heuklang
+60057,Heuklang
+60058,Heuklang
+60059,Heuklang
+60060,Heuklang
+60061,Heuklang
+60062,Heuklang
+60063,Heuklang
+60064,Heuklang
+60065,Heuklang
+60066,Heuklang
+60067,Heuklang
+60068,Heuklang
+60069,Heuklang
+60070,Heuklang
+60071,Heuklang
+60072,Heuklang
+60073,Heuklang
+60074,Heuklang
+60075,Heuklang
+60076,Heuklang
+60077,Heuklang
+60078,Heuklang
+60079,Heuklang
+60080,Heuklang
+60081,Heuklang
+60082,Heuklang
+60083,Heuklang
+60084,Heuklang
+60085,Heuklang
+60086,Heuklang
+60087,Heuklang
 60088,Call of the Earth
 60089,Call of the Earth
 60090,Call of the Earth
@@ -18349,7 +20166,7 @@ Param0,String
 60126,Blade of Darkness III
 60127,Hell's Gate of Cartian's Guardian
 60128,Summoned_Flame Buster Grenade
-60129,Heilang
+60129,Heuklang
 60130,Valkyrie Buff SP MOD
 60131,Valkyrie Buff SP Wall
 60132,Musa Air Waves
@@ -18587,7 +20404,7 @@ Param0,String
 61155,Belmorn
 61156,Aakman Elite Guardian
 61157,Aakman Elite Watcher
-61158,Ancient Civilization Priest
+61158,Aakman Flamen
 61159,Aakman Airbender
 61160,Aakman Punisher
 61161,Aakman Watcher
@@ -18683,6 +20500,7 @@ Param0,String
 61253,The Magnus Entrance - Well
 61254,The Magnus Entrance - Well
 61255,The Magnus Entrance - Well
+61256,The Magnus Entrance - Well
 61257,Unknown Scholar
 61258,Object
 61259,Object
