@@ -405,7 +405,7 @@ Param0,String
 414,Splashing Point
 415,Sausan Garrison Wharf
 416,Racetrack
-417,Soldiers' Cemetery
+417,Soldier's Cemetery
 418,Gavinya Great Crater
 419,Gavinya Coastal Cliff
 420,Roud Sulfur Works
@@ -1080,119 +1080,143 @@ Param0,String
 1206,Yolu's Paradise
 1207,Terrmian Beach
 1208,The Great Desert of Valencia (Black Desert)
-1209,UnKnown
-1210,UnKnown
-1211,UnKnown
-1212,UnKnown
-1213,UnKnown
-1214,UnKnown
-1215,UnKnown
-1216,UnKnown
-1217,UnKnown
-1218,UnKnown
-1219,UnKnown
-1220,UnKnown
-1221,UnKnown
-1222,UnKnown
-1223,UnKnown
-1224,UnKnown
-1225,UnKnown
-1226,UnKnown
-1227,UnKnown
-1228,UnKnown
-1229,UnKnown
-1230,UnKnown
-1231,UnKnown
-1232,UnKnown
-1233,UnKnown
-1234,UnKnown
-1235,UnKnown
-1236,UnKnown
-1237,UnKnown
-1238,UnKnown
-1239,UnKnown
-1240,UnKnown
-1241,UnKnown
-1242,UnKnown
-1243,UnKnown
-1244,UnKnown
-1245,UnKnown
-1246,UnKnown
-1247,UnKnown
-1248,UnKnown
-1249,UnKnown
-1250,UnKnown
-1251,UnKnown
-1252,UnKnown
-1253,UnKnown
-1254,UnKnown
-1255,UnKnown
-1256,UnKnown
-1257,UnKnown
-1258,UnKnown
-1259,UnKnown
-1260,UnKnown
-1261,UnKnown
-1262,UnKnown
-1263,UnKnown
-1264,UnKnown
-1265,UnKnown
-1266,UnKnown
-1267,UnKnown
-1268,UnKnown
-1269,UnKnown
-1270,UnKnown
-1271,UnKnown
-1272,UnKnown
-1273,UnKnown
-1274,UnKnown
-1275,UnKnown
-1276,UnKnown
-1277,UnKnown
-1278,UnKnown
-1279,UnKnown
-1280,UnKnown
-1281,UnKnown
-1282,UnKnown
-1283,UnKnown
-1284,UnKnown
-1285,UnKnown
-1286,UnKnown
-1287,UnKnown
-1288,UnKnown
-1289,UnKnown
-1290,UnKnown
-1291,UnKnown
-1292,UnKnown
-1293,UnKnown
-1294,UnKnown
-1295,UnKnown
-1296,UnKnown
-1297,UnKnown
-1298,UnKnown
-1299,UnKnown
-1300,UnKnown
-1301,UnKnown
-1302,UnKnown
-1303,UnKnown
-1304,UnKnown
-1305,UnKnown
-1306,UnKnown
-1307,UnKnown
-1308,UnKnown
-1309,UnKnown
-1310,UnKnown
-1311,UnKnown
-1312,UnKnown
-1313,UnKnown
-1314,UnKnown
-1315,UnKnown
-1316,UnKnown
-1317,UnKnown
-1318,UnKnown
-1319,UnKnown
-1320,UnKnown
-1321,UnKnown
+1209,Land of the Morning Light
+1210,Dalbeol Village
+1211,Nampo's Moodle Village
+1212,Dalbeol Office
+1213,Honorable Choi House
+1214,Shimhyangje
+1215,Hanji County
+1216,Ojukheon
+1217,Shimnidae Forest
+1218,Nampo Gate
+1219,Nampo's Moodle Village
+1220,Nampo Shipyard
+1221,Donghae Office
+1222,Dami Pier
+1223,Nampo
+1224,Ooldool Strait
+1225,Solgaji Forest Beacon Tower
+1226,Solgaji Forest
+1227,Hamlet
+1228,Solbaram Neowa House
+1229,Cheongsan Institute
+1230,Soopmool in Ruins
+1231,Dokkebi Forest
+1232,Golden Pig Cave
+1233,Old Crane's Home
+1234,Sky Altar
+1235,Gowun Plateau
+1236,Dalim Village in Ruins
+1237,Drybranch Village
+1238,Bomnae County Beacon Tower
+1239,Bomnae County
+1240,Honglim Base
+1241,Yeowoo Pass Beacon Tower
+1242,Yeowoo Pass
+1243,Dallae Pier
+1244,Rosebay School
+1245,Nopsae Angler's Point
+1246,Nopsae's Byeot County
+1247,Nopsae Pass
+1248,Stone Island
+1249,Birigongdeoks' Home
+1250,Bari Forest
+1251,Old Owl's Home
+1252,Beombawi Tavern
+1253,Tigerslayers Base
+1254,Tiger Palace
+1255,Beombawi Valley
+1256,Beombawi Gate
+1257,Haemo Island
+1258,Byukgye Institute
+1259,Byukgye Island
+1260,Land of the Morning Light
+1261,Shimnidae Forest
+1262,Hanji County
+1263,Shimnidae Forest
+1264,Nampo Gate
+1265,Nampo's Moodle Village
+1266,Solgaji Forest
+1267,Cheongsan Institute
+1268,Dokkebi Forest
+1269,Golden Pig Cave
+1270,Gowun Plateau
+1271,Drybranch Village
+1272,Bomnae County
+1273,Honglim Base
+1274,Nopsae Pass
+1275,Bari Forest
+1276,Beombawi Valley
+1277,Beombawi Gate
+1278,Haemo Island
+1279,Shimnidae Forest
+1280,Solgaji Cave
+1281,Enlightenment Cave
+1282,Shinsun Grotto
+1283,Hanji Hollow
+1284,Ooldool Coastal Cave
+1285,Bomnae Coastal Cave
+1286,Small Yeowoo Cave
+1287,Honglim Cave
+1288,Humid Cave
+1289,Young Tiger's Den
+1290,Bari Forest
+1291,Traveller's Den
+1292,Dalbeol Cave
+1293,Nopsae Cave
+1294,Bari Cave
+1295,Haemo Coastal Cave
+1296,Seagrace Cave
+1297,Dokkebi Cave
+1298,Dokkebi Cave
+1299,Dokkebi Altar
+1300,Nampo Sea
+1301,Nopsae Sea
+1302,Hanji Shrine
+1303,Moon Grotto
+1304,Golden Pig Cave
+1305,Honglim Cave
+1306,Yeowoo Den
+1307,Yeowoo Cave
+1308,Hidden Bomnae Cave
+1309,Tiger Palace
+1310,Beombawi Cave
+1311,Beombawi Grotto
+1312,Land of the Morning Light
+1313,Hanji County
+1314,Shimnidae Forest
+1315,Solgaji Forest
+1316,Nopsae Pass
+1317,Beombawi Valley
+1318,Bari Forest
+1319,Chief's Home
+1320,Oduksini's Domain
+1321,Golden Pig Cave
+1322,The Great Desert of Valencia (Black Desert)
+1323,Shinhyang
+1324,Zulatia Sea
+1325,Elsana Sea
+1326,Serni Sea
+1327,Margoria
+1328,Margoria
+1329,Margoria
+1330,Margoria
+1331,Juur Sea
+1332,Vadabin Sea
+1333,Vadabin Sea
+1334,Vadabin Sea
+1335,Vadabin Sea
+1336,Vadabin Sea
+1337,Vadabin Sea
+1338,Juur Sea
+1339,Margoria
+1340,Margoria
+1341,Margoria
+1342,Margoria
+1343,Ross Sea
+1344,Valencia Sea
+1345,UnKnown
 5000,UnKnown
 5001,UnKnown
 5002,UnKnown
