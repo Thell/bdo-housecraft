@@ -1,18 +1,13 @@
-""" This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
-"""
-# pylint: skip-file
+# This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
 import kaitaistruct
 from kaitaistruct import KaitaiStruct, KaitaiStream, BytesIO
 
-if getattr(kaitaistruct, 'API_VERSION', (0, 9)) < (0, 9):
-    raise Exception(
-        "Incompatible Kaitai Struct Python API: 0.9 or later is required, but you have %s" %
-        (kaitaistruct.__version__))
 
+if getattr(kaitaistruct, 'API_VERSION', (0, 9)) < (0, 9):
+    raise Exception("Incompatible Kaitai Struct Python API: 0.9 or later is required, but you have %s" % (kaitaistruct.__version__))
 
 class Houseinfo(KaitaiStruct):
-
     def __init__(self, _io, _parent=None, _root=None):
         self._io = _io
         self._parent = _parent
@@ -26,8 +21,8 @@ class Houseinfo(KaitaiStruct):
         for i in range(self.num_entries):
             self.house_info.append(Houseinfo.HouseinfoType(self._io, self, self._root))
 
-    class CraftListType(KaitaiStruct):
 
+    class CraftListType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -38,8 +33,8 @@ class Houseinfo(KaitaiStruct):
             self.item_craft_index = self._io.read_u4le()
             self.house_level = self._io.read_u4le()
 
-    class NeedHouseKeyType(KaitaiStruct):
 
+    class NeedHouseKeyType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -49,8 +44,8 @@ class Houseinfo(KaitaiStruct):
         def _read(self):
             self.need_house_key = self._io.read_u2le()
 
-    class HouseinfoType(KaitaiStruct):
 
+    class HouseinfoType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
