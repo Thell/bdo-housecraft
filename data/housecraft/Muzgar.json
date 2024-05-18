@@ -1,0 +1,5 @@
+[
+  {"lodging":0,"storage":0,"cost":0,"indices":[1375],"states":[0]},
+  {"lodging":0,"storage":16,"cost":1,"indices":[1375,3845],"states":[0,1]},
+  {"lodging":0,"storage":32,"cost":2,"indices":[1375,3845,3846],"states":[0,1,1]}
+]
