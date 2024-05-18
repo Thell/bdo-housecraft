@@ -20,7 +20,6 @@ csv = "1.2.1"
 env_logger = "0.10.0"
 highs-sys = { version = "1.5.0", git = "https://github.com/Thell/highs-sys.git", branch = "highs-quiet-parallel", features = [
     "highs_release",
-    "libz",
     "ninja",
 ] }
 itertools = "0.10.5"
