@@ -96,7 +96,7 @@ Param0,String
 95,Bartali Farm
 96,Marino Farm
 97,Finto Farm
-98,Cron Castle Site  
+98,Cron Castle Site
 99,Balenos Plains
 100,Fleme Hills
 101,Ehwaz Hill
@@ -197,7 +197,7 @@ Param0,String
 206,Rumbling Land
 207,Stonetail Wasteland
 208,Stonetail Horse Ranch
-209,Asula Highland
+209,Asula Highlands
 210,Canyon of Corruption
 211,Abandoned Iron Mine
 212,Omar Lava Cave
@@ -206,7 +206,7 @@ Param0,String
 215,Tungrad Forest
 216,Hasrah Cliff
 217,Alumn Rock Valley
-218,Boing Valley
+218,Asparkan
 219,Small Island
 220,Fort Barran
 221,Tarif
@@ -467,7 +467,7 @@ Param0,String
 533,Mediah Northern Highlands
 534,Rumbling Land
 535,Mediah Shore
-536,Asula Highland
+536,Asula Highlands
 537,Abandoned Iron Mine
 538,Abandoned Monastery Cave
 539,Kzarka Shrine Cave
@@ -827,7 +827,7 @@ Param0,String
 953,Kzarka Shrine
 954,Corridor of Chaos
 955,O'draxxia
-956,O'dyllita
+956,O'dyllita Castle
 957,La O'delle
 958,Olun's Valley
 959,Black Mountains
@@ -835,7 +835,7 @@ Param0,String
 961,Bahit Sanctum
 962,Thornwood Forest
 963,Crypt of Resting Thoughts
-964,Thornwood Castle
+964,O'dyllita Castle Vicinity
 965,Talibahr's Rope
 966,Starry Midnight Port
 967,Tunkuta
@@ -934,7 +934,7 @@ Param0,String
 1060,Delmira Plantation
 1061,Shiv Valley Road
 1062,O'draxxia
-1063,Narcion
+1063,Zulatia Sea
 1064,Shiv Valley Road
 1065,Al Halam Sea
 1066,UnKnown
@@ -1216,7 +1216,72 @@ Param0,String
 1342,Margoria
 1343,Ross Sea
 1344,Valencia Sea
-1345,UnKnown
+1345,Sea Palace
+1346,Sea Palace
+1347,Atessahra
+1348,Sezec Mercenary Camp
+1349,City of the Dead
+1350,Tungrad Ruins
+1351,Asparkan Work Camp
+1352,Junaid River Border Post
+1353,Asparkan Bridge
+1354,Tremorin Hill
+1355,City of the Dead
+1356,Kermelun Wilds
+1357,Tomb of Forgotten Records
+1358,Asparkan
+1359,Asparkan
+1360,City of the Dead
+1361,Atessahra
+1362,Sezec Mercenary Camp
+1363,Tungrad Ruins
+1364,Tomb of Forgotten Records
+1365,Corpus Tomb
+1366,Cave of Lament
+1367,Neruda Plain
+1368,Junaid River
+1369,Neruda Plain
+1370,Tremorin Hill
+1371,Kermelun Wilds
+1372,Junaid River
+1373,Secirtash Prison
+1374,Atessahra
+1375,Muzgar
+1376,Aakshrad Mountains
+1377,Yzrahid Highlands
+1378,Darkseekers' Retreat
+1379,Karasi Canyon
+1380,Barhan Camp
+1381,Shakhtar Wilds
+1382,Velandir
+1383,Turba Farm
+1384,Larc Guard Post
+1385,Muzgar Black Stone Mine
+1386,Yzrahid Highlands Cave
+1387,Gladios Inn
+1388,Shakhtar Pier
+1389,Resh's Camp
+1390,Darkseekers' Retreat
+1391,Karasi Canyon
+1392,Barhan Camp
+1393,Turba Farm
+1394,Larc Guard Post
+1396,Gladios Inn
+1397,Lake Sefirah
+1398,Lake Sefirah - Upstream
+1399,Society of Equilibrium
+1400,Stofbir
+1401,Fris Snowfield
+1402,Aakshrad Mountains
+1403,Yzrahid Highlands
+1404,Shakhtar Wilds
+1405,Fris Snowfield
+1406,UnKnown
+1407,UnKnown
+1408,UnKnown
+1409,UnKnown
+1410,UnKnown
+1411,UnKnown
 5000,UnKnown
 5001,UnKnown
 5002,UnKnown

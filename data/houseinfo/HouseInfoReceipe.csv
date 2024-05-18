@@ -54,6 +54,11 @@ Param0,String
 1412,Old Moon Furniture Workshop
 1413,Old Moon Furniture Workshop
 1414,Old Moon Furniture Workshop
+1415,Old Moon Furniture Workshop
+1416,Old Moon Furniture Workshop
+1417,Old Moon Furniture Workshop
+1418,Old Moon Furniture Workshop
+1419,Old Moon Furniture Workshop
 1421,Costume Mill
 1422,Costume Mill
 1423,Costume Mill
@@ -113,9 +118,11 @@ Param0,String
 2009,Jangdok Platform
 2010,Fish Workshop
 2011,Shipyard
-50001,Guild Storage Level 2
+2012,Byukgye Ship Part Workshop
+50001,Guild Storage level 2
 50002,Guild Storage level 3
 50003,Guild Storage level 4
 50004,Guild Storage level 5
 50005,Guild Storage level 6
 50006,Guild Storage level 7
+50007,Guild Storage level 7
