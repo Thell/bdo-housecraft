@@ -32,7 +32,7 @@ Param0,String
 31,Woosa
 32,Witch
 33,POSM
-34,PRSA
+34,Dosa
 35,Warrior Use 3
 36,Warrior Use 3
 37,Warrior Use 3
@@ -53,7 +53,7 @@ Param0,String
 115,PBM
 116,Maegu
 117,Woosa
-118,Shai Female
+118,Shai
 119,Shai Male
 120,Striker
 121,Musa
@@ -70,7 +70,7 @@ Param0,String
 132,Kunoichi
 133,Warrior
 134,Dokkebi Musa
-135,PRSA
+135,Dosa
 136,PGWA
 137,PBNA
 138,POEA
@@ -130,6 +130,7 @@ Param0,String
 289,Sari Flower_CA
 290,Lava_CA
 291,Kunoichi's Shadow_CA
+292,Warrior of Fog_CA
 301,Awakened Skill Reset
 302,Combat Skills Reset: All
 303,Combat Skills Reset: Partial
@@ -636,6 +637,7 @@ Param0,String
 814,Mountain of Eternal Winter Freight Wagon
 870,Villager
 871,Villager
+872,Villager
 880,Worker
 881,Dye
 882,Shop
@@ -1795,8 +1797,8 @@ Param0,String
 2900,Altinova 6-4
 2901,Altinova 6-5
 2902,Altinova 6-6
-2903,Altinova 7-1
-2904,Altinova 7-2
+2903,Altinova 7-4
+2904,Altinova 7-3
 2905,Altinova Guild House 2
 2906,Altinova 8-1
 2907,Altinova 8-2
@@ -1807,8 +1809,8 @@ Param0,String
 2912,Altinova 10-2
 2913,Altinova 10-3
 2914,Altinova 10-4
-2915,Altinova 7-4
-2916,Altinova 7-3
+2915,Altinova 7-1
+2916,Altinova 7-2
 3001,"Valencia 1-1, 1F"
 3002,"Valencia 1-1, 2F"
 3003,Valencia 1-2
@@ -2074,6 +2076,23 @@ Param0,String
 3844,Solbaram Neowa House
 3845,Muzgar 1
 3846,Muzgar 2
+3847,Hyeollokdang
+3848,Hyeollokdang
+3849,Morning Light Godu Village 1
+3850,Morning Light Godu Village 2
+3851,Morning Light Godu Village 3
+3852,Morning Light Unjongga Street 1
+3853,Morning Light Unjongga Street 2
+3854,Morning Light Bukpo 1
+3855,Morning Light Bukpo 2
+3856,Morning Light Bukpo 3
+3857,Morning Light Bukpo 4
+3858,Morning Light Bukpo 5
+3859,Morning Light Bukpo 6
+3860,Morning Light Yukjo Street 1
+3861,Morning Light Yukjo Street 2
+3862,Morning Light Yukjo Street 3
+3863,Morning Light Yukjo Street 4
 4001,Container
 4002,Stuffed Bear Head
 4003,Bear Hide Carpet
@@ -2835,9 +2854,9 @@ Param0,String
 6760,Margoria Whale Sofa
 6761,Spring Flower Chair
 6762,Spring Flower Sofa
-6763,Coral Chair1
+6763,Coral Chair 1
 6764,Coral Sofa
-6765,Coral Chair2
+6765,Coral Chair 2
 6766,[Sweet Halloween] White Bunny Chair
 6767,[Sweet Halloween] Black Bunny Chair
 6768,[Sweet Halloween] Box Chair
@@ -3023,6 +3042,7 @@ Param0,String
 7187,Artifact Inventory +5 Expansion Coupon
 7188,Fence of Abundance
 7189,Crystal Restore Count Coupon
+7190,Pet Skill Change Coupon
 7201,Premium Pack I (30 days)
 7202,Premium Pack I (60 days)
 7203,Premium Pack I (90 days)
@@ -4930,6 +4950,15 @@ Param0,String
 12785,Calpheon/Kamasylvia Fort (Tier 3 Node)
 12786,Calpheon/Kamasylvia Fort (Tier 4 Node)
 12787,Calpheon/Kamasylvia Fort (Tier 5 Node)
+12788,Balenos/Serendia Supply Depot
+12789,Mediah/Valencia Supply Depot
+12790,Calpheon/Kamasylvia Supply Depot
+12791,Balenos/Serendia Barricade
+12792,Mediah/Valencia Barricade
+12793,Calpheon/Kamasylvia Barricade
+12794,Balenos/Serendia Iron Barricade
+12795,Mediah/Valencia Iron Barricade
+12796,Calpheon/Kamasylvia Iron Barricade
 13001,Xian Workshop Chandelier (Fluorescent)
 13002,Serendian Chandelier (Fluorescent)
 13003,Serendian Chandelier (Red)
@@ -5176,6 +5205,14 @@ Param0,String
 15036,[Jukebox] Snow Flower
 15037,[Jukebox] Gayageum
 15038,[Jukebox] Fox Orb
+15039,[Jukebox] GH0ST
+15040,[Jukebox] 風のいたずら
+15041,[Jukebox] 一起來場探索未知的快樂冒險吧！
+15042,[Jukebox] Memorias de primavera
+15043,[Jukebox] It's My Adventure Now
+15044,[Jukebox] White Wind
+15045,[Jukebox] Heidel Night Bar Jazz
+15046,[Jukebox] Shining Sands
 15201,Corner Decorated Vanity
 15202,[Manor] Janggu
 15203,Traditional Mattress
@@ -5289,7 +5326,7 @@ Param0,String
 15330,[Manor] Ripe Persimmon Tree
 15331,[Manor] Bountiful Jujube Tree
 15332,[Manor] Pleasantly Plump Gourd Vine
-15333,[Manor] Ginkgo Tree
+15333,[Manor] Silver Apricot Tree
 15334,[Manor] Maple Tree
 15342,[Manor] A-frame Carrier Loaded with Straw Mats
 15343,[Manor] A-frame Carrier Loaded with Straw
@@ -5308,6 +5345,42 @@ Param0,String
 15356,[Manor] Well-managed Village Mugunghwa
 15357,[Manor] Small Tangerine Tree
 15358,[Manor] Red Camellia Tree
+15359,Ten Symbols of Longevity Screen
+15360,Nacre Vanity
+15361,[Manor] Rain Gauge
+15362,Geumbo
+15363,Royal Folding Chair
+15364,[Manor] Clepsydra
+15365,Palace Bench
+15366,Nacre Wardrobe
+15367,[Manor] Small Palanquin
+15368,[Manor] Palanquin
+15369,[Manor] Curved Potted Tree
+15370,[Manor] Leaning Potted Tree
+15371,[Manor] Palace Ceremonial Mugo
+15372,[Manor] Palace Ceremonial Shade
+15373,[Manor] Stone Turtle Statue
+15374,Red Nacre Closet
+15375,Palace Bench
+15376,Nacre Wardrobe
+15377,[Manor] Small Palanquin
+15378,[Manor] Palanquin
+15379,Red Nacre Closet
+15380,[Manor] Palace Ceremonial Lantern
+15381,[Manor] Palace Ceremonial Scroll
+15382,[Manor] Sajikdan Altar Ritual Flag
+15383,[Manor] Sajikdan Altar Yeonggo Drums
+15384,[Manor] Sajikdan Altar Ritual Scroll
+15385,[Manor] Yukjo Street Parasol
+15386,Bronze Incense Burner
+15387,Bronze Gong with Inscription
+15388,Bronze Incense Burner with Inscription
+15389,Gold Crown from Cheonmachong Tomb
+15390,Three-legged Cauldron with a Handle
+15391,Celadon Pillow in the Shape of Twin Lions
+15392,Celadon Square Incense Burner with Goblin
+15396,[Manor] Golden Dark Bonghwang Statue
+15397,[Manor] Blood-red Dark Bonghwang Statue
 15501,Tied-Up Curtain
 15502,Open Curtain
 15503,Cotton Curtain
@@ -6116,6 +6189,7 @@ Param0,String
 16994,Wharf Expansion Item
 16995,Do not use
 16996,Paw-doodle: Scholar
+16997,Paw-doodle: Dosa
 17001,Plain Wall Tapestry
 17002,Glamorous Patterned Tapestry
 17003,Mediah Patterned Tapestry
@@ -6909,8 +6983,8 @@ Param0,String
 18533,Persimmon Tree
 18534,Jujube Tree
 18535,Jujube Tree
-18541,Ginkgo Tree
-18542,Ginkgo Tree
+18541,Silver Apricot Tree
+18542,Silver Apricot Tree
 18543,Maple Tree
 18544,Maple Tree
 18545,Viola
@@ -6971,6 +7045,9 @@ Param0,String
 18605,Breath-imbued Karanda Statue
 18606,Kzarka Statue
 18607,Breath-imbued Kzarka Statue
+18609,[Event] Unsa Gowon's Hwando
+18610,[Manor] Friends Across the Sea
+18611,[Event] Autumn Banquet Table
 18901,Vatu's Carpet
 18902,Everfrost High-quality Carpet
 18903,Everfrost Bench
@@ -7445,7 +7522,7 @@ Param0,String
 20319,Mine Imp
 20320,Plantation Small Mole
 20321,Plantation Big Mole
-20322,Locusts Swarm
+20322,Locust Swarm
 20323,Rift's Echo
 20324,Red Nose
 20325,Dastard Bheg
@@ -8259,14 +8336,14 @@ Param0,String
 21136,Gairas
 21137,Rift Seed
 21138,Dehkia's Lantern
-21139,Fallen Ahib
-21140,Ahib Dark Chaser
-21141,Ahib Condemner
-21142,Ahib Dark Champion
-21143,Dark Knight
-21144,Ahib Beast Trainer
-21145,Ahib Dark Chaser
-21146,Ahib Condemner
+21139,Argos Obsidian Altar
+21140,Argos Obsidian Altar
+21141,Argos Obsidian Altar
+21142,Crescent Follower
+21143,Crescent Watcher
+21144,Crescent Guardian
+21145,Crescent Chief Gatekeeper
+21146,Argos Obsidian Energy
 21147,Desert Naga Combatant
 21148,Desert Naga Combat Monk
 21149,Valencia Naga Apprentice Axeman
@@ -8305,8 +8382,8 @@ Param0,String
 21182,Ahib Salun Wolf Spearmaiden
 21183,Bloodthirsty Khalk
 21184,Khalk of Darkness
-21185,Ahib Dark Champion
-21186,Ahib Dark Mage
+21185,Crescent Follower
+21186,Crescent Watcher
 21187,Ancient Ator
 21188,Ancient Puturum
 21189,Ancient Kutum
@@ -8324,7 +8401,7 @@ Param0,String
 21201,Ahib Salun Wolf Spearmaiden
 21202,Bloodthirsty Khalk
 21203,Khalk of Darkness
-21204,Ahib Salun Bear Spearmaiden
+21204,Crescent Guardian
 21205,Ahib Salun Wolf Spearmaiden
 21206,Bloodthirsty Khalk
 21207,Valencian Lion
@@ -8371,9 +8448,9 @@ Param0,String
 21248,Olun's Golem
 21249,Olun's Golem
 21250,Olun's Golem
-21251,Olun's Heart
-21252,Olun's Statue
-21253,Olun's Power Tower
+21251,Olun's Golem
+21252,Olun's Golem
+21253,Olun's Golem
 21254,Olun's Heart
 21255,Olun's Statue
 21256,Sand Twister
@@ -8746,14 +8823,14 @@ Param0,String
 21623,Fadus Archer
 21624,Fadus Shaman
 21625,Fadus Warrior
-21626,Turo Scout
-21627,Turo Pike Warrior
-21628,Turo Berserker
-21629,Ulutuka
+21626,Mirumok
+21627,Old Mirumok
+21628,Degraded Old Tree Treant
+21629,Degraded Ruins Tree Treant
 21630,Eye of Despair
 21631,Cultist Fatty
 21632,Cultist Runner
-21633,Ulutuka
+21633,Voraro
 21634,Turo Pike Warrior
 21635,Turo Berserker
 21636,Baby Gargoyle
@@ -9195,6 +9272,9 @@ Param0,String
 22097,Mansha Warrior
 22098,Old Tree Treant
 22099,Balten
+22100,Black Energy
+22101,Black Energy
+22102,Black Energy
 22103,Terruda Reinforced Infantryman
 22104,Centaurus Axeman
 22105,Basilisk Petrifier
@@ -9213,6 +9293,36 @@ Param0,String
 22118,Gray Wolf Alpha
 22119,Soldier
 22120,Kunga
+22121,Al Rhundi
+22122,Giant Mudster
+22123,Belmorn
+22124,Karanda
+22125,Titium
+22126,Dastard Bheg
+22127,Muskan
+22128,Muraka
+22129,Quint
+22130,Saunil Siege Captain
+22131,Muraka
+22132,"Kzarka, the Lord of Corruption"
+22133,Red Nose
+22134,Dastard Bheg
+22135,Saunil Siege Captain
+22136,Belmorn
+22137,Quint
+22138,Muraka
+22139,Infantry
+22140,Vanguard
+22141,Patrol
+22142,Wizard
+22143,Mudster
+22144,Elite Infantry
+22145,Imp Soldier
+22146,Imp Raider
+22147,Imp Wizard
+22148,Steel Imp
+22149,Steel Imp Warrior
+22150,Steel Imp Wizard
 22201,Poison Net Desert Scorpion
 22202,Rainbow Fox
 22203,Breoro
@@ -9471,6 +9581,18 @@ Param0,String
 22547,MOD Oog Mk VIII
 22548,MOD Oog Mk III
 22549,MOD Mago Mk V
+22559,Altar Imp
+22560,Altar Imp Warrior
+22561,Altar Imp Scout
+22562,Altar Imp Trainer
+22563,Altar Imp Fighter
+22564,Altar Imp Archer
+22565,Saunil Fighter
+22566,Saunil Armored Warrior
+22567,Saunil Elder
+22568,Saunil Brawler
+22569,Troll
+22570,Troll Warrior
 22571,Faded Ancient Relic
 22572,Lava Tukar
 22573,Lava Searcher
@@ -9480,7 +9602,7 @@ Param0,String
 22577,Frenzied Executioner
 22578,Executioner
 22579,Iron Fist Warder
-22580,Caphras's Follower
+22580,Caphras' Follower
 22582,Dark Eyes Warder
 22583,Aakman Watcher
 22584,Aakman Guardian
@@ -10110,16 +10232,19 @@ Param0,String
 23226,Thundercloud Kutum
 23227,Thundercloud Kutum
 23249,Seculion
+23250,Calpheon Shadow Knight
 23251,Sun Aura
 23252,Sun Aura
 23253,Sun Aura
 23254,Sun Aura
 23255,Sun Aura
+23256,Black Shadow
 23259,Nozzle
 23260,Sulfur Bundle
 23261,Apostle of Immorality
 23262,Ahib Grand Shaman
 23263,Lemoria Honor Guard
+23264,Muskan
 23265,Supplies
 23266,Supplies
 23267,Supplies
@@ -10708,6 +10833,7 @@ Param0,String
 23861,One-Eyed Outlaw
 23862,Captain Khuru
 23863,Black Dragon's Shadow
+23866,Transcended Kzarka
 23867,Serendia Shrine Pillar
 23873,Remnants of Corruption
 23874,Blooming Illusion's Shadow
@@ -11339,9 +11465,57 @@ Param0,String
 24526,Swamp Naga
 24551,Forgotten Trial's Legacy
 24552,Elion's Blessing
+24553,Deep Sunken Darkness
+24554,Deep Sunken Darkness
+24555,Centipede Ruffian
+24556,Centipede Hooligan
+24557,Centipede Strongman
+24558,Bulgasal Soldier
+24559,Bulgasal
+24560,Bulgasal
+24561,Dark Bonghwang
+24562,Jigwi
+24565,Deposed Crown Prince
+24566,Blue-clad Youth
+24567,Uturi
+24569,Cheoyong
+24570,Grampa Sackbeard
+24571,Grampa Sackbeard
+24572,Grampa Sackbeard
+24573,Bean Archer
+24574,Red Bean Swordsman
+24575,Millet Spearman
+24576,Tiger
+24577,Fox
+24578,Deer
+24579,Bulgasal Soldier
+24580,Marten
+24581,Marten
+24582,Ominous Barrier
+24583,Centipede Eldest Thug
+24584,Water's Reflection
+24585,Heart's Reflection
+24586,Trial of Wisdom
+24587,Trial of Wisdom
+24588,Trial of Wisdom
+24589,Trial of Wisdom
+24590,Trial of Wisdom
+24591,Trial of Wisdom
+24592,Trial of Wisdom
+24593,Trial of Wisdom
+24594,Trial of Wisdom
+24595,Trial of Wisdom
+24596,Trial of Wisdom
+24597,Hellfire-Infused Flame
+24598,Rising Hellfire
+24599,Flame of Resentment
+24600,Jigwi's Flame
 24601,Oreturem
 24602,Syketurem
 24603,Vayeturem
+24604,Bulgasal's Iron Armor
+24605,Blazing Iron
+24606,Bulgasal
 24607,Heinton
 24608,Veinturam
 24609,Keluos
@@ -11426,7 +11600,7 @@ Param0,String
 24688,Tripped Safeguard
 24689,Veinturam
 24690,Yolu's Watchman
-24691,Veil of Dark Heat
+24691,Black Energy
 24692,Yolu's Watchman
 24693,Veinturam
 24694,Veinturam
@@ -11436,8 +11610,24 @@ Param0,String
 24698,Creomar's Illusion
 24699,Krahtenn's Illusion
 24700,Device
+24717,Fox
 24731,Imp Work Supervisor
 24732,Troll Work Supervisor
+24733,Goyoung
+24736,Bulgasal
+24737,Uturi
+24738,Sangoon
+24739,Duoksini
+24740,Golden Pig King
+24741,Bean Archer
+24742,Red Bean Swordsman
+24743,Millet Spearman
+24744,Jurong
+24745,Duoksini
+24746,Deposed Crown Prince
+24747,Sun Aura
+24748,Burning Oil
+24749,Blazing Iron
 24750,Impassioned Amarillos
 24751,Heart of Creation
 24752,Tuntaros
@@ -11745,6 +11935,72 @@ Param0,String
 25116,Incarnation of Corruption
 25117,Incarnation of Corruption
 25118,Sealed Door
+25120,Sangoon
+25121,Sangoon
+25122,Aiming Point
+25123,Sangoon
+25124,Sangoon
+25125,Sangoon
+25126,Sangoon
+25127,Uturi
+25128,Dokkebi Soul
+25129,Military Officer
+25130,Boar
+25132,Bulgasal
+25133,Bulgasal
+25134,Dark Bonghwang
+25135,Jigwi
+25138,Deposed Crown Prince
+25139,Blue-clad Youth
+25140,Uturi
+25142,Cheoyong
+25144,Palace Guard
+25145,Hellfire-Infused Flame
+25146,Rising Hellfire
+25147,Flame of Resentment
+25148,Jigwi's Flame
+25149,Water's Reflection
+25150,Heart's Reflection
+25151,Trial of Wisdom
+25152,Trial of Wisdom
+25153,Trial of Wisdom
+25154,Trial of Wisdom
+25155,Trial of Wisdom
+25156,Trial of Wisdom
+25157,Trial of Wisdom
+25158,Trial of Wisdom
+25159,Trial of Wisdom
+25160,Trial of Wisdom
+25161,Trial of Wisdom
+25162,Bulgasal's Iron Armor
+25163,Blazing Iron
+25164,Blazing Fire
+25165,Iron Aura
+25166,Soul of Fire
+25167,Iron Aura
+25168,Blazing Fire
+25169,Bulgasal Soldier
+25170,Bulgasal Soldier
+25171,Bean Archer
+25172,Red Bean Swordsman
+25173,Millet Spearman
+25174,Uturi
+25175,Bean Sack
+25176,Aiming Point
+25177,Soybean and Red Bean
+25178,Dark Bonghwang
+25179,Dark Bonghwang
+25180,Dark Bonghwang
+25181,Dark Bonghwang
+25182,Dark Bonghwang
+25183,Dark Bonghwang
+25184,Divided Moon
+25185,Deposed Crown Prince
+25186,Mooncast Shadow
+25187,Cheoyong
+25188,Cheoyong
+25189,Black Bear
+25190,Boar
 25201,Erekhantus
 25202,Limbo Spire
 25203,Erekhantus
@@ -11926,6 +12182,23 @@ Param0,String
 25379,Ancient Puturum
 25380,Treasure Hunter
 25381,Rift Treasure Chest
+25382,Uturi
+25383,Dark Bonghwang
+25384,Dark Bonghwang
+25385,Dark Bonghwang
+25386,Dark Bonghwang
+25387,Jigwi's Flame
+25388,Hongryeon
+25389,Bean Sack
+25390,Bulgasal
+25392,Dark Bonghwang
+25393,Dark Bonghwang
+25394,Divided Moon
+25395,Deposed Crown Prince
+25396,Aiming Point
+25397,Soybean and Red Bean
+25398,Mooncast Shadow
+25399,Bulgasal's Iron
 25400,Afuaru
 25401,Afuaru
 25402,Afuaru
@@ -11943,6 +12216,81 @@ Param0,String
 25414,Afuaru
 25415,Afuaru
 25416,Afuaru
+25417,Iron Aura
+25418,Soul of Fire
+25419,Moonlit Vision
+25421,Bonghwang's Energy
+25422,Small Dark Bonghwang Avatar
+25423,Cheoyong's Altar
+25424,Cheoyong
+25431,Bulgasal
+25432,Bulgasal
+25433,Dark Bonghwang
+25434,Jigwi
+25435,Janghwa
+25436,Hongryeon
+25437,Deposed Crown Prince
+25438,Blue-clad Youth
+25439,Uturi
+25440,Mago
+25441,Cheoyong
+25442,Marten
+25443,Won Baek
+25444,Master
+25445,Bean Archer
+25446,Red Bean Swordsman
+25447,Millet Spearman
+25448,Tiger
+25449,Fox
+25450,Deer
+25451,Bulgasal Soldier
+25452,Bulgasal Soldier
+25453,Uturi
+25454,Dark Bonghwang
+25455,Dark Bonghwang
+25456,Dark Bonghwang
+25457,Dark Bonghwang
+25458,Bean Sack
+25459,Iron Aura
+25460,Soul of Fire
+25461,Bulgasal's Iron
+25462,Bulgasal
+25463,Dark Bonghwang
+25464,Dark Bonghwang
+25465,Divided Moon
+25466,Deposed Crown Prince
+25467,Aiming Point
+25468,Soybean and Red Bean
+25469,Mooncast Shadow
+25470,Moonlit Vision
+25471,Master
+25474,Apex Changui
+25475,Jang Iksoon
+25476,Hyoyun
+25477,Lee Duksoo
+25478,Raccoon Bandit
+25479,Boar Bandit
+25480,Lynx Bandit
+25481,Fox Bandit
+25482,Seoryeon Corps Trainee
+25483,Seoryeon Corps Trainee
+25484,Step Stool
+25485,Mago
+25486,Cheoyong's Altar
+25487,Cheoyong
+25488,Heart's Reflection
+25489,Trial of Wisdom
+25490,Trial of Wisdom
+25491,Trial of Wisdom
+25492,Bonghwang's Energy
+25493,Palace Guard
+25494,Rebellion Forces
+25495,Arang
+25496,Military Officer
+25497,Bean Archer
+25498,Red Bean Swordsman
+25499,Millet Spearman
+25500,Chewie
 25501,Red Nose
 25502,Giath
 25503,Dastard Bheg
@@ -11981,6 +12329,7 @@ Param0,String
 25536,[Event] Leebur
 25537,[Event] Mammore
 25539,[Event] Golden Treasure Chest
+25540,Small Dark Bonghwang Avatar
 25550,Time Bomb
 25551,Ancient Ruins Guard
 25552,Ancient Ruins Defender
@@ -13765,6 +14114,7 @@ Param0,String
 27582,Hollow Maretta
 27583,Maretta's Song
 27584,Hekaru
+27585,Mount Ahshi Tiger
 27601,Giant Lioness
 27602,Giant Lion
 27603,Giant Bison
@@ -13881,7 +14231,7 @@ Param0,String
 27746,Tanco
 27747,Elten
 27748,Maegu
-27749,Koo Mi-eun
+27749,Koo Mieun
 27751,Shepherd Boy
 27752,Sheep
 27753,Pudge
@@ -13901,7 +14251,7 @@ Param0,String
 27768,Customs and Border Protection Senior Officer
 27769,Woosa
 27770,Maegu
-27771,Koo Mi-eun
+27771,Koo Mieun
 27772,Hwadam
 27773,Gildong
 27774,Hasrah Artifact
@@ -14103,6 +14453,22 @@ Param0,String
 28078,Swamp Fogan Fortuneteller
 28079,Sea Palace Bubble Fountain
 28081,Stun Trap
+28082,Harpy
+28083,Harpy Warrior
+28084,Harpy Mage
+28085,Small Harpy
+28086,Black Harpy Elite
+28087,Harpy Warrior
+28088,Harpy
+28089,Small Harpy
+28090,Harpy Warrior
+28091,Harpy Mage
+28092,Black Harpy Elite
+28093,Mudster
+28094,Calpheon Shrine Priestess
+28095,Calpheon Shrine Elite Warrior
+28096,Calpheon Shrine Elite Wizard
+28097,Calpheon Elite Shadow Knight
 28098,Garmoth
 28099,Hungry Black Spirit
 28100,Hungry Black Spirit
@@ -14155,6 +14521,47 @@ Param0,String
 28256,Condensed Power Stone
 28257,Afuaru
 28258,Afuaru
+28260,Cultist
+28261,Cultist Warrior
+28262,Cultist Shaman
+28263,Serendia Shrine Warrior
+28264,Serendia Shrine Wizard
+28265,Serendia Shrine Priest
+28266,Shadow Knight
+28267,Shadow Wizard
+28268,Shadow Priestess
+28269,Ancient Ruins Guard
+28270,Ancient Ruins Defender
+28271,Ancient Ruins Stone Gate
+28272,Valks
+28273,Dastard Bheg
+28274,Al Rhundi
+28275,Captured Fogan
+28276,Titium
+28277,Belmorn
+28278,Cultist
+28279,Harpy
+28280,Soldier
+28281,Soldier
+28282,Soldier
+28283,Shadow Knight
+28284,Shadow Knight
+28285,Shadow Knight
+28286,Soldier
+28287,Soldier
+28288,Soldier
+28289,Soldier
+28290,"Kzarka, the Lord of Corruption"
+28291,Al Rhundi Barricade
+28292,Al Rhundi Flag
+28293,Saunil Immobile Catapult
+28294,Saunil Siege Tower
+28295,Troll Siege Soldier
+28296,Afuaru
+28297,Dekrogda
+28298,Dekrogda
+28299,Dekrogda
+28300,Afuaru
 28301,Red Nose
 28302,Giath
 28303,Bheg
@@ -14420,6 +14827,10 @@ Param0,String
 29041,Lizard Warrior
 29042,Lizard Archer
 29043,Lizard Elite Soldier
+29045,Blue Whale
+29046,Seagull
+29047,Mommy Humpback Whale
+29048,Baby Humpack Whale
 29050,Bandit Warrior
 29051,Bandit Archer
 29052,Bandit Leader
@@ -14460,6 +14871,12 @@ Param0,String
 29090,Spook
 29091,Hexe Marie
 29092,Mischievous Jack
+29093,Leaping Schools of Fish
+29094,Leaping Schools of Fish and Seagulls
+29095,Fish
+29096,Fish
+29097,Mysterious Illusion
+29098,Mysterious Illusion
 29100,Demibeast Warrior
 29101,Beast Demibeast Javelin
 29102,Demibeast Super Warrior
@@ -14650,6 +15067,9 @@ Param0,String
 29374,Rock
 29375,Unstable Grounds
 29376,Statue of Illusions
+29377,Gravity Field
+29378,Rainstorm
+29379,Zodd
 29383,Object
 29384,Apex Urukios
 29385,Apex Urukios
@@ -15279,6 +15699,7 @@ Param0,String
 31589,Arduanatt
 31590,Horse
 31591,Horse
+31592,Horse
 31601,Giorga Bonneville
 32001,Phantom Man
 35000,Ogre
@@ -15599,6 +16020,13 @@ Param0,String
 35687,Seagull
 35688,Giath's Journal
 35689,Panokseon Under Construction
+35695,Villager
+35696,Villager
+35698,Villager
+35699,Fish Crate
+35700,Samsin
+35701,Rice Sack
+35702,Package
 36051,Imp Boss Attack Tower
 36052,Imp Boss Defense Tower
 37031,Villager's Corpse
@@ -16739,6 +17167,230 @@ Param0,String
 44712,MediahSequence
 44713,MediahSequence
 44714,MediahSequence
+44761,Prankkebi
+44762,Dokkebi Jar
+44763,Kkebifire
+44764,Kkebifire
+44765,Kkebifire
+44766,Stone Lantern
+44767,Kkebifire
+44768,Stone Lantern
+44769,Prankkebi
+44770,Dokkebi Jar
+44771,Unknown Scholar
+44772,Praying Traveler
+44773,Suspicious Traveller
+44774,Bandit
+44775,Prankkebi
+44776,Constable
+44777,Scarecrow
+44778,Constable
+44779,Constable
+44780,Drill Sergeant
+44781,Constable
+44782,Constable
+44783,Constable
+44784,Girl
+44785,Chicken
+44786,Boy
+44787,Jar
+44788,Dokkebi
+44791,Kkebifire
+44792,Changui
+44793,Sack
+44794,Sack
+44795,Dokkebi
+44796,Dokkebi
+44797,Villager
+44798,Treasure Chest
+44799,Navy
+44800,Mayor
+44801,Villager
+44802,Rabbit
+44803,Collapsed Villager
+44804,Beggar
+44805,Villager
+44806,Villager
+44807,Merchant
+44808,Villager
+44809,Villager
+44810,Auntie
+44811,Constable
+44812,Sack
+44813,Villager
+44814,Animal
+44815,Scarecrow
+44816,Jar
+44817,Villager
+44818,Box
+44819,Dokkebi
+44820,Bomb
+44821,Pillar
+44822,Pillar
+44823,Woman
+44824,Villager
+44825,Feed Sack
+44826,Villager
+44827,Herb
+44828,Animal2
+44829,Villager
+44839,Prankkebi
+44840,Frightened Traveler
+44841,Suspicious Chest
+44842,Suspicious Chest
+44843,Suspicious Chest
+44844,Prankkebi
+44845,Fleeing Dokkebi
+44846,Prankkebi
+44847,Dokkebi Jar
+44848,Prankkebi
+44849,Dokkebi Made Stone Lantern
+44850,Prankkebi
+44851,Dokkebi Made Stone Lantern
+44852,Hwanggu
+44853,Rock Brought by Hwanggu
+44854,Troubled Merchant
+44855,Chicken Lost by Merchant
+44856,Troubled Merchant
+44859,Gukbap Cooking Woman
+44860,Prankkebi
+44861,Prankkebi
+44862,Geumsun's Mother
+44863,Geumsun Looking for Her Mother
+44864,Peddler
+44865,Kkebifire
+44866,Kkebifire
+44867,Scarecrow
+44868,Constable
+44869,Foreigner
+44870,Prime Suspect
+44871,Auntie
+44872,Stone Lantern
+44873,Dancer
+44874,Techkebi
+44875,Techkebi
+44876,Foreigner
+44877,Villager
+44878,Scholar
+44879,Child
+44880,Villager
+44881,Woman
+44882,Villager
+44883,Woodcutter
+44884,Villager
+44885,Jar
+44886,Poongmool Troupe
+44887,Prankkebi
+44888,Peddler
+44889,Villager
+44891,Happy Dokkebi
+44892,Stone Lantern
+44893,Dirty Sand
+44894,Cleansing Soul
+44895,Released Tiger Changui
+44896,Bored Dokkebi
+44897,Happy Kkebifire
+44898,Sunhui
+44899,Peddler
+44900,Clumsy Shepherd
+44901,Sheep
+44902,Dokkebi in Hiding
+44903,Stone
+44906,Footprints
+44907,Weasel
+44908,Timid Hunter
+44909,Boar
+44910,Child
+44911,Manager
+44912,Elder
+44913,Hunter
+44914,Rabbit
+44915,Child
+44916,Man
+44917,Villager
+44918,Treasure Chest
+44919,Dokkebi
+44920,Scarecrow
+44921,Manager
+44922,Jar
+44923,Basket
+44924,Treasure Chest
+44925,Granny
+44926,Foxfire
+44927,Dokkebi
+44928,Dokkebi
+44929,Villager
+44930,Boksoon Manager
+44931,Girl
+44932,Fluffy Manager
+44933,Villager
+44934,Tigerslayer Manager
+44935,Dokkebi Manager
+44936,Dokkebi
+44937,Mister Turt Manager
+44938,Mister Turt
+44939,Manager
+44940,Dokkebi
+44941,Manager
+44942,Chestkebi
+44943,Trunkkebi
+44944,Onion Crate Manager
+44945,Slowkkebi
+44946,Jinju
+44947,Woman
+44948,Young Man
+44949,Sparrow
+44950,Seonbi
+44951,Girl
+44952,Gassy Girl Manager
+44953,Collekebi
+44954,Kkebifire
+44955,Boy
+44956,Tidykebi
+44957,Boredkebi
+44958,Boredkebi
+44959,Wife
+44960,Villager
+44961,Dazekebi
+44962,Liquor Pot
+44963,Woman
+44964,Seonbi
+44965,Villager
+44966,Clothes Designer
+44967,Man
+44968,Villager
+44969,Villager
+44970,Suspicious Item
+44971,Villager
+44972,Bear
+44973,Villager
+44974,Tigerslayer
+44975,Tigerslayer
+44976,Geumsun
+44977,Villager
+44978,Tigerslayer
+44979,Prankkebi
+44980,Girl
+44981,Girl
+44982,Raccoon Bandit
+44983,Geumsun
+44984,Heart-broken Scholar
+44985,Prankkebi
+44986,Prankkebi's Treasure Chest
+44987,Delivery Woman
+44988,Fleeing Kkebifire
+44989,Invisible Manager
+44990,Villager
+44991,Villager
+44992,Villager
+44993,Dokkebi
+44994,Jar
+44995,Foreigner
+44996,Villager
+44997,Dokkebi
+44998,Rock
+44999,Dokkebi
+45000,Villager
 45001,Nerasabi Alom
 45002,Rabam
 45003,Purajin
@@ -17233,6 +17885,51 @@ Param0,String
 47144,Olympia
 47145,Kamasylvia Castle Musical Spirit
 47146,O'dyllita Castle Musical Spirit
+47147,Man
+47148,Villager
+47149,Man
+47150,Manager
+47151,Peddler
+47152,Villager
+47153,Villager
+47154,Manager
+47155,Manager
+47156,Timid Villager
+47157,Gamerkebi
+47158,Gamerkebi
+47159,Villager
+47160,Dazekebi
+47161,Woman
+47162,Villager
+47163,Villager
+47164,Villager
+47165,Sack
+47166,Box
+47167,Healer
+47168,Villager
+47169,Peddler
+47170,Peddler
+47171,Strongman
+47172,Strongman
+47173,Sweeping Woman
+47175,Dokkebi
+47176,Manager
+47177,Hunter
+47178,Manager
+47181,Constable
+47182,Weakkebi
+47183,Weakkebi
+47184,Man
+47185,Sparrow
+47186,Villager
+47187,Villager
+47188,Villager
+47189,Shockkebi
+47190,Shockkebi
+47193,Villager
+47194,Villager
+47195,Yangban
+47196,Wagon
 47200,Lee Duksoo
 47201,Jang Iksoon
 47202,Yibang
@@ -17519,6 +18216,151 @@ Param0,String
 47499,Ain Greid
 47500,Resh
 47501,Archive
+47502,Im Yeook
+47503,Hani
+47504,Dani
+47505,Geummin
+47506,Inhye
+47507,Haegang
+47508,Park Inseon
+47509,Park Inseon
+47510,Park Pyeongho
+47511,Go Yun
+47512,Go Yun
+47513,Jang Daeseung
+47514,Oh Hakgyu
+47515,Yun Jeonghee
+47516,Yang Taemin
+47517,Hong Jongjin
+47518,Choi Woncheol
+47519,Gu Jongjik
+47520,Im Jehyeok
+47521,Kang Heeok
+47522,Bang Gigyeong
+47523,Kim Chanyeong
+47524,Seo Dangeum
+47525,Woo Seoyun
+47526,Gang Sol
+47527,Lee Minguk
+47528,Gang Pirok
+47529,Kim Ilguk
+47530,Han Munhyeong
+47531,Na Jiseong
+47532,Cha Manbok
+47533,Jin Myeongbo
+47534,Ju Hyangsuk
+47535,Lee Gyueun
+47536,Nam Baeksan
+47537,Song Jiae
+47538,Kang Danhyeok
+47539,Bae Seunghyeon
+47540,Bae Seohee
+47541,Heo Seungwon
+47542,Hyunyong
+47543,Gwitae
+47544,Seongguk
+47545,Danyeong
+47546,Taeseok
+47547,Dorong
+47548,Wonyeong
+47549,Seokhwan
+47550,Gyehyang
+47551,Hyeok
+47552,Sunhwa
+47553,Juran
+47554,Sin Cheolmin
+47555,Yongdeuk
+47556,Wandol
+47557,Gapdol
+47558,Deukhwan
+47559,Han Hobae
+47560,Horyeong
+47561,Dalyeong
+47562,Marong
+47563,Gyeonghwan
+47564,Myeonghun
+47565,Dohyeon
+47566,Gyuil
+47567,Eollong
+47568,Seonga
+47569,Mihyang
+47570,Bokhee
+47571,Lee Hoseop
+47572,Seongtae
+47573,Choyeop
+47574,Lee Mongryong
+47575,Seong Chunhyang
+47576,Koo Mihyun
+47577,Seong Siwon
+47578,Jo Taesoo
+47579,Bae Muryong
+47580,Choi Jinyong
+47581,Kim Geumryun
+47582,Lee Duksoo
+47583,Jang Iksoon
+47584,Arang
+47585,Yojin
+47586,Bonghee
+47587,Hyangnam
+47588,Yuyeong
+47589,Munsu
+47590,Surim
+47591,Myeongyeong
+47592,Taegu
+47593,Kyumuk
+47594,Jinu
+47595,Yeongsim
+47596,Migyeong
+47597,Jonghyeon
+47598,Taegyong
+47599,Yeji
+47600,Chunsu
+47601,Heonyeong
+47602,Jaerong
+47603,Hyeonseon
+47604,Daeyeong
+47605,Daruk
+47606,Gideok
+47607,Han Seunghee
+47608,Jinwan
+47609,Deokman
+47610,Seungsan
+47611,Jung Hwadam
+47612,Hong Gildong
+47613,Seo Hyoyun
+47614,Seok Geonchang
+47615,Uturi
+47616,Gyeongjae
+47617,Sangbaek
+47618,Jeon Yongjun
+47619,Yeonhwa
+47620,Girgo Viano
+47621,Girgo Viano
+47622,Girgo Viano
+47624,Wonsan
+47625,Hosu
+47626,Seokgil
+47627,Baek Jugyu
+47628,Empty Cup
+47629,Forgetkkebi
+47630,Scars of a Fallen Kingdom
+47631,Old Pier
+47632,Exile Sentry
+47633,Sacrament House
+47634,Vine Flower Tree
+47635,Sky Altar Stele
+47636,Bonghwang Statue
+47637,Broken Wagon
+47638,Someone's Journal
+47639,Dragon's Rest
+47640,Swing
+47641,Samsin Tree
+47642,Heungdeok
+47643,Lee Gunwoo
+47644,Dongman
+47645,Gangsu
+47646,Sol
+47647,Neoksam
 49490,Devan
 49494,Girgo Viano
 49495,Girgo Viano
@@ -17769,12 +18611,16 @@ Param0,String
 49771,King Clam High Striker
 49772,Murong
 49773,Dorio
+49774,Sea Palace Entry
+49775,Sea Palace Entry
 49790,Shai
 49791,Rubin
 49792,Young Kamasylve's Illusion
 49793,Abelin
 49794,Crio
 49795,Object
+49796,Sea Palace Entry
+49797,Sea Palace Entry
 50001,Tiny Nose
 50002,Andrei
 50003,Fairy Nest
@@ -20801,7 +21647,7 @@ Param0,String
 59722,Fwuzzy
 59723,Fwuzzy
 59724,Quest NPC
-59725,Quest NPC
+59725,Villager
 59726,Tachros
 59727,GM Silver
 59728,Sub NPC
@@ -20958,6 +21804,7 @@ Param0,String
 59899,Guard
 59900,Wheelbarrow
 59901,Gumiho Stele
+59902,Freight Wagon
 59903,Sarang's Weapon Box
 59904,Quest NPC
 59905,Daon's Goods Box
@@ -21056,7 +21903,7 @@ Param0,String
 60001,Abyssal Well
 60002,Dokkebi Princess
 60003,Water Supply Box
-60004,Supplies Sack
+60004,Supply Sack
 60005,Rations Cart
 60006,Musical Spirit
 60007,Musical Spirit
@@ -21210,7 +22057,7 @@ Param0,String
 60157,Life
 60158,Barrier
 60159,Vitclari's Light
-60160,Dim Tree Spirit
+60160,Stone Lantern
 60161,Black Leopard
 60162,Musical Spirit
 60163,Brown Bear
@@ -21374,16 +22221,16 @@ Param0,String
 61110,Object
 61111,Object
 61112,Object
-61113,Character
-61114,Character
-61115,Character
-61116,Character
+61113,Patrigio
+61114,Patrigio
+61115,Papu
+61116,Otter
 61117,Character
 61118,Character
-61119,Character
-61120,Character
-61121,Character
-61122,Character
+61119,Sub NPC
+61120,Sub NPC
+61121,Sub NPC
+61122,Sub NPC
 61123,Character
 61124,Character
 61125,Character
@@ -21610,8 +22457,14 @@ Param0,String
 62087,Grusha
 62088,Guard
 62089,Guard
-62090,Guard
-62091,Guard
+62090,Uturi
+62091,Bean Archer
+62092,Transparent NPC
+62093,Red Bean Swordsman
+62094,Millet Spearman
+62095,Freight Wagon
+62096,Jar
+62097,Rulupee
 65001,Cliff
 65002,Jordine
 65003,Peony
