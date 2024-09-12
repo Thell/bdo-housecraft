@@ -1,5 +1,4 @@
-""" Module to read and parse a houseinfo.bss file to generate and write the houseinfo.json file.
-"""
+"""Module to read and parse a houseinfo.bss file to generate and write the houseinfo.json file."""
 
 #  A good reference for this is `GameCommon/HouseInfoStaticStatus`.
 #
@@ -58,43 +57,41 @@ from houseinfo_kaitaistruct import Houseinfo
 
 
 def main(input_path, output_path):
-    """ Read and parse the houseinfo.bss file to generate and write the houseinfo.json file.
-    """
+    """Read and parse the houseinfo.bss file to generate and write the houseinfo.json file."""
     with open(input_path, "rb") as input_file:
         kstream = KaitaiStream(input_file)
         houseinfo = Houseinfo(kstream)
 
     house_info_list = []
     for house in houseinfo.house_info:
-        # Skip the Heidel Manor.
-        if house.character_key in [3814, 3815]:
+        # Skip the Manors.
+        if house.character_key in [3814, 3815, 3841, 3842, 3847, 3848]:
             continue
         new_house = {}
-        new_house['need_explore_point'] = house.need_explore_point
-        new_house['affiliated_warehouse'] = house.affiliated_warehouse
-        new_house['parent_node'] = house.parent_node
-        new_house['character_key'] = house.character_key
-        new_house['has_need_house_key'] = house.has_need_house_key
+        new_house["need_explore_point"] = house.need_explore_point
+        new_house["affiliated_warehouse"] = house.affiliated_warehouse
+        new_house["parent_node"] = house.parent_node
+        new_house["character_key"] = house.character_key
+        new_house["has_need_house_key"] = house.has_need_house_key
         need_house_key = house.need_house_key.need_house_key if house.has_need_house_key == 1 else 0
-        new_house['need_house_key'] = need_house_key
-        new_house['house_group'] = house.house_group
-        new_house['house_floor'] = house.house_floor
-        new_house['num_craft_list_items'] = house.num_craft_list_items
+        new_house["need_house_key"] = need_house_key
+        new_house["house_group"] = house.house_group
+        new_house["house_floor"] = house.house_floor
+        new_house["num_craft_list_items"] = house.num_craft_list_items
         new_craft_list = []
         for craft in house.craft_list:
-            new_craft_list.append({
-                'house_level': craft.house_level,
-                'item_craft_index': craft.item_craft_index
-            })
-        new_house['craft_list'] = new_craft_list
+            new_craft_list.append(
+                {"house_level": craft.house_level, "item_craft_index": craft.item_craft_index}
+            )
+        new_house["craft_list"] = new_craft_list
         house_info_list.append(new_house)
 
-    house_infos = {'house_info': house_info_list}
+    house_infos = {"house_info": house_info_list}
     with open(output_path, "w", encoding="UTF-8") as out_file:
         json.dump(house_infos, out_file, indent=4)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", help="input path for bss file")
     parser.add_argument("-o", "--output", help="output path for json file")
