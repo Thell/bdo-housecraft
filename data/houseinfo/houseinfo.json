@@ -1596,48 +1596,6 @@
             ]
         },
         {
-            "need_explore_point": 3,
-            "affiliated_warehouse": 1420,
-            "parent_node": 1853,
-            "character_key": 3848,
-            "has_need_house_key": 0,
-            "need_house_key": 0,
-            "house_group": 0,
-            "house_floor": 0,
-            "num_craft_list_items": 2,
-            "craft_list": [
-                {
-                    "house_level": 1,
-                    "item_craft_index": 2
-                },
-                {
-                    "house_level": 1,
-                    "item_craft_index": 0
-                }
-            ]
-        },
-        {
-            "need_explore_point": 2,
-            "affiliated_warehouse": 1420,
-            "parent_node": 1853,
-            "character_key": 3847,
-            "has_need_house_key": 0,
-            "need_house_key": 0,
-            "house_group": 0,
-            "house_floor": 0,
-            "num_craft_list_items": 2,
-            "craft_list": [
-                {
-                    "house_level": 1,
-                    "item_craft_index": 2
-                },
-                {
-                    "house_level": 1,
-                    "item_craft_index": 0
-                }
-            ]
-        },
-        {
             "need_explore_point": 1,
             "affiliated_warehouse": 1375,
             "parent_node": 1843,
@@ -1705,48 +1663,6 @@
             "affiliated_warehouse": 1219,
             "parent_node": 1785,
             "character_key": 3843,
-            "has_need_house_key": 0,
-            "need_house_key": 0,
-            "house_group": 0,
-            "house_floor": 0,
-            "num_craft_list_items": 2,
-            "craft_list": [
-                {
-                    "house_level": 1,
-                    "item_craft_index": 2
-                },
-                {
-                    "house_level": 1,
-                    "item_craft_index": 0
-                }
-            ]
-        },
-        {
-            "need_explore_point": 3,
-            "affiliated_warehouse": 1210,
-            "parent_node": 1781,
-            "character_key": 3842,
-            "has_need_house_key": 0,
-            "need_house_key": 0,
-            "house_group": 0,
-            "house_floor": 0,
-            "num_craft_list_items": 2,
-            "craft_list": [
-                {
-                    "house_level": 1,
-                    "item_craft_index": 2
-                },
-                {
-                    "house_level": 1,
-                    "item_craft_index": 0
-                }
-            ]
-        },
-        {
-            "need_explore_point": 2,
-            "affiliated_warehouse": 1210,
-            "parent_node": 1781,
-            "character_key": 3841,
             "has_need_house_key": 0,
             "need_house_key": 0,
             "house_group": 0,
