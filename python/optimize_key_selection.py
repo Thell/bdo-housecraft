@@ -43,7 +43,7 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
             item_req_tree[item_req].append(items[i])
 
     # Use the COIN Branch and Cut solver
-    solver = pywraplp.Solver('subset_selection', pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)
+    solver = pywraplp.Solver("subset_selection", pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)
 
     # Variables to flag selected items and indicate the state of the selected item.
     # solver.BoolVar() returns an anonymous variable index.
@@ -92,8 +92,15 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
     return solver
 
 
-def subset_selection(items, item_reqs, weights, state_1_values, state_2_values,
-                     state_1_sum_values_lb, state_2_sum_values_lb):
+def subset_selection(
+    items,
+    item_reqs,
+    weights,
+    state_1_values,
+    state_2_values,
+    state_1_sum_values_lb,
+    state_2_sum_values_lb,
+):
     """
     - items is a list of items to choose from.
     - item_reqs is a list of item requirements, where item_reqs[i] is the parent item of items[i].
@@ -118,9 +125,16 @@ def subset_selection(items, item_reqs, weights, state_1_values, state_2_values,
     return (None, None, None, None, None)
 
 
-def subset_selection_par(items, item_reqs, weights, state_1_values, state_2_values,
-                         state_1_values_sum_ub, state_2_values_sum_lb):
-    """ Optimize all state pairs in parallel. """
+def subset_selection_par(
+    items,
+    item_reqs,
+    weights,
+    state_1_values,
+    state_2_values,
+    state_1_values_sum_ub,
+    state_2_values_sum_lb,
+):
+    """Optimize all state pairs in parallel."""
     solutions = []
     solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
 
@@ -178,7 +192,7 @@ def extract_solution(solver, items, weights, state_1_values, state_2_values):
 
 
 def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_2_values):
-    """ Instantiate model and write to mps file 'subset_select(N).mps'"""
+    """Instantiate model and write to mps file 'subset_select(N).mps'"""
     solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
     state_1_constraint = solver.LookupConstraint("state_1_lb")
     state_2_constraint = solver.LookupConstraint("state_2_lb")
@@ -190,12 +204,12 @@ def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_
 
 
 def write_to_file(data, filename):
-    """ Write mps file with incremental (n) suffix."""
+    """Write mps file with incremental (n) suffix."""
     i = 1
     name, ext = os.path.splitext(filename)
     while os.path.exists(filename):
-        name = re.sub(r'\(\d+\)$', '', name)
+        name = re.sub(r"\(\d+\)$", "", name)
         filename = f"{name}({i}){ext}"
         i += 1
-    with open(filename, 'w', encoding="UTF-8") as file:
+    with open(filename, "w", encoding="UTF-8") as file:
         file.write(data)

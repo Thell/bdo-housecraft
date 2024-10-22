@@ -52,18 +52,17 @@ impl Building {
         character: &IndexedStringMap,
         exploration: &IndexedStringMap,
         region: &IndexedStringMap,
-        _usage: &IndexedStringMap,
     ) -> Self {
         let key = house_info.character_key;
         let node_key = house_info.parent_node;
-        let region_key = house_info.affiliated_warehouse;
+        let region_key = house_info.affiliated_town;
 
         Self {
             key,
-            need_key: if house_info.has_need_house_key == 1 {
+            need_key: if house_info.len_need_house_key == 1 {
                 house_info.need_house_key
             } else {
-                house_info.affiliated_warehouse
+                house_info.affiliated_town
             },
             node_key,
             region_key,
@@ -82,17 +81,15 @@ impl Building {
     }
 }
 #[derive(Deserialize, Debug)]
-pub(crate) struct HouseInfos {
-    pub house_info: Vec<HouseInfo>,
-}
+pub(crate) struct HouseInfos(HashMap<String, HouseInfo>);
 
 #[allow(unused)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct HouseInfo {
-    pub affiliated_warehouse: usize,
+    pub affiliated_town: usize,
     pub character_key: usize,       /* key [CharacterKey] */
     pub craft_list: Vec<CraftList>, /* house craft list [pa_vector<gc::HouseInfoCraft>] */
-    pub has_need_house_key: usize,
+    pub len_need_house_key: usize,
     pub house_floor: usize,      /* house floor [HouseFloor] */
     pub house_group: usize,      /* house group [HouseGroup] */
     pub need_explore_point: u32, /* need explore count [ExplorationPoint] */
@@ -190,16 +187,16 @@ pub(crate) fn read_csv_data(filename: &str) -> Result<IndexedStringMap> {
 pub(crate) fn parse_houseinfo_data() -> Result<RegionBuildingMap> {
     let character = read_csv_data("Character.csv")?;
     let exploration = read_csv_data("Exploration.csv")?;
-    let usage = read_csv_data("HouseInfoReceipe.csv")?;
-    let region = read_csv_data("RegionInfo.csv")?;
+    let region = read_csv_data("Region.csv")?;
 
     let json_string = std::fs::read_to_string("./data/houseinfo/houseinfo.json")?;
-    let house_infos = serde_json::from_str::<HouseInfos>(&json_string)?;
+    let house_infos_map: HashMap<String, HouseInfo> = serde_json::from_str(&json_string)?;
+    let house_infos: Vec<HouseInfo> = house_infos_map.into_values().collect();
 
     let mut region_buildings = RegionBuildingMap::new();
 
-    for house_info in house_infos.house_info.into_iter() {
-        let building = Building::new(&house_info, &character, &exploration, &region, &usage);
+    for house_info in house_infos.into_iter() {
+        let building = Building::new(&house_info, &character, &exploration, &region);
         if let Some(region) = region_buildings.get_mut(&building.region_name) {
             region.insert(building.key, building);
         } else {

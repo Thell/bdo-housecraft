@@ -6,7 +6,7 @@ Param0,String
 5,Tamer
 6,Hashashin
 7,Sage
-8,Warrior Use3
+8,PSM
 9,Guardian
 10,Scholar
 11,Drakania
@@ -14,14 +14,14 @@ Param0,String
 13,Corsair
 14,Lahn
 15,PBM
-16,Berserker Unused 2
+16,PRUM
 17,Maegu
 18,Shai
 19,Shai Male
 20,Striker
 21,Musa
 22,Maehwa
-23,Temp Maehwa
+23,Maehwa
 24,Mystic
 25,Valkyrie
 26,Kunoichi
@@ -33,7 +33,7 @@ Param0,String
 32,Witch
 33,POSM
 34,Dosa
-35,Warrior Use 3
+35,PWGE
 36,Warrior Use 3
 37,Warrior Use 3
 101,Warrior
@@ -71,7 +71,7 @@ Param0,String
 133,Warrior
 134,Dokkebi Musa
 135,Dosa
-136,PGWA
+136,PWGE
 137,PBNA
 138,POEA
 201,Warrior_TEST
@@ -990,22 +990,22 @@ Param0,String
 1416,High-quality Napa Cabbage Seed
 1417,Special Napa Cabbage Seed
 1418,Magical Napa Cabbage Seed
-1419,Mystical Napa Cabbage Seed
+1419,Mysterious Napa Cabbage Seed
 1420,Radish Seed
 1421,High-quality Radish Seed
 1422,Special Radish Seed
 1423,Magical Radish Seed
-1424,Mystical Radish Seed
+1424,Mysterious Radish Seed
 1425,Perilla Seed
 1426,High-quality Perilla Seed
 1427,Special Perilla Seed
 1428,Magical Perilla Seed
-1429,Mystical Perilla Seed
+1429,Mysterious Perilla Seed
 1430,Rice Seed
 1431,High-quality Rice Seed
 1432,Special Rice Seed
 1433,Magical Rice Seed
-1434,Mystical Rice Seed
+1434,Mysterious Rice Seed
 1435,Strange and Beautiful Rice Seed
 1436,Truffle Mushroom Crop
 1451,Withered Wheat Seed
@@ -6950,6 +6950,30 @@ Param0,String
 18234,Goblin-Style Bed
 18235,Flagstone Floor
 18236,Pale Green Bud Wall
+18237,Calpheon Marble and Gold Bedside Table
+18238,Calpheon Marble and Gold Drawers
+18239,Calpheon Marble and Gold Wardrobe
+18240,Calpheon Marble and Gold Dining Table
+18241,Calpheon Marble and Gold Table
+18242,Calpheon Marble and Gold Chair
+18243,Calpheon Marble and Gold Sofa
+18244,Calpheon Marble and Gold Bookshelf
+18245,Calpheon Marble and Gold Bed
+18246,Leather Bedside Table
+18247,Leather Drawers
+18248,Leather Wardrobe
+18249,Leather Dining Table
+18250,Leather Table
+18251,Leather Chair
+18252,Leather Sofa
+18253,Leather Bookshelf
+18254,Leather Bed
+18255,Calpheon Stimi Wall
+18256,Neat Paper Wall
+18257,Sels Floor
+18258,Melange Floor
+18259,Arcadian Floor A
+18260,Arcadian Floor B
 18501,Pine Tree
 18502,Pine Tree
 18503,Pine Tree
@@ -8486,9 +8510,9 @@ Param0,String
 21286,Stone Waragon
 21287,Stone Mutant Waragon
 21288,Olun's Power Tower
-21289,Olun's Heart
-21290,Olun's Statue
-21291,Olun's Power Tower
+21289,Cadry Fighter
+21290,Cadry Black Mage
+21291,Cadry Armored Fighter
 21292,Olun's Heart
 21293,Olun's Statue
 21294,Olun's Power Tower
@@ -8857,15 +8881,15 @@ Param0,String
 21657,Rock Golem
 21658,Olun's Golem
 21659,Indomitable Golem
-21660,Boulder Golem
+21660,Cadry Cannon
 21661,Forest Ronaros Scout
 21662,Forest Ronaros Guardian
 21663,Forest Ronaros Catcher
 21664,Forest Ronaros Marksman
 21665,Forest Ronaros Boss
-21666,Rock Golem
-21667,Olun's Golem
-21668,Indomitable Golem
+21666,Cadry Cannon
+21667,Cadry Cannon
+21668,Void Sphere
 21669,Boulder Golem
 21670,Rock Golem
 21671,Greenstone Bull
@@ -8878,7 +8902,7 @@ Param0,String
 21678,Fadus Warrior Chief
 21679,Fadus Warrior Chief
 21680,Fadus Warrior Chief
-21681,Golem's Left Arm
+21681,Cadry Commander
 21682,Turo Scout
 21683,Turo Pike Warrior
 21684,Turo Berserker
@@ -11721,6 +11745,12 @@ Param0,String
 24881,Bamboo Legion Swordsman
 24882,Bamboo Legion Archer
 24883,Songakshi
+24884,Frenzied Dragon God's Energy
+24885,Lakiaro
+24886,Lakiaro
+24887,Lakiaro
+24888,Lakiaro
+24889,Lakiaro
 24890,Young Valtarra
 24891,Young Okiara
 24892,Young Narc
@@ -12001,6 +12031,10 @@ Param0,String
 25188,Cheoyong
 25189,Black Bear
 25190,Boar
+25197,Lakiaro
+25198,Lakiaro
+25199,Lakiaro
+25200,Reanimated Ancient Puturum
 25201,Erekhantus
 25202,Limbo Spire
 25203,Erekhantus
@@ -22109,6 +22143,7 @@ Param0,String
 60209,Summon
 60210,Destination point
 60211,Lava Field
+60213,Summon
 61001,Object
 61002,Object
 61003,Object
@@ -22369,6 +22404,7 @@ Param0,String
 61260,Object
 61261,Object
 61262,The Magnus Entrance - Well
+61263,The Magnus Entrance - Well
 61989,Sequence NPC
 61990,Sequence NPC
 61991,Sequence NPC
@@ -22517,3 +22553,2028 @@ Param0,String
 65050,Black Spirit
 65301,Spellbound Heart
 65302,Protected Area
+9999,Shop
+22388,Shop
+22472,Shop
+22481,Shop
+22799,Shop
+22874,Shop
+24646,Shop
+37094,<null>
+37139,<null>
+37142,<null>
+39901,Old Moon Remote Store
+39902,Old Moon Remote Store
+39903,Old Moon Remote Store
+39904,Old Moon Remote Store
+39905,Old Moon Remote Store
+40001,Shop
+40002,Shop
+40003,Shop
+40004,Shop
+40005,Shop
+40006,Shop
+40007,Shop
+40008,Shop
+40009,Shop
+40010,<null>
+40011,<null>
+40012,Shop
+40013,Shop
+40014,Shop
+40015,Shop
+40016,<null>
+40017,<null>
+40018,Contract Workers
+40019,<null>
+40020,<null>
+40021,<null>
+40022,<null>
+40023,<null>
+40024,<null>
+40025,<null>
+40026,<null>
+40027,Shop
+40028,<null>
+40029,<null>
+40030,<null>
+40031,<null>
+40032,Shop
+40033,Shop
+40034,<null>
+40035,Shop
+40036,<null>
+40039,<null>
+40040,Shop
+40041,<null>
+40042,<null>
+40043,Shop
+40044,Currency Exchange
+40045,Shop
+40046,Shop
+40047,Shop
+40048,<null>
+40063,Shop
+40064,<null>
+40065,Shop
+40066,<null>
+40068,Secret Shop
+40069,<null>
+40070,<null>
+40071,Shop
+40072,Shop
+40073,<null>
+40074,<null>
+40101,<null>
+40128,<null>
+40133,<null>
+40134,<null>
+40135,Employment Contracts
+40136,Employment Contracts
+40137,Employment Contracts
+40138,Employment Contracts
+40139,Employment Contracts
+40141,<null>
+40143,Secret Shop
+40144,<null>
+40145,<null>
+40601,<null>
+40602,<null>
+40603,<null>
+40604,Shop
+40605,Shop
+40606,<null>
+40607,Shop
+40608,Currency Exchange
+40609,<null>
+40610,Contract Workers
+40611,<null>
+40612,Shop
+40613,Currency Exchange
+40614,Shop
+40701,Shop
+40702,Shop
+40703,<null>
+40706,Currency Exchange
+40707,<null>
+40708,Shop
+40709,Shop
+40710,<null>
+40711,Shop
+40712,Shop
+40713,<null>
+40714,Shop
+40715,<null>
+40716,Shop
+40717,Shop
+40718,Contract Workers
+40719,<null>
+40720,Shop
+40721,Shop
+40726,<null>
+40727,<null>
+40732,<null>
+40733,<null>
+40734,<null>
+40736,Shop
+40737,Shop
+40738,Shop
+40742,Shop
+40743,Shop
+40744,<null>
+40771,Shop
+41001,<null>
+41002,Shop
+41003,Shop
+41004,Shop
+41005,<null>
+41006,Shop
+41007,<null>
+41008,Shop
+41009,Shop
+41010,Shop
+41011,Shop
+41012,Shop
+41013,Currency Exchange
+41014,<null>
+41015,<null>
+41016,Shop
+41017,<null>
+41018,<null>
+41019,Shop
+41020,Contract Workers
+41021,<null>
+41022,Shop
+41023,<null>
+41024,Shop
+41025,Shop
+41026,Shop
+41027,Shop
+41028,<null>
+41029,<null>
+41030,<null>
+41031,<null>
+41032,<null>
+41033,<null>
+41034,<null>
+41035,<null>
+41036,<null>
+41037,<null>
+41038,<null>
+41039,Shop
+41040,Shop
+41042,Shop
+41043,Shop
+41044,Shop
+41045,<null>
+41046,<null>
+41047,<null>
+41048,Secret Shop
+41050,<null>
+41051,<null>
+41052,Shop
+41053,Currency Exchange
+41054,Shop
+41055,Shop
+41056,<null>
+41072,Shop
+41073,<null>
+41074,Shop
+41075,Shop
+41076,Shop
+41077,<null>
+41078,Shop
+41079,<null>
+41080,<null>
+41081,Shop
+41082,<null>
+41083,<null>
+41084,<null>
+41085,<null>
+41086,<null>
+41088,Shop
+41089,<null>
+41090,<null>
+41091,<null>
+41092,<null>
+41093,<null>
+41094,<null>
+41095,<null>
+41096,<null>
+41097,<null>
+41098,Shop
+41099,<null>
+41100,<null>
+41101,<null>
+41102,<null>
+41103,Shop
+41104,Shop
+41107,Contract Workers
+41111,Shop
+41116,<null>
+41117,<null>
+41118,Shop
+41119,<null>
+41120,<null>
+41122,Secret Shop
+41123,<null>
+41221,<null>
+41222,<null>
+41223,<null>
+41224,<null>
+41225,<null>
+41229,Employment Contracts
+41230,Employment Contracts
+41231,Employment Contracts
+41232,Employment Contracts
+41233,Employment Contracts
+41238,Shop
+41241,Shop
+41242,Shop
+41243,Shop
+41244,Currency Exchange
+41247,Shop
+41248,Shop
+41249,Currency Exchange
+41250,Shop
+41251,Shop
+41254,Shop
+41284,<null>
+42001,Shop
+42002,Shop
+42003,Shop
+42004,Shop
+42005,<null>
+42006,Shop
+42007,Shop
+42008,Shop
+42009,Contract Workers
+42011,Shop
+42012,Shop
+42013,<null>
+42014,Shop
+42015,Secret Shop
+42016,Shop
+42017,Shop
+42018,<null>
+42020,Shop
+42021,<null>
+42022,Shop
+42023,Shop
+42024,Shop
+42026,<null>
+42027,<null>
+42028,Shop
+42029,Shop
+42030,Shop
+42031,Shop
+42032,Shop
+42033,Shop
+42034,<null>
+42035,<null>
+42036,<null>
+42101,<null>
+42102,<null>
+42103,<null>
+42104,<null>
+42105,<null>
+42106,<null>
+42107,Shop
+42108,<null>
+42109,<null>
+42110,<null>
+42111,<null>
+42112,<null>
+42113,<null>
+42114,<null>
+42115,<null>
+42116,<null>
+42117,<null>
+42118,Shop
+42119,Shop
+42120,<null>
+42121,<null>
+42124,<null>
+42125,<null>
+42132,<null>
+42134,<null>
+42135,Shop
+42137,<null>
+42138,Currency Exchange
+42140,Shop
+42141,<null>
+42151,Shop
+42152,Shop
+42153,Shop
+42161,<null>
+42162,<null>
+42163,<null>
+42166,Shop
+42167,Shop
+42168,Employment Contracts
+42169,Employment Contracts
+42170,Employment Contracts
+42171,Employment Contracts
+42172,Employment Contracts
+42173,<null>
+42174,Employment Contracts
+42175,Employment Contracts
+42176,Secret Shop
+42177,<null>
+42178,<null>
+42201,Shop
+42202,Shop
+42203,Shop
+42204,Shop
+42205,<null>
+42208,Shop
+42209,<null>
+42214,Shop
+42215,Shop
+42216,<null>
+42301,<null>
+42302,Currency Exchange
+42304,Shop
+42306,Contract Workers
+42307,Shop
+42309,<null>
+42310,<null>
+42311,<null>
+42312,Shop
+42313,Shop
+42314,Shop
+42316,Shop
+43001,Shop
+43002,Shop
+43003,Shop
+43004,Shop
+43005,<null>
+43006,Shop
+43007,<null>
+43008,Shop
+43009,<null>
+43010,<null>
+43012,Currency Exchange
+43013,Shop
+43014,<null>
+43015,<null>
+43016,Contract Workers
+43019,<null>
+43020,<null>
+43021,<null>
+43025,Shop
+43026,Shop
+43202,Shop
+43203,Shop
+43204,Shop
+43205,<null>
+43207,<null>
+43208,<null>
+43209,<null>
+43210,<null>
+43214,<null>
+43301,Shop
+43302,Shop
+43303,Shop
+43304,Shop
+43305,<null>
+43309,Contract Workers
+43310,<null>
+43311,<null>
+43312,Shop
+43313,Currency Exchange
+43314,Shop
+43401,Shop
+43402,<null>
+43404,Shop
+43405,Shop
+43407,<null>
+43408,Shop
+43409,<null>
+43410,Shop
+43411,<null>
+43412,Shop
+43413,Shop
+43414,Shop
+43430,<null>
+43431,<null>
+43432,Shop
+43433,<null>
+43434,Shop
+43436,<null>
+43437,<null>
+43438,<null>
+43439,<null>
+43440,<null>
+43441,<null>
+43442,<null>
+43443,Shop
+43446,<null>
+43447,<null>
+43448,<null>
+43449,<null>
+43450,<null>
+43451,Shop
+43452,<null>
+43501,<null>
+43502,<null>
+43503,<null>
+43504,Shop
+43505,<null>
+43506,Shop
+43507,<null>
+43508,Shop
+43510,<null>
+43511,Shop
+43512,Shop
+43513,Shop
+43514,Shop
+44001,<null>
+44002,Shop
+44003,Shop
+44004,Shop
+44005,Shop
+44006,Shop
+44007,Shop
+44008,Shop
+44009,<null>
+44010,<null>
+44011,<null>
+44012,Shop
+44013,Shop
+44014,<null>
+44015,Shop
+44016,<null>
+44017,<null>
+44018,Contract Workers
+44019,Currency Exchange
+44020,<null>
+44021,<null>
+44022,Shop
+44023,<null>
+44024,Shop
+44025,Shop
+44028,<null>
+44029,<null>
+44030,<null>
+44031,<null>
+44032,<null>
+44034,<null>
+44035,<null>
+44036,<null>
+44037,<null>
+44038,Shop
+44040,<null>
+44041,<null>
+44101,Shop
+44102,Shop
+44103,Shop
+44104,Shop
+44106,Shop
+44107,<null>
+44108,Shop
+44109,<null>
+44110,<null>
+44111,<null>
+44112,Shop
+44114,<null>
+44115,Shop
+44117,<null>
+44118,Contract Workers
+44119,Currency Exchange
+44123,<null>
+44124,Shop
+44125,Shop
+44128,Shop
+44135,<null>
+44138,<null>
+44139,<null>
+44140,<null>
+44141,<null>
+44151,<null>
+44152,<null>
+44153,Shop
+44154,<null>
+44155,<null>
+44156,Shop
+44157,<null>
+44158,<null>
+44159,<null>
+44160,<null>
+44161,<null>
+44202,Shop
+44204,Shop
+44205,Shop
+44208,Shop
+44210,<null>
+44212,<null>
+44213,<null>
+44214,Shop
+44215,<null>
+44301,Shop
+44302,Shop
+44303,Shop
+44306,<null>
+44307,Shop
+44308,Shop
+44404,<null>
+44602,Shop
+44604,Shop
+44605,Shop
+44606,Shop
+44607,<null>
+44610,<null>
+44611,<null>
+44612,Shop
+44613,<null>
+44614,Shop
+44615,<null>
+44616,Employment Contracts
+44617,Employment Contracts
+44618,Employment Contracts
+44619,Employment Contracts
+44620,Employment Contracts
+44621,<null>
+44622,<null>
+44623,Design Contracts
+44625,<null>
+44626,<null>
+44627,<null>
+44628,<null>
+44629,<null>
+44630,<null>
+44631,Secret Shop
+44632,Secret Shop
+44633,Shop
+44637,Shop
+44638,Marni's Stone
+44690,Marni's Stone
+44697,Shop
+45001,Shop
+45002,<null>
+45003,Shop
+45004,Shop
+45005,Shop
+45006,<null>
+45007,<null>
+45008,<null>
+45009,<null>
+45011,<null>
+45012,<null>
+45013,<null>
+45014,<null>
+45015,Shop
+45016,Currency Exchange
+45017,Shop
+45018,Shop
+45019,Shop
+45020,Shop
+45021,<null>
+45022,<null>
+45023,<null>
+45024,<null>
+45025,Contract Workers
+45026,Shop
+45027,Shop
+45028,Shop
+45029,Shop
+45030,<null>
+45032,Secret Shop
+45033,Shop
+45034,Shop
+45035,Shop
+45037,Shop
+45038,Shop
+45039,Shop
+45056,<null>
+45057,Old Moon Shop
+45058,Shop
+45102,<null>
+45103,<null>
+45105,Shop
+45106,Shop
+45107,Shop
+45108,Shop
+45109,Contract Workers
+45110,Shop
+45111,Shop
+45112,Shop
+45114,<null>
+45115,Shop
+45116,<null>
+45117,<null>
+45120,<null>
+45121,<null>
+45123,Shop
+45124,Shop
+45125,Shop
+45129,Shop
+45130,Currency Exchange
+45131,Shop
+45132,<null>
+45133,Shop
+45134,Shop
+45135,Contract Workers
+45136,Shop
+45139,<null>
+45141,Shop
+45142,Shop
+45143,Shop
+45144,Shop
+45145,Shop
+45147,Shop
+45148,Shop
+45149,Shop
+45150,Shop
+45151,Shop
+45153,Contract Workers
+45155,<null>
+45156,<null>
+45201,Shop
+45203,Shop
+45204,<null>
+45205,Currency Exchange
+45206,Shop
+45207,<null>
+45208,Shop
+45209,<null>
+45210,Shop
+45211,Shop
+45212,Shop
+45213,Shop
+45214,<null>
+45215,<null>
+45217,Shop
+45218,Shop
+45219,Currency Exchange
+45220,Shop
+45221,Shop
+45222,<null>
+45301,Shop
+45302,Shop
+45303,Shop
+45304,Shop
+45305,Shop
+45306,<null>
+45308,Employment Contracts
+45309,Employment Contracts
+45310,Employment Contracts
+45311,Employment Contracts
+45312,Employment Contracts
+45313,Employment Contracts
+45314,Villa
+45315,<null>
+45316,Currency Exchange
+45321,<null>
+45322,Shop
+45323,<null>
+45327,Knowledge Scroll
+45330,<null>
+45331,Currency Exchange
+45332,Shop
+45333,Shop
+45334,Shop
+45335,Shop
+45336,Shop
+45337,Contract Workers
+45338,Shop
+45340,Shop
+45341,Shop
+45342,<null>
+45343,Shop
+45344,Shop
+45345,Currency Exchange
+45348,<null>
+45349,Shop
+45350,Shop
+45351,Villa
+45354,<null>
+45363,Secret Shop
+45366,<null>
+45367,<null>
+45501,<null>
+45502,Shop
+45503,<null>
+45504,Shop
+45505,Shop
+45508,<null>
+45509,Shop
+45511,<null>
+45512,Currency Exchange
+45513,Shop
+45515,Shop
+45518,<null>
+45519,Shop
+45522,<null>
+45524,<null>
+45526,<null>
+45528,<null>
+45529,Shop
+45530,<null>
+45531,<null>
+45532,<null>
+45540,Shop
+45541,Shop
+45542,Shop
+45543,<null>
+45544,Shop
+45545,Shop
+45546,<null>
+45547,<null>
+45548,Shop
+45549,Shop
+45550,<null>
+45551,<null>
+45552,Contract Workers
+45553,Shop
+45554,Shop
+45555,Currency Exchange
+45556,<null>
+45557,<null>
+45558,<null>
+45559,<null>
+45561,<null>
+45562,Secret Shop
+45563,Shop
+45564,<null>
+45565,<null>
+45567,<null>
+45568,Shop
+45569,<null>
+45570,Shop
+45571,Shop
+45572,Shop
+45574,Shop
+45575,<null>
+45576,<null>
+45577,Shop
+45578,<null>
+45579,<null>
+45580,<null>
+45581,<null>
+45587,<null>
+45592,Shop
+45593,Contract Workers
+45596,Secret Shop
+45600,Old Moon Shop
+46001,<null>
+46002,<null>
+46004,<null>
+46005,Shop
+46006,Shop
+46007,<null>
+46008,Currency Exchange
+46009,<null>
+46010,<null>
+46011,<null>
+46012,<null>
+46013,Shop
+46015,Shop
+46016,<null>
+46017,Mercenary Office
+46019,Shop
+46020,Shop
+46021,<null>
+46022,Shop
+46023,<null>
+46024,Contract Workers
+46025,<null>
+46027,Shop
+46028,<null>
+46029,Shop
+46030,Shop
+46031,Shop
+46032,Shop
+46033,Shop
+46034,<null>
+46040,Shop
+46041,Shop
+46042,Secret Shop
+46047,Shop
+46049,Shop
+46051,Secret Shop
+47001,<null>
+47002,Shop
+47003,Shop
+47004,Shop
+47005,Shop
+47006,Shop
+47007,<null>
+47008,Currency Exchange
+47009,<null>
+47010,Shop
+47011,Shop
+47012,Shop
+47013,<null>
+47014,Shop
+47015,<null>
+47016,Contract Workers
+47017,<null>
+47019,<null>
+47020,<null>
+47021,Shop
+47022,Shop
+47023,Secret Shop
+47024,Secret Shop
+47025,Shop
+47026,Shop
+47027,<null>
+47028,<null>
+47029,Shop
+47030,<null>
+47031,Shop
+47032,Shop
+47034,<null>
+47035,Shop
+47036,<null>
+47037,Shop
+47038,<null>
+47039,<null>
+47040,<null>
+47041,Shop
+47042,<null>
+47043,<null>
+47044,Shop
+47045,Shop
+47046,<null>
+47047,<null>
+47048,<null>
+47049,Shop
+47050,Shop
+47051,<null>
+47052,Shop
+47053,<null>
+47054,Shop
+47055,<null>
+47056,<null>
+47057,<null>
+47058,<null>
+47059,<null>
+47060,<null>
+47061,Shop
+47062,<null>
+47063,<null>
+47064,<null>
+47065,<null>
+47066,<null>
+47067,<null>
+47068,<null>
+47070,Shop
+47071,<null>
+47072,<null>
+47073,<null>
+47074,<null>
+47075,<null>
+47079,<null>
+47080,<null>
+47081,<null>
+47082,<null>
+47083,<null>
+47084,<null>
+47085,<null>
+47086,<null>
+47087,<null>
+47088,Shop
+47089,Shop
+47090,Shop
+47091,<null>
+47092,<null>
+47093,<null>
+47094,<null>
+47095,<null>
+47096,Shop
+47097,Shop
+47098,<null>
+47099,<null>
+47100,Shop
+47101,Shop
+47102,<null>
+47103,<null>
+47104,<null>
+47105,<null>
+47106,<null>
+47107,<null>
+47108,<null>
+47109,<null>
+47110,<null>
+47111,<null>
+47112,<null>
+47113,<null>
+47114,<null>
+47115,<null>
+47116,<null>
+47117,Shop
+47118,<null>
+47119,Shop
+47120,<null>
+47121,<null>
+47122,Shop
+47123,<null>
+47124,Shop
+47125,Shop
+47126,Shop
+47127,<null>
+47128,Shop
+47129,Shop
+47130,Shop
+47131,<null>
+47132,<null>
+47133,<null>
+47134,<null>
+47135,<null>
+47136,<null>
+47137,<null>
+47138,<null>
+47139,Shop
+47140,Shop
+47141,Shop
+47144,<null>
+47145,<null>
+47146,<null>
+47202,<null>
+47204,Shop
+47205,Shop
+47206,<null>
+47207,Shop
+47208,<null>
+47209,Shop
+47210,Shop
+47211,Currency Exchange
+47212,<null>
+47213,Shop
+47214,<null>
+47215,<null>
+47216,<null>
+47217,<null>
+47218,<null>
+47219,Contract Workers
+47220,<null>
+47221,<null>
+47222,Shop
+47223,Shop
+47224,Shop
+47225,<null>
+47226,Shop
+47227,<null>
+47228,Shop
+47229,Shop
+47230,Shop
+47231,Shop
+47232,Shop
+47233,Shop
+47234,Shop
+47235,<null>
+47236,Shop
+47237,<null>
+47238,<null>
+47239,Contract Workers
+47240,<null>
+47241,<null>
+47242,<null>
+47243,Shop
+47244,Shop
+47245,<null>
+47246,Shop
+47247,Shop
+47248,Shop
+47249,<null>
+47250,<null>
+47251,Currency Exchange
+47252,<null>
+47253,Shop
+47254,Shop
+47255,Shop
+47256,<null>
+47257,Shop
+47258,<null>
+47259,<null>
+47260,<null>
+47261,Shop
+47262,Shop
+47263,Shop
+47264,Shop
+47265,Shop
+47266,<null>
+47267,<null>
+47268,Shop
+47269,<null>
+47270,Shop
+47271,Shop
+47272,<null>
+47273,Contract Workers
+47274,Shop
+47275,<null>
+47276,Shop
+47277,<null>
+47278,<null>
+47279,Shop
+47280,Currency Exchange
+47281,<null>
+47282,<null>
+47283,Shop
+47284,<null>
+47285,<null>
+47286,<null>
+47287,<null>
+47288,<null>
+47289,<null>
+47290,<null>
+47291,<null>
+47292,<null>
+47293,<null>
+47294,<null>
+47295,<null>
+47296,<null>
+47297,<null>
+47298,<null>
+47299,<null>
+47300,Shop
+47301,Shop
+47302,Shop
+47303,Shop
+47304,Shop
+47305,Shop
+47306,<null>
+47307,<null>
+47308,<null>
+47309,Shop
+47310,<null>
+47311,<null>
+47312,<null>
+47313,Shop
+47314,<null>
+47315,Shop
+47316,<null>
+47317,<null>
+47318,<null>
+47319,<null>
+47320,<null>
+47321,<null>
+47322,<null>
+47323,Shop
+47324,Shop
+47325,Shop
+47326,<null>
+47327,<null>
+47328,<null>
+47329,<null>
+47330,<null>
+47331,<null>
+47332,Shop
+47333,<null>
+47334,Shop
+47335,Shop
+47336,<null>
+47337,<null>
+47338,<null>
+47339,<null>
+47340,<null>
+47341,<null>
+47342,<null>
+47343,<null>
+47344,Shop
+47345,<null>
+47346,Shop
+47347,Shop
+47348,<null>
+47349,Shop
+47350,<null>
+47351,<null>
+47352,<null>
+47353,Shop
+47354,Shop
+47355,<null>
+47356,Shop
+47357,<null>
+47358,<null>
+47359,<null>
+47360,<null>
+47361,<null>
+47362,<null>
+47363,<null>
+47364,<null>
+47365,<null>
+47366,<null>
+47367,<null>
+47375,<null>
+47376,Shop
+47377,Shop
+47378,Shop
+47379,Shop
+47380,<null>
+47381,Shop
+47382,<null>
+47383,Shop
+47384,<null>
+47385,Currency Exchange
+47386,<null>
+47387,<null>
+47388,Shop
+47389,Shop
+47390,Shop
+47391,Shop
+47392,Shop
+47393,<null>
+47394,<null>
+47395,<null>
+47396,<null>
+47397,Shop
+47398,Shop
+47399,<null>
+47400,Currency Exchange
+47401,Shop
+47402,<null>
+47403,Shop
+47405,<null>
+47408,Shop
+47410,Shop
+47412,Currency Exchange
+47415,Shop
+47416,<null>
+47417,Shop
+47418,Shop
+47420,<null>
+47421,<null>
+47425,Shop
+47426,Shop
+47427,Shop
+47429,<null>
+47430,<null>
+47432,<null>
+47433,<null>
+47434,<null>
+47435,<null>
+47439,<null>
+47440,<null>
+47441,<null>
+47442,<null>
+47446,Secret Shop
+47447,Secret Shop
+47448,Secret Shop
+47449,<null>
+47450,<null>
+47451,<null>
+47452,Shop
+47453,<null>
+47454,<null>
+47455,Shop
+47457,<null>
+47458,Shop
+47459,Shop
+47460,Shop
+47461,<null>
+47462,<null>
+47463,<null>
+47464,<null>
+47465,Shop
+47466,Secret Shop
+47468,<null>
+47469,Shop
+47470,<null>
+47471,Shop
+47482,<null>
+47484,<null>
+47504,<null>
+47510,<null>
+47516,<null>
+47539,<null>
+47540,<null>
+47541,Shop
+47542,<null>
+47543,<null>
+47544,Shop
+47545,Shop
+47546,<null>
+47547,Shop
+47548,Contract Workers
+47549,Shop
+47550,Shop
+47551,Shop
+47552,Shop
+47553,Currency Exchange
+47554,Shop
+47555,<null>
+47556,<null>
+47557,<null>
+47558,Shop
+47559,<null>
+47560,<null>
+47561,<null>
+47562,<null>
+47563,<null>
+47564,Shop
+47565,Shop
+47566,Shop
+47567,Shop
+47568,Shop
+47569,Shop
+47570,Shop
+47571,Shop
+47572,Shop
+47573,<null>
+47586,<null>
+47587,<null>
+47588,Shop
+47589,Shop
+47590,<null>
+47591,<null>
+47592,<null>
+47593,Shop
+47594,Shop
+47595,Shop
+47596,Shop
+47597,Shop
+47598,Shop
+47599,Contract Workers
+47600,<null>
+47601,Shop
+47602,Shop
+47603,Currency Exchange
+47604,<null>
+47605,Shop
+47606,<null>
+47608,Contract Workers
+47609,<null>
+47613,<null>
+47614,<null>
+47616,<null>
+47617,Shop
+47620,Shop
+47621,Shop
+47622,Shop
+47624,<null>
+47625,<null>
+47626,<null>
+47628,<null>
+47629,<null>
+47630,<null>
+47631,<null>
+47632,<null>
+47633,<null>
+47634,<null>
+47635,<null>
+47636,<null>
+47637,<null>
+47638,<null>
+47639,<null>
+47641,<null>
+47642,Currency Exchange
+47644,Shop
+47645,Shop
+47646,Shop
+47647,<null>
+49490,Shop
+49494,Shop
+49495,Shop
+49496,Shop
+49497,Shop
+49498,Shop
+49499,Shop
+49500,Shop
+49501,Shop
+49502,Shop
+49503,Shop
+49504,Shop
+49505,Shop
+49506,Shop
+49507,Shop
+49508,Shop
+49509,Shop
+49510,Shop
+49511,Shop
+49512,Shop
+49513,Shop
+49514,Shop
+49515,Shop
+49516,Shop
+49517,Shop
+49518,Shop
+49524,Shop
+49525,Shop
+49526,Shop
+49527,Shop
+49528,Shop
+49529,Shop
+49531,Old Moon Shop
+49532,Old Moon Shop
+49533,Old Moon Shop
+49534,Old Moon Shop
+49535,Old Moon Shop
+49539,<null>
+49540,<null>
+49541,<null>
+49542,<null>
+49543,<null>
+49544,Shop
+49548,Shop
+49555,Shop
+49556,Shop
+49557,Shop
+49558,Shop
+49572,<null>
+49578,Currency Exchange
+49579,Shop
+49580,<null>
+49581,Shop
+49582,<null>
+49583,<null>
+49584,<null>
+49585,<null>
+49610,Shop
+49617,Shop
+49713,Shop
+49714,Shop
+49715,Shop
+49723,<null>
+49724,<null>
+49727,Terrmian Papu Shop
+49729,Terrmian Otter Shop
+49732,Currency Exchange
+49733,<null>
+49734,Shop
+49741,Shop
+49742,Shop
+49743,Shop
+49744,Shop
+49758,Shop
+49767,Shop
+49773,<null>
+49793,Shop
+50001,<null>
+50002,Shop
+50003,<null>
+50004,<null>
+50005,<null>
+50006,<null>
+50007,<null>
+50008,<null>
+50009,<null>
+50010,<null>
+50013,<null>
+50014,<null>
+50201,<null>
+50202,<null>
+50203,Shop
+50204,<null>
+50205,Shop
+50206,Shop
+50207,Shop
+50208,Shop
+50209,<null>
+50211,<null>
+50212,Shop
+50213,Shop
+50402,<null>
+50403,<null>
+50404,<null>
+50405,<null>
+50406,<null>
+50411,<null>
+50413,<null>
+50414,<null>
+50415,<null>
+50416,<null>
+50418,<null>
+50419,<null>
+50420,<null>
+50421,<null>
+50422,<null>
+50423,<null>
+50424,<null>
+50426,<null>
+50427,<null>
+50428,<null>
+50429,<null>
+50430,<null>
+50431,<null>
+50432,<null>
+50433,<null>
+50434,<null>
+50435,<null>
+50436,<null>
+50437,<null>
+50438,<null>
+50439,<null>
+50440,<null>
+50441,<null>
+50442,<null>
+50443,<null>
+50444,<null>
+50445,<null>
+50446,<null>
+50447,<null>
+50448,<null>
+50449,<null>
+50450,<null>
+50451,<null>
+50454,<null>
+50455,<null>
+50456,<null>
+50457,<null>
+50458,<null>
+50459,<null>
+50460,<null>
+50461,<null>
+50462,<null>
+50464,<null>
+50465,<null>
+50466,<null>
+50467,<null>
+50468,<null>
+50469,<null>
+50470,<null>
+50471,<null>
+50475,<null>
+50476,<null>
+50477,<null>
+50478,<null>
+50479,<null>
+50480,<null>
+50481,<null>
+50482,<null>
+50483,<null>
+50484,<null>
+50487,<null>
+50488,<null>
+50489,<null>
+50490,<null>
+50491,<null>
+50492,<null>
+50493,<null>
+50494,<null>
+50495,<null>
+50496,<null>
+50497,<null>
+50498,<null>
+50499,<null>
+50500,<null>
+50501,<null>
+50502,<null>
+50503,<null>
+50504,<null>
+50505,<null>
+50506,<null>
+50507,<null>
+50508,<null>
+50509,<null>
+50510,<null>
+50511,<null>
+50512,<null>
+50513,<null>
+50514,<null>
+50515,<null>
+50516,<null>
+50517,<null>
+50518,<null>
+50519,<null>
+50520,<null>
+50521,<null>
+50522,<null>
+50523,<null>
+50524,<null>
+50525,<null>
+50526,<null>
+50527,<null>
+50528,<null>
+50529,<null>
+50530,<null>
+50531,<null>
+50532,<null>
+50533,<null>
+50534,<null>
+50535,<null>
+50536,<null>
+50537,<null>
+50538,<null>
+50539,<null>
+50540,<null>
+50541,<null>
+50542,<null>
+50543,<null>
+50544,<null>
+50545,<null>
+50546,<null>
+50547,<null>
+50548,<null>
+50549,Shop
+50550,<null>
+50551,<null>
+50553,<null>
+50554,<null>
+50556,<null>
+50557,<null>
+50558,<null>
+50559,<null>
+50560,<null>
+50561,<null>
+50562,<null>
+50563,Shop
+50564,<null>
+50565,<null>
+50566,<null>
+50568,Shop
+50569,<null>
+50570,<null>
+50571,<null>
+50572,<null>
+50573,<null>
+50574,<null>
+50575,<null>
+50576,<null>
+50577,<null>
+50578,<null>
+50579,<null>
+50580,<null>
+50581,<null>
+50582,<null>
+50583,<null>
+50584,<null>
+50586,<null>
+50587,<null>
+50588,<null>
+50589,<null>
+50590,<null>
+50591,<null>
+50592,<null>
+50593,<null>
+50594,<null>
+50595,<null>
+50596,<null>
+50597,<null>
+50598,<null>
+50599,<null>
+50600,<null>
+50602,<null>
+50603,<null>
+50604,<null>
+50607,<null>
+50608,<null>
+50609,<null>
+50612,<null>
+50613,<null>
+50615,<null>
+50616,<null>
+50617,<null>
+50618,<null>
+50619,<null>
+50620,<null>
+50621,<null>
+50622,<null>
+50623,<null>
+50624,<null>
+50625,<null>
+50626,<null>
+50627,<null>
+50629,<null>
+50630,<null>
+50632,<null>
+50633,<null>
+50637,<null>
+50638,<null>
+50639,<null>
+50640,Shop
+50641,<null>
+50642,<null>
+50643,<null>
+50644,<null>
+50645,<null>
+50646,<null>
+50647,<null>
+50648,<null>
+50649,<null>
+50650,<null>
+50651,<null>
+50652,<null>
+50653,<null>
+50654,<null>
+50655,<null>
+50656,<null>
+50659,<null>
+50660,<null>
+50661,<null>
+50662,<null>
+50663,<null>
+50664,<null>
+50665,<null>
+50666,<null>
+50667,<null>
+50670,<null>
+50671,<null>
+50672,<null>
+50673,<null>
+50700,<null>
+50701,<null>
+50702,<null>
+50703,<null>
+50704,<null>
+50705,<null>
+50706,<null>
+50707,<null>
+50708,<null>
+50709,<null>
+50710,Shop
+50711,<null>
+50712,<null>
+50713,<null>
+50714,<null>
+50715,<null>
+50716,<null>
+50717,<null>
+50718,<null>
+50719,<null>
+50720,<null>
+50721,<null>
+50722,<null>
+50723,<null>
+50724,<null>
+50725,<null>
+50726,<null>
+50727,<null>
+50728,<null>
+50729,<null>
+50730,<null>
+50731,<null>
+50732,<null>
+50733,<null>
+50734,Shop
+50735,<null>
+50736,<null>
+50737,<null>
+50738,<null>
+50740,<null>
+50741,<null>
+50742,<null>
+50743,<null>
+50744,<null>
+50745,<null>
+50746,<null>
+50747,<null>
+50748,Old Moon Shop
+50749,Shop
+50751,Shop
+50752,Shop
+50753,Shop
+50754,Shop
+50755,Shop
+50756,Shop
+50757,Shop
+50760,<null>
+50761,<null>
+50762,<null>
+50763,<null>
+50764,<null>
+50765,<null>
+50767,<null>
+50768,<null>
+50769,<null>
+50770,<null>
+50771,<null>
+50772,<null>
+50773,<null>
+50774,<null>
+50775,<null>
+50776,<null>
+50777,<null>
+50778,<null>
+50779,<null>
+50780,<null>
+50781,<null>
+50782,<null>
+50783,<null>
+50784,<null>
+50785,<null>
+50786,<null>
+50787,<null>
+50788,<null>
+50789,<null>
+50790,<null>
+50791,<null>
+50792,<null>
+50793,<null>
+50794,<null>
+50795,<null>
+50796,<null>
+50797,<null>
+50798,<null>
+50799,<null>
+50800,<null>
+50807,<null>
+50810,Shop
+50811,<null>
+50812,<null>
+50813,<null>
+50814,<null>
+50815,<null>
+50816,<null>
+50817,<null>
+50818,<null>
+50819,<null>
+50821,Crow Shop
+50822,<null>
+50823,<null>
+50824,<null>
+50825,<null>
+50826,<null>
+50827,<null>
+50831,Crow Shop
+50834,Shop
+50837,Shop
+50838,Shop
+50839,Crow Shop
+50840,Shop
+50841,Contract Workers
+50842,Shop
+50843,<null>
+50844,<null>
+50845,Shop
+50847,Shop
+50848,Shop
+50852,<null>
+50853,<null>
+50854,<null>
+50855,<null>
+50856,Shop
+50857,Shop
+50858,Shop
+50862,<null>
+50865,Currency Exchange
+50866,Shop
+50869,Shop
+50870,Shop
+50871,Shop
+50872,Shop
+50873,<null>
+50874,<null>
+50875,<null>
+50876,Shop
+50877,Shop
+50878,Shop
+50879,<null>
+50880,<null>
+50881,<null>
+50882,<null>
+50883,<null>
+50884,Shop
+50885,<null>
+50886,Shop
+50887,Shop
+50893,<null>
+50894,<null>
+50895,<null>
+50898,<null>
+50899,<null>
+50902,Shop
+50903,Shop
+50906,Shop
+50907,Shop
+50908,<null>
+50909,Shop
+50910,<null>
+50911,Shop
+50914,Shop
+50915,Shop
+50917,Shop
+50918,Shop
+50919,<null>
+50920,Shop
+50921,Shop
+50923,<null>
+50926,Shop
+50927,<null>
+50928,Shop
+50929,<null>
+50930,Shop
+50932,Shop
+50934,<null>
+50935,Shop
+50936,Shop
+50937,Shop
+50940,Shop
+50941,<null>
+50943,Shop
+50946,Shop
+50949,<null>
+50951,Shop
+50952,Shop
+50957,<null>
+50959,<null>
+50960,Shop
+50962,Shop
+50963,<null>
+50965,Shop
+50969,Shop
+50972,Shop
+50973,Shop
+50974,Secret Shop
+50975,Marni Shop
+50978,Secret Shop
+50979,<null>
+50980,War Shop (Tier 5)
+50981,Shop
+50982,Shop
+50983,Shop
+50984,Shop
+50985,Shop
+50986,Shop
+50988,<null>
+50989,<null>
+50993,Shop
+50994,Shop
+57060,<null>
+57141,<null>
+57157,Cron Gift Shop
+57179,Shop
+58045,Shop
+58046,<null>
+58116,Shop
+58901,<null>
+58902,<null>
+58903,<null>
+58904,<null>
+58905,<null>
+58906,<null>
+58907,<null>
+58908,<null>
+58909,<null>
+58910,<null>
+58911,<null>
+58912,<null>
+58913,<null>
+58914,<null>
+58915,<null>
+58916,<null>
+58917,<null>
+58918,<null>
+58919,<null>
+58920,<null>
+58921,<null>
+58922,<null>
+58923,<null>
+58924,<null>
+58925,<null>
+58926,<null>
+58927,<null>
+58928,<null>
+58929,<null>
+58930,<null>
+58931,<null>
+58932,<null>
+58933,<null>
+58934,<null>
+58935,<null>
+58936,<null>
+58937,<null>
+58938,<null>
+58939,<null>
+58940,<null>
+58941,<null>
+58942,<null>
+58943,<null>
+58945,<null>
+58946,<null>
+58947,<null>
+58948,<null>
+58949,<null>
+58950,<null>
+58951,<null>
+58952,<null>
+58953,<null>
+58954,<null>
+58955,<null>
+58956,<null>
+58957,<null>
+58958,<null>
+58959,<null>
+58960,<null>
+58961,<null>
+58962,<null>
+58963,<null>
+58964,<null>
+58966,<null>
+58967,<null>
+58968,<null>
+58969,<null>
+58970,<null>
+58971,<null>
+58972,<null>
+59001,<null>
+59005,<null>
+59007,<null>
+59025,<null>
+59027,Secret Shop
+59028,Secret Shop
+59029,Secret Shop
+59030,Secret Shop
+59031,Secret Shop
+59032,Secret Shop
+59033,Secret Shop
+59039,<null>
+59053,<null>
+59054,<null>
+59055,<null>
+59056,<null>
+59057,<null>
+59058,<null>
+59059,<null>
+59060,<null>
+59061,<null>
+59062,<null>
+59063,<null>
+59064,<null>
+59065,<null>
+59066,<null>
+59067,<null>
+59068,<null>
+59069,<null>
+59070,<null>
+59071,<null>
+59072,<null>
+59101,<null>
+59110,Secret Shop
+59137,<null>
+59138,<null>
+59139,<null>
+59140,<null>
+59141,<null>
+59142,<null>
+59143,<null>
+59144,<null>
+59145,<null>
+59146,<null>
+59164,<null>
+59199,<null>
+59222,<null>
+59227,<null>
+59228,<null>
+59231,Shop
+59246,Shop
+59247,Shop
+59248,Shop
+59249,Shop
+59250,Shop
+59251,Shop
+59252,Shop
+59253,Shop
+59254,Shop
+59263,Shop
+59265,Shop
+59266,Shop
+59267,Shop
+59276,<null>
+59279,Shop
+59293,Shop
+59305,Shop
+59306,Shop
+59309,Shop
+59310,Shop
+59411,Shop
+59437,War Shop (Tier 1)
+59446,War Shop (Tier 2)
+59447,War Shop (Tier 3)
+59448,War Shop (Tier 4)
+59449,<null>
+59521,Apply for Intl. Friendly Match
+59562,<null>
+59591,Shop
+59605,Shop
+59606,Shop
+59627,Shop
+59628,Shop
+59629,Shop
+59630,Shop
+59663,Aid Supplies
+59689,<null>
+59716,Old Moon Shop
+59717,Shop
+59718,Shop
+59726,<null>
+59739,<null>
+59760,<null>
+59773,Shop
+59962,Shop
+59963,Shop
+59964,Shop
+59996,Shop
+60006,<null>
+60007,<null>
+61113,Shop
+51,Longsword
+52,Longsword
+53,Longsword
+54,Longsword
+55,Longsword
+56,Longsword
+57,Longsword
+58,Longsword
+59,Longsword
+60,Longsword
+61,Longsword
+62,Longsword
+63,Longsword
+64,Longsword
+65,Longsword
+66,Longsword
+69,Longsword
+71,Longsword
+81,Longsword
+87,Longsword

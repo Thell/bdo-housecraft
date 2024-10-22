@@ -11,20 +11,19 @@ import multiprocessing as mp
 import os.path
 
 from houseinfo import get_region_buildings
-from optimize_key_selection import subset_selection, subset_selection_par,\
-      write_subset_selection_mps
+from optimize_key_selection import subset_selection, subset_selection_par, write_subset_selection_mps
 
-OptimizerResult = namedtuple("Solution", 'cost storage lodging items states')
-Solution = namedtuple("Solution", 'lodging storage cost items states')
-RegionInfo = namedtuple("RegionInfo",
-                        'buildings, items, item_reqs, weights, state_1_values, state_2_values')
+OptimizerResult = namedtuple("Solution", "cost storage lodging items states")
+Solution = namedtuple("Solution", "lodging storage cost items states")
+RegionInfo = namedtuple(
+    "RegionInfo", "buildings, items, item_reqs, weights, state_1_values, state_2_values"
+)
 
 # pylint: disable=invalid-name
 
 
 def dominates(s1: Solution, s2: Solution):
-    """ Returns true if the first solution dominates the second solution.
-    """
+    """Returns true if the first solution dominates the second solution."""
     return s1.cost <= s2.cost and s1.storage >= s2.storage and s1.lodging >= s2.lodging
 
 
@@ -32,20 +31,18 @@ def dominates(s1: Solution, s2: Solution):
 
 
 def have_validation_files(region_name):
-    """ returns true if validation files exist
-    """
+    """returns true if validation files exist"""
     region_name = region_name.replace(" ", "_")
     if region_name in ["Altinova", "Heidel", "Valencia_City", "Calpheon_City"]:
         print(f"./data/housecraft/validation/HiGHS/{region_name}.json")
         return os.path.exists(f"./data/housecraft/validation/HiGHS/{region_name}.json")
     return os.path.exists(
-        f"./data/housecraft/validation/highs/{region_name}.json") and os.path.exists(
-            f"./data/housecraft/validation/popjumppush/{region_name}.json")
+        f"./data/housecraft/validation/highs/{region_name}.json"
+    ) and os.path.exists(f"./data/housecraft/validation/popjumppush/{region_name}.json")
 
 
 def get_highs_solutions(region_name):
-    """ read the HiGHS solutions json
-    """
+    """read the HiGHS solutions json"""
     region_name = region_name.replace(" ", "_")
     with open(f"./data/housecraft/validation/HiGHS/{region_name}.json", encoding="UTF-8") as file:
         solutions = json.load(file)
@@ -53,33 +50,37 @@ def get_highs_solutions(region_name):
 
 
 def get_popjumppush_solutions(region_name):
-    """ read the popjumppush exact solutions
-    """
+    """read the popjumppush exact solutions"""
     region_name = region_name.replace(" ", "_")
-    with open(f"./data/housecraft/validation/popjumppush/{region_name}.json",
-              encoding="UTF-8") as file:
+    with open(
+        f"./data/housecraft/validation/popjumppush/{region_name}.json", encoding="UTF-8"
+    ) as file:
         exact_solutions = json.load(file)
     return exact_solutions
 
 
 def get_region_info(region_name):
-    """ return the region's buildings
-    """
+    """return the region's buildings"""
     return RegionInfo(*get_region_buildings(region_name))
 
 
 def optimize(region: RegionInfo, lodging, storage):
-    """ returns the optimal solution for the given lodging, storage combination
-    """
-    solution = subset_selection(region.items, region.item_reqs, region.weights,
-                                region.state_1_values, region.state_2_values, storage, lodging)
+    """returns the optimal solution for the given lodging, storage combination"""
+    solution = subset_selection(
+        region.items,
+        region.item_reqs,
+        region.weights,
+        region.state_1_values,
+        region.state_2_values,
+        storage,
+        lodging,
+    )
     result = OptimizerResult(*solution)
     return Solution(result.lodging, result.storage, result.cost, result.items, result.states)
 
 
 def optimize_all(args, region_info: RegionInfo):
-    """ return all optimal solutions for all lodging, storage pairs
-    """
+    """return all optimal solutions for all lodging, storage pairs"""
     max_storage = sum(region_info.state_1_values)
     max_lodging = sum(region_info.state_2_values)
     time_log(f"Generating for {args.region} with max lodging and storage of \
@@ -105,8 +106,7 @@ def optimize_all(args, region_info: RegionInfo):
 
 
 def optimize_all_state_pairs(region_info: RegionInfo):
-    """ optimize all lodging, storage pairs for the region
-    """
+    """optimize all lodging, storage pairs for the region"""
     solutions = []
     max_storage = sum(region_info.state_1_values)
     max_lodging = sum(region_info.state_2_values)
@@ -125,8 +125,7 @@ def optimize_all_state_pairs(region_info: RegionInfo):
 
 
 def optimize_all_par(args, region_info: RegionInfo):
-    """ optimize all lodging, storage pairs for the region using multiple workers
-    """
+    """optimize all lodging, storage pairs for the region using multiple workers"""
     # Use a single thread per lodging axis
     worker_args = optimizer_par_worker_args(args, region_info)
     solutions = []
@@ -141,35 +140,36 @@ def optimize_all_par(args, region_info: RegionInfo):
 
 
 def optimize_all_par_worker(worker_args):
-    """ optimize the lodging, storage pairs given in worker_args
-    """
+    """optimize the lodging, storage pairs given in worker_args"""
     region = worker_args["region_info"]
-    subset_solutions = subset_selection_par(region.items, region.item_reqs, region.weights,
-                                            region.state_1_values, region.state_2_values,
-                                            *worker_args["params"])
+    subset_solutions = subset_selection_par(
+        region.items,
+        region.item_reqs,
+        region.weights,
+        region.state_1_values,
+        region.state_2_values,
+        *worker_args["params"],
+    )
     solutions = []
     for solution in subset_solutions:
         result = OptimizerResult(*solution)
-        solution = Solution(result.lodging, result.storage, result.cost, result.items,
-                            result.states)
+        solution = Solution(result.lodging, result.storage, result.cost, result.items, result.states)
         solutions.append(solution)
     return solutions
 
 
 def optimizer_par_worker_args(_args, region_info):
-    """ return a list of arguments, region and storage, lodging pairs, for each worker.
-    """
+    """return a list of arguments, region and storage, lodging pairs, for each worker."""
     state_1_sum_ub = sum(region_info.state_1_values) + 1
     state_2_sum_ub = sum(region_info.state_2_values) + 1
-    return [{
-        "region_info": copy.deepcopy(region_info),
-        "params": (state_1_sum_ub, lb)
-    } for lb in range(state_2_sum_ub)]
+    return [
+        {"region_info": copy.deepcopy(region_info), "params": (state_1_sum_ub, lb)}
+        for lb in range(state_2_sum_ub)
+    ]
 
 
 def retain_dominating(solutions: list[Solution]):
-    """ returns the dominating solutions
-    """
+    """returns the dominating solutions"""
     n = len(solutions)
     dominated_indices = set()
     for i in range(n):
@@ -185,16 +185,15 @@ def retain_dominating(solutions: list[Solution]):
 
 
 def time_log(msg):
-    """ prints output with a timestamp
-    """
+    """prints output with a timestamp"""
     print(f"{datetime.now().isoformat(sep=' ', timespec='milliseconds')}: {msg}")
 
 
 def validate_solutions(args, cbc_solutions):
-    """ Validate optimizer solutions.
-        Passing conditions:
-          - CBC == popjumppush == HiGHS for all regions < Heidel
-          - CBC == HiGHS for all regions >= Heidel
+    """Validate optimizer solutions.
+    Passing conditions:
+      - CBC == popjumppush == HiGHS for all regions < Heidel
+      - CBC == HiGHS for all regions >= Heidel
     """
     cbc = dict.fromkeys([tuple(s[0:3]) for s in cbc_solutions])
     highs = dict.fromkeys([tuple(s.values())[0:3] for s in get_highs_solutions(args.region)])
@@ -202,7 +201,8 @@ def validate_solutions(args, cbc_solutions):
     time_log(f"Validating {args.region}...")
     if args.region not in ["Altinova", "Heidel", "Valencia City", "Calpheon City"]:
         popjumppush = dict.fromkeys(
-            [tuple(s.values())[0:3] for s in get_popjumppush_solutions(args.region)])
+            [tuple(s.values())[0:3] for s in get_popjumppush_solutions(args.region)]
+        )
 
         print("  CBC == popjumppush:", end=" ")
         if cbc == popjumppush:
@@ -249,40 +249,40 @@ def validate_solutions(args, cbc_solutions):
 
 
 def write_model(region: RegionInfo, _lodging, _storage):
-    """ writes out the model to an mps
-    """
-    write_subset_selection_mps(region.items, region.item_reqs, region.weights,
-                               region.state_1_values, region.state_2_values)
+    """writes out the model to an mps"""
+    write_subset_selection_mps(
+        region.items, region.item_reqs, region.weights, region.state_1_values, region.state_2_values
+    )
 
 
 def main(args):
-    """ Entry point
-    """
-    # yapf: disable
-    regions = ["Velia", "Glish", "Keplan", "Trent", "Iliya Island", "Tarif", "Shakatu",
-               "Sand Grain Bazaar", "Ancado Inner Harbor", "Arehaza", "Muiquun", "Old Wisdom Tree",
-               "Grána", "Duvencrune", "O'draxxia", "Eilton", "Olvia", "Port Epheria", "Altinova",
-               "Heidel", "Valencia City", "Calpheon City", "Dalbeol Village",
-                "Nampo's Moodle Village", "Nopsae's Byeot County"]
-    # yapf: enable
+    """Entry point"""
 
     if args.region == "ALL":
-        for region in regions:
+        with open("./data/houseinfo/" + "regioninfo.json", "r") as f:
+            regions = json.load(f)
+
+        for region in regions.values():
+            args.region = region
+            region_info = get_region_info(region)
+            if len(region_info.buildings) == 0:
+                print(f"No buildings for {region}...", region_info.buildings)
+                continue
             if args.validate and not have_validation_files(region):
                 print(f"Validation files for {region} must be generated/optimized.")
                 continue
-            args.region = region
-            region_info = get_region_info(args.region)
             if args.write:
                 write_model(region_info, args.lodging, args.storage)
             elif args.all:
                 optimize_all(args, region_info)
             else:
                 solution = optimize(region_info, args.lodging, args.storage)
-                print(f"cost: {solution.cost}, lodging: {solution.lodging}, \
+                print(
+                    f"cost: {solution.cost}, lodging: {solution.lodging}, \
                           storage: {solution.storage}\n"
-                      f"items: {solution.items}\n"
-                      f"states: {solution.states}\n")
+                    f"items: {solution.items}\n"
+                    f"states: {solution.states}\n"
+                )
     else:
         region_info = get_region_info(args.region)
         if args.write:
@@ -294,29 +294,35 @@ def main(args):
             print(
                 f"cost: {solution.cost}, lodging: {solution.lodging}, storage: {solution.storage}\n"
                 f"items: {solution.items}\n"
-                f"states: {solution.states}\n")
+                f"states: {solution.states}\n"
+            )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-r", "--region", help="warehouse region")
     parser.add_argument("-l", "--lodging", help="desired lodging", type=int)
     parser.add_argument("-s", "--storage", help="desired storage", type=int)
-    parser.add_argument("-A",
-                        "--all",
-                        help="generate all dominant (ignores --lodging/--storage)",
-                        action=argparse.BooleanOptionalAction)
-    parser.add_argument("-q",
-                        "--quiet",
-                        help="suppress listing",
-                        action=argparse.BooleanOptionalAction)
+    parser.add_argument(
+        "-A",
+        "--all",
+        help="generate all dominant (ignores --lodging/--storage)",
+        action=argparse.BooleanOptionalAction,
+    )
+    parser.add_argument(
+        "-q", "--quiet", help="suppress listing", action=argparse.BooleanOptionalAction
+    )
     parser.add_argument("-j", "--jobs", help="number of worker jobs to use", type=int, default=0)
-    parser.add_argument("-V",
-                        "--validate",
-                        help="validate against exact (only has meaning with --All)",
-                        action=argparse.BooleanOptionalAction)
-    parser.add_argument("-W",
-                        "--write",
-                        help="write model to mps file (ignores all other arguments)",
-                        action=argparse.BooleanOptionalAction)
+    parser.add_argument(
+        "-V",
+        "--validate",
+        help="validate against exact (only has meaning with --All)",
+        action=argparse.BooleanOptionalAction,
+    )
+    parser.add_argument(
+        "-W",
+        "--write",
+        help="write model to mps file (ignores all other arguments)",
+        action=argparse.BooleanOptionalAction,
+    )
     main(parser.parse_args())

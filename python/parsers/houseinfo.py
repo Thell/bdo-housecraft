@@ -34,17 +34,6 @@ class Houseinfo(KaitaiStruct):
             self.house_level = self._io.read_u4le()
 
 
-    class NeedHouseKeyType(KaitaiStruct):
-        def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
-            self._parent = _parent
-            self._root = _root if _root else self
-            self._read()
-
-        def _read(self):
-            self.need_house_key = self._io.read_u2le()
-
-
     class HouseinfoType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
@@ -54,20 +43,17 @@ class Houseinfo(KaitaiStruct):
 
         def _read(self):
             self.need_explore_point = self._io.read_u2le()
-            self.affiliated_warehouse = self._io.read_u2le()
+            self.affiliated_town = self._io.read_u2le()
             self.parent_node = self._io.read_u2le()
             self.unk1 = self._io.read_u2le()
             self.character_key = self._io.read_u2le()
-            self.unk2 = []
-            for i in range(2):
-                self.unk2.append(self._io.read_u1())
-
+            self.unk2 = self._io.read_u2le()
             self.house_group = self._io.read_u4le()
             self.house_floor = self._io.read_u4le()
-            self.has_need_house_key = self._io.read_u4le()
-            self.unk3 = self._io.read_u4le()
-            if self.has_need_house_key == 1:
-                self.need_house_key = Houseinfo.NeedHouseKeyType(self._io, self, self._root)
+            self.len_need_house_key = self._io.read_u8le()
+            self.need_house_key = []
+            for i in range(self.len_need_house_key):
+                self.need_house_key.append(self._io.read_u2le())
 
             self.num_craft_list_items = self._io.read_u4le()
             self.craft_list = []
@@ -75,3 +61,6 @@ class Houseinfo(KaitaiStruct):
                 self.craft_list.append(Houseinfo.CraftListType(self._io, self, self._root))
 
             self.pad1 = self._io.read_u1()
+
+
+
