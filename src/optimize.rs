@@ -7,6 +7,7 @@ use std::ptr::null;
 
 use anyhow::{Ok, Result};
 use highs_sys::*;
+use indexmap::IndexMap;
 use rayon::prelude::*;
 use regex::Regex;
 use serde::Serialize;
@@ -339,12 +340,14 @@ impl Drop for SubsetModel {
 
 pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
     info!("preparing...");
+
     let region_name = cli.region.clone().unwrap();
     let all_region_buildings: RegionBuildingMap = if region_name == *"ALL" {
         parse_houseinfo_data()?
     } else {
         get_region_buildings(Some(region_name))?
     };
+    let mut all_chains_by_region: IndexMap<usize, IndexMap<usize, Vec<Chain>>> = IndexMap::new();
 
     for (region_name, region_buildings) in all_region_buildings.iter() {
         cli.region = Some(region_name.to_owned());
@@ -367,9 +370,28 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
         info!("retaining...");
         retain_dominating(&mut chains);
         info!("Retained chain count: {:?}", chains.len());
-        info!("writing...");
+
+        info!("writing region-specific chains...");
+
         write_chains(cli, &region, &mut chains)?;
+
+        let region_id = chains[0].indices[0];
+        for chain in chains {
+            let lodging = chain.worker_count;
+            all_chains_by_region
+                .entry(region_id)
+                .or_insert_with(IndexMap::new)
+                .entry(lodging)
+                .or_insert_with(Vec::new)
+                .push(chain);
+        }
     }
+
+    // Write the aggregated chains to all_lodging_storage.json
+    info!("writing all regions' chains...");
+    all_chains_by_region.sort_keys();
+    write_all_chains(cli, &all_chains_by_region)?;
+
     Ok(())
 }
 
@@ -505,6 +527,27 @@ fn write_chains(cli: &Cli, region: &RegionNodes, chains: &mut Vec<Chain>) -> Res
         println!(
             "Result: {} 'best of best' scored storage/lodging chains written to {}.",
             chains.len(),
+            path.to_str().unwrap()
+        );
+    }
+
+    Ok(())
+}
+
+fn write_all_chains(
+    cli: &Cli,
+    all_chains_by_region: &IndexMap<usize, IndexMap<usize, Vec<Chain>>>,
+) -> Result<()> {
+    let path = PathBuf::from("./data/housecraft/all_lodging_storage.json");
+    fs::create_dir_all(path.parent().unwrap())?;
+    let mut output = File::create(path.clone())?;
+
+    let json = to_string_pretty(&all_chains_by_region)?;
+    output.write_all(json.as_bytes())?;
+
+    if !cli.verbose.is_silent() {
+        println!(
+            "Result: All regions' chains written to {}.",
             path.to_str().unwrap()
         );
     }

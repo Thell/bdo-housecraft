@@ -329,7 +329,6 @@ def generate_houseinfo_data():
         if house.character_key in mansion_character_keys:
             continue
 
-        # need_house_key = house.need_house_key.need_house_key if house.has_need_house_key == 1 else 0
         craft_list = [
             {"house_level": craft.house_level, "item_craft_index": craft.item_craft_index}
             for craft in house.craft_list
@@ -366,6 +365,46 @@ def generate_regioninfo_data(strings_filestem):
     return dict(natsorted(regioninfo.items()))
 
 
+def do_housecraft_optimize():
+    """cargo build and then optimize"""
+    from subprocess import run
+
+    args = ["cargo", "build", "--release"]
+    try:
+        run(args)
+    except Exception as e:
+        print("failed cargo build", e)
+
+    args = ["target/debug/housecraft", "--optimize", "-R", "ALL", "--limit-warehouse", "184"]
+    try:
+        run(args)
+    except Exception as e:
+        print("failed optimization", e)
+
+
+def format_all_lodging_storage():
+    from compact_json import Formatter
+    import json
+    import re
+
+    path = data_path().parent / "housecraft" / "all_lodging_storage.json"
+    with open(path, "r") as f:
+        json_data = json.load(f)
+
+    formatter = Formatter(
+        ensure_ascii=False,
+        omit_trailing_whitespace=True,
+        always_expand_depth=1,
+        max_inline_length=99999,
+    )
+    json_data = formatter.serialize(json_data)
+    json_data = re.sub(r"\s+,", ",", json_data)
+    json_data = re.sub(r"\s+}", "}", json_data)
+    json_data = re.sub(r"\s+\]", "]", json_data)
+    with open(path, "w") as f:
+        f.write(json_data)
+
+
 def main(args):
     if args.update:
         remove_files(parser_path())
@@ -379,6 +418,9 @@ def main(args):
     print_short_output(houseinfo)
     write_json(regioninfo, data_path() / "regioninfo.json", format=True, camelize_keys=False)
     write_json(houseinfo, data_path() / "houseinfo.json", format=True, camelize_keys=False)
+
+    do_housecraft_optimize()
+    format_all_lodging_storage()
 
 
 atexit.register(close_all_file_handles)

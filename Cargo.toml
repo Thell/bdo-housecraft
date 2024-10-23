@@ -22,6 +22,7 @@ highs-sys = { version = "1.5.0", git = "https://github.com/Thell/highs-sys.git",
     "highs_release",
     "ninja",
 ] }
+indexmap = { version = "2.6.0", features = ["serde"] }
 itertools = "0.10.5"
 lazy_static = "1.4.0"
 libz-sys = "1.1.8"
