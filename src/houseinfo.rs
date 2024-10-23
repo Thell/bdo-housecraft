@@ -80,8 +80,6 @@ impl Building {
         }
     }
 }
-#[derive(Deserialize, Debug)]
-pub(crate) struct HouseInfos(HashMap<String, HouseInfo>);
 
 #[allow(unused)]
 #[derive(Deserialize, Debug)]

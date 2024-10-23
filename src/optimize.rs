@@ -382,9 +382,9 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
                 let lodging = chain.worker_count;
                 all_chains_by_region
                     .entry(region_id)
-                    .or_insert_with(IndexMap::new)
+                    .or_default()
                     .entry(lodging)
-                    .or_insert_with(Vec::new)
+                    .or_default()
                     .push(chain);
             }
         }
