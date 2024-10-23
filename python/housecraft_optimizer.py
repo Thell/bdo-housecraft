@@ -223,7 +223,8 @@ def validate_solutions(args, cbc_solutions):
             print("passed")
         else:
             highs = set(highs.keys())
-            popjumppush = set(popjumppush.keys())
+            if isinstance(popjumppush, dict):
+                popjumppush = set(popjumppush.keys())
             diff1 = list(highs - popjumppush)
             diff1 = sorted(diff1, key=lambda s: (s[0], s[1]))
             diff2 = list(popjumppush - highs)
