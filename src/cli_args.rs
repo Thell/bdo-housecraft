@@ -56,8 +56,8 @@ pub(crate) struct Cli {
     #[arg(long, group = "generation", requires = "region", conflicts_with = "listing", help_heading = Some("Generation"))]
     pub(crate) optimize: bool,
 
-    /// limit warehouse to 172 slots (Max of 196 - the 16 given for free)
-    #[arg(long, requires = "generation", help_heading = Some("Generation"))]
+    /// limit warehouse slots during optimize (192 maximum - 8 minimum given for free)
+    #[arg(long, requires = "generation", conflicts_with = "generate", help_heading = Some("Generation"))]
     pub(crate) limit_warehouse: Option<Option<usize>>,
 
     /// output only the lodging, storage and cost to /data/housecraft/validation
