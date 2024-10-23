@@ -342,7 +342,8 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
     info!("preparing...");
 
     let region_name = cli.region.clone().unwrap();
-    let all_region_buildings: RegionBuildingMap = if region_name == *"ALL" {
+    let all_regions = region_name == *"ALL";
+    let all_region_buildings: RegionBuildingMap = if all_regions {
         parse_houseinfo_data()?
     } else {
         get_region_buildings(Some(region_name))?
@@ -375,22 +376,26 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
 
         write_chains(cli, &region, &mut chains)?;
 
-        let region_id = chains[0].indices[0];
-        for chain in chains {
-            let lodging = chain.worker_count;
-            all_chains_by_region
-                .entry(region_id)
-                .or_insert_with(IndexMap::new)
-                .entry(lodging)
-                .or_insert_with(Vec::new)
-                .push(chain);
+        if all_regions {
+            let region_id = chains[0].indices[0];
+            for chain in chains {
+                let lodging = chain.worker_count;
+                all_chains_by_region
+                    .entry(region_id)
+                    .or_insert_with(IndexMap::new)
+                    .entry(lodging)
+                    .or_insert_with(Vec::new)
+                    .push(chain);
+            }
         }
     }
 
     // Write the aggregated chains to all_lodging_storage.json
     info!("writing all regions' chains...");
     all_chains_by_region.sort_keys();
-    write_all_chains(cli, &all_chains_by_region)?;
+    if all_regions {
+        write_all_chains(cli, &all_chains_by_region)?;
+    }
 
     Ok(())
 }
@@ -416,7 +421,7 @@ fn optimize_worker(cli: Cli, region: RegionNodes, state_2_sum_lb: usize) -> Chai
     let state_1_sum_ub = match cli.limit_warehouse {
         Some(argument) => match argument {
             Some(limit) => std::cmp::min(region.max_warehouse_count, limit),
-            _ => 176,
+            _ => 184,
         },
         _ => region.max_warehouse_count,
     };
