@@ -369,8 +369,9 @@ checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
 
 [[package]]
 name = "highs-sys"
-version = "1.6.3"
-source = "git+https://github.com/Thell/highs-sys.git?branch=master#81377f9e2c68fd7a7ac2488baf00e95efc476f00"
+version = "1.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "84793ab0a88a3afe0148d042677634c24c90a0303205666cc88970a1073a77ef"
 dependencies = [
  "bindgen",
  "cmake",
@@ -378,7 +379,7 @@ dependencies = [
 
 [[package]]
 name = "housecraft"
-version = "0.3.8"
+version = "0.3.9"
 dependencies = [
  "anyhow",
  "clap",
