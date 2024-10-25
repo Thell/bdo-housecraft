@@ -1,11 +1,16 @@
-# Work in progress.
-
 # About
 
-This project is an implementation of the pop_jump_push algorithm. It uses graph data from the MMORPG Black Desert Online's town building networks, which provide
-varying graph sizes and multistate nodes, to generate and score exact solutions to the problem of minimizing cost while maximizing utilization given minimum usage levels.
+This project is an implementation of the pop_jump_push algorithm. It uses graph
+data from the MMORPG Black Desert Online's town building networks, which provide
+varying graph sizes and multistate nodes, to generate and score exact solutions
+to the problem of minimizing cost while maximizing utilization given minimum
+usage levels.
 
-In Black Desert Online the map is split into regions, each region consists of towns and the towns have buildings in chains where a building can be required to be rented prior to another building in the chain (an arborescence). The buildings can be used for many purposes and this project only concerns itself with worker lodging and warehouse storage.
+In Black Desert Online the map is split into regions, each region consists of
+towns and the towns have buildings in chains where a building can be required to
+be rented prior to another building in the chain (an arborescence). The
+buildings can be used for many purposes and this project only concerns itself
+with worker lodging and warehouse storage.
 
 # Building Information
 
@@ -174,15 +179,26 @@ Result: 252 'best of best' scored storage/lodging chains written to ./data/house
 
 ## Generation/Optimization Notes
 
-Even though the generator visits _all_ combinations of all buildings in all states and the optimizer visits all combinations of storage and lodging they both yield only the dominating chains.
+Even though the generator visits _all_ combinations of all buildings in all
+states and the optimizer visits all combinations of storage and lodging they
+both yield only the dominating chains.
 
-> A dominant chain strictly dominates a different chain when it provides the same or more workers and or warehouse counts for less or the same cost.
+> A dominant chain strictly dominates a different chain when it provides the
+same or more workers and or warehouse counts for less or the same cost.
 
-The resulting chains are the best-of-the-best chains for any combination of cost, worker and warehouse counts.
+The resulting chains are the best-of-the-best chains for any combination of
+cost, worker and warehouse counts.
 
-All of the following regions have had exact results generated: Ancado Inner Harbor, Arehaza, Duvencrune, Eilton, Glish, Grána, Iliya Island, Keplan, Muiquun, O'draxxia, Old Wisdom Tree, Olvia, Port Epheria, Sand Grain Bazaar, Shakatu, Tarif, Trent, Velia, and Altinova.
+All regions except Heidel, Valencia City and Calpheon City have had exact
+results generated.
 
-The exact results validated the results of the both the Python implmentated optimizer using CBC and the Rust implemented optimizer using HiGHS with 100% matches. Then both implementations optimized the regions of Heidel, Valencia City and Calpheon City with only a single resulting difference. That difference was on an instance that would never happen in reality; it utilized 6 lodging, and either 399 or 400 storage slots both with a cost of 152.
+The exact results validated the results of the both the Python implmentated
+optimizer using CBC and the Rust implemented optimizer using HiGHS with 100%
+matches. Then both CBC and HiGHS optimized the regions of Heidel, Valencia City
+and Calpheon City with only a single resulting difference.
+That difference was on an instance that would never happen in reality; it
+utilized 6 lodging, and either 399 or 400 storage slots both with a cost of 152
+when the maximum usable lodging in-game is 192 per region.
 
 
 # Building
