@@ -35,7 +35,7 @@ pub(crate) struct Cli {
     #[clap(flatten)]
     pub(crate) verbose: clap_verbosity_flag::Verbosity,
 
-    /// warehouse region
+    /// specific region or ALL
     #[arg(short = 'R', long, help_heading = Some("Listing"))]
     pub(crate) region: Option<String>,
 
