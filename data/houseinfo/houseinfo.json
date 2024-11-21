@@ -13341,7 +13341,7 @@
         "num_craft_list_items": 4,
         "craft_list": [
             { "house_level": 2, "item_craft_index":    2 },
-            { "house_level": 3, "item_craft_index":    1 },
+            { "house_level": 4, "item_craft_index":    1 },
             { "house_level": 1, "item_craft_index":    3 },
             { "house_level": 1, "item_craft_index": 2009 }
         ]
@@ -13377,7 +13377,7 @@
         "num_craft_list_items": 4,
         "craft_list": [
             { "house_level": 3, "item_craft_index":    2 },
-            { "house_level": 1, "item_craft_index":    1 },
+            { "house_level": 3, "item_craft_index":    1 },
             { "house_level": 1, "item_craft_index": 2008 },
             { "house_level": 1, "item_craft_index": 2009 }
         ]

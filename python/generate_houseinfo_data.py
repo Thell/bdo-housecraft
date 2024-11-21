@@ -379,7 +379,7 @@ def do_housecraft_optimize():
     try:
         run(args)
     except Exception as e:
-        print("failed optimization", e)
+        print("failed optimization", e, "\n", args)
 
 
 def format_all_lodging_storage():

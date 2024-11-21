@@ -131,6 +131,7 @@ Param0,String
 290,Lava_CA
 291,Kunoichi's Shadow_CA
 292,Warrior of Fog_CA
+293,Iron Tiger_CA
 301,Awakened Skill Reset
 302,Combat Skills Reset: All
 303,Combat Skills Reset: Partial
@@ -3043,6 +3044,8 @@ Param0,String
 7188,Fence of Abundance
 7189,Crystal Restore Count Coupon
 7190,Pet Skill Change Coupon
+7191,[Event] New Year Wish Lantern Set A
+7192,[Event] New Year Wish Lantern Set B
 7201,Premium Pack I (30 days)
 7202,Premium Pack I (60 days)
 7203,Premium Pack I (90 days)
@@ -4927,10 +4930,10 @@ Param0,String
 12762,Balenos/Serendia Hwacha
 12763,Mediah/Valencia Hwacha
 12764,Calpheon/Kamasylvia Hwacha
-12765,Mediah/Valencia Enhanced Flame Tower
-12766,Calpheon/Kamasylvia Enhanced Flame Tower
-12767,Mediah/Valencia Big Hwacha
-12768,Calpheon/Kamasylvia Big Hwacha
+12765,Balenos/Serendia Enhanced Flame Tower
+12766,Mediah/Valencia Enhanced Flame Tower
+12767,Balenos/Serendia Big Hwacha
+12768,Mediah/Valencia Big Hwacha
 12769,Balenos/Serendia Elephant Nursery
 12770,Mediah/Valencia Elephant Nursery
 12771,Calpheon/Kamasylvia Elephant Nursery
@@ -5381,6 +5384,11 @@ Param0,String
 15392,Celadon Square Incense Burner with Goblin
 15396,[Manor] Golden Dark Bonghwang Statue
 15397,[Manor] Blood-red Dark Bonghwang Statue
+15398,[Event] Sealed Black Witch Isabella
+15399,Black Desert 10th Anniversary Medal
+15400,[Jukebox] Dream of Freshwater Eel 2024
+15401,[Jukebox] From Sun to Boy 2024
+15402,[Jukebox] Invitation from Daily Life 2024
 15501,Tied-Up Curtain
 15502,Open Curtain
 15503,Cotton Curtain
@@ -7072,6 +7080,239 @@ Param0,String
 18609,[Event] Unsa Gowon's Hwando
 18610,[Manor] Friends Across the Sea
 18611,[Event] Autumn Banquet Table
+18612,[Event] Adventurous Memories (10th Anniversary)
+18613,[Manor] Spooky Keeper
+18614,[Manor] Spooky Lil' Keeper
+18615,[Manor] Spooky Light
+18616,[Manor] Spooky Romance
+18617,[Manor] Spooky Pumpkin Pal A
+18618,[Manor] Spooky Pumpkin Pal B
+18619,[Manor] Spooky Pumpkin Pal C
+18620,[Manor] Spooky Posh Pumpkin A
+18621,[Manor] Spooky Posh Pumpkin B
+18622,[Manor] Spooky Pumpkin Decoration
+18623,[Guild] Kzarka Statue
+18624,[Guild] Stuffed Winter Bear Head
+18625,[Guild] Stuffed Snowfield Yak Head
+18626,[Guild] Stuffed Black Snowfield Yak Head
+18627,[Guild] Stuffed Snowfield Markhor Head
+18628,[Guild] Artisan's Stuffed Winter Bear Head
+18629,[Guild] Artisan's Stuffed Snowfield Yak Head
+18630,[Guild] Artisan's Stuffed Black Snowfield Yak Head
+18631,[Guild] Artisan's Stuffed Snowfield Markhor Head
+18632,[Guild] Master's Stuffed Winter Bear Head
+18633,[Guild] Master's Stuffed Snowfield Yak Head
+18634,[Guild] Master's Stuffed Black Snowfield Yak Head
+18635,[Guild] Master's Stuffed Snowfield Markhor Head
+18636,[Guild] Stuffed Frost Wolf
+18637,[Guild] Artisan's Stuffed Frost Wolf
+18638,[Guild] Master's Stuffed Frost Wolf
+18639,[Guild] Stuffed Snow Leopard
+18640,[Guild] Artisan's Stuffed Snow Leopard
+18641,[Guild] Master's Stuffed Snow Leopard
+18642,[Guild] Stuffed Snowfield Ili Pika
+18643,[Guild] Artisan's Stuffed Snowfield Ili Pika
+18644,[Guild] Master's Stuffed Snowfield Ili Pika
+18645,[Guild] Artisan's Special Stuffed Winter Bear Head
+18646,[Guild] Artisan's Special Stuffed Snowfield Yak Head
+18647,[Guild] Artisan's Special Stuffed Black Snowfield Yak Head
+18648,[Guild] Artisan's Special Stuffed Snowfield Markhor Head
+18649,[Guild] Artisan's Special Stuffed Frost Wolf
+18650,[Guild] Artisan's Special Stuffed Bear Head
+18651,[Guild] Artisan's Special Bear Hide Carpet
+18652,[Guild] Artisan's Special Stuffed Boar Head
+18653,[Guild] Artisan's Special Stuffed Fox Head
+18654,[Guild] Artisan's Special Stuffed Weasel
+18655,[Guild] Artisan's Special Stuffed Gray Wolf Head
+18656,[Guild] Artisan's Special Stuffed Wolf Head
+18657,[Guild] Artisan's Special Stuffed Giant Boar Head
+18658,[Guild] Artisan's Special Stuffed Elk Head
+18659,[Guild] Artisan's Special Stuffed Valencia Mountain Sheep Head
+18660,[Guild] Artisan's Special Stuffed Giant Lion Head
+18661,[Guild] Artisan's Special Stuffed Valencian Lioness Head
+18662,[Guild] Artisan's Special Stuffed Drieghan Male Goat Head
+18663,[Guild] Artisan's Special Stuffed Drieghan Female Goat Head
+18664,[Guild] Artisan's Special Stuffed Yak Head
+18665,[Guild] Artisan's Special Stuffed Llama
+18666,[Guild] Artisan's Special Stuffed Belladonna Elephant Head
+18667,[Guild] Artisan's Special Stuffed Baby Belladonna Elephant Head
+18668,[Guild] Artisan's Special Stuffed Gazelle Head
+18669,[Guild] Artisan's Special Stuffed Black Leopard Head
+18670,[Guild] Artisan's Special Stuffed Feather Wolf Head
+18671,[Guild] Artisan's Special Stuffed Phnyl Head
+18672,[Guild] Artisan's Special Stuffed Ferrica Head
+18673,[Guild] Artisan's Special Stuffed Ferrina Head
+18674,[Guild] Artisan's Special Stuffed Kamasylvia Weasel
+18675,[Guild] Master's Special Stuffed Winter Bear Head
+18676,[Guild] Master's Special Stuffed Snowfield Yak Head
+18677,[Guild] Master's Special Stuffed Black Snowfield Yak Head
+18678,[Guild] Master's Special Stuffed Snowfield Markhor Head
+18679,[Guild] Master's Special Stuffed Frost Wolf
+18680,[Guild] Master's Special Stuffed Bear Head
+18681,[Guild] Master's Special Bear Hide Carpet
+18682,[Guild] Master's Special Stuffed Boar Head
+18683,[Guild] Master's Special Stuffed Fox Head
+18684,[Guild] Master's Special Stuffed Weasel
+18685,[Guild] Master's Special Stuffed Gray Wolf Head
+18686,[Guild] Master's Special Stuffed Wolf Head
+18687,[Guild] Master's Special Stuffed Giant Boar Head
+18688,[Guild] Master's Special Stuffed Elk Head
+18689,[Guild] Master's Special Stuffed Valencia Mountain Sheep Head
+18690,[Guild] Master's Special Stuffed Giant Lion Head
+18691,[Guild] Master's Special Stuffed Valencian Lioness Head
+18692,[Guild] Master's Special Stuffed Drieghan Male Goat Head
+18693,[Guild] Master's Special Stuffed Drieghan Female Goat Head
+18694,[Guild] Master's Special Stuffed Yak Head
+18695,[Guild] Master's Special Stuffed Llama
+18696,[Guild] Master's Special Stuffed Belladonna Elephant Head
+18697,[Guild] Master's Special Stuffed Baby Belladonna Elephant Head
+18698,[Guild] Master's Special Stuffed Gazelle Head
+18699,[Guild] Master's Special Stuffed Black Leopard Head
+18700,[Guild] Master's Special Stuffed Feather Wolf Head
+18701,[Guild] Master's Special Stuffed Phnyl Head
+18702,[Guild] Master's Special Stuffed Ferrica Head
+18703,[Guild] Master's Special Stuffed Ferrina Head
+18704,[Guild] Master's Special Stuffed Kamasylvia Weasel
+18705,[Guild] Artisan's Special Stuffed Snow Leopard
+18706,[Guild] Artisan's Special Snowfield Ili Pika
+18707,[Guild] Master's Special Stuffed Snow Leopard
+18708,[Guild] Master's Special Stuffed Snowfield Ili Pika
+18709,[Guild] Stuffed Boar Head
+18710,[Guild] Stuffed Tiger
+18711,[Guild] Sensitive Stuffed Bear Head
+18712,[Guild] Stuffed Falcon
+18713,[Guild] Stuffed Ferocious Boar Head
+18714,[Guild] Stuffed Ferocious Bear Head
+18715,[Guild] Stuffed Thunderpaw Head
+18716,[Guild] Breath-imbued Stuffed Boar Head
+18717,[Guild] Breath-imbued Stuffed Tiger
+18718,[Guild] Breath-imbued Stuffed Bear Head
+18719,[Guild] Breath-imbued Stuffed Falcon
+18720,[Guild] Breath-imbued Stuffed Ferocious Boar Head
+18721,[Guild] Breath-imbued Stuffed Ferocious Bear Head
+18722,[Guild] Ancient Artifact China
+18723,[Guild] Ancient Artifact Pot
+18724,[Guild] Experimental Alchemy Tool
+18725,[Guild] Ancient Slate Ornament
+18726,[Guild] Ancient Kamel Statue
+18727,[Guild] Stuffed Bear Head
+18728,[Guild] Bear Hide Carpet
+18729,[Guild] Stuffed Fox Head
+18730,[Guild] Goblin Chief Helmet
+18731,[Guild] Imp Boss's Knife
+18732,[Guild] Stuffed Weasel
+18733,[Guild] Stuffed Gray Wolf Head
+18734,[Guild] Stuffed Wolf Head
+18735,[Guild] Statue of Blind Faith Ornament
+18736,[Guild] Grotesque Flag Ornament
+18737,[Guild] Jack-O'-Lantern Ornament
+18738,[Guild] Halberd of the Swamp Ornament
+18739,[Guild] Scrapper's Gloves Ornament
+18740,[Guild] Bheg's Shining Helmet
+18741,[Guild] Karanda's Plume Ornament
+18742,[Guild] Witch's Shoulder Piece
+18743,[Guild] Muskan's Bloody Steel Helmet
+18744,[Guild] Purified Tree Spirit Sprout
+18745,[Guild] Khalk's Wings
+18746,[Guild] Quint Statue
+18747,[Guild] Mutant Troll Statue
+18748,[Guild] Stuffed Giant Boar Head
+18749,[Guild] Stuffed Elk Head
+18750,[Guild] Valencia Mountain Sheep Head
+18751,[Guild] Stuffed Giant Lion Head
+18752,[Guild] Stuffed Valencian Lioness Head
+18753,[Guild] Stuffed King Brown Bear Head
+18754,[Guild] Stuffed White Wolf Head
+18755,[Guild] Stuffed Drieghan Male Goat Head
+18756,[Guild] Stuffed Drieghan Female Goat Head
+18757,[Guild] Stuffed Yak Head
+18758,[Guild] Stuffed Llama
+18759,[Guild] Stuffed Belladonna Elephant Head
+18760,[Guild] Stuffed Baby Belladonna Elephant Head
+18761,[Guild] Stuffed Gazelle Head
+18762,[Guild] Stuffed Black Leopard Head
+18763,[Guild] Stuffed Feather Wolf Head
+18764,[Guild] Stuffed Phnyl Head
+18765,[Guild] Stuffed Ferrica Head
+18766,[Guild] Stuffed Ferrina Head
+18767,[Guild] Stuffed Kamasylvia Weasel
+18768,[Guild] Artisan's Stuffed Bear Head
+18769,[Guild] Artisan's Bear Hide Carpet
+18770,[Guild] Artisan's Stuffed Fox Head
+18771,[Guild] Artisan's Stuffed Weasel
+18772,[Guild] Artisan's Stuffed Gray Wolf Head
+18773,[Guild] Artisan's Stuffed Wolf Head
+18774,[Guild] Artisan's Stuffed Giant Boar Head
+18775,[Guild] Artisan's Stuffed Elk Head
+18776,[Guild] Artisan's Stuffed Valencia Mountain Sheep Head
+18777,[Guild] Artisan's Stuffed Giant Lion Head
+18778,[Guild] Artisan's Stuffed Valencian Lioness Head
+18779,[Guild] Artisan's Stuffed Drieghan Male Goat Head
+18780,[Guild] Artisan's Stuffed Drieghan Female Goat Head
+18781,[Guild] Artisan's Stuffed Yak Head
+18782,[Guild] Artisan's Stuffed Llama
+18783,[Guild] Master's Stuffed Bear Head
+18784,[Guild] Master's Bear Hide Carpet
+18785,[Guild] Master's Stuffed Fox Head
+18786,[Guild] Master's Stuffed Weasel
+18787,[Guild] Master's Stuffed Gray Wolf Head
+18788,[Guild] Master's Stuffed Wolf Head
+18789,[Guild] Master's Stuffed Giant Boar Head
+18790,[Guild] Master's Stuffed Elk Head
+18791,[Guild] Master's Stuffed Valencia Mountain Sheep Head
+18792,[Guild] Master's Stuffed Giant Lion Head
+18793,[Guild] Master's Stuffed Valencian Lioness Head
+18794,[Guild] Master's Stuffed Drieghan Male Goat Head
+18795,[Guild] Master's Stuffed Drieghan Female Goat Head
+18796,[Guild] Master's Stuffed Yak Head
+18797,[Guild] Master's Stuffed Llama
+18798,[Guild] Artisan's Stuffed Belladonna Elephant Head
+18799,[Guild] Artisan's Stuffed Baby Belladonna Elephant Head
+18800,[Guild] Artisan's Stuffed Gazelle Head
+18801,[Guild] Artisan's Stuffed Black Leopard Head
+18802,[Guild] Artisan's Stuffed Feather Wolf Head
+18803,[Guild] Artisan's Stuffed Phnyl Head
+18804,[Guild] Artisan's Stuffed Ferrica Head
+18805,[Guild] Artisan's Stuffed Ferrina Head
+18806,[Guild] Artisan's Stuffed Kamasylvia Weasel
+18807,[Guild] Master's Stuffed Belladonna Elephant Head
+18808,[Guild] Master's Stuffed Baby Belladonna Elephant Head
+18809,[Guild] Master's Stuffed Gazelle Head
+18810,[Guild] Master's Stuffed Black Leopard Head
+18811,[Guild] Master's Stuffed Feather Wolf Head
+18812,[Guild] Master's Stuffed Phnyl Head
+18813,[Guild] Master's Stuffed Ferrica Head
+18814,[Guild] Master's Stuffed Ferrina Head
+18815,[Guild] Master's Stuffed Kamasylvia Weasel
+18816,[Guild] Kutum Lamp
+18817,[Guild] Nouver Statue
+18818,[Guild] Stuffed Grass Rhino Head
+18819,[Guild] Stuffed Verdure Buck
+18820,[Guild] Stuffed Verdure Doe
+18821,[Guild] Stuffed Shadow Wolf Head
+18822,[Guild] Stuffed Shadow Lion Head
+18823,[Guild] Artisan's Stuffed Grass Rhino Head
+18824,[Guild] Artisan's Stuffed Verdure Buck
+18825,[Guild] Artisan's Stuffed Verdure Doe
+18826,[Guild] Artisan's Stuffed Shadow Wolf Head
+18827,[Guild] Artisan's Stuffed Shadow Lion Head
+18828,[Guild] Master's Stuffed Grass Rhino Head
+18829,[Guild] Master's Stuffed Verdure Buck
+18830,[Guild] Master's Stuffed Verdure Doe
+18831,[Guild] Master's Stuffed Shadow Wolf Head
+18832,[Guild] Master's Stuffed Shadow Lion Head
+18833,[Guild] Artisan's Special Stuffed Grass Rhino Head
+18834,[Guild] Artisan's Special Stuffed Verdure Buck
+18835,[Guild] Artisan's Special Stuffed Verdure Doe
+18836,[Guild] Artisan's Special Stuffed Shadow Wolf Head
+18837,[Guild] Artisan's Special Stuffed Shadow Lion Head
+18838,[Guild] Master's Special Stuffed Grass Rhino Head
+18839,[Guild] Master's Special Stuffed Verdure Buck
+18840,[Guild] Master's Special Stuffed Verdure Doe
+18841,[Guild] Master's Special Stuffed Shadow Wolf Head
+18842,[Guild] Master's Special Stuffed Shadow Lion Head
+18843,[Guild] Blue Whale Wall Decoration
+18844,[Guild] Karanda Statue
 18901,Vatu's Carpet
 18902,Everfrost High-quality Carpet
 18903,Everfrost Bench
@@ -11926,6 +12167,7 @@ Param0,String
 25076,Griffon Egg
 25077,Griffon Egg
 25078,Big Elephant
+25079,Balten
 25080,Steppe Wagon
 25081,Injured Ostrich
 25082,Manshaum Narc's Spear
@@ -12257,6 +12499,12 @@ Param0,String
 25422,Small Dark Bonghwang Avatar
 25423,Cheoyong's Altar
 25424,Cheoyong
+25425,Kkebifire
+25426,Kkebifire
+25427,Gray Wolf
+25428,Barnas
+25429,Cadry Fighter
+25430,Cadry Armored Fighter
 25431,Bulgasal
 25432,Bulgasal
 25433,Dark Bonghwang
@@ -12298,6 +12546,8 @@ Param0,String
 25469,Mooncast Shadow
 25470,Moonlit Vision
 25471,Master
+25472,Spook
+25473,Songakshi
 25474,Apex Changui
 25475,Jang Iksoon
 25476,Hyoyun
@@ -12364,7 +12614,16 @@ Param0,String
 25537,[Event] Mammore
 25539,[Event] Golden Treasure Chest
 25540,Small Dark Bonghwang Avatar
-25550,Time Bomb
+25541,Lynx Bandit
+25542,Fox Bandit
+25543,Raccoon Bandit
+25544,Boar Bandit
+25545,Fox Bandit Boss
+25546,Centipede's Mark
+25547,Prankkebi
+25548,Strongkkebi
+25549,Philosophkebi
+25550,Combatkebi
 25551,Ancient Ruins Guard
 25552,Ancient Ruins Defender
 25553,Dark Rift
@@ -12837,6 +13096,7 @@ Param0,String
 26033,Gallant Conch Blader
 26034,Ruinous Puffer Shaman
 26035,Holy Sea Cucumber Priest
+26036,Gumiho
 26037,Fierce Pine Blader
 26038,Solitary Conch Blader
 26039,Crio Reciter
@@ -12898,6 +13158,8 @@ Param0,String
 26095,Yiol
 26096,Yukhon
 26097,Tiger Changui
+26098,Kkebidol
+26099,Kkebilith
 26100,Sealed Tower
 26101,Imp Soldier
 26102,Imp Raider
@@ -13525,6 +13787,11 @@ Param0,String
 26724,Yukhon
 26725,Tiger Changui
 26726,Oduksini
+26727,Lynx Bandit
+26728,Fox Bandit
+26729,Raccoon Bandit
+26730,Boar Bandit
+26731,Duoksini
 26735,Oduksini
 26736,Oduksini
 26737,Oduksini's Soul
@@ -14072,6 +14339,11 @@ Param0,String
 27378,Unstable Star Debris
 27379,Unstable Star Debris
 27422,Piku
+27426,Red Nose
+27427,Giath
+27428,Phantom Knight
+27433,Shakatu's Treasure
+27480,Afuaru
 27500,Syaki
 27501,Man of Steel
 27502,Man of Fortitude
@@ -15351,6 +15623,19 @@ Param0,String
 29834,Wacky Tacky Frio
 29850,Red Nose
 29851,Giath
+29855,Isabella
+29856,Isabella
+29857,Isabella
+29858,Isabella
+29859,Barnas
+29860,Volkras
+29861,Gairas
+29862,Mischievous Jack
+29873,Volkras
+29874,Volkras
+29875,Volkras
+29876,Volkras
+29877,Volkras
 29881,Bloodthirsty Stoneback Crab
 29882,Goblin Elite Soldier
 29883,Ahib Condemner
@@ -15639,10 +15924,10 @@ Param0,String
 31129,Balenos/Serendia Hwacha
 31130,Mediah/Valencia Hwacha
 31131,Calpheon/Kamasylvia Hwacha
-31132,Mediah/Valencia Enhanced Flame Tower
-31133,Calpheon/Kamasylvia Enhanced Flame Tower
-31134,Mediah/Valencia Big Hwacha
-31135,Calpheon/Kamasylvia Big Hwacha
+31132,Balenos/Serendia Enhanced Flame Tower
+31133,Mediah/Valencia Enhanced Flame Tower
+31134,Balenos/Serendia Big Hwacha
+31135,Mediah/Valencia Big Hwacha
 31136,Lynch Cannon
 31501,Horse
 31502,Horse
@@ -15734,6 +16019,7 @@ Param0,String
 31590,Horse
 31591,Horse
 31592,Horse
+31594,Horse
 31601,Giorga Bonneville
 32001,Phantom Man
 35000,Ogre
@@ -16056,11 +16342,13 @@ Param0,String
 35689,Panokseon Under Construction
 35695,Villager
 35696,Villager
+35697,Villager
 35698,Villager
 35699,Fish Crate
 35700,Samsin
 35701,Rice Sack
 35702,Package
+35703,Ancient Ator
 36051,Imp Boss Attack Tower
 36052,Imp Boss Defense Tower
 37031,Villager's Corpse
@@ -18655,6 +18943,7 @@ Param0,String
 49795,Object
 49796,Sea Palace Entry
 49797,Sea Palace Entry
+49798,Mysterious Man
 50001,Tiny Nose
 50002,Andrei
 50003,Fairy Nest
@@ -22009,16 +22298,16 @@ Param0,String
 60075,Heuklang
 60076,Heuklang
 60077,Heuklang
-60078,Heuklang
-60079,Heuklang
-60080,Heuklang
-60081,Heuklang
-60082,Heuklang
-60083,Heuklang
-60084,Heuklang
-60085,Heuklang
-60086,Heuklang
-60087,Heuklang
+60078,Summon
+60079,Summon
+60080,Summon
+60081,Summon
+60082,Summon
+60083,Summon
+60084,Summon
+60085,Summon
+60086,Summon
+60087,Summon
 60088,Call of the Earth
 60089,Call of the Earth
 60090,Call of the Earth
@@ -22144,6 +22433,7 @@ Param0,String
 60210,Destination point
 60211,Lava Field
 60213,Summon
+60214,Summon
 61001,Object
 61002,Object
 61003,Object
@@ -22274,7 +22564,7 @@ Param0,String
 61128,Character
 61129,Wuju
 61130,Sub NPC
-61131,Object
+61131,Abyssal Veins
 61132,Object
 61133,Small Mole
 61134,Thief Mole
@@ -22501,6 +22791,20 @@ Param0,String
 62095,Freight Wagon
 62096,Jar
 62097,Rulupee
+62098,Sub NPC
+62103,Spook
+62104,Spook
+62105,Gairas
+62106,Spook
+62107,Seodo
+62108,Taegong
+62109,Durgeff
+62110,Lando
+62111,Frame Fragment
+62112,Mount Level Down Ticket
+62113,Frame Fragment 3
+62114,Frame Fragment 4
+62137,Kario
 65001,Cliff
 65002,Jordine
 65003,Peony
@@ -24558,6 +24862,9 @@ Param0,String
 60006,<null>
 60007,<null>
 61113,Shop
+62107,<null>
+62108,<null>
+62137,<null>
 51,Longsword
 52,Longsword
 53,Longsword
