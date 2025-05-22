@@ -1,0 +1,11 @@
+[
+  {"lodging":0,"storage":0,"cost":0,"indices":[218],"states":[0]},
+  {"lodging":0,"storage":5,"cost":1,"indices":[218,3865],"states":[0,1]},
+  {"lodging":0,"storage":8,"cost":2,"indices":[218,3864],"states":[0,1]},
+  {"lodging":0,"storage":13,"cost":3,"indices":[218,3864,3865],"states":[0,1,1]},
+  {"lodging":1,"storage":0,"cost":1,"indices":[218,3865],"states":[0,2]},
+  {"lodging":1,"storage":8,"cost":3,"indices":[218,3864,3865],"states":[0,1,2]},
+  {"lodging":2,"storage":0,"cost":2,"indices":[218,3864],"states":[0,2]},
+  {"lodging":2,"storage":5,"cost":3,"indices":[218,3864,3865],"states":[0,2,1]},
+  {"lodging":3,"storage":0,"cost":3,"indices":[218,3864,3865],"states":[0,2,2]}
+]
