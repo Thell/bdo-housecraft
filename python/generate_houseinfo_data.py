@@ -4,6 +4,12 @@
 # bdo-cli is not publicly distributed but you can use tools such as BDOcrypt to extract
 # language data and PAZ-unpacker to extract binary files.
 
+# Without bdo-cli:
+# - language data csv files in data/houseinfo needs to be updated
+# - gamecommondata/binary files need to be extracted and put in houseinfo/gamecommondata/binary
+# - formats must be updated to reflect any binary file changes.
+#
+# For the specific files required read this script.
 
 # NOTE:
 # Execute this module to update data after new regions with updated houseinfo are added.
@@ -11,7 +17,6 @@
 #   bdo-cli: which provides pad and language data extraction requiring SCY rebuild.
 #   kaitai-compiler: to compile binary structure formats when they have changed. (use flag --update)
 
-# Will use
 
 import atexit
 from functools import lru_cache
