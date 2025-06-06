@@ -117,19 +117,6 @@ impl SubsetModel {
         let item_reqs: Vec<_> = region.parents.iter().map(|x| *x as u32).collect();
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
-
-        // Presolve -> MIP fails on a few known instances.
-        // See https://github.com/ERGO-Code/HiGHS/issues/1273
-        // This is a workaround.
-        let no_presolve_regions = ["Altinova", "Heidel"];
-        if no_presolve_regions.contains(&region.region_name.as_str()) {
-            let option = CString::new("presolve").unwrap();
-            let value = CString::new("off").unwrap();
-            unsafe {
-                Highs_setStringOptionValue(self.highs_ptr, option.as_ptr(), value.as_ptr());
-            };
-        }
-
         let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
         let mut item_flags: HashMap<u32, i32> = HashMap::new();
         let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
