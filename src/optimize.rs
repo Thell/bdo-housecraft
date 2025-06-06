@@ -363,7 +363,7 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
 
         write_chains(cli, &region, &mut chains)?;
 
-        if all_regions {
+        if all_regions && !cli.for_validation {
             let region_id = chains[0].indices[0];
             for chain in chains {
                 let lodging = chain.worker_count;
@@ -377,13 +377,14 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
         }
     }
 
-    // Write the aggregated chains to all_lodging_storage.json
-    info!("writing all regions' chains...");
-    all_chains_by_region.sort_keys();
-    if all_regions {
-        write_all_chains(cli, &all_chains_by_region)?;
+    if all_regions && !cli.for_validation {
+        // Write the aggregated chains to all_lodging_storage.json
+        info!("writing all regions' chains...");
+        all_chains_by_region.sort_keys();
+        if all_regions {
+            write_all_chains(cli, &all_chains_by_region)?;
+        }
     }
-
     Ok(())
 }
 
