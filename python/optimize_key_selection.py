@@ -16,12 +16,17 @@ The module uses the CBC solver from OR-Tools via pywraplp to find an optimal sol
 # keep the modelling more general and inline with the Rust/HiGHS solution for comparison and ease
 # of understanding and testing.
 
+import contextlib
+import io
 import os
 import re
 import sys
 
 from collections import defaultdict
-from ortools.linear_solver import pywraplp
+
+# Suppress stdout during import
+with contextlib.redirect_stdout(io.StringIO()):
+    from ortools.linear_solver import pywraplp
 
 
 def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
@@ -89,6 +94,12 @@ def subset_solver(items, item_reqs, weights, state_1_values, state_2_values):
         objective.SetCoefficient(item_flags[item], weights[i])
     objective.SetMinimization()
 
+    # Force root variables to be used so they get included in MPS export
+    root = items[0]
+    objective.SetCoefficient(item_flags[root], 1e-9)
+    state_1_sum_constraint.SetCoefficient(state_1_flags[root], 1e-9)
+    state_2_sum_constraint.SetCoefficient(state_2_flags[root], 1e-9)
+
     return solver
 
 
@@ -113,10 +124,13 @@ def subset_selection(
     """
     solver = subset_solver(items, item_reqs, weights, state_1_values, state_2_values)
 
+    lb1 = 0.0 if state_1_sum_values_lb is None else float(state_1_sum_values_lb)
+    lb2 = 0.0 if state_2_sum_values_lb is None else float(state_2_sum_values_lb)
+
     state_1_constraint = solver.LookupConstraint("state_1_lb")
     state_2_constraint = solver.LookupConstraint("state_2_lb")
-    state_1_constraint.SetBounds(state_1_sum_values_lb, solver.infinity())
-    state_2_constraint.SetBounds(state_2_sum_values_lb, solver.infinity())
+    state_1_constraint.SetBounds(lb1, solver.infinity())
+    state_2_constraint.SetBounds(lb2, solver.infinity())
 
     result_status = solver.Solve()
 
@@ -141,8 +155,11 @@ def subset_selection_par(
     state_1_constraint = solver.LookupConstraint("state_1_lb")
     state_2_constraint = solver.LookupConstraint("state_2_lb")
 
+    state_1_values_sum_ub = 0.0 if state_1_values_sum_ub is None else float(state_1_values_sum_ub)
+    state_2_values_sum_lb = 0.0 if state_2_values_sum_lb is None else float(state_2_values_sum_lb)
+
     state_2_constraint.SetBounds(state_2_values_sum_lb, solver.infinity())
-    state_1_values_sum_lb = 0
+    state_1_values_sum_lb = 0.0
     while state_1_values_sum_lb <= state_1_values_sum_ub:
         state_1_constraint.SetBounds(state_1_values_sum_lb, solver.infinity())
         result_status = solver.Solve()
@@ -198,7 +215,7 @@ def write_subset_selection_mps(items, item_reqs, weights, state_1_values, state_
     state_2_constraint = solver.LookupConstraint("state_2_lb")
     state_1_constraint.SetBounds(9999, solver.infinity())
     state_2_constraint.SetBounds(9999, solver.infinity())
-    model_text = solver.ExportModelAsMpsFormat(fixed_format=True, obfuscated=True)
+    model_text = solver.ExportModelAsMpsFormat(fixed_format=True, obfuscate=True)
     write_to_file(model_text, "subset_select.mps")
     sys.exit("Model written.")
 

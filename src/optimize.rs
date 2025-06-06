@@ -57,19 +57,18 @@ impl Chain {
         let mut states = vec![0];
 
         for (i, col) in col_values.chunks_exact(3).take(num_nodes).enumerate() {
-            if col[0] != 1 {
-                // item_flag
-                continue;
-            } else if col[1] == 1 {
-                // state_1_flag
-                warehouse_count += region.warehouse_counts[i];
-                indices.push(i);
-                states.push(1);
-            } else if col[2] == 1 {
-                // state_2_flag
-                worker_count += region.worker_counts[i];
-                indices.push(i);
-                states.push(2);
+            if col[0] == 1 {
+                if col[1] == 1 {
+                    // state_1_flag
+                    warehouse_count += region.warehouse_counts[i];
+                    indices.push(i);
+                    states.push(1);
+                } else if col[2] == 1 {
+                    // state_2_flag
+                    worker_count += region.worker_counts[i];
+                    indices.push(i);
+                    states.push(2);
+                }
             }
         }
 
@@ -117,19 +116,6 @@ impl SubsetModel {
         let item_reqs: Vec<_> = region.parents.iter().map(|x| *x as u32).collect();
         let state_1_values: Vec<_> = region.warehouse_counts.iter().map(|x| *x as f64).collect();
         let state_2_values: Vec<_> = region.worker_counts.iter().map(|x| *x as f64).collect();
-
-        // Presolve -> MIP fails on a few known instances.
-        // See https://github.com/ERGO-Code/HiGHS/issues/1273
-        // This is a workaround.
-        let no_presolve_regions = ["Altinova", "Heidel"];
-        if no_presolve_regions.contains(&region.region_name.as_str()) {
-            let option = CString::new("presolve").unwrap();
-            let value = CString::new("off").unwrap();
-            unsafe {
-                Highs_setStringOptionValue(self.highs_ptr, option.as_ptr(), value.as_ptr());
-            };
-        }
-
         let costs: Vec<_> = region.costs.iter().map(|x| *x as f64).collect();
         let mut item_flags: HashMap<u32, i32> = HashMap::new();
         let mut state_1_flags: HashMap<u32, i32> = HashMap::new();
@@ -242,6 +228,26 @@ impl SubsetModel {
         // Item selection constraint: one state on flagged items, no state otherwise.
         for item in items.iter() {
             if *item == items[0] {
+                // Root item: enforce state_1_flags[0] = 0 and state_2_flags[0] = 0
+                let aindex: [i32; 1] = [state_1_flags[item]];
+                let avalue: [f64; 1] = [1.0];
+                Highs_addRow(
+                    self.highs_ptr,
+                    0.0,
+                    0.0,
+                    1,
+                    aindex.as_ptr(),
+                    avalue.as_ptr(),
+                );
+                let aindex: [i32; 1] = [state_2_flags[item]];
+                Highs_addRow(
+                    self.highs_ptr,
+                    0.0,
+                    0.0,
+                    1,
+                    aindex.as_ptr(),
+                    avalue.as_ptr(),
+                );
                 continue;
             }
             // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
@@ -376,7 +382,7 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
 
         write_chains(cli, &region, &mut chains)?;
 
-        if all_regions {
+        if all_regions && !cli.for_validation {
             let region_id = chains[0].indices[0];
             for chain in chains {
                 let lodging = chain.worker_count;
@@ -390,13 +396,14 @@ pub(crate) fn optimize(cli: &mut Cli) -> Result<()> {
         }
     }
 
-    // Write the aggregated chains to all_lodging_storage.json
-    info!("writing all regions' chains...");
-    all_chains_by_region.sort_keys();
-    if all_regions {
-        write_all_chains(cli, &all_chains_by_region)?;
+    if all_regions && !cli.for_validation {
+        // Write the aggregated chains to all_lodging_storage.json
+        info!("writing all regions' chains...");
+        all_chains_by_region.sort_keys();
+        if all_regions {
+            write_all_chains(cli, &all_chains_by_region)?;
+        }
     }
-
     Ok(())
 }
 
