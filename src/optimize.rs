@@ -57,19 +57,18 @@ impl Chain {
         let mut states = vec![0];
 
         for (i, col) in col_values.chunks_exact(3).take(num_nodes).enumerate() {
-            if col[0] != 1 {
-                // item_flag
-                continue;
-            } else if col[1] == 1 {
-                // state_1_flag
-                warehouse_count += region.warehouse_counts[i];
-                indices.push(i);
-                states.push(1);
-            } else if col[2] == 1 {
-                // state_2_flag
-                worker_count += region.worker_counts[i];
-                indices.push(i);
-                states.push(2);
+            if col[0] == 1 {
+                if col[1] == 1 {
+                    // state_1_flag
+                    warehouse_count += region.warehouse_counts[i];
+                    indices.push(i);
+                    states.push(1);
+                } else if col[2] == 1 {
+                    // state_2_flag
+                    worker_count += region.worker_counts[i];
+                    indices.push(i);
+                    states.push(2);
+                }
             }
         }
 
@@ -229,6 +228,26 @@ impl SubsetModel {
         // Item selection constraint: one state on flagged items, no state otherwise.
         for item in items.iter() {
             if *item == items[0] {
+                // Root item: enforce state_1_flags[0] = 0 and state_2_flags[0] = 0
+                let aindex: [i32; 1] = [state_1_flags[item]];
+                let avalue: [f64; 1] = [1.0];
+                Highs_addRow(
+                    self.highs_ptr,
+                    0.0,
+                    0.0,
+                    1,
+                    aindex.as_ptr(),
+                    avalue.as_ptr(),
+                );
+                let aindex: [i32; 1] = [state_2_flags[item]];
+                Highs_addRow(
+                    self.highs_ptr,
+                    0.0,
+                    0.0,
+                    1,
+                    aindex.as_ptr(),
+                    avalue.as_ptr(),
+                );
                 continue;
             }
             // state_1_flags[child] + state_2_flags[child] - items_flag[child] == 0
