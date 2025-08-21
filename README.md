@@ -12,9 +12,33 @@ be rented prior to another building in the chain (an arborescence). The
 buildings can be used for many purposes and this project only concerns itself
 with worker lodging and warehouse storage.
 
-# Building Information
+# Required input files
 
-> **Note: Calpheon City, Valencia City and Heidel are _not_ included in the exact results.**
+The following files are required in `\data\houseinfo\`:
+- `houseinfo.json` describes the properties of houses. is a dictionary but the keys are not used. each value describes a house and must contain all of the following fields:
+  - `need_explore_point: <integer>` the CP cost of the house
+  - `affiliated_town: <townkey>` which region the house belongs to
+  - `parent_node: <nodekey>` required but unused
+  - `character_key: <charkey>` is the actual key to perform linking
+  - `len_need_house_key` either 1 if the house has a requirement, or 0 if not
+  - `need_house_key` either a `charkey` of a required house, or 0
+  - `house_group` required but unused
+  - `house_floor` required but unused
+  - `craft_list` a list of possible uses. each use must have fields:
+	- `item_craft_index: <houseusekey>` the intended use, where 1 is lodging and 2 is storage
+    - `house_level: <integer>` the "level" of usage. the level defines the amount of lodging (level 1: 1 bed, 2: 2, 3: 4, 4: 6, 5: 8) or storage (level 1: 3 storage cells, 2: 5, 3: 8, 4: 12, 5: 16) the house can give. this mapping is not configurable.
+  - `num_craft_list_items` the length of `craft_list`
+- Localization strings (use UTF8 for entries like Grána). First line must contain `Param0,String` header, following lines are just `key,value`:
+  - `Region.csv` - names of regions (`townkey`s)
+  - `Exploration.csv` - names of nodes (`nodekey`s)
+  - `Character.csv` - names of houses (`charkey`s)
+  - `HouseInfoReceipe.csv` - human readable decriptions of "house use" integers (`houseusekey`s)
+- `regioninfo.json` must contain a dictionary of regions to work on (`{<townkey>: name, ...}`, names are not used)
+
+Use `/python/regenerate_houseinfo_data.py` as guidance for preparing the input files yourself.
+	
+
+# Building Information
 
 ## List building chains.
 
@@ -141,6 +165,7 @@ O'draxxia
 
 - Exhaustively calculates exact node chain costs for warehouse and workers.
 - Data is written to a file `/data/housecraft/{region_name}.json` containing storage, lodging, building and usage states sorted by warehouse and worker count in ascending order.
+> **Note: Calpheon City, Valencia City and Heidel are _not_ included in the exact results.**
 
 ```md
 > housecraft.exe --generate -R Velia
