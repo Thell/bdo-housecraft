@@ -380,7 +380,7 @@ def do_housecraft_optimize():
     except Exception as e:
         print("failed cargo build", e)
 
-    args = ["target/debug/housecraft", "--optimize", "-R", "ALL", "--limit-warehouse", "184"]
+    args = ["target/release/housecraft", "--optimize", "-R", "ALL", "--limit-warehouse", "184"]
     try:
         run(args)
     except Exception as e:
