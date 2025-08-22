@@ -6,7 +6,7 @@ Param0,String
 5,Tamer
 6,Hashashin
 7,Sage
-8,PJKD
+8,Wukong
 9,Guardian
 10,Scholar
 11,Drakania
@@ -43,7 +43,7 @@ Param0,String
 105,Tamer
 106,Hashashin
 107,Sage
-108,Warrior Use3
+108,Wukong
 109,Guardian
 110,Scholar
 111,Drakania
@@ -2099,6 +2099,12 @@ Param0,String
 3865,Asparkan 2
 3866,Muzgar 3
 3867,Muzgar 4
+3868,Shore of Ruins 1
+3869,Shore of Ruins 2
+3870,Aal's Revelation 1
+3871,Aal's Revelation 2
+3872,Aal's Revelation 3
+3873,Aal's Revelation 4
 4001,Container
 4002,Stuffed Bear Head
 4003,Bear Hide Carpet
@@ -2872,6 +2878,96 @@ Param0,String
 6772,Winter Wood Chair
 6773,Kamasylvia Rocking Chair
 6774,Kamasylvia Chair
+6775,Bountiful Pepper
+6776,Bountiful Garlic
+6777,Bountiful Onion
+6778,Bountiful Hot Pepper
+6779,Bountiful Pumpkin
+6780,Bountiful Carrot
+6781,Bountiful Strawberry
+6782,Bountiful Grape
+6783,Bountiful Sunflower
+6784,Bountiful Olive
+6785,Bountiful Tomato
+6786,Bountiful Paprika
+6787,Bountiful Potato
+6788,Bountiful Barley
+6789,Bountiful Wheat
+6790,Bountiful Corn
+6791,Bountiful Sweet Potato
+6792,Bountiful Fig
+6797,Bountiful Sunrise Herb
+6798,Bountiful Silver Azalea
+6799,Bountiful Fire Flake Flower
+6800,Bountiful Dry Mane Grass
+6801,Bountiful Silk Honey Grass
+6802,Bountiful Everlasting Herb
+6803,Bountiful Fortune Teller Mushroom
+6804,Bountiful Arrow Mushroom
+6805,Bountiful Dwarf Mushroom
+6806,Bountiful Cloud Mushroom
+6807,Bountiful Sky Mushroom
+6808,Bountiful Tiger Mushroom
+6809,Bountiful Emperor Mushroom
+6810,Bountiful Ghost Mushroom
+6811,Bountiful Fog Mushroom
+6812,Bountiful Hump Mushroom
+6813,Bountiful Bluffer Mushroom
+6814,Bountiful Ancient Mushroom
+6815,Bountiful Amanita Mushroom
+6816,Bountiful Truffle Mushroom
+6817,Bountiful Nolina
+6818,Bountiful Penestraria
+6819,Bountiful Dalvenia Alrea
+6820,Bountiful Bouquet Mushroom
+6821,Bountiful Leccinum
+6822,Bountiful Purple Mushroom
+6823,Bountiful Pie Mushroom
+6824,Bountiful Acacia
+6825,Bountiful Chicken Feed
+6826,Bountiful Haystack
+6827,Bountiful Delotia
+6828,Bountiful Citron
+6829,Bountiful Chanterelle Hypha
+6830,Bountiful Red-spotted Amanita Hypha
+6831,Bountiful Mesima Hypha
+6832,Bountiful Dictyophora Hypha
+6833,Bountiful Napa Cabbage Seed
+6834,Bountiful Radish Seed
+6835,Bountiful Perilla Seed
+6836,Bountiful Rice Seed
+6837,[Event] Heidel Festival Commemorative Frame I
+6838,[Event] Heidel Festival Commemorative Frame II
+6839,[Event] Heidel Festival Commemorative Frame III
+6840,[Event] Heidel Festival Commemorative Frame IV
+6841,[Event] Heidel Festival Commemorative Frame V
+6842,[Event] Heidel Festival Commemorative Frame VI
+6843,[Event] Heidel Festival Commemorative Frame VII
+6844,[Event] Wavewhisper Map Frame
+6846,[Event] Terrmian Beach Aquarium
+6847,Hakinza Sanctuary Wall Ornament
+6848,Hakinza Sanctuary Floor Decoration
+6850,Columnar Joint Floor Decoration
+6851,Crimsonroot Wall Lamp
+6852,Emeraltides Wall Lamp
+6861,Azureach Floor Decoration
+6862,Hand of Ancient Ator
+6863,Ancient Relic Altar
+6864,Emeraltides Wall Ornament
+6865,Ebonshade Wall Ornament
+6866,Azureach Wall Ornament
+6869,Hakinza Sanctuary Bed
+6870,Hakinza Sanctuary Wardrobe
+6871,Hakinza Sanctuary Chair
+6872,Hakinza Sanctuary Table
+6873,Hakinza Sanctuary Sofa
+6875,Hakinza Sanctuary Chandelier
+6876,Hakinza Sanctuary Iron Lamp
+6877,Hakinza Sanctuary Iron Wall Candle Stand
+6878,Hakinza Sanctuary Mounted Lamp
+6879,Hakinza Sanctuary Worker's Lodging Slot +1
+6880,Hakinza Sanctuary Wharf Slot +1
+6882,Liberation Day Furniture
 7001,Scarecrow
 7002,Scarecrow
 7003,Scarecrow
@@ -4294,14 +4390,22 @@ Param0,String
 10926,Dead Coral
 10931,Red Coral
 10932,Trumpet Coral
+10933,Spirit-laden Caphras Tree
+10934,Thicket
+10944,Wild Herb
 10951,Sea Fan
 10952,Sea Fan
 10953,Spotted Coral
 10966,King Starfish
 10967,Oyster
+10968,Shrub
 10970,Starfish
 10971,Starfish
+10973,Elder Tree
 10975,Seaweed
+10978,Caphras Tree
+10982,Rock
+10984,Rock
 10986,Kelp
 11001,Weapon Shelf
 11002,Armor Shelf
@@ -4510,7 +4614,7 @@ Param0,String
 11205,Keplan Object 65
 11501,Chicken Coop
 11502,Wagon
-11503,Dry Well
+11503,Dried-up Well
 11504,Balenos Object_4
 11505,Balenos Object_5
 11506,Balenos Object_6
@@ -4845,8 +4949,8 @@ Param0,String
 12502,Crafted Tub
 12601,Square Fort
 12602,Square Fort
-12603,Calpheon/Kamasylvia Node Fort
-12604,Balenos/Serendia Node Fort
+12603,Mediah/Valencia Node Fort
+12604,Calpheon/Kamasylvia Node Fort
 12605,Barricade
 12606,Barricade
 12607,Barricade
@@ -4914,6 +5018,9 @@ Param0,String
 12673,Flimsy Barricade
 12674,Flimsy Barricade
 12675,Flimsy Wooden Fence
+12722,Blue Battlefield Fort (Tier 3 Node)
+12723,Blue Battlefield Fort (Tier 4 Node)
+12724,Blue Battlefield Fort (Tier 5 Node)
 12741,Square Fort
 12742,Barricade
 12743,Iron Barricade
@@ -4938,10 +5045,10 @@ Param0,String
 12762,Balenos/Serendia Hwacha
 12763,Mediah/Valencia Hwacha
 12764,Calpheon/Kamasylvia Hwacha
-12765,Balenos/Serendia Enhanced Flame Tower
-12766,Mediah/Valencia Enhanced Flame Tower
-12767,Balenos/Serendia Big Hwacha
-12768,Mediah/Valencia Big Hwacha
+12765,Mediah/Valencia Enhanced Flame Tower
+12766,Calpheon/Kamasylvia Enhanced Flame Tower
+12767,Mediah/Valencia Big Hwacha
+12768,Calpheon/Kamasylvia Big Hwacha
 12769,Balenos/Serendia Elephant Nursery
 12770,Mediah/Valencia Elephant Nursery
 12771,Calpheon/Kamasylvia Elephant Nursery
@@ -6254,6 +6361,7 @@ Param0,String
 16996,Paw-doodle: Scholar
 16997,Paw-doodle: Dosa
 16998,Paw-doodle: Deadeye
+16999,Paw-doodle: Wukong
 17001,Plain Wall Tapestry
 17002,Glamorous Patterned Tapestry
 17003,Mediah Patterned Tapestry
@@ -7462,6 +7570,9 @@ Param0,String
 18938,Glorious Golden Trophy
 18939,Honorable Silver Trophy
 18940,Tenacious Bronze Trophy
+18941,[Event] Supreme One's Power Pole
+18942,[Event] Gentle Flying Nimbus
+18943,[Event] Radiant Flying Nimbus
 18944,[Event] Guardian of Vahmalkea
 18945,[Event] Guardian of Yolunakea
 18946,[Event] Guardian of Sycrakea
@@ -9477,6 +9588,20 @@ Param0,String
 21884,Seculion
 21885,Gift Box
 21886,Fox Bandit
+21887,Illezra
+21888,Illezra
+21889,Black Spirit's Energy
+21890,Illezra
+21891,Illezra
+21892,Illezra
+21893,Illezra
+21894,Illezra
+21895,Illezra's Dark Shadow
+21896,Illezra
+21897,Illezra's Dark Shadow
+21898,Illezra's Dark Shadow
+21899,Illezra's Dark Shadow
+21900,Illezra's Dark Shadow
 21901,Ahib Beast Trainer
 21902,Ahib Dark Chaser
 21903,Ahib Condemner
@@ -13854,7 +13979,7 @@ Param0,String
 26618,Suspicious Jar
 26619,Suspicious Jar
 26620,Sangoon
-26621,Sangoon
+26621,Afuaru
 26622,Sangoon
 26623,Sangoon
 26624,Sangoon
@@ -14656,6 +14781,7 @@ Param0,String
 27584,Hekaru
 27585,Mount Ahshi Tiger
 27587,Egg
+27591,Darktouched Spirit Knight
 27600,Desert Naga Combatant
 27601,Giant Lioness
 27602,Giant Lion
@@ -15072,6 +15198,7 @@ Param0,String
 28077,Swamp Fogan Guard
 28078,Swamp Fogan Fortuneteller
 28079,Sea Palace Bubble Fountain
+28080,Darktouched Root Spirit
 28081,Stun Trap
 28082,Harpy
 28083,Harpy Warrior
@@ -15094,6 +15221,30 @@ Param0,String
 28100,Hungry Black Spirit
 28101,Cyclops
 28102,Savage Ogre
+28106,Rusalka
+28107,Rusalka's Eyes
+28108,Rusalka
+28109,Rusalka
+28110,Coral Dreamfish
+28111,Coral Naga Frontliner
+28112,Coral Naga Trickster
+28113,Coral Naga Lookout
+28114,Coral Naga Chief Shaman
+28115,Coral Stoneback Crab
+28116,Rusalka's Might
+28117,Rusalka's Might
+28118,Condensed Cleansing Energy
+28119,Rusalka's Eyes
+28120,Rusalka's Eyes
+28121,Rusalka's Embrace
+28122,Rusalka
+28123,Rusalka's Eyes
+28124,Black Spirit-consumed Mermaid
+28125,Black Spirit-consumed Pirate
+28126,Black Wings
+28147,Darktouched Spirit Shaman
+28148,Darktouched Young Spirit
+28150,Golden Leaf Snake
 28151,Boren
 28152,Rey
 28153,Small Pot
@@ -15108,9 +15259,21 @@ Param0,String
 28162,Tower
 28163,Tower
 28164,Defender's Light
+28165,Rock Elephant
 28166,Resurrection spot A
 28167,Resurrection spot B
+28168,Enslar
+28169,Enslar
+28170,Light Fragment
 28171,Flame Tower Transparent NPC 1
+28173,Enslar's Shadow
+28174,Enslar_lower_mob1
+28175,Enslar_lower_mob2
+28176,Titan
+28177,Gravekeeper Golem
+28178,Gravewarden of Dawn
+28179,Gravewarden of Dusk
+28180,Orbita Grave of Light
 28181,Fridri Dofricson
 28182,Barhan Nesser
 28230,Afuaru
@@ -15142,6 +15305,7 @@ Param0,String
 28256,Condensed Power Stone
 28257,Afuaru
 28258,Afuaru
+28259,Grave of Faith
 28260,Cultist
 28261,Cultist Warrior
 28262,Cultist Shaman
@@ -15182,7 +15346,7 @@ Param0,String
 28297,Dekrogda
 28298,Dekrogda
 28299,Dekrogda
-28300,Afuaru
+28300,Sacred Lightning
 28301,Valkin
 28302,Fareed
 28303,Evergart
@@ -15220,18 +15384,24 @@ Param0,String
 28335,Gotha Rensa
 28336,Kyrill
 28337,Kun
+28338,Black Spirit-consumed Knight
+28339,Black Spirit-consumed Valkyrie
+28340,Gravewarden of Dawn
 28341,Dark Fog
 28342,Dark Fog
 28343,Dark Fog
 28344,Dark Fog
 28345,Dark Fog
+28346,Gravewarden of Dusk
+28349,Cliffside Mountain Sheep
+28350,Jordine
 28351,Imp Soldier
 28352,Imp Raider
-28353,Imp Wizard
-28354,Swamp Fogan
-28355,Swamp Fogan Lookout
-28356,Swamp Fogan Guard
-28357,Swamp Fogan Fortuneteller
+28353,Orzekea Power Stone
+28354,Orzekea Power Stone
+28355,Centarion
+28356,Spiran
+28357,Leos
 28358,Wandering Rogue Elementalist
 28359,Wandering Rogue Fighter
 28360,Wandering Rogue
@@ -15241,23 +15411,65 @@ Param0,String
 28364,Khala Elite Combatant
 28365,Khala Commanding Officer
 28366,Khala Reinforced Thrower
+28367,Jordine
+28368,Darktouched Spirit Knight
+28369,Darktouched Spirit Shaman
+28370,Darktouched Young Spirit
+28371,Mutated Muraka
+28372,Possessed Muraka
+28373,Black Spirit-consumed Blader
+28374,Black Spirit-consumed Mercenary
+28375,Black Wings
+28376,Darktouched Root Spirit
+28377,Darktouched Spirit Knight
+28378,Darktouched Spirit Shaman
+28379,Darktouched Young Spirit
+28380,Mutated Muraka
+28381,Possessed Muraka
+28382,Black Wings
+28383,Darktouched Root Spirit
+28384,Jordine
+28385,Jordine
 28386,Afuaru's Treasure Chest
+28387,Illezra's Dark Shadow
+28388,Illezra's Dark Shadow
+28389,Illezra's Dark Shadow
+28390,Illezra's Dark Shadow
+28391,Illezra's Dark Shadow
+28392,Illezra's Dark Shadow
+28393,Illezra's Dark Shadow
+28394,Illezra's Dark Shadow
+28395,Illezra's Dark Shadow
+28396,Illezra's Dark Shadow
+28397,Illezra
+28398,Illezra's Dark Shadow
+28399,Illezra's Dark Shadow
+28400,Illezra's Dark Shadow
 28401,Goblin Fighter
-28402,Goblin Thrower
-28403,Goblin Shaman
-28404,Goblin Elite Soldier
+28402,Magic Explosion
+28403,Binding Light
+28404,Magic Bubble
 28405,Swamp Naga
 28406,Swamp Naga Apprentice Axeman
-28407,Swamp Naga Apprentice Spearman
-28408,Swamp Naga Axeman
-28409,Swamp Naga Commander
-28410,Helm Big Axe
-28411,Helm Two-Axe Warrior
-28412,Helm Iron Shield
-28413,Helm Hammer
-28414,Basilisk Ambusher
-28415,Basilisk Watcher
-28416,Basilisk Petrifier
+28407,Edania
+28408,Black Spirit-consumed Blader
+28409,Black Spirit-consumed Mercenary
+28410,Black Spirit-consumed Knight
+28411,Black Spirit-consumed Valkyrie
+28412,Black Spirit-consumed Mermaid
+28413,Darktouched Spirit Knight
+28414,Darktouched Spirit Shaman
+28415,Darktouched Young Spirit
+28416,Mutated Muraka
+28417,Black Spirit
+28418,Black Spirit
+28419,Possessed Muraka
+28420,Black Spirit-consumed Blader
+28421,Black Spirit-consumed Mercenary
+28422,Darktouched Root Spirit
+28423,Jordine
+28424,Jordine
+28425,Fallen Valkyrie
 28451,Rookie Soldier
 28452,Senior Soldier
 28453,Scout
@@ -15292,16 +15504,53 @@ Param0,String
 28513,Tanco
 28514,Tukar Balten
 28515,Elten
-28601,Crio Protector
-28602,Crio Chaser
-28603,Crio Predator
-28604,Crio Usurper
+28519,Move
+28520,Statue
+28521,Ancient Device
+28522,Stoneback Crab
+28523,Stoneback Crab
+28524,Stoneback Crab
+28530,Statue
+28531,Bubble
+28532,Jordine
+28533,Jordine
+28534,Black Wings
+28535,Enslar
+28536,Enslar
+28537,Light Fragment
+28538,Enslar's Shadow
+28539,Enslar's Shadow
+28540,Enslar's Shadow
+28541,Rusalka
+28542,Rusalka
+28543,Rusalka's Eyes
+28544,Rusalka
+28545,Rusalka
+28582,Titan
+28583,Gravekeeper Golem
+28584,Gravewarden of Dawn
+28585,Gravewarden of Dusk
+28586,Black Spirit-consumed Knight
+28587,Black Spirit-consumed Valkyrie
+28588,Darktouched Spirit Knight
+28589,Darktouched Spirit Shaman
+28590,Darktouched Young Spirit
+28591,Coral Naga Frontliner
+28592,Coral Naga Trickster
+28593,Coral Naga Lookout
+28594,Coral Naga Chief Shaman
+28599,Fallen Valkyrie
+28600,Saskia
+28601,Claudilys
+28602,Felicie
+28603,Black Spirit-consumed Blader
+28604,Black Spirit-consumed Mercenary
 28605,Crio Reciter
 28606,Papu Paladin
 28607,Papu Dragoon
 28608,Papu Magic Blader
-28609,Papu Holy Archer
-28610,Papu Magician
+28609,Edana's Energy
+28610,Edana's Energy
 28827,Pirate Flag
 28828,Carrier Pigeon
 28829,Barrack
@@ -15474,6 +15723,8 @@ Param0,String
 29031,Dagon Warrior
 29032,Dagon Wizard
 29033,Dagon Elite Warrior
+29035,Ashen Wing
+29036,Margarethe
 29040,Lizard Defender
 29041,Lizard Warrior
 29042,Lizard Archer
@@ -15993,6 +16244,9 @@ Param0,String
 29779,Lekrashan
 29780,Lekrashan
 29781,Lekrashan
+29797,Veil
+29798,Edana's Energy
+29799,Mysterious Light
 29800,Red Nose
 29805,Ogre
 29806,Troll
@@ -16011,6 +16265,17 @@ Param0,String
 29825,Rock Tree Stoneback Crab
 29826,Moss Stoneback Crab
 29834,Wacky Tacky Frio
+29838,Ashen Wing
+29839,Edana's Fragment
+29840,Wariyana
+29842,Tripitaka
+29843,Gumiho
+29844,Gumiho
+29845,Illezra
+29846,Illezra
+29847,Illezra
+29848,Illezra
+29849,Illezra
 29850,Red Nose
 29851,Giath
 29855,Isabella
@@ -16021,11 +16286,21 @@ Param0,String
 29860,Volkras
 29861,Gairas
 29862,Mischievous Jack
+29863,Illezra
+29864,Illezra
+29865,Illezra's Dark Shadow
+29866,Illezra's Dark Shadow
+29867,Illezra's Dark Shadow
+29868,Illezra's Dark Shadow
+29869,Illezra's Dark Shadow
+29870,Illezra's Dark Shadow
 29873,Volkras
-29874,Volkras
-29875,Volkras
-29876,Volkras
-29877,Volkras
+29874,Illezra's Dark Shadow
+29875,Illezra's Dark Shadow
+29876,Illezra's Dark Shadow
+29877,Illezra's Dark Shadow
+29878,Illezra's Dark Shadow
+29879,Illezra's Dark Shadow
 29881,Bloodthirsty Stoneback Crab
 29882,Goblin Elite Soldier
 29883,Ahib Condemner
@@ -16085,11 +16360,18 @@ Param0,String
 29965,Brave Pine Blader
 29966,Shore-Down Stoneback Crab
 29967,Shore-Down Stoneback Crab
+29968,Illezra's Dark Shadow
+29969,Black Spirit
 29970,Olun's Silence
 29971,Golem's Left Arm
 29972,Raz'nal
 29973,Ulutuka
 29974,Portal
+29975,Illezra's Dark Shadow
+29976,Illezra's Dark Shadow
+29977,Illezra
+29978,Heart of Atomagia
+29979,Heart of Atomagia
 29981,Kutum's Power Stone
 29982,Terrmian Thousand Years War
 29983,Otter Commander
@@ -16308,16 +16590,17 @@ Param0,String
 31122,Elephant
 31123,Ballista
 31124,Ballista
+31125,Doomcaller
 31126,Balenos/Serendia Flame Tower
 31127,Mediah/Valencia Flame Tower
 31128,Calpheon/Kamasylvia Flame Tower
 31129,Balenos/Serendia Hwacha
 31130,Mediah/Valencia Hwacha
 31131,Calpheon/Kamasylvia Hwacha
-31132,Calpheon/Kamasylvia Enhanced Flame Tower
-31133,Balenos/Serendia Enhanced Flame Tower
-31134,Calpheon/Kamasylvia Big Hwacha
-31135,Balenos/Serendia Big Hwacha
+31132,Mediah/Valencia Enhanced Flame Tower
+31133,Calpheon/Kamasylvia Enhanced Flame Tower
+31134,Mediah/Valencia Big Hwacha
+31135,Calpheon/Kamasylvia Big Hwacha
 31136,Lynch Cannon
 31501,Horse
 31502,Horse
@@ -16410,6 +16693,7 @@ Param0,String
 31591,Horse
 31592,Horse
 31594,Horse
+31595,Krogdalo
 31601,Giorga Bonneville
 31611,Voltarion
 31612,Voltarion
@@ -18323,6 +18607,7 @@ Param0,String
 45379,Dawn
 45380,Morning
 45381,Cloudy Day
+45382,Podium
 45501,Narchillan
 45502,Surichi
 45503,Leminei Lain
@@ -19086,6 +19371,66 @@ Param0,String
 47645,Gangsu
 47646,Sol
 47647,Neoksam
+47648,Bahram
+47649,Eileen
+47650,Isobelle Encarotia
+47651,Roig Mills
+47652,Povios
+47653,Valks
+47654,Lejenti
+47655,Herawen
+47656,Ergin
+47657,Taner
+47658,Ferit
+47659,Alper
+47660,Girgo Viano
+47661,Zafer
+47662,Emet
+47663,Faruk
+47664,Kadir
+47665,Erdin
+47666,Selim
+47667,Kenan
+47668,Burak
+47669,Vedat
+47670,Akin
+47671,Serdar
+47672,Hashashin Statue
+47675,Otieno
+47676,Erhan
+47677,Aylin
+47678,Seda
+47679,Serkan
+47680,Mavera
+47681,Orhan
+47682,Ayshe
+47683,Feride
+47684,Nesibe
+47685,Dener
+47686,Kebir
+47687,Kagai
+47688,Ruhsar
+47689,Kamau
+47690,Kihara
+47691,Marua
+47692,Mutai
+47693,Azra
+47694,Yesem
+47695,Deniz
+47696,Ayaz
+47697,Cemal
+47698,Levent
+47699,Mert
+47700,Nadir
+47701,Pinar
+47702,Ceylan
+47703,Umut
+47704,Jeda
+47705,Throne of Aetherion
+47706,Throne of Orbita
+47707,Throne of Nymphamaré
+47708,Throne of Tenebraum
+47709,Throne of Zephyros
 49490,Devan
 49494,Girgo Viano
 49495,Girgo Viano
@@ -21878,9 +22223,9 @@ Param0,String
 59085,Summon Mystical Pearl Oyster
 59087,Choir Leader
 59088,Choir Member
-59089,Aspiring child musician
-59090,Aspiring child musician
-59091,Aspiring child musician
+59089,Aspiring Child Musician
+59090,Aspiring Child Musician
+59091,Aspiring Child Musician
 59092,Kunata Don
 59093,Momu
 59094,Durak
@@ -23104,6 +23449,7 @@ Param0,String
 61262,The Magnus Entrance - Well
 61263,The Magnus Entrance - Well
 61264,The Magnus Entrance - Well
+61265,The Magnus Entrance - Well
 61989,Sequence NPC
 61990,Sequence NPC
 61991,Sequence NPC
@@ -23220,7 +23566,7 @@ Param0,String
 62119,Kim Yeongbae
 62120,Park Sugyeong
 62121,Sangdeok
-62122,Hansu
+62122,Hansoo
 62123,Seokdo
 62124,Jiyeong
 62125,Hyeokcheol
@@ -23276,6 +23622,7 @@ Param0,String
 62190,Griffon
 62191,Duskwing Trainer
 62192,Villager
+62193,Sub NPC
 62194,Munsik
 62195,Papu
 62196,GM Silver
@@ -23334,6 +23681,31 @@ Param0,String
 62354,Manager
 62355,Scholar
 62356,Manager
+62357,Main Quest
+62358,Sub-quest
+62359,Pre-quest
+62360,Geographic Knowledge
+62361,Object
+62362,Edana's Fragment
+62363,Edana's Fragment
+62364,L Area
+62365,K Area
+62366,Immobile NPC 1
+62367,Immobile NPC 2
+62368,Immobile NPC 3
+62369,Sub-quest
+62370,Mobile NPC 1
+62371,Mobile NPC 2
+62372,Mobile NPC 3
+62373,Mobile NPC 4
+62374,NPC 1
+62375,NPC 2
+62376,NPC 3
+62377,NPC
+62378,Effect
+62379,Alustin
+62380,Emma Bartali
+62381,Quest NPC
 62384,Scholar
 62385,Scholar Manager
 62386,Defender's Light Activation Device
@@ -23373,8 +23745,40 @@ Param0,String
 62422,Large Siege Tower
 62423,Medium Siege Tower
 62424,Large Siege Tower
+62426,Ox King
+62427,Ox King
+62428,Ox King
+62429,Ox King
+62430,Ox King
+62436,Orwen
+62437,Jordine
+62438,Goyen
+62439,Edana's Legacy
+62440,Hakinza Sanctuary Storage +1 Expansion Bundle
+62441,Hakinza Sanctuary Stable +1 Expansion Coupon
+62442,Lafi Bedmountain
+62443,Serdo
+62444,Failed Edana
+62445,Ancient Teleportation Pad
+62446,Pet Group Preset +1 Expansion Coupon
+62447,Artifact Preset +1 Expansion Coupon
+62448,Edana's Legacy
+62449,Villager
+62450,Failed Edana
+62451,Failed Edana
+62452,Failed Edana
+62453,Failed Edana
+62454,Gate
+62455,Gate
 64502,Fresh Egg
+64503,NPC
 64504,10 Papu Emojis (Permanent)
+64505,Levian
+64506,Blue Shell
+64507,Treasure Chest
+64508,Pubi
+64509,Diving Board
+64510,Sarche
 65001,Cliff
 65002,Jordine
 65003,Peony
@@ -24698,6 +25102,65 @@ Param0,String
 47645,Shop
 47646,Shop
 47647,<null>
+47648,<null>
+47649,Shop
+47650,<null>
+47651,<null>
+47652,Shop
+47653,<null>
+47654,<null>
+47655,<null>
+47656,Shop
+47657,<null>
+47658,Shop
+47659,Shop
+47660,Shop
+47661,<null>
+47662,Shop
+47663,<null>
+47664,Shop
+47665,Currency Exchange
+47666,<null>
+47667,<null>
+47668,<null>
+47669,<null>
+47670,Shop
+47671,Contract Workers
+47675,<null>
+47676,<null>
+47677,<null>
+47678,<null>
+47679,<null>
+47680,<null>
+47681,<null>
+47682,<null>
+47683,<null>
+47684,<null>
+47685,<null>
+47686,<null>
+47687,<null>
+47688,<null>
+47689,<null>
+47690,<null>
+47691,<null>
+47692,<null>
+47693,<null>
+47694,<null>
+47695,<null>
+47696,<null>
+47697,<null>
+47698,<null>
+47699,<null>
+47700,<null>
+47701,<null>
+47702,<null>
+47703,<null>
+47704,<null>
+47705,<null>
+47706,<null>
+47707,<null>
+47708,<null>
+47709,<null>
 49490,Shop
 49494,Shop
 49495,Shop
@@ -25463,6 +25926,12 @@ Param0,String
 62323,Shop
 62324,Shop
 62327,<null>
+62443,<null>
+62444,Shop
+62450,Shop
+62451,Shop
+62452,Shop
+62453,Shop
 51,Longsword
 52,Longsword
 53,Longsword
