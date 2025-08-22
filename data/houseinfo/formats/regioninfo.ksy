@@ -75,6 +75,10 @@ types:
       - id: is_village_war_area
         type: u1
 
+      - id: unknown_1
+        type: u1
+        doc: 250805
+
       - id: is_king_or_lord_war_zone
         type: u1
 
@@ -86,7 +90,7 @@ types:
 
       - id: is_main_or_minor_town
         type: u1
-
+        
       - id: accessible_area
         type: u1
 
@@ -96,19 +100,18 @@ types:
       - id: village_tax_level
         type: u1
 
-      - id: unknown_1_nws
+      - id: village_tax_rate_by_level
         type: u2
-        doc: poss village_tax_level_sum u4
 
       - id: unknown_2
         type: u4
-        doc: all are 0x57E4 (22500)
+        doc: all are 0x57E4 (22500), changed now all are 0x555A (21850)
 
       - id: unknown_3
         type: u1
         doc: all are 0x00
 
-      - id: unknown_bool_indicator_1
+      - id: unknown_4
         type: u1
         doc: there are 110 '0' indicators
 
@@ -162,7 +165,6 @@ types:
 
       - id: immediate_respawn
         type: u1
-        # 106 bytes
 
       - id: waypoint_key
         type: u4
@@ -182,13 +184,12 @@ types:
 
       - id: valid_return_position_list_len
         type: u4
-        # 146
+        doc: skip
 
       - id: valid_return_position_list
         type: position_type
         repeat: expr
         repeat-expr: valid_return_position_list_len
-        # 146 + valid_return_position_list_len * 12
 
       - id: exploration_point
         type: u2
@@ -198,7 +199,6 @@ types:
 
       - id: warehouse_character_key
         type: u2
-        # 146 + valid_return_position_list_len * 12 + 38
 
       - id: warehouse_dialog_index
         type: u2
@@ -235,11 +235,9 @@ types:
 
       - id: is_free_revival_area
         type: u1
-        # 20
 
       - id: pc_deliver_region_key_list_len
         type: u4
-        # 21
 
       - id: pc_deliver_region_key_list
         type: field_list_type
@@ -254,7 +252,6 @@ types:
         repeat: expr
         repeat-expr: respawn_position_list_len
 
-      # 176B to end of record
       - id: unknown_5
         type: u1
         doc: all 0x00
@@ -294,16 +291,19 @@ types:
       - id: revive_point
         type: position_type
 
+      # After this shrddr's bt and my excel vary greatly
+
       - id: alignment_padding
         type: u8
         doc: buffer size is managed after the revive_point
 
-      - id: unknown_14_nws
+      - id: unknown_14
         type: u4
         doc: last block seems all node war and siege related
 
-      - id: unknown_15_nws
+      - id: unknown_15
         type: u4
+        doc: nodewars_siege_related
 
       - id: unknown_16
         type: u4
@@ -315,40 +315,49 @@ types:
       - id: premium_character_possible_region
         type: u1
 
-      - id: unknown_17nodewars_siege_related
+      - id: unknown_17
         type: u4
+        doc: nodewars_siege_related
 
       - id: unknown_18
         type: u2
         doc: all 0xFFFF
 
-      - id: unknown_19_nws
+      - id: unknown_19
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_20_nws
+      - id: unknown_20
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_21nodewars_siege_related
+      - id: unknown_21
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_22nodewars_siege_related
+      - id: unknown_22
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_23nodewars_siege_related
+      - id: unknown_23
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_24_nws
+      - id: unknown_24
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_25_nws
+      - id: unknown_25
         type: u4
+        doc: nodewars_siege_related
 
-      - id: unknown_26_nws
+      - id: unknown_26
         type: u4
+        doc: nodewars_siege_related
 
-      - id: uknown_arena_something
+      - id: unknown_arena_something
         type: u1
-        doc: perhaps something with seige
+        doc: perhaps something with seige?
         
       - id: unknown_27
         size: 12
@@ -358,8 +367,9 @@ types:
         size: 12
         doc: actually 8 + 4
         
-      - id: unknown_29_nws
+      - id: unknown_29
         type: u2
+        doc: nodewars_siege_related
         
       - id: is_siege_challenge
         type: u1
@@ -370,11 +380,16 @@ types:
       - id: unknown_31_siege_related
         type: u8
         
-      - id: unknown_32_nws
+      - id: unknown_32
         type: u8
+        doc: nodewars_siege_related
         
-      - id: unknown_33_nws
+      - id: unknown_33
         type: u8
+        doc: nodewars_siege_related
+        
+      - id: guild_wharf_character_key
+        type: u2
 
     instances:
       area_name:
@@ -496,4 +511,3 @@ enums:
     1: beach
     2: desert
     3: count
-    
