@@ -13502,7 +13502,7 @@
         "num_craft_list_items": 3,
         "craft_list": [
             { "house_level": 2, "item_craft_index":    2 },
-            { "house_level": 1, "item_craft_index":    1 },
+            { "house_level": 2, "item_craft_index":    1 },
             { "house_level": 3, "item_craft_index": 1432 }
         ]
     },
@@ -13534,7 +13534,7 @@
         "num_craft_list_items": 2,
         "craft_list": [
             { "house_level": 4, "item_craft_index": 2 },
-            { "house_level": 2, "item_craft_index": 1 }
+            { "house_level": 3, "item_craft_index": 1 }
         ]
     }
 }

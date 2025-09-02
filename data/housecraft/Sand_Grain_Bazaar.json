@@ -58,7 +58,7 @@
   {"lodging":3,"storage":3,"cost":4,"indices":[605,3301,3304,3307,3309],"states":[0,2,2,2,1]},
   {"lodging":3,"storage":5,"cost":5,"indices":[605,3301,3302,3307],"states":[0,1,2,2]},
   {"lodging":3,"storage":8,"cost":6,"indices":[605,3301,3302,3307,3309],"states":[0,1,2,2,1]},
-  {"lodging":3,"storage":12,"cost":7,"indices":[605,3301,3302,3303],"states":[0,2,2,1]},
+  {"lodging":3,"storage":12,"cost":7,"indices":[605,3304,3305,3306],"states":[0,2,2,1]},
   {"lodging":3,"storage":17,"cost":8,"indices":[605,3301,3302,3303,3307],"states":[0,1,2,1,2]},
   {"lodging":3,"storage":20,"cost":9,"indices":[605,3301,3304,3305,3306,3307],"states":[0,2,2,1,1,2]},
   {"lodging":3,"storage":23,"cost":10,"indices":[605,3301,3304,3305,3306,3307,3309],"states":[0,2,2,1,1,2,1]},
