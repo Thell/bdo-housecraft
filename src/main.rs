@@ -16,6 +16,7 @@ mod houseinfo;
 mod list_buildings;
 mod list_crafts;
 mod list_regions;
+mod list_storage;
 mod node_manipulation;
 mod optimize;
 mod region_nodes;
@@ -30,6 +31,7 @@ use generate::generate;
 use list_buildings::list_buildings;
 use list_crafts::list_crafts;
 use list_regions::list_regions;
+use list_storage::list_storage;
 use optimize::optimize;
 
 fn main() -> Result<()> {
@@ -49,6 +51,8 @@ fn main() -> Result<()> {
         list_regions()?
     } else if cli.list_crafts {
         list_crafts(cli.region)?
+    } else if cli.list_storage {
+        list_storage()?
     } else if let Some(craft) = cli.find_craft {
         find_craft_buildings(cli.region, craft)?
     } else if cli.generate {

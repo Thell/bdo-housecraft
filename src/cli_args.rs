@@ -28,6 +28,10 @@ pub(crate) struct Cli {
     #[arg(short = 'c', long)]
     pub(crate) list_crafts: bool,
 
+    /// list all regions storage sorted by global efficiency
+    #[arg(short = 's', long)]
+    pub(crate) list_storage: bool,
+
     /// find buildings for craft
     #[arg(short = 'f', long)]
     pub(crate) find_craft: Option<String>,

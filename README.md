@@ -161,6 +161,32 @@ O'draxxia
 ══════════════════════════════════════════════════
 ```
 
+## List storage chains
+
+```md
+> housecraft --list-storage
+  Region                   Building                               C   S    S/C     ttlC   ttlS   ttlS/ttlC  
+────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Dalbeol Village          Morning Light Dalbeol 4                1   16   16.00   1      16     16.00      
+                           Dokkebi Jar                            1   16   16.00   2      32     16.00      
+  Nampo's Moodle Village   Morning Light Nampo 1                  1   16   16.00   3      48     16.00      
+  Nopsae's Byeot County    Morning Light Nopsae 3                 1   16   16.00   4      64     16.00      
+                           Morning Light Nopsae 5                 1   16   16.00   5      80     16.00      
+  Muzgar                   Muzgar 1                               1   16   16.00   6      96     16.00      
+                           Muzgar 2                               1   16   16.00   7      112    16.00      
+  Yukjo Street             Morning Light Yukjo Street 1           1   16   16.00   8      128    16.00      
+  Godu Village             Morning Light Unjongga Street 2        1   16   16.00   9      144    16.00      
+  Bukpo                    Morning Light Bukpo 2                  1   16   16.00   10     160    16.00      
+                           Morning Light Bukpo 6                  1   16   16.00   11     176    16.00      
+  Hakinza Sanctuary        Shore of Ruins 1                       1   16   16.00   12     192    16.00      
+                           Shore of Ruins 2                       1   16   16.00   13     208    16.00      
+  Dalbeol Village          Morning Light Dalbeol 5                1   12   12.00   14     220    15.71      
+  Nampo's Moodle Village   Morning Light Nampo 3                  1   12   12.00   15     232    15.47      
+  Godu Village             Morning Light Unjongga Street 1        1   12   12.00   16     244    15.25      
+  Dalbeol Village          Morning Light Dalbeol 3                1   8    8.00    17     252    14.82      
+...
+```
+
 # Generate building chains.
 
 - Exhaustively calculates exact node chain costs for warehouse and workers.
