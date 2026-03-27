@@ -17,7 +17,6 @@
 #   bdo-cli: which provides pad and language data extraction requiring SCY rebuild.
 #   kaitai-compiler: to compile binary structure formats when they have changed. (use flag --update)
 
-
 import atexit
 from functools import lru_cache
 from pathlib import Path
@@ -32,7 +31,7 @@ RECORDS_CACHE = {}
 FILE_HANDLES = {}
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def package_path() -> Path:
     import importlib.resources
 
@@ -40,27 +39,27 @@ def package_path() -> Path:
         return path
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def data_path() -> Path:
     return package_path().parent / "data" / "houseinfo"
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def binary_path() -> Path:
     return data_path() / "gamecommondata" / "binary"
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def format_path() -> Path:
     return data_path() / "formats"
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def parser_path() -> Path:
     return package_path() / "parsers"
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def strings_path() -> Path:
     return data_path()
 
@@ -77,18 +76,17 @@ def scy_rebuild_path():
 
 
 def get_binary_file_handle(file_path):
-    global FILE_HANDLES
-
     file_key = str(file_path)
 
     if file_key not in FILE_HANDLES:
-        FILE_HANDLES[file_key] = open(binary_path() / file_path, "rb")
+        # NOTE: Keep open file handles for non-mmap binary files
+        #       they are closed by the atexit hook
+        FILE_HANDLES[file_key] = open(binary_path() / file_path, "rb")  # noqa: SIM115
 
     return FILE_HANDLES[file_key]
 
 
 def close_all_file_handles():
-    global FILE_HANDLES
     for handle in FILE_HANDLES.values():
         handle.close()
     FILE_HANDLES.clear()
@@ -113,8 +111,8 @@ def kaitai_struct_compile():
             f"{parser_path().as_posix()}",
             f"{format_path().joinpath('*.ksy')}",
         ]
-        run(args=args, shell=True, capture_output=True)
-    except Exception as e:
+        run(args=args, shell=True, capture_output=True, check=False)
+    except Exception as e:  # noqa: BLE001
         print("failed", e)
 
 
@@ -138,9 +136,10 @@ def extract_binary(filename):
                 f"^{filename}$",
                 "--out-dir",
                 f"{data_path().as_posix()}",
-            ]
+            ],
+            check=True,
         )
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print("failed", e)
 
 
@@ -202,29 +201,25 @@ def extract_strings(language_data_group, param0=any, param1=0, param2=0, param3=
         args.append("--param0")
         args.append(f"{param0}")
 
-    args.extend(
-        [
-            "--param1",
-            f"{param1}",
-            "--param2",
-            f"{param2}",
-            "--param3",
-            f"{param3}",
-        ]
-    )
+    args.extend([
+        "--param1",
+        f"{param1}",
+        "--param2",
+        f"{param2}",
+        "--param3",
+        f"{param3}",
+    ])
 
-    args.extend(
-        [
-            "--out-file",
-            f"{(strings_path() / f"{language_data_group}.csv").as_posix()}",
-            "-F",
-            "param0,string",
-        ]
-    )
+    args.extend([
+        "--out-file",
+        f"{(strings_path() / f'{language_data_group}.csv').as_posix()}",
+        "-F",
+        "param0,string",
+    ])
     print(f"Extracting {language_data_group} strings...")
     try:
-        run(args)
-    except Exception as e:
+        run(args, check=True)
+    except Exception as e:  # noqa: BLE001
         print("failed", e)
 
 
@@ -236,11 +231,7 @@ def remove_files(path):
 
 def ensure_data_availability():
     def get_stems(path):
-        return [
-            p.stem
-            for p in path.iterdir()
-            if not p.stem.startswith(".") and not p.stem.startswith("_")
-        ]
+        return [p.stem for p in path.iterdir() if not p.stem.startswith(".") and not p.stem.startswith("_")]
 
     formats = sorted(get_stems(format_path()))
     parsers = sorted(get_stems(parser_path()))
@@ -357,6 +348,7 @@ def generate_houseinfo_data():
 
 def generate_regioninfo_data(strings_filestem):
     import csv
+
     from natsort import natsorted
 
     with open(strings_path() / f"{strings_filestem}.csv", "r", encoding="UTF-8") as f:
@@ -376,21 +368,22 @@ def do_housecraft_optimize():
 
     args = ["cargo", "build", "--release"]
     try:
-        run(args)
-    except Exception as e:
+        run(args, check=True)
+    except Exception as e:  # noqa: BLE001
         print("failed cargo build", e)
 
     args = ["target/release/housecraft", "--optimize", "-R", "ALL", "--limit-warehouse", "184"]
     try:
-        run(args)
-    except Exception as e:
+        run(args, check=True)
+    except Exception as e:  # noqa: BLE001
         print("failed optimization", e, "\n", args)
 
 
 def format_all_lodging_storage():
-    from compact_json import Formatter
     import json
     import re
+
+    from compact_json import Formatter
 
     path = data_path().parent / "housecraft" / "all_lodging_storage.json"
     with open(path, "r") as f:

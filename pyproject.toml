@@ -1,0 +1,13 @@
+[project]
+name = "bdo-housecraft"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "compact-json>=1.8.2",
+    "highspy>=1.13.1",
+    "inflection>=0.5.1",
+    "kaitaistruct>=0.11",
+    "natsort>=8.4.0",
+]

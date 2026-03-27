@@ -2357,6 +2357,21 @@
             { "house_level": 1, "item_craft_index":  0 }
         ]
     },
+    "2247": {
+        "need_explore_point": 2,
+        "affiliated_town": 88,
+        "parent_node": 61,
+        "character_key": 2247,
+        "len_need_house_key": 0,
+        "need_house_key": 0,
+        "house_group": 0,
+        "house_floor": 0,
+        "num_craft_list_items": 2,
+        "craft_list": [
+            { "house_level": 1, "item_craft_index": 2 },
+            { "house_level": 1, "item_craft_index": 0 }
+        ]
+    },
     "2249": {
         "need_explore_point": 2,
         "affiliated_town": 32,
