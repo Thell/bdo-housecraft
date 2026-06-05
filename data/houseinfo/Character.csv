@@ -2959,6 +2959,11 @@ Param0,String
 6853,Pearl of Emeraltides
 6854,Mermaid Fountain Statue
 6855,Wall-Mounted Mermaid Fountain Statue
+6856,[Event] [Manor] Throne of Azureach
+6857,[Event] [Manor] Throne of Emeraltides
+6858,[Event] [Manor] Throne of Crimsonroot
+6859,[Event] [Manor] Throne of Ebonshade
+6860,[Event] [Manor] Throne of Amberwilds
 6861,Azureach Floor Decoration
 6862,Hand of Ancient Ator
 6863,Ancient Relic Altar
@@ -3032,6 +3037,10 @@ Param0,String
 6952,[Event] [Manor] White Mugunghwa - Full Bloom
 6953,[Event] [Manor] Red Mugunghwa - Radiance
 6954,[Event] [Manor] White Mugunghwa - Radiance
+6955,[Event] [Manor] Rippling Koi Pond
+6957,[Event] Courage-Lit Egg Lamp
+6958,[Event] Abundance-Lit Egg Lamp
+6959,[Event] Heart of Black Wings
 7001,Scarecrow
 7002,Scarecrow
 7003,Scarecrow
@@ -3463,6 +3472,7 @@ Param0,String
 8639,Owl
 8640,Owl
 8641,Darkness
+8642,Darkness
 8992,GM's Location
 8993,GM's Location
 8994,GM's Location
@@ -5013,8 +5023,8 @@ Param0,String
 12502,Crafted Tub
 12601,Square Fort
 12602,Square Fort
-12603,Mediah/Valencia Node Fort
-12604,Calpheon/Kamasylvia Node Fort
+12603,Calpheon/Ulukita Node Fort
+12604,Valencia/Edania Node Fort
 12605,Barricade
 12606,Barricade
 12607,Barricade
@@ -5104,43 +5114,43 @@ Param0,String
 12757,Balenos/Serendia Fort (Tier 4 Node)
 12758,Balenos/Serendia Fort (Tier 5 Node)
 12759,Balenos/Serendia Flame Tower
-12760,Mediah/Valencia Flame Tower
-12761,Calpheon/Kamasylvia Flame Tower
+12760,Calpheon/Ulukita Flame Tower
+12761,Valencia/Edania Flame Tower
 12762,Balenos/Serendia Hwacha
-12763,Mediah/Valencia Hwacha
-12764,Calpheon/Kamasylvia Hwacha
-12765,Mediah/Valencia Enhanced Flame Tower
-12766,Calpheon/Kamasylvia Enhanced Flame Tower
-12767,Mediah/Valencia Big Hwacha
-12768,Calpheon/Kamasylvia Big Hwacha
+12763,Calpheon/Ulukita Hwacha
+12764,Valencia/Edania Hwacha
+12765,Calpheon/Ulukita Enhanced Flame Tower
+12766,Valencia/Edania Enhanced Flame Tower
+12767,Calpheon/Ulukita Big Hwacha
+12768,Valencia/Edania Big Hwacha
 12769,Balenos/Serendia Elephant Nursery
-12770,Mediah/Valencia Elephant Nursery
-12771,Calpheon/Kamasylvia Elephant Nursery
+12770,Calpheon/Ulukita Elephant Nursery
+12771,Valencia/Edania Elephant Nursery
 12772,Balenos/Serendia Indomitable Flag Factory
-12773,Mediah/Valencia Indomitable Flag Factory
-12774,Calpheon/Kamasylvia Indomitable Flag Factory
+12773,Calpheon/Ulukita Indomitable Flag Factory
+12774,Valencia/Edania Indomitable Flag Factory
 12775,Balenos/Serendia Indomitable Flag
-12776,Mediah/Valencia Indomitable Flag
-12777,Calpheon/Kamasylvia Indomitable Flag
-12778,Mediah/Valencia Fort (Tier 1 Node)
-12779,Mediah/Valencia Fort (Tier 2 Node)
-12780,Mediah/Valencia Fort (Tier 3 Node)
-12781,Mediah/Valencia Fort (Tier 4 Node)
-12782,Mediah/Valencia Fort (Tier 5 Node)
-12783,Calpheon/Kamasylvia Fort (Tier 1 Node)
-12784,Calpheon/Kamasylvia Fort (Tier 2 Node)
-12785,Calpheon/Kamasylvia Fort (Tier 3 Node)
-12786,Calpheon/Kamasylvia Fort (Tier 4 Node)
-12787,Calpheon/Kamasylvia Fort (Tier 5 Node)
+12776,Calpheon/Ulukita Indomitable Flag
+12777,Valencia/Edania Indomitable Flag
+12778,Calpheon/Ulukita Fort (Tier 1 Node)
+12779,Calpheon/Ulukita Fort (Tier 2 Node)
+12780,Calpheon/Ulukita Fort (Tier 3 Node)
+12781,Calpheon/Ulukita Fort (Tier 4 Node)
+12782,Calpheon/Ulukita Fort (Tier 5 Node)
+12783,Valencia/Edania Fort (Tier 1 Node)
+12784,Valencia/Edania Fort (Tier 2 Node)
+12785,Valencia/Edania Fort (Tier 3 Node)
+12786,Valencia/Edania Fort (Tier 4 Node)
+12787,Valencia/Edania Fort (Tier 5 Node)
 12788,Balenos/Serendia Supply Depot
-12789,Mediah/Valencia Supply Depot
-12790,Calpheon/Kamasylvia Supply Depot
+12789,Calpheon/Ulukita Supply Depot
+12790,Valencia/Edania Supply Depot
 12791,Balenos/Serendia Barricade
-12792,Mediah/Valencia Barricade
-12793,Calpheon/Kamasylvia Barricade
+12792,Calpheon/Ulukita Barricade
+12793,Valencia/Edania Barricade
 12794,Balenos/Serendia Iron Barricade
-12795,Mediah/Valencia Iron Barricade
-12796,Calpheon/Kamasylvia Iron Barricade
+12795,Calpheon/Ulukita Iron Barricade
+12796,Valencia/Edania Iron Barricade
 12797,Command Post
 12798,Field HQ
 12799,Field Command Post
@@ -9118,7 +9128,7 @@ Param0,String
 21332,Frenzied Executioner
 21333,Executioner
 21334,Iron Fist Warder
-21335,Caphras' Follower
+21335,Caphras's Follower
 21336,Dark Eyes Warder
 21337,Ahib Beast Trainer
 21338,Ahib Dark Chaser
@@ -10213,7 +10223,7 @@ Param0,String
 22577,Frenzied Executioner
 22578,Executioner
 22579,Iron Fist Warder
-22580,Caphras' Follower
+22580,Caphras's Follower
 22582,Dark Eyes Warder
 22583,Aakman Watcher
 22584,Aakman Guardian
@@ -11833,7 +11843,7 @@ Param0,String
 24273,Ancient Dungeon Guard Tower
 24274,Hystria Guard Tower
 24275,Hystria Watch Tower
-24276,Caphras' Torture Device
+24276,Caphras's Torture Device
 24277,Jail Alarm Device
 24278,Pile of Jail Junk
 24279,Aakman Illusion Statue
@@ -13837,42 +13847,42 @@ Param0,String
 26397,Raider Golden Pig
 26398,Dark Portal
 26399,Blood Relic
-26400,Blood Relic
-26401,Blood Relic
-26402,Imp Soldier
-26403,Imp Raider
-26404,Imp Wizard
-26405,Steel Imp
-26406,Steel Imp Warrior
-26407,Steel Imp Wizard
-26408,Goblin
-26409,Goblin Fighter
-26410,Goblin Thrower
-26411,Goblin Shaman
-26412,Goblin Elite Soldier
-26413,Imp
-26414,Imp Warrior
-26415,Imp Scout
-26416,Imp Trainer
-26417,Altar Imp Fighter
-26418,Swamp Naga
-26419,Swamp Naga Apprentice Spearman
-26420,Swamp Naga Apprentice Axeman
-26421,Swamp Naga Axeman
-26422,Swamp Naga Commander
-26423,Swamp Fogan
-26424,Swamp Fogan Guard
-26425,Swamp Fogan Lookout
-26426,Swamp Fogan Fortuneteller
-26427,Fogan Hatchling
-26428,Big Swamp Fogan
-26429,Small Swamp Fogan
-26430,Red Orc
-26431,Red Orc Warrior
-26432,Red Orc Wizard
-26433,Red Orc Elite Soldier
-26434,Red Orc Fighter
-26435,Red Orc Berserker
+26400,Dark Energy
+26401,Purified Blood Essence
+26402,Jordine
+26403,Egg
+26404,Jordine
+26405,Jordine
+26406,Cathawen
+26407,Ronin
+26408,Thundercloud Kutum
+26409,Sangoon
+26410,Sangoon
+26411,Yukhon
+26412,Sangoon
+26413,Sangoon
+26414,Golden Pig King
+26415,Golden Pig King
+26416,Burning Oil
+26417,Duoksini
+26418,Soldierkkebi
+26419,Soldierkkebi
+26420,Soldierkkebi
+26421,Dokkebi
+26422,Dokkebi Soul
+26423,Dokkebi Soul
+26424,Duoksini
+26425,Gumiho
+26426,Egg
+26427,Foxfire
+26428,Egg
+26429,Egg
+26430,Gumiho
+26431,Jigwi
+26432,Hellfire-Infused Flame
+26433,Rising Hellfire
+26434,Flame of Resentment
+26435,Jigwi's Flame
 26436,Long Red Orc
 26437,Young Red Orc
 26438,Young Red Orc Warrior
@@ -13882,100 +13892,100 @@ Param0,String
 26442,Khuruto Fighter
 26443,Khuruto Shaman
 26444,Saunil Fighter
-26445,Saunil Armored Warrior
-26446,Saunil Elder
-26447,Saunil Brawler
-26448,Saunil Guard
-26449,Saunil Warrior
-26450,Saunil Archer
-26451,Saunil Elite Soldier
-26452,Saunil Vanguard
-26453,Saunil Commander
-26454,Saunil Mobile Catapult
-26455,Spotted Hyena
-26456,Giant
-26457,Giant Brawler
-26458,Giant Combatant
-26459,Giant Fighter
-26460,Giant Warrior
-26461,Troll
-26462,Troll Warrior
-26463,Troll Thrower
-26464,Troll Shaman
-26465,Troll Porter
-26466,Ancient Troll
-26467,Ancient Troll Warrior
-26468,Ancient Troll Thrower
-26469,Ancient Troll Shaman
-26470,Troll Elite Warrior
-26471,Troll Cow
-26472,Ancient Troll Elite Warrior
-26473,Catfishman
-26474,Catfishman Fisher
-26475,Catfishman Light-armored Warrior
-26476,Catfishman Elite Fisher
-26477,Otter Fisher
-26478,Fat Catfishman
-26479,Catfishman Witmirth
-26480,Skeleton
-26481,Skeleton Archer
-26482,Skeleton Warrior
-26483,Skeleton Wolf
-26484,Green Orc Skeleton Warrior
-26485,Skeleton Lizard
-26486,Skeleton Witmirth
-26487,Rhutum Guard
-26488,Rhutum Sheriff
-26489,Red Orc Guard
-26490,Red Orc Sentinel
-26491,Saunil Guard
-26492,Saunil Sheriff
-26493,Khuruto Executor
-26494,Khuruto Sheriff
-26495,Khuruto Guard
-26496,Khuruto Chaser
-26497,Imp Work Supervisor
-26498,Rhutum Chief Shaman
-26499,Troll Work Supervisor
-26500,Thunder Drummer
-26501,Lightning Trumpeter
-26502,Small Mane
-26503,Big Mane
-26504,Agile Mane
-26505,Giant Mane
-26506,Helm Miner
-26507,Helm Big Axe
-26508,Helm Two-Axe Warrior
-26509,Helm Iron Shield
-26510,Helm Hammer
-26511,Helm Hunter
-26512,Helm Big Mace
-26513,Helm Small Mace
-26514,Helm Angry Hammer
-26515,Helm Golem
-26516,Helm Devourer
-26517,Helm Destroyer
-26518,Helm Crusher
-26519,Helm Raid Captain
-26520,Ferrid Tio
-26521,Ferrid Tuny
-26522,Ferrid Tali
-26523,Ferrid Tio
-26524,Lava Devourer
-26525,Lava Fafalun
-26526,Lava Tukar
-26527,Lava Searcher
-26528,Lava Faolun
-26529,Lava Taolun
-26530,Elric Layperson
-26531,Elric Follower
+26445,Darktouched Spirit Knight
+26446,Darktouched Spirit Shaman
+26447,Darktouched Young Spirit
+26448,Mutated Muraka
+26449,Possessed Muraka
+26450,Darktouched Root Spirit
+26451,Darktouched Root Spirit
+26452,Altar's Trial
+26453,Altar's Trial
+26454,Altar's Trial
+26455,Altar's Trial
+26456,Altar's Trial
+26457,Forest Ronaros Scout
+26458,Forest Ronaros Guardian
+26459,Forest Ronaros Catcher
+26460,Ronaros's Shackle
+26461,Altar's Trial
+26462,Centarion
+26463,Spiran
+26464,Leos
+26465,Alketa
+26466,Alketa's Sword
+26467,Orzekea Artifact
+26468,Orzekea Artifact
+26469,Gyfin Rhasia Decimator
+26470,Gyfin Rhasia Flamen
+26471,Gyfin Rhasia Guard
+26472,Gyfin Rhasia Crusher
+26473,Butcher of Gyfin Rhasia
+26474,Gyfin Rhasia
+26475,Altar of Blood
+26476,Ahib Beast Trainer
+26477,Ahib Dark Chaser
+26478,Ahib Condemner
+26479,Ahib Dark Champion
+26480,Ahib Dark Mage
+26481,Ahib Salun Bear Spearmaiden
+26482,Ahib Salun Bear Spearmaiden
+26483,Prankkebi
+26484,Strongkkebi
+26485,Philosophkebi
+26486,Combatkebi
+26487,Kkebifire
+26488,Kkebidol
+26489,Kkebilith
+26490,Cadry Chief Gatekeeper
+26491,Cadry Chief Gatekeeper
+26492,Cadry Fighter
+26493,Cadry Black Mage
+26494,Cadry Armored Fighter
+26495,Cadry Ruins
+26496,Cadry Ruins
+26497,Tungrad Visionary
+26498,Tungrad Ascetic
+26499,Tungrad Executioner
+26500,Tungrad Putarek
+26501,Tungrad Ruins
+26502,Tungrad Ruins
+26503,Red Nose
+26504,Eternal Darkseeker
+26505,Punitive Darkseeker
+26506,Vengeful Darkseeker
+26507,Mournful Darkseeker
+26508,Altar of Blood
+26509,Altar of Blood
+26510,Altar of Blood
+26511,Volkras
+26512,Barnas
+26513,Gairas
+26514,Spook
+26515,Gairas
+26516,Gairas
+26517,Gairas
+26518,Coral Dreamfish
+26519,Coral Naga Frontliner
+26520,Coral Naga Trickster
+26521,Coral Naga Lookout
+26522,Coral Naga Chief Shaman
+26523,Black Spirit-consumed Mermaid
+26524,Black Spirit-consumed Pirate
+26525,Titan
+26526,Gravekeeper Golem
+26527,Gravewarden of Dawn
+26528,Gravewarden of Dusk
+26529,Black Spirit-consumed Knight
+26530,Black Spirit-consumed Valkyrie
+26531,Sacred Lightning
 26532,Elric Cultist
 26533,Elric Priest
 26534,Elric High Priest
 26535,Decayed Swamp Monster
-26536,Desert Naga Combatant
-26537,Desert Naga Combat Monk
-26538,Desert Naga Commanding Officer
+26536,Altar of Blood
+26537,Altar of Blood
+26538,Altar of Blood
 26539,Stone Mountain Turtle Dragon
 26540,Desert Fogan Sentry
 26541,Desert Fogan Seer
@@ -13990,40 +14000,40 @@ Param0,String
 26550,Cadry Commander
 26551,Basilisk Ambusher
 26552,Basilisk Watcher
-26553,Basilisk Petrifier
-26554,Petrified Soldier
-26555,Petrified Adventurer
-26556,Gorgo Cobra
-26557,Centaurus
-26558,Centaurus Hunter
+26553,Tehmelun Military Dog
+26554,Red Nose
+26555,Tehmelun Seeker
+26556,Tehmelun Elite Soldier
+26557,Tehmelun Creed Knight
+26558,Ancient Puturum
 26559,Centaurus Axeman
-26560,Centaurus Seeker
-26561,Aakman Elite Guardian
-26562,Aakman Elite Watcher
-26563,Aakman Flamen
+26560,Crescent Follower
+26561,Crescent Watcher
+26562,Crescent Guardian
+26563,Saunil Mobile Catapult
 26564,Aakman Airbender
 26565,Aakman Punisher
-26566,Aakman Watcher
-26567,Aakman Guardian
-26568,Kalqueesh
-26569,Vodkhan
-26570,Tanco
-26571,Tutuka
-26572,Tukar Balten
-26573,Elten
-26574,Tukar Burmol
-26575,Tukar Demol
-26576,Ancient Civilization Executioner
-26577,Ancient Civilization Executioner
-26578,Laytenn
+26566,Jordine
+26567,Urugon
+26568,Valteran
+26569,Katos
+26570,Kimel
+26571,Ahtenn
+26572,Cetus
+26573,Monoceros
+26574,Unstable Grounds
+26575,Mirumok
+26576,Old Mirumok
+26577,Voraro
+26578,Degraded Old Tree Treant
 26579,Laytenn
 26580,Desert Naga Chief Gatekeeper
 26581,Desert Fogan Chief Gatekeeper
 26582,Crescent Chief Gatekeeper
 26583,Cadry Chief Gatekeeper
 26584,Shadow of Gahaz
-26585,Kreator
-26586,Kreator
+26585,Altar of Blood
+26586,Altar of Blood
 26587,Kreator
 26588,Kreator
 26589,Red Orc Wizard
@@ -14138,11 +14148,11 @@ Param0,String
 26698,Oduksini's Soul
 26699,Oduksini
 26700,Oduksini
-26701,Flame Tower
-26702,Hwacha
+26701,Ahib Salun Wolf Spearmaiden
+26702,Geuseunsae
 26703,Cannon
-26704,Defense Tower
-26705,Wooden Fence Gate
+26704,Offin Tett
+26705,Coral Naga Frontliner
 26706,Wooden Fence
 26707,Flame Trap
 26708,Yukhon
@@ -14188,34 +14198,34 @@ Param0,String
 26748,Yukhon
 26749,Tiger Changui
 26750,Oduksini
-26751,Red Nose
-26752,Giath
-26753,Dastard Bheg
-26754,Naga Captain
-26755,Titium
-26756,Org
-26757,Kelcas
-26758,Saunil Siege Captain
-26759,Gehaku
-26760,Black Mane
-26761,Qoobe
-26762,Hexe Marie
-26763,Abandoned Iron Mine Executor
-26764,Giant Mane
-26765,Steel Nux
-26766,Ferrid
-26767,Skeleton King
-26768,Desert Naga Chief Gatekeeper
-26769,Desert Fogan Chief Gatekeeper
-26770,Crescent Chief Gatekeeper
-26771,Cadry Chief Gatekeeper
-26772,Katzvariak
-26773,Ronin
+26751,Ron's Mirror
+26752,Forest Ronaros Scout
+26753,Forest Ronaros Guardian
+26754,Forest Ronaros Catcher
+26755,Forest Ronaros Marksman
+26756,Elite Golden Pig
+26757,Charging Golden Pig
+26758,Ancient Puturum
+26759,Cadry Commander
+26760,Crescent Chief Gatekeeper
+26761,Tungrad Putarek
+26762,Griffon
+26763,Serpen
+26764,Golden Pig King
+26765,Elite Golden Pig
+26766,Afuaru
+26767,Afuaru
+26768,Afuaru
+26769,Afuaru
+26770,Alketa
+26771,Alketa's Sword
+26772,Energy of the Altar
+26773,Darktouched Root Spirit
 26774,Akumsa
 26775,Ancient Puturum
 26776,Centaurus Commander
 26777,Basilisk Commander
-26778,Ancient Kutum
+26778,Kutum's Remnant
 26779,Oduksini
 26780,Oduksini
 26781,Oduksini's Soul
@@ -14247,8 +14257,94 @@ Param0,String
 26807,Enter Stage 8
 26808,Enter Stage 9
 26809,Enter Stage 10
-26828,Red Orc Wizard
-26846,Imp Bomber
+26810,Tehmelun Military Dog
+26811,Tehmelun Elite Soldier
+26812,Tehmelun Creed Knight
+26813,Tehmelun Seeker
+26814,Blood Relic
+26815,Cadry Fighter
+26816,Cadry Black Mage
+26817,Cadry Armored Fighter
+26818,Cadry Chief Gatekeeper
+26819,Crescent Follower
+26820,Crescent Watcher
+26821,Crescent Guardian
+26822,Saunil Mobile Catapult
+26823,Tungrad Visionary
+26824,Tungrad Ascetic
+26825,Tungrad Executioner
+26826,Eternal Darkseeker
+26827,Punitive Darkseeker
+26828,Vengeful Darkseeker
+26829,Mournful Darkseeker
+26830,Prankkebi
+26831,Strongkkebi
+26832,Philosophkebi
+26833,Combatkebi
+26834,Kkebifire
+26835,Kkebidol
+26836,Kkebilith
+26837,Volkras
+26838,Barnas
+26839,Gairas
+26840,Gairas
+26841,Spook
+26842,Valteran
+26843,Katos
+26844,Kimel
+26845,Ahtenn
+26846,Cetus
+26847,Monoceros
+26848,Ancient Puturum
+26849,Cadry Commander
+26850,Crescent Chief Gatekeeper
+26851,Tungrad Putarek
+26852,Tungrad Putarek
+26853,Geuseunsae
+26854,Griffon
+26855,Serpen
+26856,Desert Fogan Seer
+26857,Desert Fogan Hoppity
+26858,Desert Fogan Fighter
+26859,Crescent Watcher
+26860,Crescent Follower
+26861,Crescent Guardian
+26862,Cadry Fighter
+26863,Cadry Black Mage
+26864,Cadry Armored Fighter
+26865,Cadry Commander
+26866,Lava Devourer
+26867,Lava Fafalun
+26868,Lava Tukar
+26869,Lava Searcher
+26870,Lava Faolun
+26871,Lava Taolun
+26872,Basilisk Ambusher
+26873,Basilisk Watcher
+26874,Basilisk Petrifier
+26875,Petrified Soldier
+26876,Petrified Adventurer
+26877,Gorgo Cobra
+26878,Centaurus
+26879,Centaurus Hunter
+26880,Centaurus Axeman
+26881,Centaurus Seeker
+26882,Saunil Mobile Catapult
+26883,Aakman Elite Guardian
+26884,Aakman Elite Watcher
+26885,Aakman Flamen
+26886,Aakman Airbender
+26887,Aakman Punisher
+26888,Aakman Watcher
+26889,Aakman Guardian
+26890,Kalqueesh
+26891,Vodkhan
+26892,Tanco
+26893,Tutuka
+26894,Tukar Balten
+26895,Elten
+26896,Tukar Burmol
+26897,Tukar Demol
 26898,Elten
 26899,Elten
 26900,Giath
@@ -15076,9 +15172,9 @@ Param0,String
 27843,Frenzied Executioner
 27844,Executioner
 27845,Iron Fist Warder
-27846,Caphras' Follower
+27846,Caphras's Follower
 27847,Dark Eyes Warder
-27848,Caphras' Torture Device
+27848,Caphras's Torture Device
 27849,Jail Alarm Device
 27850,Pile of Jail Junk
 27851,Afuaru's Treasure Chest
@@ -15588,7 +15684,7 @@ Param0,String
 28427,Remnant of the Seer
 28428,Remnant of the Watcher
 28429,Laytenn
-28430,Caphras' Energy
+28430,Caphras's Energy
 28431,Black Spirit-consumed Mercenary
 28432,Jordine
 28433,Rusalka
@@ -15788,6 +15884,22 @@ Param0,String
 28681,New Great Ocean Small
 28682,New Great Ocean Large
 28683,New Great Ocean Large Phase 2
+28726,Ronin
+28727,Egg
+28731,Quint
+28732,Vell
+28753,Black Wings
+28754,Muraka
+28755,Black Gem
+28756,Quint
+28757,Enchanted Rock
+28764,Dimensional Rift
+28765,Mutated Muraka
+28766,Titan
+28767,Manticore
+28768,Beelzebub
+28769,Watcher's Gaze
+28779,Golden Pig Statue
 28827,Pirate Flag
 28828,Carrier Pigeon
 28829,Barrack
@@ -15890,7 +16002,7 @@ Param0,String
 28952,Treasure Chest of a Sailor
 28953,Treasure Chest of a Sailor
 28954,Treasure Chest of a Sailor
-28960,Caphras' Memory
+28960,Caphras's Memory
 28961,Volkras
 28962,Barnas
 28963,Gairas
@@ -16033,7 +16145,7 @@ Param0,String
 29112,Hyena Human
 29113,Executioner
 29114,Iron Fist Warder
-29115,Caphras' Follower
+29115,Caphras's Follower
 29116,Dark Eyes Warder
 29117,Aakman Elite Guardian
 29118,Aakman Elite Watcher
@@ -16155,6 +16267,7 @@ Param0,String
 29263,Sandstorm Assassin
 29264,Sandstorm Elite
 29265,Sandstorm Rifleman
+29266,Dimensional Rift
 29270,Yulho
 29271,Yulho
 29272,Yulho
@@ -16873,15 +16986,15 @@ Param0,String
 31124,Ballista
 31125,Doomcaller
 31126,Balenos/Serendia Flame Tower
-31127,Mediah/Valencia Flame Tower
-31128,Calpheon/Kamasylvia Flame Tower
+31127,Calpheon/Ulukita Flame Tower
+31128,Valencia/Edania Flame Tower
 31129,Balenos/Serendia Hwacha
-31130,Mediah/Valencia Hwacha
-31131,Calpheon/Kamasylvia Hwacha
-31132,Mediah/Valencia Enhanced Flame Tower
-31133,Calpheon/Kamasylvia Enhanced Flame Tower
-31134,Mediah/Valencia Big Hwacha
-31135,Calpheon/Kamasylvia Big Hwacha
+31130,Calpheon/Ulukita Hwacha
+31131,Valencia/Edania Hwacha
+31132,Calpheon/Ulukita Enhanced Flame Tower
+31133,Valencia/Edania Enhanced Flame Tower
+31134,Calpheon/Ulukita Big Hwacha
+31135,Valencia/Edania Big Hwacha
 31136,Lynch Cannon
 31501,Horse
 31502,Horse
@@ -17101,7 +17214,7 @@ Param0,String
 35315,Wheat Cart
 35316,Khuruto Scout
 35317,Secret Box
-35318,Caphras' Journal
+35318,Caphras's Journal
 35319,Treasure Chest
 35401,Old Box
 35402,Old Box
@@ -17555,6 +17668,7 @@ Param0,String
 37246,Villager
 37247,Villager
 37248,Margoria Lost Item
+37249,Knowledge NPC
 39801,Fairy Irene
 39802,Fairy Irene
 39803,Fairy Risty
@@ -17739,10 +17853,10 @@ Param0,String
 40742,Ledorich Beo
 40743,Tanya
 40744,Duncan
-40745,Mystical Lake Festival
+40745,Songkran
 40746,Roig Mills
 40747,Transparent Quest NPC
-40748,Mystical Lake Festival
+40748,Songkran
 40749,Secret Guards
 40750,Transparent Quest NPC
 40751,Edan
@@ -17767,6 +17881,7 @@ Param0,String
 40770,Feinia
 40771,Manny
 40772,Transparent NPC
+40773,Cedrio
 41001,Bobby Lauren
 41002,Ornella
 41003,Caresto Fonti
@@ -19766,6 +19881,35 @@ Param0,String
 47739,Marcus
 47740,Vargas
 47741,Zaid
+47742,Edania Merchant
+47743,Edania Merchant
+47744,Edania Merchant
+47745,Edania Merchant
+47746,Edania Merchant
+47747,Edania Merchant
+47748,Edania Merchant
+47749,Edania Merchant
+47750,Edania Merchant
+47751,Edania Merchant
+47752,Edania Merchant
+47754,Edania Merchant
+47755,Edania Merchant
+47756,Edania Merchant
+47757,Edania Merchant
+47758,Edania Merchant
+47759,Edania Merchant
+47760,Edania Merchant
+47761,Edania Merchant
+47762,Edania Merchant
+47763,Edania Merchant
+47764,Edania Merchant
+47765,Edania Merchant
+47766,Edania Merchant
+47767,Edania Merchant
+47768,Edania Merchant
+47769,Edania Merchant
+47770,Girgo Viano
+47771,Patrigio
 49490,Devan
 49494,Girgo Viano
 49495,Girgo Viano
@@ -19853,6 +19997,16 @@ Param0,String
 49583,Goblin
 49584,Carpuro
 49585,Kanilla Delcas
+49586,Guide of the Abyss
+49587,Guide of the Abyss
+49588,Guide of the Abyss
+49589,Guide of the Abyss
+49590,Guide of the Abyss
+49591,Guide of the Abyss
+49592,Guide of the Abyss
+49593,Guide of the Abyss
+49594,Guide of the Abyss
+49595,Guide of the Abyss
 49596,Guardian
 49597,Barrack Villager
 49598,Mysterious Axe
@@ -22451,18 +22605,18 @@ Param0,String
 58970,Perugia
 58971,Roshina
 58972,Benns Joanna
-58973,Crio Barterer
-58974,Crio Barterer
-58975,Crio Barterer
-58976,Crio Barterer
-58977,Crio Barterer
-58978,Crio Barterer
-58979,Crio Barterer
-58980,Crio Barterer
-58981,Crio Barterer
+58973,Brio
+58974,Karpu
+58975,Saro
+58976,Nedio
+58977,Sabnipu
+58978,Orchio
+58979,Anvanio
+58980,Gangnampo
+58981,Gangdalpo
 58982,Crio Barterer
-58983,Crio Barterer
-58984,Crio Barterer
+58983,Kami
+58984,Hanipu
 58985,Crio Barterer
 58986,Crio Barterer
 58987,Crio Barterer
@@ -22638,7 +22792,7 @@ Param0,String
 59176,A Hidden Note
 59177,Reubens
 59178,Treasure Chest of a Sailor
-59179,Caphras' Memory
+59179,Caphras's Memory
 59180,Invisible NPC
 59181,Oak Barrel
 59182,Box
@@ -22651,12 +22805,12 @@ Param0,String
 59189,Kantulo's Ration Box
 59190,Black Squirrel Captain
 59199,Fughar
-59200,Caphras' Memory
+59200,Caphras's Memory
 59201,Dark Knight
 59203,Altinova Arena
 59204,Memorial Stone
-59205,Caphras' Memory
-59206,Caphras' Memory
+59205,Caphras's Memory
+59206,Caphras's Memory
 59207,Beautiful Landmark
 59208,Luis Pollak
 59209,Crate
@@ -24008,7 +24162,7 @@ Param0,String
 62321,Backup Power Source
 62322,Lara
 62323,Norong
-62324,Court Lady-in-Training
+62324,Seori
 62325,Scholar
 62326,Scholar
 62327,Nerry
@@ -24176,6 +24330,9 @@ Param0,String
 62525,Sub-Quest
 62526,Sarcophagus
 62527,Villager
+62551,Richard
+62552,Radina
+62553,Donkey
 64502,Fresh Egg
 64503,NPC
 64504,10 Papu Emojis (Permanent)
@@ -24210,6 +24367,165 @@ Param0,String
 64533,Olvia Academy Pass - Sailing/Barter
 64534,Olvia Academy Pass - Farming
 64535,Donghwa
+64536,Palooza of Papu-tudes 3 (Permanent)
+64537,Love It Papu (Permanent)
+64538,Confetti Papu (Permanent)
+64539,Correct Papu (Permanent)
+64540,Incorrect Papu (Permanent)
+64541,Namgil
+64542,Martha Kiyen
+64543,Golden Jindo
+64544,Golden Jindo
+64545,Golden Jindo
+64546,Golden Jindo
+64547,Golden Jindo
+64548,Golden Jindo
+64549,Golden Jindo
+64550,Golden Jindo
+64551,Golden Jindo
+64552,Golden Jindo
+64553,Golden Jindo
+64554,Golden Jindo
+64555,Golden Jindo
+64556,Golden Jindo
+64557,Golden Jindo
+64558,Golden Jindo
+64559,Golden Jindo
+64560,Golden Jindo
+64561,Golden Jindo
+64562,Golden Jindo
+64563,Golden Jindo
+64564,Golden Jindo
+64565,Golden Jindo
+64566,Golden Jindo
+64567,Golden Jindo
+64568,Golden Jindo
+64569,Golden Jindo
+64570,Golden Jindo
+64571,Golden Jindo
+64572,Golden Jindo
+64573,White Jindo
+64574,White Jindo
+64575,White Jindo
+64576,White Jindo
+64577,White Jindo
+64578,White Jindo
+64579,White Jindo
+64580,White Jindo
+64581,White Jindo
+64582,White Jindo
+64583,White Jindo
+64584,White Jindo
+64585,White Jindo
+64586,White Jindo
+64587,White Jindo
+64588,White Jindo
+64589,White Jindo
+64590,White Jindo
+64591,White Jindo
+64592,White Jindo
+64593,White Jindo
+64594,White Jindo
+64595,White Jindo
+64596,White Jindo
+64597,White Jindo
+64598,White Jindo
+64599,White Jindo
+64600,White Jindo
+64601,White Jindo
+64602,White Jindo
+64603,Golden Jindo Pup
+64604,Golden Jindo Pup
+64605,Golden Jindo Pup
+64606,Golden Jindo Pup
+64607,Golden Jindo Pup
+64608,Golden Jindo Pup
+64609,Golden Jindo Pup
+64610,Golden Jindo Pup
+64611,Golden Jindo Pup
+64612,Golden Jindo Pup
+64613,Golden Jindo Pup
+64614,Golden Jindo Pup
+64615,Golden Jindo Pup
+64616,Golden Jindo Pup
+64617,Golden Jindo Pup
+64618,Golden Jindo Pup
+64619,Golden Jindo Pup
+64620,Golden Jindo Pup
+64621,Golden Jindo Pup
+64622,Golden Jindo Pup
+64623,Golden Jindo Pup
+64624,Golden Jindo Pup
+64625,Golden Jindo Pup
+64626,Golden Jindo Pup
+64627,Golden Jindo Pup
+64628,Golden Jindo Pup
+64629,Golden Jindo Pup
+64630,Golden Jindo Pup
+64631,Golden Jindo Pup
+64632,Golden Jindo Pup
+64633,White Jindo Pup
+64634,White Jindo Pup
+64635,White Jindo Pup
+64636,White Jindo Pup
+64637,White Jindo Pup
+64638,White Jindo Pup
+64639,White Jindo Pup
+64640,White Jindo Pup
+64641,White Jindo Pup
+64642,White Jindo Pup
+64643,White Jindo Pup
+64644,White Jindo Pup
+64645,White Jindo Pup
+64646,White Jindo Pup
+64647,White Jindo Pup
+64648,White Jindo Pup
+64649,White Jindo Pup
+64650,White Jindo Pup
+64651,White Jindo Pup
+64652,White Jindo Pup
+64653,White Jindo Pup
+64654,White Jindo Pup
+64655,White Jindo Pup
+64656,White Jindo Pup
+64657,White Jindo Pup
+64658,White Jindo Pup
+64659,White Jindo Pup
+64660,White Jindo Pup
+64661,White Jindo Pup
+64662,White Jindo Pup
+64663,Golden Jindo
+64664,Golden Jindo
+64665,Golden Jindo
+64666,Golden Jindo
+64667,Golden Jindo
+64668,Golden Jindo
+64669,Golden Jindo
+64670,Golden Jindo
+64671,White Jindo
+64672,White Jindo
+64673,White Jindo
+64674,White Jindo
+64675,White Jindo
+64676,White Jindo
+64677,White Jindo
+64678,White Jindo
+64679,Golden Jindo Pup
+64680,Golden Jindo Pup
+64681,Golden Jindo Pup
+64682,Golden Jindo Pup
+64683,Golden Jindo Pup
+64684,Golden Jindo Pup
+64685,Golden Jindo Pup
+64686,Golden Jindo Pup
+64687,White Jindo Pup
+64688,White Jindo Pup
+64689,White Jindo Pup
+64690,White Jindo Pup
+64691,White Jindo Pup
+64692,White Jindo Pup
+64693,White Jindo Pup
+64694,White Jindo Pup
 65001,Cliff
 65002,Jordine
 65003,Peony
@@ -24393,6 +24709,7 @@ Param0,String
 40743,Shop
 40744,<null>
 40771,Shop
+40773,Shop
 41001,<null>
 41002,Shop
 41003,Shop
@@ -25731,7 +26048,7 @@ Param0,String
 50404,<null>
 50405,<null>
 50406,<null>
-50411,<null>
+50411,Shop
 50413,<null>
 50414,<null>
 50415,<null>
@@ -26259,6 +26576,17 @@ Param0,String
 58970,<null>
 58971,<null>
 58972,<null>
+58973,<null>
+58974,<null>
+58975,<null>
+58976,<null>
+58977,<null>
+58978,<null>
+58979,<null>
+58980,<null>
+58981,<null>
+58983,<null>
+58984,<null>
 59001,<null>
 59005,<null>
 59007,<null>
@@ -26397,7 +26725,9 @@ Param0,String
 62500,Shop
 62501,Shop
 62518,Shop
+62551,<null>
 64525,Shop
+64541,Shop
 51,Longsword
 52,Longsword
 53,Longsword
