@@ -1,6 +1,6 @@
 {
     "2101": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 1,
         "character_key": 2101,
@@ -19,7 +19,7 @@
         ]
     },
     "2102": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 1,
         "character_key": 2102,
@@ -53,7 +53,7 @@
         ]
     },
     "2104": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 1,
         "character_key": 2104,
@@ -87,7 +87,7 @@
         ]
     },
     "2106": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 5,
         "parent_node": 1,
         "character_key": 2106,
@@ -121,7 +121,7 @@
         ]
     },
     "2108": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 1,
         "character_key": 2108,
@@ -220,7 +220,7 @@
         ]
     },
     "2115": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 22,
         "character_key": 2115,
@@ -237,7 +237,7 @@
         ]
     },
     "2116": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 21,
         "character_key": 2116,
@@ -270,7 +270,7 @@
         ]
     },
     "2118": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 44,
         "character_key": 2118,
@@ -304,7 +304,7 @@
         ]
     },
     "2120": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 26,
         "character_key": 2120,
@@ -338,7 +338,7 @@
         ]
     },
     "2122": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 5,
         "parent_node": 27,
         "character_key": 2122,
@@ -369,7 +369,7 @@
         ]
     },
     "2125": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 5,
         "parent_node": 45,
         "character_key": 2125,
@@ -387,7 +387,7 @@
         ]
     },
     "2126": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 5,
         "parent_node": 45,
         "character_key": 2126,
@@ -438,7 +438,7 @@
         ]
     },
     "2129": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 182,
         "parent_node": 1002,
         "character_key": 2129,
@@ -473,7 +473,7 @@
         ]
     },
     "2131": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 182,
         "parent_node": 1002,
         "character_key": 2131,
@@ -490,7 +490,7 @@
         ]
     },
     "2132": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 182,
         "parent_node": 1002,
         "character_key": 2132,
@@ -523,7 +523,7 @@
         ]
     },
     "2134": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 182,
         "parent_node": 1002,
         "character_key": 2134,
@@ -555,7 +555,7 @@
         ]
     },
     "2136": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 182,
         "parent_node": 1002,
         "character_key": 2136,
@@ -605,7 +605,7 @@
         ]
     },
     "2139": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2139,
@@ -621,7 +621,7 @@
         ]
     },
     "2141": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2141,
@@ -754,7 +754,7 @@
         ]
     },
     "2149": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2149,
@@ -771,7 +771,7 @@
         ]
     },
     "2150": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2150,
@@ -787,7 +787,7 @@
         ]
     },
     "2151": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2151,
@@ -803,7 +803,7 @@
         ]
     },
     "2152": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2152,
@@ -820,7 +820,7 @@
         ]
     },
     "2153": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2153,
@@ -852,7 +852,7 @@
         ]
     },
     "2155": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2155,
@@ -906,7 +906,7 @@
         ]
     },
     "2158": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2158,
@@ -924,7 +924,7 @@
         ]
     },
     "2159": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2159,
@@ -1007,7 +1007,7 @@
         ]
     },
     "2164": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2164,
@@ -1024,7 +1024,7 @@
         ]
     },
     "2165": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2165,
@@ -1041,7 +1041,7 @@
         ]
     },
     "2166": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2166,
@@ -1057,7 +1057,7 @@
         ]
     },
     "2167": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2167,
@@ -1089,7 +1089,7 @@
         ]
     },
     "2169": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2169,
@@ -1124,7 +1124,7 @@
         ]
     },
     "2171": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2171,
@@ -1141,7 +1141,7 @@
         ]
     },
     "2172": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2172,
@@ -1192,7 +1192,7 @@
         ]
     },
     "2175": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2175,
@@ -1210,7 +1210,7 @@
         ]
     },
     "2176": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2176,
@@ -1225,7 +1225,7 @@
         ]
     },
     "2177": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2177,
@@ -1241,7 +1241,7 @@
         ]
     },
     "2178": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2178,
@@ -1258,7 +1258,7 @@
         ]
     },
     "2179": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2179,
@@ -1309,7 +1309,7 @@
         ]
     },
     "2182": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2182,
@@ -1345,7 +1345,7 @@
         ]
     },
     "2185": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2185,
@@ -1361,7 +1361,7 @@
         ]
     },
     "2186": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2186,
@@ -1397,7 +1397,7 @@
         ]
     },
     "2189": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2189,
@@ -1447,7 +1447,7 @@
         ]
     },
     "2192": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2192,
@@ -1465,7 +1465,7 @@
         ]
     },
     "2193": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2193,
@@ -1481,7 +1481,7 @@
         ]
     },
     "2194": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2194,
@@ -1500,7 +1500,7 @@
         ]
     },
     "2195": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2195,
@@ -1534,7 +1534,7 @@
         ]
     },
     "2197": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2197,
@@ -1552,7 +1552,7 @@
         ]
     },
     "2198": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2198,
@@ -1602,7 +1602,7 @@
         ]
     },
     "2201": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2201,
@@ -1651,7 +1651,7 @@
         ]
     },
     "2204": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 321,
         "character_key": 2204,
@@ -1720,7 +1720,7 @@
         ]
     },
     "2208": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 52,
         "parent_node": 302,
         "character_key": 2208,
@@ -1758,7 +1758,7 @@
         ]
     },
     "2210": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 52,
         "parent_node": 302,
         "character_key": 2210,
@@ -1792,7 +1792,7 @@
         ]
     },
     "2212": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 52,
         "parent_node": 344,
         "character_key": 2212,
@@ -1810,7 +1810,7 @@
         ]
     },
     "2213": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 323,
         "character_key": 2213,
@@ -1827,7 +1827,7 @@
         ]
     },
     "2214": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 322,
         "character_key": 2214,
@@ -1860,7 +1860,7 @@
         ]
     },
     "2216": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 322,
         "character_key": 2216,
@@ -1877,7 +1877,7 @@
         ]
     },
     "2217": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 322,
         "character_key": 2217,
@@ -1894,7 +1894,7 @@
         ]
     },
     "2218": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 346,
         "character_key": 2218,
@@ -1961,7 +1961,7 @@
         ]
     },
     "2222": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2222,
@@ -2030,7 +2030,7 @@
         ]
     },
     "2226": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 32,
         "parent_node": 301,
         "character_key": 2226,
@@ -2111,7 +2111,7 @@
         ]
     },
     "2232": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2232,
@@ -2128,7 +2128,7 @@
         ]
     },
     "2233": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2233,
@@ -2145,7 +2145,7 @@
         ]
     },
     "2234": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2234,
@@ -2177,7 +2177,7 @@
         ]
     },
     "2236": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2236,
@@ -2243,7 +2243,7 @@
         ]
     },
     "2240": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2240,
@@ -2308,7 +2308,7 @@
         ]
     },
     "2244": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 64,
         "character_key": 2244,
@@ -2325,7 +2325,7 @@
         ]
     },
     "2245": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 65,
         "character_key": 2245,
@@ -2342,7 +2342,7 @@
         ]
     },
     "2246": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 65,
         "character_key": 2246,
@@ -2358,7 +2358,7 @@
         ]
     },
     "2247": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 88,
         "parent_node": 61,
         "character_key": 2247,
@@ -2373,7 +2373,7 @@
         ]
     },
     "2249": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 32,
         "parent_node": 328,
         "character_key": 2249,
@@ -2408,7 +2408,7 @@
         ]
     },
     "2252": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2252,
@@ -2425,7 +2425,7 @@
         ]
     },
     "2253": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2253,
@@ -2492,7 +2492,7 @@
         ]
     },
     "2257": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2257,
@@ -2507,7 +2507,7 @@
         ]
     },
     "2258": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2258,
@@ -2523,7 +2523,7 @@
         ]
     },
     "2259": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2259,
@@ -2558,7 +2558,7 @@
         ]
     },
     "2261": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2261,
@@ -2575,7 +2575,7 @@
         ]
     },
     "2262": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2262,
@@ -2591,7 +2591,7 @@
         ]
     },
     "2263": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2263,
@@ -2608,7 +2608,7 @@
         ]
     },
     "2264": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2264,
@@ -2624,7 +2624,7 @@
         ]
     },
     "2265": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2265,
@@ -2639,7 +2639,7 @@
         ]
     },
     "2266": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2266,
@@ -2672,7 +2672,7 @@
         ]
     },
     "2268": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2268,
@@ -2705,7 +2705,7 @@
         ]
     },
     "2270": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 107,
         "parent_node": 602,
         "character_key": 2270,
@@ -2756,7 +2756,7 @@
         ]
     },
     "2302": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 126,
         "parent_node": 608,
         "character_key": 2302,
@@ -2773,7 +2773,7 @@
         ]
     },
     "2303": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 126,
         "parent_node": 608,
         "character_key": 2303,
@@ -2791,7 +2791,7 @@
         ]
     },
     "2304": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 126,
         "parent_node": 608,
         "character_key": 2304,
@@ -2808,7 +2808,7 @@
         ]
     },
     "2305": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 126,
         "parent_node": 608,
         "character_key": 2305,
@@ -2827,7 +2827,7 @@
         ]
     },
     "2306": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 126,
         "parent_node": 608,
         "character_key": 2306,
@@ -2843,7 +2843,7 @@
         ]
     },
     "2307": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 126,
         "parent_node": 609,
         "character_key": 2307,
@@ -2878,7 +2878,7 @@
         ]
     },
     "2309": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 126,
         "parent_node": 609,
         "character_key": 2309,
@@ -2912,7 +2912,7 @@
         ]
     },
     "2311": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 126,
         "parent_node": 609,
         "character_key": 2311,
@@ -2980,7 +2980,7 @@
         ]
     },
     "2333": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 603,
         "character_key": 2333,
@@ -3013,7 +3013,7 @@
         ]
     },
     "2335": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2335,
@@ -3030,7 +3030,7 @@
         ]
     },
     "2336": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2336,
@@ -3046,7 +3046,7 @@
         ]
     },
     "2337": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2337,
@@ -3063,7 +3063,7 @@
         ]
     },
     "2338": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2338,
@@ -3146,7 +3146,7 @@
         ]
     },
     "2343": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2343,
@@ -3195,7 +3195,7 @@
         ]
     },
     "2346": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2346,
@@ -3245,7 +3245,7 @@
         ]
     },
     "2349": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2349,
@@ -3261,7 +3261,7 @@
         ]
     },
     "2350": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2350,
@@ -3294,7 +3294,7 @@
         ]
     },
     "2352": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2352,
@@ -3311,7 +3311,7 @@
         ]
     },
     "2353": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2353,
@@ -3329,7 +3329,7 @@
         ]
     },
     "2354": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2354,
@@ -3379,7 +3379,7 @@
         ]
     },
     "2357": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2357,
@@ -3396,7 +3396,7 @@
         ]
     },
     "2358": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2358,
@@ -3429,7 +3429,7 @@
         ]
     },
     "2360": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 603,
         "character_key": 2360,
@@ -3446,7 +3446,7 @@
         ]
     },
     "2361": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 603,
         "character_key": 2361,
@@ -3497,7 +3497,7 @@
         ]
     },
     "2364": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 603,
         "character_key": 2364,
@@ -3514,7 +3514,7 @@
         ]
     },
     "2365": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 603,
         "character_key": 2365,
@@ -3564,7 +3564,7 @@
         ]
     },
     "2368": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 633,
         "character_key": 2368,
@@ -3581,7 +3581,7 @@
         ]
     },
     "2369": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 120,
         "parent_node": 604,
         "character_key": 2369,
@@ -3633,7 +3633,7 @@
         ]
     },
     "2372": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 661,
         "character_key": 2372,
@@ -3650,7 +3650,7 @@
         ]
     },
     "2373": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 628,
         "character_key": 2373,
@@ -3686,7 +3686,7 @@
         ]
     },
     "2375": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 663,
         "character_key": 2375,
@@ -3704,7 +3704,7 @@
         ]
     },
     "2376": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 107,
         "parent_node": 670,
         "character_key": 2376,
@@ -3722,7 +3722,7 @@
         ]
     },
     "2377": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 126,
         "parent_node": 719,
         "character_key": 2377,
@@ -3739,7 +3739,7 @@
         ]
     },
     "2378": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 126,
         "parent_node": 719,
         "character_key": 2378,
@@ -3805,7 +3805,7 @@
         ]
     },
     "2404": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2404,
@@ -3856,7 +3856,7 @@
         ]
     },
     "2407": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2407,
@@ -3873,7 +3873,7 @@
         ]
     },
     "2408": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2408,
@@ -3890,7 +3890,7 @@
         ]
     },
     "2409": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2409,
@@ -3907,7 +3907,7 @@
         ]
     },
     "2410": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2410,
@@ -3940,7 +3940,7 @@
         ]
     },
     "2412": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2412,
@@ -4042,7 +4042,7 @@
         ]
     },
     "2418": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2418,
@@ -4129,7 +4129,7 @@
         ]
     },
     "2423": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2423,
@@ -4146,7 +4146,7 @@
         ]
     },
     "2424": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2424,
@@ -4163,7 +4163,7 @@
         ]
     },
     "2425": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2425,
@@ -4180,7 +4180,7 @@
         ]
     },
     "2426": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2426,
@@ -4199,7 +4199,7 @@
         ]
     },
     "2428": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2428,
@@ -4233,7 +4233,7 @@
         ]
     },
     "2453": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2453,
@@ -4267,7 +4267,7 @@
         ]
     },
     "2455": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2455,
@@ -4284,7 +4284,7 @@
         ]
     },
     "2456": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2456,
@@ -4336,7 +4336,7 @@
         ]
     },
     "2459": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2459,
@@ -4353,7 +4353,7 @@
         ]
     },
     "2460": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2460,
@@ -4370,7 +4370,7 @@
         ]
     },
     "2461": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2461,
@@ -4434,7 +4434,7 @@
         ]
     },
     "2467": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2467,
@@ -4468,7 +4468,7 @@
         ]
     },
     "2469": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2469,
@@ -4486,7 +4486,7 @@
         ]
     },
     "2470": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2470,
@@ -4502,7 +4502,7 @@
         ]
     },
     "2471": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2471,
@@ -4550,7 +4550,7 @@
         ]
     },
     "2474": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2474,
@@ -4581,7 +4581,7 @@
         ]
     },
     "2476": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2476,
@@ -4598,7 +4598,7 @@
         ]
     },
     "2477": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2477,
@@ -4614,7 +4614,7 @@
         ]
     },
     "2478": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2478,
@@ -4663,7 +4663,7 @@
         ]
     },
     "2481": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2481,
@@ -4697,7 +4697,7 @@
         ]
     },
     "2483": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2483,
@@ -4746,7 +4746,7 @@
         ]
     },
     "2486": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2486,
@@ -4779,7 +4779,7 @@
         ]
     },
     "2488": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2488,
@@ -4796,7 +4796,7 @@
         ]
     },
     "2489": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2489,
@@ -4812,7 +4812,7 @@
         ]
     },
     "2490": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2490,
@@ -4829,7 +4829,7 @@
         ]
     },
     "2491": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2491,
@@ -4861,7 +4861,7 @@
         ]
     },
     "2493": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2493,
@@ -4895,7 +4895,7 @@
         ]
     },
     "2495": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2495,
@@ -4912,7 +4912,7 @@
         ]
     },
     "2496": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2496,
@@ -4960,7 +4960,7 @@
         ]
     },
     "2499": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2499,
@@ -4977,7 +4977,7 @@
         ]
     },
     "2500": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2500,
@@ -4994,7 +4994,7 @@
         ]
     },
     "2501": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2501,
@@ -5010,7 +5010,7 @@
         ]
     },
     "2502": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2502,
@@ -5061,7 +5061,7 @@
         ]
     },
     "2506": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2506,
@@ -5094,7 +5094,7 @@
         ]
     },
     "2508": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2508,
@@ -5126,7 +5126,7 @@
         ]
     },
     "2510": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2510,
@@ -5161,7 +5161,7 @@
         ]
     },
     "2512": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2512,
@@ -5176,7 +5176,7 @@
         ]
     },
     "2513": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2513,
@@ -5193,7 +5193,7 @@
         ]
     },
     "2514": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2514,
@@ -5245,7 +5245,7 @@
         ]
     },
     "2517": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2517,
@@ -5261,7 +5261,7 @@
         ]
     },
     "2518": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2518,
@@ -5295,7 +5295,7 @@
         ]
     },
     "2520": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2520,
@@ -5311,7 +5311,7 @@
         ]
     },
     "2521": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2521,
@@ -5375,7 +5375,7 @@
         ]
     },
     "2553": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2553,
@@ -5392,7 +5392,7 @@
         ]
     },
     "2554": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2554,
@@ -5409,7 +5409,7 @@
         ]
     },
     "2555": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2555,
@@ -5426,7 +5426,7 @@
         ]
     },
     "2556": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2556,
@@ -5443,7 +5443,7 @@
         ]
     },
     "2557": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2557,
@@ -5460,7 +5460,7 @@
         ]
     },
     "2558": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2558,
@@ -5563,7 +5563,7 @@
         ]
     },
     "2564": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2564,
@@ -5597,7 +5597,7 @@
         ]
     },
     "2566": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2566,
@@ -5615,7 +5615,7 @@
         ]
     },
     "2567": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2567,
@@ -5650,7 +5650,7 @@
         ]
     },
     "2571": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2571,
@@ -5685,7 +5685,7 @@
         ]
     },
     "2602": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2602,
@@ -5701,7 +5701,7 @@
         ]
     },
     "2603": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2603,
@@ -5736,7 +5736,7 @@
         ]
     },
     "2605": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2605,
@@ -5803,7 +5803,7 @@
         ]
     },
     "2610": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2610,
@@ -5952,7 +5952,7 @@
         ]
     },
     "2619": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2619,
@@ -5969,7 +5969,7 @@
         ]
     },
     "2620": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2620,
@@ -6000,7 +6000,7 @@
         ]
     },
     "2622": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2622,
@@ -6017,7 +6017,7 @@
         ]
     },
     "2623": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2623,
@@ -6034,7 +6034,7 @@
         ]
     },
     "2624": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2624,
@@ -6050,7 +6050,7 @@
         ]
     },
     "2625": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2625,
@@ -6084,7 +6084,7 @@
         ]
     },
     "2627": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2627,
@@ -6149,7 +6149,7 @@
         ]
     },
     "2631": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2631,
@@ -6166,7 +6166,7 @@
         ]
     },
     "2632": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2632,
@@ -6182,7 +6182,7 @@
         ]
     },
     "2633": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2633,
@@ -6199,7 +6199,7 @@
         ]
     },
     "2634": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2634,
@@ -6264,7 +6264,7 @@
         ]
     },
     "2638": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2638,
@@ -6282,7 +6282,7 @@
         ]
     },
     "2639": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2639,
@@ -6299,7 +6299,7 @@
         ]
     },
     "2641": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2641,
@@ -6317,7 +6317,7 @@
         ]
     },
     "2642": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2642,
@@ -6367,7 +6367,7 @@
         ]
     },
     "2645": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2645,
@@ -6384,7 +6384,7 @@
         ]
     },
     "2646": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2646,
@@ -6416,7 +6416,7 @@
         ]
     },
     "2649": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2649,
@@ -6450,7 +6450,7 @@
         ]
     },
     "2651": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2651,
@@ -6467,7 +6467,7 @@
         ]
     },
     "2652": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2652,
@@ -6484,7 +6484,7 @@
         ]
     },
     "2653": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2653,
@@ -6517,7 +6517,7 @@
         ]
     },
     "2656": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2656,
@@ -6584,7 +6584,7 @@
         ]
     },
     "2660": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2660,
@@ -6634,7 +6634,7 @@
         ]
     },
     "2663": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2663,
@@ -6650,7 +6650,7 @@
         ]
     },
     "2664": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2664,
@@ -6685,7 +6685,7 @@
         ]
     },
     "2666": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2666,
@@ -6736,7 +6736,7 @@
         ]
     },
     "2669": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2669,
@@ -6769,7 +6769,7 @@
         ]
     },
     "2671": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2671,
@@ -6803,7 +6803,7 @@
         ]
     },
     "2673": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2673,
@@ -6820,7 +6820,7 @@
         ]
     },
     "2674": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2674,
@@ -6870,7 +6870,7 @@
         ]
     },
     "2677": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2677,
@@ -6887,7 +6887,7 @@
         ]
     },
     "2678": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2678,
@@ -6904,7 +6904,7 @@
         ]
     },
     "2679": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2679,
@@ -6956,7 +6956,7 @@
         ]
     },
     "2682": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2682,
@@ -6973,7 +6973,7 @@
         ]
     },
     "2683": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2683,
@@ -7022,7 +7022,7 @@
         ]
     },
     "2686": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2686,
@@ -7039,7 +7039,7 @@
         ]
     },
     "2687": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2687,
@@ -7090,7 +7090,7 @@
         ]
     },
     "2690": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2690,
@@ -7125,7 +7125,7 @@
         ]
     },
     "2693": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2693,
@@ -7143,7 +7143,7 @@
         ]
     },
     "2694": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2694,
@@ -7160,7 +7160,7 @@
         ]
     },
     "2695": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2695,
@@ -7195,7 +7195,7 @@
         ]
     },
     "2697": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2697,
@@ -7212,7 +7212,7 @@
         ]
     },
     "2698": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2698,
@@ -7229,7 +7229,7 @@
         ]
     },
     "2699": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2699,
@@ -7264,7 +7264,7 @@
         ]
     },
     "2701": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2701,
@@ -7282,7 +7282,7 @@
         ]
     },
     "2702": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2702,
@@ -7299,7 +7299,7 @@
         ]
     },
     "2703": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2703,
@@ -7334,7 +7334,7 @@
         ]
     },
     "2752": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2752,
@@ -7351,7 +7351,7 @@
         ]
     },
     "2753": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2753,
@@ -7403,7 +7403,7 @@
         ]
     },
     "2771": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2771,
@@ -7469,7 +7469,7 @@
         ]
     },
     "2775": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2775,
@@ -7486,7 +7486,7 @@
         ]
     },
     "2776": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2776,
@@ -7535,7 +7535,7 @@
         ]
     },
     "2793": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2793,
@@ -7552,7 +7552,7 @@
         ]
     },
     "2794": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2794,
@@ -7569,7 +7569,7 @@
         ]
     },
     "2795": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2795,
@@ -7586,7 +7586,7 @@
         ]
     },
     "2796": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2796,
@@ -7603,7 +7603,7 @@
         ]
     },
     "2797": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2797,
@@ -7620,7 +7620,7 @@
         ]
     },
     "2798": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2798,
@@ -7687,7 +7687,7 @@
         ]
     },
     "2802": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2802,
@@ -7704,7 +7704,7 @@
         ]
     },
     "2803": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2803,
@@ -7721,7 +7721,7 @@
         ]
     },
     "2804": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 601,
         "character_key": 2804,
@@ -7772,7 +7772,7 @@
         ]
     },
     "2812": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 712,
         "character_key": 2812,
@@ -7821,7 +7821,7 @@
         ]
     },
     "2815": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 712,
         "character_key": 2815,
@@ -7838,7 +7838,7 @@
         ]
     },
     "2816": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 712,
         "character_key": 2816,
@@ -7889,7 +7889,7 @@
         ]
     },
     "2820": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 77,
         "parent_node": 712,
         "character_key": 2820,
@@ -7923,7 +7923,7 @@
         ]
     },
     "2822": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 77,
         "parent_node": 712,
         "character_key": 2822,
@@ -8002,7 +8002,7 @@
         ]
     },
     "2833": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1145,
         "character_key": 2833,
@@ -8067,7 +8067,7 @@
         ]
     },
     "2837": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 221,
         "parent_node": 1159,
         "character_key": 2837,
@@ -8100,7 +8100,7 @@
         ]
     },
     "2839": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 221,
         "parent_node": 1161,
         "character_key": 2839,
@@ -8181,7 +8181,7 @@
         ]
     },
     "2844": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1158,
         "character_key": 2844,
@@ -8199,7 +8199,7 @@
         ]
     },
     "2845": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1153,
         "character_key": 2845,
@@ -8249,7 +8249,7 @@
         ]
     },
     "2848": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1153,
         "character_key": 2848,
@@ -8266,7 +8266,7 @@
         ]
     },
     "2849": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 221,
         "parent_node": 1141,
         "character_key": 2849,
@@ -8316,7 +8316,7 @@
         ]
     },
     "2852": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 221,
         "parent_node": 1141,
         "character_key": 2852,
@@ -8385,7 +8385,7 @@
         ]
     },
     "2856": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 221,
         "parent_node": 1141,
         "character_key": 2856,
@@ -8402,7 +8402,7 @@
         ]
     },
     "2857": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 221,
         "parent_node": 1141,
         "character_key": 2857,
@@ -8519,7 +8519,7 @@
         ]
     },
     "2865": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 221,
         "parent_node": 1160,
         "character_key": 2865,
@@ -8536,7 +8536,7 @@
         ]
     },
     "2866": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2866,
@@ -8553,7 +8553,7 @@
         ]
     },
     "2867": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2867,
@@ -8619,7 +8619,7 @@
         ]
     },
     "2873": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2873,
@@ -8635,7 +8635,7 @@
         ]
     },
     "2874": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2874,
@@ -8654,7 +8654,7 @@
         ]
     },
     "2875": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2875,
@@ -8671,7 +8671,7 @@
         ]
     },
     "2876": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2876,
@@ -8688,7 +8688,7 @@
         ]
     },
     "2877": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2877,
@@ -8705,7 +8705,7 @@
         ]
     },
     "2878": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2878,
@@ -8721,7 +8721,7 @@
         ]
     },
     "2879": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2879,
@@ -8754,7 +8754,7 @@
         ]
     },
     "2882": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2882,
@@ -8770,7 +8770,7 @@
         ]
     },
     "2883": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2883,
@@ -8819,7 +8819,7 @@
         ]
     },
     "2886": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2886,
@@ -8835,7 +8835,7 @@
         ]
     },
     "2887": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2887,
@@ -8852,7 +8852,7 @@
         ]
     },
     "2888": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2888,
@@ -8885,7 +8885,7 @@
         ]
     },
     "2891": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2891,
@@ -8901,7 +8901,7 @@
         ]
     },
     "2892": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2892,
@@ -8970,7 +8970,7 @@
         ]
     },
     "2896": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2896,
@@ -9004,7 +9004,7 @@
         ]
     },
     "2898": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2898,
@@ -9020,7 +9020,7 @@
         ]
     },
     "2900": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2900,
@@ -9072,7 +9072,7 @@
         ]
     },
     "2903": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2903,
@@ -9090,7 +9090,7 @@
         ]
     },
     "2904": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2904,
@@ -9107,7 +9107,7 @@
         ]
     },
     "2906": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2906,
@@ -9124,7 +9124,7 @@
         ]
     },
     "2907": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2907,
@@ -9157,7 +9157,7 @@
         ]
     },
     "2909": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2909,
@@ -9174,7 +9174,7 @@
         ]
     },
     "2910": {
-        "need_explore_point": 4,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2910,
@@ -9191,7 +9191,7 @@
         ]
     },
     "2911": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2911,
@@ -9208,7 +9208,7 @@
         ]
     },
     "2912": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2912,
@@ -9241,7 +9241,7 @@
         ]
     },
     "2914": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2914,
@@ -9258,7 +9258,7 @@
         ]
     },
     "2915": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2915,
@@ -9274,7 +9274,7 @@
         ]
     },
     "2916": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 202,
         "parent_node": 1101,
         "character_key": 2916,
@@ -9308,7 +9308,7 @@
         ]
     },
     "3002": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3002,
@@ -9325,7 +9325,7 @@
         ]
     },
     "3003": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3003,
@@ -9359,7 +9359,7 @@
         ]
     },
     "3005": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3005,
@@ -9376,7 +9376,7 @@
         ]
     },
     "3006": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3006,
@@ -9392,7 +9392,7 @@
         ]
     },
     "3007": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3007,
@@ -9442,7 +9442,7 @@
         ]
     },
     "3010": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3010,
@@ -9459,7 +9459,7 @@
         ]
     },
     "3011": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3011,
@@ -9475,7 +9475,7 @@
         ]
     },
     "3012": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3012,
@@ -9507,7 +9507,7 @@
         ]
     },
     "3014": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3014,
@@ -9522,7 +9522,7 @@
         ]
     },
     "3015": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3015,
@@ -9538,7 +9538,7 @@
         ]
     },
     "3016": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3016,
@@ -9589,7 +9589,7 @@
         ]
     },
     "3023": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3023,
@@ -9604,7 +9604,7 @@
         ]
     },
     "3024": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3024,
@@ -9621,7 +9621,7 @@
         ]
     },
     "3025": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3025,
@@ -9671,7 +9671,7 @@
         ]
     },
     "3028": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3028,
@@ -9704,7 +9704,7 @@
         ]
     },
     "3032": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3032,
@@ -9738,7 +9738,7 @@
         ]
     },
     "3034": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3034,
@@ -9754,7 +9754,7 @@
         ]
     },
     "3035": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3035,
@@ -9801,7 +9801,7 @@
         ]
     },
     "3038": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3038,
@@ -9817,7 +9817,7 @@
         ]
     },
     "3039": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3039,
@@ -9833,7 +9833,7 @@
         ]
     },
     "3040": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3040,
@@ -9850,7 +9850,7 @@
         ]
     },
     "3041": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3041,
@@ -9882,7 +9882,7 @@
         ]
     },
     "3043": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3043,
@@ -9914,7 +9914,7 @@
         ]
     },
     "3045": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3045,
@@ -9932,7 +9932,7 @@
         ]
     },
     "3046": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3046,
@@ -9949,7 +9949,7 @@
         ]
     },
     "3047": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3047,
@@ -9965,7 +9965,7 @@
         ]
     },
     "3048": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3048,
@@ -10015,7 +10015,7 @@
         ]
     },
     "3051": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3051,
@@ -10031,7 +10031,7 @@
         ]
     },
     "3052": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3052,
@@ -10048,7 +10048,7 @@
         ]
     },
     "3053": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3053,
@@ -10116,7 +10116,7 @@
         ]
     },
     "3059": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3059,
@@ -10132,7 +10132,7 @@
         ]
     },
     "3060": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3060,
@@ -10147,7 +10147,7 @@
         ]
     },
     "3061": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3061,
@@ -10164,7 +10164,7 @@
         ]
     },
     "3062": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3062,
@@ -10179,7 +10179,7 @@
         ]
     },
     "3063": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3063,
@@ -10195,7 +10195,7 @@
         ]
     },
     "3064": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3064,
@@ -10227,7 +10227,7 @@
         ]
     },
     "3066": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3066,
@@ -10245,7 +10245,7 @@
         ]
     },
     "3067": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3067,
@@ -10277,7 +10277,7 @@
         ]
     },
     "3069": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3069,
@@ -10293,7 +10293,7 @@
         ]
     },
     "3070": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3070,
@@ -10309,7 +10309,7 @@
         ]
     },
     "3071": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3071,
@@ -10325,7 +10325,7 @@
         ]
     },
     "3072": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3072,
@@ -10341,7 +10341,7 @@
         ]
     },
     "3073": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3073,
@@ -10357,7 +10357,7 @@
         ]
     },
     "3074": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3074,
@@ -10374,7 +10374,7 @@
         ]
     },
     "3075": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3075,
@@ -10442,7 +10442,7 @@
         ]
     },
     "3084": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3084,
@@ -10459,7 +10459,7 @@
         ]
     },
     "3085": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3085,
@@ -10474,7 +10474,7 @@
         ]
     },
     "3086": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3086,
@@ -10490,7 +10490,7 @@
         ]
     },
     "3087": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3087,
@@ -10506,7 +10506,7 @@
         ]
     },
     "3088": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3088,
@@ -10538,7 +10538,7 @@
         ]
     },
     "3090": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3090,
@@ -10554,7 +10554,7 @@
         ]
     },
     "3091": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3091,
@@ -10572,7 +10572,7 @@
         ]
     },
     "3092": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3092,
@@ -10621,7 +10621,7 @@
         ]
     },
     "3102": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3102,
@@ -10669,7 +10669,7 @@
         ]
     },
     "3105": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3105,
@@ -10685,7 +10685,7 @@
         ]
     },
     "3106": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3106,
@@ -10701,7 +10701,7 @@
         ]
     },
     "3107": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3107,
@@ -10733,7 +10733,7 @@
         ]
     },
     "3109": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3109,
@@ -10749,7 +10749,7 @@
         ]
     },
     "3110": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3110,
@@ -10766,7 +10766,7 @@
         ]
     },
     "3111": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3111,
@@ -10782,7 +10782,7 @@
         ]
     },
     "3112": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3112,
@@ -10797,7 +10797,7 @@
         ]
     },
     "3113": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3113,
@@ -10813,7 +10813,7 @@
         ]
     },
     "3114": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3114,
@@ -10845,7 +10845,7 @@
         ]
     },
     "3122": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3122,
@@ -10893,7 +10893,7 @@
         ]
     },
     "3125": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3125,
@@ -10939,7 +10939,7 @@
         ]
     },
     "3128": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3128,
@@ -10955,7 +10955,7 @@
         ]
     },
     "3129": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3129,
@@ -10989,7 +10989,7 @@
         ]
     },
     "3131": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3131,
@@ -11006,7 +11006,7 @@
         ]
     },
     "3132": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3132,
@@ -11023,7 +11023,7 @@
         ]
     },
     "3133": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3133,
@@ -11039,7 +11039,7 @@
         ]
     },
     "3134": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3134,
@@ -11072,7 +11072,7 @@
         ]
     },
     "3143": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3143,
@@ -11104,7 +11104,7 @@
         ]
     },
     "3145": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3145,
@@ -11120,7 +11120,7 @@
         ]
     },
     "3146": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3146,
@@ -11152,7 +11152,7 @@
         ]
     },
     "3148": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3148,
@@ -11168,7 +11168,7 @@
         ]
     },
     "3149": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3149,
@@ -11248,7 +11248,7 @@
         ]
     },
     "3154": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3154,
@@ -11279,7 +11279,7 @@
         ]
     },
     "3156": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3156,
@@ -11295,7 +11295,7 @@
         ]
     },
     "3157": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3157,
@@ -11313,7 +11313,7 @@
         ]
     },
     "3158": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3158,
@@ -11329,7 +11329,7 @@
         ]
     },
     "3159": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3159,
@@ -11345,7 +11345,7 @@
         ]
     },
     "3160": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3160,
@@ -11360,7 +11360,7 @@
         ]
     },
     "3161": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3161,
@@ -11376,7 +11376,7 @@
         ]
     },
     "3162": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 229,
         "parent_node": 1301,
         "character_key": 3162,
@@ -11442,7 +11442,7 @@
         ]
     },
     "3167": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 229,
         "parent_node": 1355,
         "character_key": 3167,
@@ -11458,7 +11458,7 @@
         ]
     },
     "3168": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 229,
         "parent_node": 1354,
         "character_key": 3168,
@@ -11491,7 +11491,7 @@
         ]
     },
     "3172": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 619,
         "parent_node": 1343,
         "character_key": 3172,
@@ -11509,7 +11509,7 @@
         ]
     },
     "3173": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 619,
         "parent_node": 1343,
         "character_key": 3173,
@@ -11525,7 +11525,7 @@
         ]
     },
     "3174": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 619,
         "parent_node": 1353,
         "character_key": 3174,
@@ -11542,7 +11542,7 @@
         ]
     },
     "3175": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 619,
         "parent_node": 1353,
         "character_key": 3175,
@@ -11575,7 +11575,7 @@
         ]
     },
     "3202": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 601,
         "parent_node": 1314,
         "character_key": 3202,
@@ -11593,7 +11593,7 @@
         ]
     },
     "3203": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 601,
         "parent_node": 1314,
         "character_key": 3203,
@@ -11610,7 +11610,7 @@
         ]
     },
     "3204": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 601,
         "parent_node": 1314,
         "character_key": 3204,
@@ -11628,7 +11628,7 @@
         ]
     },
     "3205": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 601,
         "parent_node": 1314,
         "character_key": 3205,
@@ -11646,7 +11646,7 @@
         ]
     },
     "3206": {
-        "need_explore_point": 2,
+        "need_explore_point": 1,
         "affiliated_town": 601,
         "parent_node": 1352,
         "character_key": 3206,
@@ -11664,7 +11664,7 @@
         ]
     },
     "3207": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 601,
         "parent_node": 1352,
         "character_key": 3207,
@@ -11696,7 +11696,7 @@
         ]
     },
     "3302": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 605,
         "parent_node": 1319,
         "character_key": 3302,
@@ -11714,7 +11714,7 @@
         ]
     },
     "3303": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 605,
         "parent_node": 1319,
         "character_key": 3303,
@@ -11746,7 +11746,7 @@
         ]
     },
     "3305": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 605,
         "parent_node": 1319,
         "character_key": 3305,
@@ -11764,7 +11764,7 @@
         ]
     },
     "3306": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 605,
         "parent_node": 1319,
         "character_key": 3306,
@@ -11797,7 +11797,7 @@
         ]
     },
     "3308": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 605,
         "parent_node": 1319,
         "character_key": 3308,
@@ -11831,7 +11831,7 @@
         ]
     },
     "3310": {
-        "need_explore_point": 3,
+        "need_explore_point": 1,
         "affiliated_town": 605,
         "parent_node": 1351,
         "character_key": 3310,
@@ -11863,7 +11863,7 @@
         ]
     },
     "3402": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 693,
         "parent_node": 1380,
         "character_key": 3402,
@@ -11898,7 +11898,7 @@
         ]
     },
     "3404": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 693,
         "parent_node": 1380,
         "character_key": 3404,
@@ -11918,7 +11918,7 @@
         ]
     },
     "3501": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3501,
@@ -11934,7 +11934,7 @@
         ]
     },
     "3502": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3502,
@@ -11987,7 +11987,7 @@
         ]
     },
     "3505": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3505,
@@ -12004,7 +12004,7 @@
         ]
     },
     "3506": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3506,
@@ -12037,7 +12037,7 @@
         ]
     },
     "3508": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3508,
@@ -12073,7 +12073,7 @@
         ]
     },
     "3510": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3510,
@@ -12092,7 +12092,7 @@
         ]
     },
     "3511": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3511,
@@ -12110,7 +12110,7 @@
         ]
     },
     "3512": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3512,
@@ -12127,7 +12127,7 @@
         ]
     },
     "3513": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3513,
@@ -12143,7 +12143,7 @@
         ]
     },
     "3514": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3514,
@@ -12160,7 +12160,7 @@
         ]
     },
     "3515": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3515,
@@ -12176,7 +12176,7 @@
         ]
     },
     "3516": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3516,
@@ -12195,7 +12195,7 @@
         ]
     },
     "3517": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3517,
@@ -12213,7 +12213,7 @@
         ]
     },
     "3518": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3518,
@@ -12230,7 +12230,7 @@
         ]
     },
     "3519": {
-        "need_explore_point": 3,
+        "need_explore_point": 2,
         "affiliated_town": 735,
         "parent_node": 1623,
         "character_key": 3519,
@@ -12282,7 +12282,7 @@
         ]
     },
     "3601": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3601,
@@ -12298,7 +12298,7 @@
         ]
     },
     "3602": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3602,
@@ -12331,7 +12331,7 @@
         ]
     },
     "3604": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3604,
@@ -12347,7 +12347,7 @@
         ]
     },
     "3605": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3605,
@@ -12364,7 +12364,7 @@
         ]
     },
     "3606": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3606,
@@ -12381,7 +12381,7 @@
         ]
     },
     "3607": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3607,
@@ -12434,7 +12434,7 @@
         ]
     },
     "3610": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3610,
@@ -12487,7 +12487,7 @@
         ]
     },
     "3613": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 873,
         "parent_node": 1649,
         "character_key": 3613,
@@ -12579,7 +12579,7 @@
         ]
     },
     "3701": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 694,
         "parent_node": 1381,
         "character_key": 3701,
@@ -12595,7 +12595,7 @@
         ]
     },
     "3702": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 694,
         "parent_node": 1381,
         "character_key": 3702,
@@ -12661,7 +12661,7 @@
         ]
     },
     "3804": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 955,
         "parent_node": 1691,
         "character_key": 3804,
@@ -12678,7 +12678,7 @@
         ]
     },
     "3805": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 955,
         "parent_node": 1691,
         "character_key": 3805,
@@ -12746,7 +12746,7 @@
         ]
     },
     "3819": {
-        "need_explore_point": 4,
+        "need_explore_point": 3,
         "affiliated_town": 1124,
         "parent_node": 1750,
         "character_key": 3819,
@@ -12763,7 +12763,7 @@
         ]
     },
     "3820": {
-        "need_explore_point": 5,
+        "need_explore_point": 3,
         "affiliated_town": 1124,
         "parent_node": 1750,
         "character_key": 3820,
