@@ -1,4 +1,5 @@
 use anyhow::{bail, Context, Ok, Result};
+use comfy_table::{ContentLineStyle, LineStyle, TableStyle};
 use serde::Deserialize;
 use std::collections::BTreeMap;
 use std::collections::HashMap;
@@ -9,8 +10,12 @@ pub(crate) type BuildingMap = BTreeMap<usize, Building>;
 pub(crate) type RegionBuildingMap = BTreeMap<String, BuildingMap>;
 pub(crate) type CraftBuildingMap = BTreeMap<String, (usize, Vec<Building>)>;
 
-// pub const HOUSECRAFT_TABLE_STYLE: &str = "0123456789abcdefghi";
-pub(crate) const HOUSECRAFT_TABLE_STYLE: &str = "   ═────      ═  ══";
+pub(crate) const HOUSECRAFT_TABLE_STYLE: TableStyle = TableStyle::new()
+    .top_border(LineStyle::new(' ', ' ', ' ', ' '))
+    .header_lines(ContentLineStyle::new(' ', ' ', ' '))
+    .header_separator(LineStyle::new('─', '─', '─', '─'))
+    .content_lines(ContentLineStyle::new(' ', ' ', ' '))
+    .bottom_border(LineStyle::new('═', '═', '═', '═'));
 
 #[derive(Clone, Debug)]
 pub(crate) struct UsageCounters {

@@ -21,7 +21,7 @@ fn print_listing(crafts_summary: RegionCraftMap) -> Result<()> {
 
     for (region, usages) in crafts_summary.iter() {
         let mut table = Table::new();
-        table.load_preset(HOUSECRAFT_TABLE_STYLE);
+        table.load_style(HOUSECRAFT_TABLE_STYLE);
         table.set_header(header_row.clone());
 
         for (usage, buildings) in usages.iter() {

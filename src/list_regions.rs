@@ -7,7 +7,7 @@ type RegionStatsMap = BTreeMap<String, UsageCounters>;
 
 fn print_listing(regions_summary: RegionStatsMap, totals: UsageCounters) -> Result<()> {
     let mut table = Table::new();
-    table.load_preset(HOUSECRAFT_TABLE_STYLE);
+    table.load_style(HOUSECRAFT_TABLE_STYLE);
     table.set_header(vec![
         Cell::new("Region").add_attribute(Attribute::Dim),
         Cell::new("CP").add_attribute(Attribute::Dim),

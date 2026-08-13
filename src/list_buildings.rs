@@ -41,7 +41,7 @@ impl fmt::Display for Chain {
         let region = REGION.get().unwrap();
 
         let mut table = Table::new();
-        table.load_preset(HOUSECRAFT_TABLE_STYLE);
+        table.load_style(HOUSECRAFT_TABLE_STYLE);
         table.set_header(vec![
             Cell::new("Key").add_attribute(Attribute::Dim),
             Cell::new("Building").add_attribute(Attribute::Dim),

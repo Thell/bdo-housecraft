@@ -1,6 +1,6 @@
 [
   {"lodging":0,"storage":0,"cost":0,"indices":[735],"states":[0]},
-  {"lodging":0,"storage":12,"cost":2,"indices":[735,3519],"states":[0,1]},
+  {"lodging":0,"storage":12,"cost":2,"indices":[735,3508],"states":[0,1]},
   {"lodging":0,"storage":16,"cost":3,"indices":[735,3517],"states":[0,1]},
   {"lodging":0,"storage":24,"cost":4,"indices":[735,3518,3519],"states":[0,1,1]},
   {"lodging":0,"storage":28,"cost":5,"indices":[735,3517,3519],"states":[0,1,1]},
@@ -68,7 +68,7 @@
   {"lodging":4,"storage":180,"cost":35,"indices":[735,3507,3508,3509,3510,3511,3512,3513,3514,3515,3516,3517,3518,3519],"states":[0,1,1,1,1,2,1,1,1,1,1,1,1,1]},
   {"lodging":4,"storage":184,"cost":36,"indices":[735,3506,3507,3508,3509,3510,3511,3512,3513,3514,3515,3516,3517,3519],"states":[0,1,1,1,1,1,2,1,1,1,1,1,1,1]},
   {"lodging":6,"storage":0,"cost":4,"indices":[735,3511,3518],"states":[0,2,2]},
-  {"lodging":6,"storage":12,"cost":6,"indices":[735,3511,3518,3519],"states":[0,2,2,1]},
+  {"lodging":6,"storage":12,"cost":6,"indices":[735,3508,3511,3518],"states":[0,2,2,1]},
   {"lodging":6,"storage":16,"cost":7,"indices":[735,3511,3517,3518],"states":[0,2,1,2]},
   {"lodging":6,"storage":24,"cost":8,"indices":[735,3508,3511,3518,3519],"states":[0,2,2,1,1]},
   {"lodging":6,"storage":28,"cost":9,"indices":[735,3511,3517,3518,3519],"states":[0,2,1,2,1]},

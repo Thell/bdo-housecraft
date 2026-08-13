@@ -18,7 +18,6 @@ pub(crate) enum ContextType {
         .multiple(true)
         .args(&["storage", "lodging"]),
 ))]
-
 pub(crate) struct Cli {
     /// list warehouse regions
     #[arg(short = 'l', long)]

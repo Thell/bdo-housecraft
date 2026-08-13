@@ -53,7 +53,7 @@ pub(crate) fn list_storage() -> Result<()> {
     let mut seen_buildings: HashMap<usize, HashSet<usize>> = HashMap::new();
 
     let mut table = Table::new();
-    table.load_preset(HOUSECRAFT_TABLE_STYLE);
+    table.load_style(HOUSECRAFT_TABLE_STYLE);
     table.set_header(vec![
         Cell::new("Region").add_attribute(Attribute::Dim),
         Cell::new("Building").add_attribute(Attribute::Dim),
