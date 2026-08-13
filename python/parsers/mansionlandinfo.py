@@ -1,17 +1,18 @@
 # This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
+# type: ignore
 
 import kaitaistruct
 from kaitaistruct import KaitaiStruct, KaitaiStream, BytesIO
 
 
-if getattr(kaitaistruct, 'API_VERSION', (0, 9)) < (0, 9):
-    raise Exception("Incompatible Kaitai Struct Python API: 0.9 or later is required, but you have %s" % (kaitaistruct.__version__))
+if getattr(kaitaistruct, 'API_VERSION', (0, 9)) < (0, 11):
+    raise Exception("Incompatible Kaitai Struct Python API: 0.11 or later is required, but you have %s" % (kaitaistruct.__version__))
 
 class Mansionlandinfo(KaitaiStruct):
     def __init__(self, _io, _parent=None, _root=None):
-        self._io = _io
+        super(Mansionlandinfo, self).__init__(_io)
         self._parent = _parent
-        self._root = _root if _root else self
+        self._root = _root or self
         self._read()
 
     def _read(self):
@@ -22,11 +23,19 @@ class Mansionlandinfo(KaitaiStruct):
             self.mansionlandinfo_table.append(Mansionlandinfo.MansionlandinfoType(self._io, self, self._root))
 
 
+
+    def _fetch_instances(self):
+        pass
+        for i in range(len(self.mansionlandinfo_table)):
+            pass
+            self.mansionlandinfo_table[i]._fetch_instances()
+
+
     class MansionlandinfoType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
+            super(Mansionlandinfo.MansionlandinfoType, self).__init__(_io)
             self._parent = _parent
-            self._root = _root if _root else self
+            self._root = _root
             self._read()
 
         def _read(self):
@@ -62,17 +71,41 @@ class Mansionlandinfo(KaitaiStruct):
             self.guild_mansion_teleport_position = Mansionlandinfo.PositionType(self._io, self, self._root)
 
 
+        def _fetch_instances(self):
+            pass
+            for i in range(len(self.sector_start_position)):
+                pass
+
+            for i in range(len(self.sector_end_position)):
+                pass
+
+            for i in range(len(self.unknown_sector_position_1)):
+                pass
+
+            for i in range(len(self.unknown_sector_position_2)):
+                pass
+
+            for i in range(len(self.condition)):
+                pass
+
+            self.guild_mansion_teleport_position._fetch_instances()
+
+
     class PositionType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
+            super(Mansionlandinfo.PositionType, self).__init__(_io)
             self._parent = _parent
-            self._root = _root if _root else self
+            self._root = _root
             self._read()
 
         def _read(self):
             self.x = self._io.read_f4le()
             self.y = self._io.read_f4le()
             self.z = self._io.read_f4le()
+
+
+        def _fetch_instances(self):
+            pass
 
 
 

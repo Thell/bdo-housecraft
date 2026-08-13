@@ -13551,5 +13551,67 @@
             { "house_level": 4, "item_craft_index": 2 },
             { "house_level": 3, "item_craft_index": 1 }
         ]
+    },
+    "3875": {
+        "need_explore_point": 1,
+        "affiliated_town": 1733,
+        "parent_node": 2057,
+        "character_key": 3875,
+        "len_need_house_key": 0,
+        "need_house_key": 0,
+        "house_group": 0,
+        "house_floor": 0,
+        "num_craft_list_items": 3,
+        "craft_list": [
+            { "house_level": 2, "item_craft_index":    2 },
+            { "house_level": 3, "item_craft_index":    1 },
+            { "house_level": 2, "item_craft_index": 1560 }
+        ]
+    },
+    "3876": {
+        "need_explore_point": 1,
+        "affiliated_town": 1733,
+        "parent_node": 2105,
+        "character_key": 3876,
+        "len_need_house_key": 0,
+        "need_house_key": 0,
+        "house_group": 0,
+        "house_floor": 0,
+        "num_craft_list_items": 3,
+        "craft_list": [
+            { "house_level": 2, "item_craft_index":    2 },
+            { "house_level": 2, "item_craft_index":    1 },
+            { "house_level": 2, "item_craft_index": 1558 }
+        ]
+    },
+    "3877": {
+        "need_explore_point": 1,
+        "affiliated_town": 1733,
+        "parent_node": 2105,
+        "character_key": 3877,
+        "len_need_house_key": 1,
+        "need_house_key": 3876,
+        "house_group": 0,
+        "house_floor": 0,
+        "num_craft_list_items": 2,
+        "craft_list": [
+            { "house_level": 3, "item_craft_index": 2 },
+            { "house_level": 3, "item_craft_index": 1 }
+        ]
+    },
+    "3878": {
+        "need_explore_point": 1,
+        "affiliated_town": 1733,
+        "parent_node": 2105,
+        "character_key": 3878,
+        "len_need_house_key": 1,
+        "need_house_key": 3877,
+        "house_group": 0,
+        "house_floor": 0,
+        "num_craft_list_items": 2,
+        "craft_list": [
+            { "house_level": 4, "item_craft_index": 2 },
+            { "house_level": 3, "item_craft_index": 1 }
+        ]
     }
 }

@@ -34,8 +34,18 @@ Param0,String
 33,Seraph
 34,Dosa
 35,Deadeye
-36,PGMS
+36,Agent
 37,Warrior Use 3
+38,PYFM
+39,PYFW
+40,PYFM2
+41,PYFW2
+42,PYFM3
+43,PYFW3
+44,PYFM4
+45,PYFW4
+46,PYFM5
+47,PYFW5
 101,Warrior
 102,Ranger
 103,Sorcerer
@@ -75,6 +85,16 @@ Param0,String
 137,PBNA
 138,POEA
 139,PGMS
+140,PYFM
+141,PYFW
+142,PYFM2
+143,PYFW2
+144,PYFM3
+145,PYFW3
+146,PYFM4
+147,PYFW4
+148,PYFM5
+149,PYFW5
 201,Warrior_TEST
 202,Ranger_TEST
 203,Sorcerer_TEST
@@ -134,6 +154,7 @@ Param0,String
 292,Warrior of Fog_CA
 293,Iron Tiger_CA
 294,Another Self_CA
+295,Hexround_CA
 301,Awakened Skill Reset
 302,Combat Skills Reset: All
 303,Combat Skills Reset: Partial
@@ -557,7 +578,8 @@ Param0,String
 727,Villager
 728,Olvia-Lema Shuttle
 729,Port Ratt Freight Ship
-731,Villager
+730,Altinova Hakinza Sanctuary Liner
+731,Aulis Coast Arehaza Liner
 732,Villager
 733,Villager
 734,Villager
@@ -2110,6 +2132,10 @@ Param0,String
 3871,Aal's Revelation 2
 3872,Aal's Revelation 3
 3873,Aal's Revelation 4
+3875,Angavu 1
+3876,Radiant Lands 1
+3877,Radiant Lands 2
+3878,Radiant Lands 3
 4001,Container
 4002,Stuffed Bear Head
 4003,Bear Hide Carpet
@@ -2987,6 +3013,7 @@ Param0,String
 6883,Marnibass Decor
 6884,Marni Electric Guitar Decor
 6885,Marnian Decor
+6900,[Event] Rocking Horse
 6901,[Event] Autumn Banquet Table
 6902,[Event] Gilt-bronze Incense Burner
 6903,[Event] Royal Dragon Scroll
@@ -3041,6 +3068,9 @@ Param0,String
 6957,[Event] Courage-Lit Egg Lamp
 6958,[Event] Abundance-Lit Egg Lamp
 6959,[Event] Heart of Black Wings
+6961,Paw-doodle: Agent
+6962,[Event] Agent's Thunderous Rhythm
+6963,[Event] Sealed Margoria Phantom Ship
 7001,Scarecrow
 7002,Scarecrow
 7003,Scarecrow
@@ -4479,7 +4509,9 @@ Param0,String
 10975,Seaweed
 10978,Caphras Tree
 10982,Rock
+10983,Basalt
 10984,Rock
+10985,Marble
 10986,Kelp
 11001,Weapon Shelf
 11002,Armor Shelf
@@ -7687,6 +7719,7 @@ Param0,String
 18982,[Event] Courage-Lit Egg Lamp
 18983,[Event] Abundance-Lit Egg Lamp
 18984,[Event] Hatched Black Spirit Lamp
+18985,[Event] [Manor] Lantern-Lit Food Cart
 18986,[Event] Endless Adventure Landscape
 18987,Pink Dolphin Sculpture
 18988,Migaloo Sculpture
@@ -13429,7 +13462,7 @@ Param0,String
 25978,Bumblin' Buccaneers Barracks
 25979,Bumblin' Outlaw
 25980,Gift Box
-25981,Bamboo Legion Archer
+25981,Wormhole
 25982,Bamboo Legion Spearman
 25983,Bamboo Legion Swordsman
 25984,Bamboo Legion Archer
@@ -13824,9 +13857,9 @@ Param0,String
 26374,Dokkebi Soul
 26375,Duoksini
 26376,Imoogi
-26377,Duoksini
-26378,Duoksini
-26379,Duoksini
+26377,Black Spirit
+26378,Curved Blade
+26379,Tempered Spear
 26380,Firefly
 26381,Sea Lion
 26382,Fierce Bambooling
@@ -14065,8 +14098,8 @@ Param0,String
 26615,Sangoon
 26616,Yukhon
 26617,Sangoon
-26618,Suspicious Jar
-26619,Suspicious Jar
+26618,Life Orb
+26619,Life Orb
 26620,Sangoon
 26621,Afuaru
 26622,Sangoon
@@ -14074,8 +14107,8 @@ Param0,String
 26624,Sangoon
 26625,Yukhon
 26626,Sangoon
-26627,Suspicious Jar
-26628,Suspicious Jar
+26627,Life Orb
+26628,Life Orb
 26629,Sangoon
 26630,Sangoon
 26631,Sangoon
@@ -14083,7 +14116,7 @@ Param0,String
 26633,Sangoon
 26634,Yukhon
 26635,Sangoon
-26636,Suspicious Jar
+26636,Life Orb
 26637,Tigerslayer
 26638,Sangoon
 26639,Sangoon
@@ -15201,16 +15234,16 @@ Param0,String
 27885,Steel Nux
 27886,Nux
 27887,Nux
-27888,Duoksini
-27889,Soldierkkebi
-27890,Soldierkkebi
-27891,Soldierkkebi
-27892,Soldierkkebi
-27893,Soldierkkebi
-27894,Dokkebi Soul
-27895,Duoksini
+27888,Gumiho & Duoksini
+27889,Gumiho & Duoksini
+27890,Gumiho & Duoksini
+27891,Duoksini
+27892,Duoksini
+27893,Duoksini
+27894,Gumiho
+27895,Gumiho
 27896,Black Shrine's Energy
-27897,Duoksini
+27897,Gumiho
 27898,Duoksini
 27899,Duoksini
 27900,Oduksini
@@ -15868,6 +15901,17 @@ Param0,String
 28650,Apostle of Immorality
 28651,Harbinger of Corruption
 28652,Apostle of Malevolence
+28653,Agris
+28654,Agris
+28655,Goldfield Scarecrow
+28656,Goldfield Harvester
+28657,Goldfield Tiller
+28658,Goldfield Keeper
+28659,Goldfield Sower
+28660,Divine Gold Tree
+28661,Agris's Energy
+28662,Agris
+28663,Agris
 28664,Cliffside Mountain Sheep
 28665,Golden Leaf Snake
 28666,Rock Elephant
@@ -15877,28 +15921,103 @@ Param0,String
 28670,Rock Elephant
 28671,Coral Stoneback Crab
 28672,Edania's Energy
+28673,Elion
+28674,Elion
 28675,Sycraia
 28676,Sycraia's Memory
 28677,Sycraia's Memory
 28678,Sycraia's Memory
+28679,Aal
+28680,Aal
 28681,New Great Ocean Small
 28682,New Great Ocean Large
 28683,New Great Ocean Large Phase 2
+28684,Aal's Spear
+28685,Aal's Brazier
+28686,Curved Blade
+28687,Tempered Spear
+28688,Steadfast Arrow
+28689,Herald of Flame
+28690,Steadfast Arrow
+28691,War Beacon
+28692,Brazier of Trials
+28693,Markthanan
+28694,Markthanan
+28695,Markthanan's Daughter
+28696,Enslaved Overseer
+28697,Enslaved Miner
+28698,Enslaved Porter
+28699,Markthanan's Servant
+28700,Markthanan
+28701,Ebonmere Watchtower
+28702,Markthanan's Black Crystal
+28703,Markthanan's Black Crystal
+28704,Sinner of Accusation
+28705,Sinner of Incitement
+28706,Aetos
+28707,Sinner of Blind Faith
+28708,Sinner of Rejection
+28709,Sinner of Invasion
+28710,Brazier
+28711,Sacred Energy
+28712,Priest of the End
+28715,Despairbringer
+28716,Ibedor
+28717,Despair-Consumed Knight
+28718,Despair-Consumed Valkyrie
+28719,Despair-Consumed Blader
+28720,Despair-Consumed Mercenary
+28721,Despair-Consumed Archer
+28723,Despair-Consumed Sorceress
+28724,Despair-Consumed Successor
+28725,Despair-Consumed Mermaid
 28726,Ronin
 28727,Egg
+28728,Despair-Consumed Pirate
+28729,Wormhole
+28730,Spacetime Debris
 28731,Quint
 28732,Vell
+28733,Dark Bonghwang
+28734,Dark Bonghwang
+28735,Dark Bonghwang
+28736,Dark Bonghwang
+28737,Dark Bonghwang
+28738,Fragment of Divinity
+28739,Knight of Famine
+28740,Knight of Conquest
+28741,Knight of War
+28742,Songakshi
+28743,Captured Man
+28744,Captured Man
+28745,Unholy Ember
+28746,Crimson Ember
 28753,Black Wings
-28754,Muraka
+28754,Sulfur Stalagmite
 28755,Black Gem
-28756,Quint
+28756,Elmermol
 28757,Enchanted Rock
+28758,Sulfur Volcano Golem
+28759,Sulfur Boulder Golem
+28760,Sulfur Rock Golem
+28761,Sulfur Hornstone
+28762,Sulfur Stalagmite
+28763,Sulfur Volcano Golem
 28764,Dimensional Rift
 28765,Mutated Muraka
 28766,Titan
 28767,Manticore
 28768,Beelzebub
 28769,Watcher's Gaze
+28770,Hadum's Gaze
+28771,Agris
+28772,Agris
+28773,Agris
+28774,Mad Screaming Saunil
+28775,Mad Screaming Harpy
+28776,Mad Screaming Orc Warrior
+28777,Mad Screaming Orc Wizard
+28778,Kilar
 28779,Golden Pig Statue
 28827,Pirate Flag
 28828,Carrier Pigeon
@@ -15951,6 +16070,7 @@ Param0,String
 28897,Red Paladin
 28898,Guard
 28899,Nimue
+28900,Testament of Judgment
 28901,Thousand Year War
 28902,Otter Commander
 28903,Papu Commander
@@ -15998,10 +16118,14 @@ Param0,String
 28945,Turkey
 28946,Turkey
 28949,Mystery Crystal Chest
+28950,Goldfield Scarecrow
 28951,Treasure Chest of a Sailor
 28952,Treasure Chest of a Sailor
 28953,Treasure Chest of a Sailor
 28954,Treasure Chest of a Sailor
+28957,Goldfield Scarecrow
+28958,Elion's Authority
+28959,Transparent Wall
 28960,Caphras's Memory
 28961,Volkras
 28962,Barnas
@@ -16051,25 +16175,26 @@ Param0,String
 29007,Test Object 16
 29008,Test Object 16
 29009,Test Object 16
-29010,Goblin Warrior
+29010,Agris's Servant
 29011,Goblin Scout
-29012,Test Object 16
-29013,Primitive Goblin
-29014,Primitive Goblin Ranger
-29015,Primitive Goblin Boomerang
-29016,Primitive Goblin Boomerang 1
-29017,Test Object 16
-29018,Test Object 16
-29019,Test Object 16
-29020,Grand Orc Chief
-29021,Red Orc Fighter
-29022,Red Orc Berserker
-29023,Red Orc
-29024,Red Orc Warrior
+29012,Goldfield Keeper
+29013,Goldfield Keeper
+29014,Goldfield Sower
+29015,Sinner of Accusation
+29016,Sinner of Incitement
+29017,Black Spirit
+29018,Sinner of Blind Faith
+29019,Sinner of Rejection
+29020,Sinner of Invasion
+29021,Revelation of Judgment
+29022,Ruins Crow
+29023,Steadfast Arrow
+29024,Herald of Flame
 29025,Red Orc Elite Soldier
 29026,Red Orc Wizard
 29027,Phantom Knight
 29028,Phantom Knight
+29029,Curved Blade
 29030,Dagon
 29031,Dagon Warrior
 29032,Dagon Wizard
@@ -16080,10 +16205,12 @@ Param0,String
 29041,Lizard Warrior
 29042,Lizard Archer
 29043,Lizard Elite Soldier
+29044,Tempered Spear
 29045,Blue Whale
 29046,Seagull
 29047,Mommy Humpback Whale
 29048,Baby Humpack Whale
+29049,Steadfast Arrow
 29050,Bandit Warrior
 29051,Bandit Archer
 29052,Bandit Leader
@@ -16102,6 +16229,9 @@ Param0,String
 29065,Mask Owl
 29066,Mask Owl Warrior
 29067,Mask Owl Archer
+29068,Herald of Flame
+29069,Elion's Tear
+29070,Breath of Elion
 29071,Pirate Warrior
 29072,Pirate Female Warrior
 29073,Pirate Giant Warrior
@@ -16130,6 +16260,7 @@ Param0,String
 29096,Fish
 29097,Mysterious Illusion
 29098,Mysterious Illusion
+29099,Elion's Blessing
 29100,Demibeast Warrior
 29101,Beast Demibeast Javelin
 29102,Demibeast Super Warrior
@@ -16365,6 +16496,7 @@ Param0,String
 29377,Gravity Field
 29378,Rainstorm
 29379,Zodd
+29382,Sulfur Stalagmite
 29383,Object
 29384,Apex Urukios
 29385,Apex Urukios
@@ -16374,6 +16506,8 @@ Param0,String
 29389,Apex Urukios
 29390,Rift of Atoraxxion
 29391,Krahtenn's Power Stone
+29392,Winged Mermaid
+29393,Tornado
 29400,Cartios
 29401,Lykina
 29402,Cartios
@@ -16389,6 +16523,7 @@ Param0,String
 29413,Apex Urukios
 29414,Creomar
 29415,Creomar
+29418,Spacetime Debris
 29419,Vaha's Garden - Sol Magia
 29420,Vaha's Cradle - Sol Magia
 29421,Object
@@ -16423,10 +16558,24 @@ Param0,String
 29476,Tree Spirit
 29477,Military Officer
 29478,Test Dummy
+29479,Elion's Resentment
+29480,Statue of Elion
+29481,Elion's Call
+29482,Elion's Scales
+29483,Aetos
+29484,Sinner of Accusation
+29485,Sinner of Incitement
+29486,Aetos
+29487,Sinner of Blind Faith
+29488,Sinner of Rejection
+29489,Sinner of Invasion
+29490,Priest of the End
 29494,Grave Robber Goblin
 29495,Grave Robber Goblin
 29496,Laytenn
 29497,Ancient Puturum
+29498,Markthanan's Black Crystal
+29499,Crow
 29501,Goblin Rider
 29502,Baby Fogan
 29503,Green Orc
@@ -16435,44 +16584,89 @@ Param0,String
 29506,Green Orc Wizard
 29507,Green Orc Archer
 29510,Green Orc Brawler
+29511,Goldfield Scarecrow
 29512,Portly Green Orc
+29513,Goldfield Scarecrow
+29514,Goldfield Scarecrow
 29520,Bear Tribe
 29521,Sheep
+29522,Sinner of Accusation
+29523,Sinner of Blind Faith
+29524,Sinner of Rejection
+29525,Sinner of Invasion
+29526,Sinner of Accusation
+29527,Sinner of Blind Faith
+29528,Sinner of Rejection
+29529,Sinner of Invasion
+29530,Markthanan's Servant
 29531,Elk
 29532,Young Elk
 29533,Female Elk
-29559,Skunky
-29560,Troll
-29561,Troll1
-29562,Troll2
-29563,Troll3
-29564,Mature Tree Spirit
-29565,Witmirth
-29566,Goblin
-29567,Goblin Warrior
-29568,Goblin Scout
-29569,Goblin Shaman
-29570,Goblin Elite Soldier
-29571,Goblin Chief
-29572,Deer
-29573,Fox Tribe
-29574,Tooth Fairy
-29575,Witch
-29576,Pirate
-29577,Ruins Spider
-29578,Ruins Raptor
-29579,Stone Tree
-29580,Twin Head Treant
-29581,Middle Treant
-29582,Hairy Meat
-29583,Orc Tiger
-29584,Bandit Boss
-29585,Big Farm Crab
-29586,Red Goblin Shaman
-29587,Relic Golem2
-29588,Relic Golem3
-29600,Wood Horn Camel
-29601,Green Orc
+29534,Duoksini
+29535,Prankkebi
+29536,StrongmanKkebi
+29537,Philosophkebi
+29538,Combatkebi
+29539,Gumiho
+29540,Duoksini
+29541,Gumiho
+29542,Brazier of Trials
+29543,Gigagord
+29544,Rhutum Archer
+29545,Khuruto Elite Soldier
+29546,Khuruto Fighter
+29547,Traval
+29548,Swamp Fogan Warrior
+29549,Harbinger of Immorality
+29550,Apostle of Immorality
+29551,Red Orc Berserker
+29552,Red Orc Wizard
+29553,Troll
+29554,Troll Warrior
+29555,Troll Thrower
+29556,Troll Shaman
+29557,Elmermol
+29558,Edana's Energy
+29559,Goldfield Scarecrow
+29560,Goldfield Harvester
+29561,Goldfield Tiller
+29562,Goldfield Keeper
+29563,Goldfield Sower
+29564,Sinner of Accusation
+29565,Sinner of Incitement
+29566,Aetos
+29567,Sinner of Blind Faith
+29568,Sinner of Rejection
+29569,Sinner of Invasion
+29570,Priest of the End
+29571,Curved Blade
+29572,Tempered Spear
+29573,Steadfast Arrow
+29574,Herald of Flame
+29575,Markthanan's Daughter
+29576,Enslaved Overseer
+29577,Enslaved Miner
+29578,Enslaved Porter
+29579,Markthanan's Servant
+29580,Ancient Elf
+29581,Ibedor
+29582,Despair-Consumed Knight
+29583,Despair-Consumed Valkyrie
+29584,Despair-Consumed Blader
+29585,Despair-Consumed Mercenary
+29586,Despair-Consumed Archer
+29587,Despair-Consumed Sorceress
+29588,Despair-Consumed Successor
+29589,Gumiho & Duoksini
+29591,Curved Blade
+29592,Tempered Spear
+29593,Steadfast Arrow
+29594,Herald of Flame
+29595,Sulfur Stalagmite
+29596,Sulfur Hornstone
+29597,Edana's Energy
+29600,Despair-Consumed Mermaid
+29601,Despair-Consumed Pirate
 29602,Green Orc Warrior
 29603,Elite Green Orc Warrior
 29604,Green Orc Wizard
@@ -16532,6 +16726,15 @@ Param0,String
 29658,Mad Screaming Orc Wizard
 29659,Chimera
 29660,Long Red Orc
+29662,Markthanan's Energy
+29663,Markthanan's Energy
+29664,Ebonmere's Energy
+29665,Aal
+29666,Agris's Golden Energy
+29667,Ibedor's Illusion
+29668,Hadum's Energy
+29689,Wormhole
+29690,Lava Bull
 29691,Pisces
 29692,Wilderness Golem
 29693,Org
@@ -19881,35 +20084,70 @@ Param0,String
 47739,Marcus
 47740,Vargas
 47741,Zaid
-47742,Edania Merchant
-47743,Edania Merchant
-47744,Edania Merchant
-47745,Edania Merchant
-47746,Edania Merchant
-47747,Edania Merchant
-47748,Edania Merchant
-47749,Edania Merchant
-47750,Edania Merchant
-47751,Edania Merchant
-47752,Edania Merchant
-47754,Edania Merchant
-47755,Edania Merchant
-47756,Edania Merchant
-47757,Edania Merchant
-47758,Edania Merchant
-47759,Edania Merchant
-47760,Edania Merchant
-47761,Edania Merchant
-47762,Edania Merchant
-47763,Edania Merchant
-47764,Edania Merchant
-47765,Edania Merchant
-47766,Edania Merchant
-47767,Edania Merchant
-47768,Edania Merchant
-47769,Edania Merchant
-47770,Girgo Viano
+47742,Alustin
+47743,Bakora
+47744,Ganin Arth
+47745,Lafi Bedmountain
+47746,Isko
+47747,Isobelle Encarotia
+47748,Martha Kiyen
+47749,Girgo Viano
+47750,Tenochti
+47751,Makui
+47752,Orwen
+47753,Karanza
+47754,Edan
+47755,Marku
+47756,Kova
+47757,Corina
+47758,Umali
+47759,Yamarko
+47760,Eileen
+47761,Tarkan
+47762,Ynix Remnant
+47763,Emma Bartali
+47764,Resh
+47765,Shaila
+47766,Zario
+47767,Bakuchi
+47768,Quatz
+47769,Janika
+47770,Clorince
 47771,Patrigio
+47773,Abene
+47774,Banica
+47775,Seth
+47776,Evelina
+47777,Meline
+47778,Luminita
+47779,Saruka
+47780,Viraco
+47781,Zandor
+47782,Sefu
+47783,Lucian
+47784,Praying Devotee
+47785,Owen
+47786,Broken Statue
+47787,Shattered Black Crystal
+47788,Intikar
+47789,Kato
+47790,Amanu
+47791,Ehren
+47792,Senika
+47793,Cecil
+47794,Laurent
+47795,Blessed Altar
+47796,Throne of Magaia
+47797,Throne of Hermesia
+47798,Throne of Aresion
+47799,Throne of Aphrodon
+47800,Throne of Voidekaia
+47801,Vestige of Goldroot
+47802,Vestige of Ebonmere
+47803,Vestige of Everlight
+47804,Vestige of Crimsonflare
+47805,Vestige of Voidreach
+47806,Vestige of Edania
 49490,Devan
 49494,Girgo Viano
 49495,Girgo Viano
@@ -23500,7 +23738,7 @@ Param0,String
 60035,Heuklang
 60036,Heuklang
 60037,Heuklang
-60038,Heuklang
+60038,Hexround
 60039,Heuklang
 60040,Heuklang
 60041,Heuklang
@@ -23532,7 +23770,7 @@ Param0,String
 60067,Heuklang
 60068,Heuklang
 60069,Heuklang
-60070,Summon
+60070,Bombardment
 60071,Summon
 60072,Heuklang
 60073,Heuklang
@@ -23540,16 +23778,16 @@ Param0,String
 60075,Heuklang
 60076,Heuklang
 60077,Heuklang
-60078,Summon
-60079,Summon
-60080,Summon
-60081,Summon
-60082,Summon
-60083,Summon
-60084,Summon
-60085,Summon
-60086,Summon
-60087,Summon
+60078,Iron Tiger: Elemental Circle
+60079,Elemental Circle
+60080,Elemental Circle
+60081,Elemental Circle
+60082,Elemental Circle
+60083,Elemental Circle
+60084,Elemental Circle
+60085,Elemental Circle
+60086,Elemental Circle
+60087,Elemental Circle
 60088,Call of the Earth
 60089,Call of the Earth
 60090,Call of the Earth
@@ -23580,45 +23818,45 @@ Param0,String
 60115,Steel Imp
 60116,Steel Imp Warrior
 60117,Steel Imp Wizard
-60118,Servant of Darkness
+60118,Sinister Omen
 60119,Spellbound Heart
 60120,Magic Lighthouse
 60121,Horse Race Start
 60122,Horse Race Goal
 60123,Elephant Trap
-60124,Blade of Darkness I
-60125,Blade of Darkness II
-60126,Blade of Darkness III
-60127,Hell's Gate of Cartian's Guardian
-60128,Summoned_Flame Buster Grenade
+60124,Blade of Darkness
+60125,Blade of Darkness
+60126,Blade of Darkness
+60127,Dark Affinity Orb
+60128,Flame Buster
 60129,Heuklang
-60130,Valkyrie Buff SP MOD
-60131,Valkyrie Buff SP Wall
-60132,Musa Air Waves
-60133,Musa Black Spirit Air Waves
+60130,Wave of Light
+60131,Wave of Light
+60132,Blade
+60133,Blade
 60134,Keeper Tett
 60135,Keeper Arne
 60136,Keeper Marg
 60137,Keeper Gorr
-60138,Kunoichi Sah Chakram
+60138,Moonlight
 60139,Toxic Flood
 60140,Keeper Tett
 60141,Keeper Gorr
 60142,Keeper Arne
 60143,Keeper Marg
-60144,Fire Mat
-60145,Rose Trap
-60146,Stun Trap
+60144,Lava Field
+60145,Rose Vine
+60146,Rose Vine
 60147,Echo Spirit
 60148,Sea Dragon
-60149,Tendon Cutter
-60150,Normal Mode Mystic Black Spirit
-60151,Mystic Awakening Charging
-60152,Kunoichi Trap
-60153,Greatbow
-60154,Wolf
-60155,Archer_Floor
-60156,Archer Apparition
+60149,Ninjutsu: Sinew Cut
+60150,Energy Wave
+60151,Sea Dragon's Energy
+60152,Kunoichi's Trap
+60153,Arrow of Light
+60154,Wolf of Light
+60155,Remnant of Light
+60156,Remnant of Light
 60157,Life
 60158,Barrier
 60159,Vitclari's Light
@@ -23630,52 +23868,53 @@ Param0,String
 60165,Fairy
 60166,The Spear of the Earth
 60167,Magic Explosion
-60168,Sand Sorcery
-60169,Dark Legion
-60170,Dark Legion_Demon King
-60171,Dark Legion
-60172,Dark Legion
-60173,Dark Legion
-60174,Dark Legion
-60175,Dark Legion
-60176,Dark Legion
-60177,Dark Legion
-60178,Dark Legion
-60179,Dark Legion
-60180,Dark Legion
-60181,Dark Legion
-60182,Dark Legion
-60183,Dark Legion
+60168,Sandstorm
+60169,Thornwood Guard
+60170,Axian
+60171,Thornwood Guard
+60172,Thornwood Guard
+60173,Thornwood Guard
+60174,Thornwood Guard
+60175,Thornwood Guard
+60176,Thornwood Guard
+60177,Thornwood Guard
+60178,Thornwood Guard
+60179,Thornwood Guard
+60180,Thornwood Guard
+60181,Thornwood Guard
+60182,Thornwood Guard
+60183,Thornwood Guard
 60184,Ice Wall
-60185,Dark Legion
-60186,Dark Legion
-60187,Dark Legion
-60188,Dark Legion
-60189,Dark Legion_Demon King
-60190,Dark Legion_Demon King
-60191,Dark Legion
-60192,Dark Legion
-60193,Spatial Rift
-60194,Symbol of the Sun
-60195,Symbol of the Sun
-60196,Young Branch of Kamasylve
-60197,Slippery Scallwag
+60185,Thornwood Guard
+60186,Thornwood Guard
+60187,Star
+60188,Star
+60189,Axian
+60190,Axian
+60191,Thornwood Guard
+60192,Thornwood Guard
+60193,Kyve
+60194,Arkanon
+60195,Arkanon
+60196,Seed of Nature
+60197,Slippery Scallywag
 60198,Labao
-60199,Cannoneer Duo
-60200,Earth Orb
-60201,Flame Orb
+60199,Slippery Scallywag
+60200,Earth's Calling
+60201,Flame's Calling
 60202,Magic Arrow
-60203,Dragon
+60203,Dragon's Breath
 60204,Destroyer of Ynix
 60205,Guardian of Ynix
-60206,Summon
-60207,Summon
-60208,Summon
-60209,Summon
+60206,Foxspirit Charm
+60207,Woosa's Do energy
+60208,Woosa's Do energy
+60209,Foxspirit Charm
 60210,Destination point
-60211,Lava Field
-60213,Summon
-60214,Summon
+60211,Jordun's Fire
+60212,Gravity Cores
+60213,Warrior of Fogs
+60214,Elemental Circle
 61001,Object
 61002,Object
 61003,Object
@@ -23940,6 +24179,9 @@ Param0,String
 61264,The Magnus Entrance - Well
 61265,The Magnus Entrance - Well
 61266,The Magnus Entrance - Well
+61267,The Magnus Entrance - Well
+61269,Sub NPC
+61270,Sub NPC
 61987,Sequence NPC
 61988,Sequence NPC
 61989,Sequence NPC
@@ -24330,9 +24572,23 @@ Param0,String
 62525,Sub-Quest
 62526,Sarcophagus
 62527,Villager
+62530,Sub-Quest
+62531,Sub-Quest
+62532,Knowledge NPC
+62533,Knowledge NPC
+62534,Immobile NPC 1
+62535,Immobile NPC 2
+62536,Immobile NPC 3
+62537,Immobile NPC 4
+62538,Mobile NPC 1
+62539,Mobile NPC 2
+62540,Mobile NPC 3
+62541,Mobile NPC 4
 62551,Richard
 62552,Radina
 62553,Donkey
+62558,Combat Special Pass
+62571,Markthanan's Rose Window
 64502,Fresh Egg
 64503,NPC
 64504,10 Papu Emojis (Permanent)
@@ -24526,6 +24782,87 @@ Param0,String
 64692,White Jindo Pup
 64693,White Jindo Pup
 64694,White Jindo Pup
+64695,Ancient Device
+64696,Ancient Device
+64697,Edan
+64698,Treasure Chest
+64699,Suspicious Sack
+64700,Washed-Up Debris
+64701,Codename: Naughty
+64702,Codename: Naughty
+64703,Codename: Naughty
+64704,Codename: Naughty
+64705,Codename: Naughty
+64706,Codename: Naughty
+64707,Codename: Naughty
+64708,Codename: Naughty
+64709,Codename: Naughty
+64710,Codename: Naughty
+64711,Codename: Naughty
+64712,Codename: Naughty
+64713,Codename: Naughty
+64714,Codename: Naughty
+64715,Codename: Naughty
+64716,Codename: Naughty
+64717,Codename: Naughty
+64718,Codename: Naughty
+64719,Codename: Naughty
+64720,Codename: Naughty
+64721,Codename: Naughty
+64722,Codename: Naughty
+64723,Codename: Naughty
+64724,Codename: Naughty
+64725,Codename: Naughty
+64726,Codename: Naughty
+64727,Codename: Naughty
+64728,Codename: Naughty
+64729,Codename: Naughty
+64730,Codename: Naughty
+64731,Codename: Naughty
+64732,Codename: Naughty
+64733,Codename: Naughty
+64734,Codename: Naughty
+64735,Codename: Naughty
+64736,Codename: Naughty
+64737,Codename: Naughty
+64738,Codename: Naughty
+64739,Codename: Naughty
+64740,Codename: Naughty
+64741,Codename: Naughty
+64742,Codename: Naughty
+64743,Codename: Naughty
+64744,Codename: Naughty
+64745,Codename: Naughty
+64746,Codename: Naughty
+64747,Codename: Naughty
+64748,Codename: Naughty
+64749,Codename: Naughty
+64750,Codename: Naughty
+64751,Codename: Naughty
+64752,Codename: Naughty
+64753,Codename: Naughty
+64754,Codename: Naughty
+64755,Codename: Naughty
+64756,Codename: Naughty
+64757,Codename: Naughty
+64758,Codename: Naughty
+64759,Codename: Naughty
+64760,Codename: Naughty
+64761,Codename: Naughty
+64762,Codename: Naughty
+64763,Codename: Naughty
+64764,Codename: Naughty
+64765,Codename: Naughty
+64766,Codename: Naughty
+64767,Codename: Naughty
+64768,Codename: Naughty
+64769,Codename: Naughty
+64770,Codename: Naughty
+64771,Codename: Naughty
+64772,Codename: Naughty
+64773,Codename: Naughty
+64774,Codename: Naughty
+64775,Codename: Naughty
 65001,Cliff
 65002,Jordine
 65003,Peony
@@ -25939,6 +26276,66 @@ Param0,String
 47739,Shop
 47740,Shop
 47741,<null>
+47742,<null>
+47743,Shop
+47744,<null>
+47745,Currency Exchange
+47746,<null>
+47747,<null>
+47748,Contract Workers
+47749,Shop
+47750,<null>
+47751,Shop
+47753,Shop
+47754,<null>
+47755,<null>
+47756,<null>
+47757,<null>
+47758,<null>
+47759,<null>
+47760,Shop
+47761,Shop
+47763,Shop
+47764,Shop
+47765,Shop
+47766,Shop
+47767,Shop
+47768,Shop
+47769,Shop
+47771,Secret Shop
+47773,<null>
+47774,<null>
+47775,<null>
+47776,<null>
+47777,<null>
+47778,<null>
+47779,<null>
+47780,<null>
+47781,<null>
+47782,<null>
+47783,<null>
+47784,<null>
+47785,<null>
+47786,<null>
+47787,<null>
+47788,<null>
+47789,<null>
+47790,<null>
+47791,<null>
+47792,<null>
+47793,<null>
+47794,<null>
+47795,<null>
+47796,<null>
+47797,<null>
+47798,<null>
+47799,<null>
+47800,<null>
+47801,Shop
+47802,Shop
+47803,Shop
+47804,Shop
+47805,Shop
 49490,Shop
 49494,Shop
 49495,Shop

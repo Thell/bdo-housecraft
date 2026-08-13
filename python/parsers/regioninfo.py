@@ -1,16 +1,23 @@
 # This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
+# type: ignore
 
 import kaitaistruct
 from kaitaistruct import KaitaiStruct, KaitaiStream, BytesIO
-from enum import Enum
+from enum import IntEnum
 
 
-if getattr(kaitaistruct, 'API_VERSION', (0, 9)) < (0, 9):
-    raise Exception("Incompatible Kaitai Struct Python API: 0.9 or later is required, but you have %s" % (kaitaistruct.__version__))
+if getattr(kaitaistruct, 'API_VERSION', (0, 9)) < (0, 11):
+    raise Exception("Incompatible Kaitai Struct Python API: 0.11 or later is required, but you have %s" % (kaitaistruct.__version__))
 
 class Regioninfo(KaitaiStruct):
 
-    class RegionType(Enum):
+    class RegionAttributeType(IntEnum):
+        normal_land = 0
+        beach = 1
+        desert = 2
+        count = 3
+
+    class RegionType(IntEnum):
         minor_town = 0
         main_town = 1
         hunting = 2
@@ -20,7 +27,7 @@ class Regioninfo(KaitaiStruct):
         arena = 6
         count = 7
 
-    class VillageSiegeType(Enum):
+    class VillageSiegeType(IntEnum):
         sunday = 0
         monday = 1
         tuesday = 2
@@ -29,20 +36,14 @@ class Regioninfo(KaitaiStruct):
         friday = 5
         saturday = 6
         count = 7
-
-    class RegionAttributeType(Enum):
-        normal_land = 0
-        beach = 1
-        desert = 2
-        count = 3
     def __init__(self, _io, _parent=None, _root=None):
-        self._io = _io
+        super(Regioninfo, self).__init__(_io)
         self._parent = _parent
-        self._root = _root if _root else self
+        self._root = _root or self
         self._read()
 
     def _read(self):
-        self.pabr = (self._io.read_bytes(4)).decode(u"utf-8")
+        self.pabr = (self._io.read_bytes(4)).decode(u"UTF-8")
         self.num_regioninfo = self._io.read_u4le()
         self.regioninfo_table = []
         for i in range(self.num_regioninfo):
@@ -50,11 +51,70 @@ class Regioninfo(KaitaiStruct):
 
         self.string_table = Regioninfo.StringTableType(self._io, self, self._root)
 
+
+    def _fetch_instances(self):
+        pass
+        for i in range(len(self.regioninfo_table)):
+            pass
+            self.regioninfo_table[i]._fetch_instances()
+
+        self.string_table._fetch_instances()
+
+    class ColorType(KaitaiStruct):
+        def __init__(self, _io, _parent=None, _root=None):
+            super(Regioninfo.ColorType, self).__init__(_io)
+            self._parent = _parent
+            self._root = _root
+            self._read()
+
+        def _read(self):
+            self.b = self._io.read_u1()
+            self.g = self._io.read_u1()
+            self.r = self._io.read_u1()
+            self.a = self._io.read_u1()
+
+
+        def _fetch_instances(self):
+            pass
+
+
+    class FieldListType(KaitaiStruct):
+        def __init__(self, _io, _parent=None, _root=None):
+            super(Regioninfo.FieldListType, self).__init__(_io)
+            self._parent = _parent
+            self._root = _root
+            self._read()
+
+        def _read(self):
+            self.field = self._io.read_u2le()
+
+
+        def _fetch_instances(self):
+            pass
+
+
+    class PositionType(KaitaiStruct):
+        def __init__(self, _io, _parent=None, _root=None):
+            super(Regioninfo.PositionType, self).__init__(_io)
+            self._parent = _parent
+            self._root = _root
+            self._read()
+
+        def _read(self):
+            self.x = self._io.read_f4le()
+            self.y = self._io.read_f4le()
+            self.z = self._io.read_f4le()
+
+
+        def _fetch_instances(self):
+            pass
+
+
     class RegionSkillType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
+            super(Regioninfo.RegionSkillType, self).__init__(_io)
             self._parent = _parent
-            self._root = _root if _root else self
+            self._root = _root
             self._read()
 
         def _read(self):
@@ -63,11 +123,15 @@ class Regioninfo(KaitaiStruct):
             self.apply_rate = self._io.read_s4le()
 
 
+        def _fetch_instances(self):
+            pass
+
+
     class RegioninfoType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
+            super(Regioninfo.RegioninfoType, self).__init__(_io)
             self._parent = _parent
-            self._root = _root if _root else self
+            self._root = _root
             self._read()
 
         def _read(self):
@@ -189,6 +253,33 @@ class Regioninfo(KaitaiStruct):
             self.unknown_33 = self._io.read_u8le()
             self.guild_wharf_character_key = self._io.read_u2le()
 
+
+        def _fetch_instances(self):
+            pass
+            self.color_key._fetch_instances()
+            self.villain_respawn_postion._fetch_instances()
+            self.region_skill_1._fetch_instances()
+            self.region_skill_2._fetch_instances()
+            self.region_skill_3._fetch_instances()
+            self.region_night_skill._fetch_instances()
+            self.center_position._fetch_instances()
+            self.return_position._fetch_instances()
+            for i in range(len(self.valid_return_position_list)):
+                pass
+                self.valid_return_position_list[i]._fetch_instances()
+
+            self.weather_data._fetch_instances()
+            for i in range(len(self.pc_deliver_region_key_list)):
+                pass
+                self.pc_deliver_region_key_list[i]._fetch_instances()
+
+            for i in range(len(self.respawn_position_list)):
+                pass
+                self.respawn_position_list[i]._fetch_instances()
+
+            self.escape_point._fetch_instances()
+            self.revive_point._fetch_instances()
+
         @property
         def area_name(self):
             if hasattr(self, '_m_area_name'):
@@ -198,11 +289,64 @@ class Regioninfo(KaitaiStruct):
             return getattr(self, '_m_area_name', None)
 
 
+    class StringBlockType(KaitaiStruct):
+        def __init__(self, _io, _parent=None, _root=None):
+            super(Regioninfo.StringBlockType, self).__init__(_io)
+            self._parent = _parent
+            self._root = _root
+            self._read()
+
+        def _read(self):
+            self.is_utf16_string = self._io.read_u1()
+            self.string_length = self._io.read_u4le()
+            if self.is_utf16_string == 0:
+                pass
+                self.string_utf8 = (self._io.read_bytes(self.string_length)).decode(u"UTF-8")
+
+            if self.is_utf16_string == 1:
+                pass
+                self.string_utf16 = (self._io.read_bytes(self.string_length)).decode(u"UTF-16LE")
+
+
+
+        def _fetch_instances(self):
+            pass
+            if self.is_utf16_string == 0:
+                pass
+
+            if self.is_utf16_string == 1:
+                pass
+
+
+
+    class StringTableType(KaitaiStruct):
+        def __init__(self, _io, _parent=None, _root=None):
+            super(Regioninfo.StringTableType, self).__init__(_io)
+            self._parent = _parent
+            self._root = _root
+            self._read()
+
+        def _read(self):
+            self.num_strings = self._io.read_u4le()
+            self.strings = []
+            for i in range(self.num_strings):
+                self.strings.append(Regioninfo.StringBlockType(self._io, self, self._root))
+
+
+
+        def _fetch_instances(self):
+            pass
+            for i in range(len(self.strings)):
+                pass
+                self.strings[i]._fetch_instances()
+
+
+
     class WeatherDataType(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
+            super(Regioninfo.WeatherDataType, self).__init__(_io)
             self._parent = _parent
-            self._root = _root if _root else self
+            self._root = _root
             self._read()
 
         def _read(self):
@@ -219,75 +363,8 @@ class Regioninfo(KaitaiStruct):
             self.select_weather_time = self._io.read_s4le()
 
 
-    class FieldListType(KaitaiStruct):
-        def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
-            self._parent = _parent
-            self._root = _root if _root else self
-            self._read()
-
-        def _read(self):
-            self.field = self._io.read_u2le()
-
-
-    class StringTableType(KaitaiStruct):
-        def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
-            self._parent = _parent
-            self._root = _root if _root else self
-            self._read()
-
-        def _read(self):
-            self.num_strings = self._io.read_u4le()
-            self.strings = []
-            for i in range(self.num_strings):
-                self.strings.append(Regioninfo.StringBlockType(self._io, self, self._root))
-
-
-
-    class PositionType(KaitaiStruct):
-        def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
-            self._parent = _parent
-            self._root = _root if _root else self
-            self._read()
-
-        def _read(self):
-            self.x = self._io.read_f4le()
-            self.y = self._io.read_f4le()
-            self.z = self._io.read_f4le()
-
-
-    class ColorType(KaitaiStruct):
-        def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
-            self._parent = _parent
-            self._root = _root if _root else self
-            self._read()
-
-        def _read(self):
-            self.b = self._io.read_u1()
-            self.g = self._io.read_u1()
-            self.r = self._io.read_u1()
-            self.a = self._io.read_u1()
-
-
-    class StringBlockType(KaitaiStruct):
-        def __init__(self, _io, _parent=None, _root=None):
-            self._io = _io
-            self._parent = _parent
-            self._root = _root if _root else self
-            self._read()
-
-        def _read(self):
-            self.is_utf16_string = self._io.read_u1()
-            self.string_length = self._io.read_u4le()
-            if self.is_utf16_string == 0:
-                self.string_utf8 = (self._io.read_bytes(self.string_length)).decode(u"utf-8")
-
-            if self.is_utf16_string == 1:
-                self.string_utf16 = (self._io.read_bytes(self.string_length)).decode(u"utf-16le")
-
+        def _fetch_instances(self):
+            pass
 
 
 
