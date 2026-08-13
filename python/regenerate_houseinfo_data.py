@@ -224,7 +224,7 @@ def extract_strings(language_data_group, param0=any, param1=0, param2=0, param3=
 
 
 def remove_files(path):
-    for file in path().iterdir():
+    for file in path.iterdir():
         if file.is_file():
             file.unlink()
 
